@@ -24,18 +24,27 @@ E = html.escape
 
 # ------------------------------------------------------------------ placeholders
 def ph(label):
-    return f'<span class="ph">[À COMPLÉTER : {E(label)}]</span>'
+    """Ne jamais afficher de pastille. Les champs vides restent dans config.json."""
+    return ""
 
-def biz(key, label):
+def biz(key, label=None):
     v = CFG["business"].get(key)
-    return E(v) if v else ph(label)
+    return E(v) if v else ""
 
-def biz_txt(key, label):
+def biz_txt(key, label=None):
     v = CFG["business"].get(key)
-    return v if v else f"[À COMPLÉTER : {label}]"
+    return v if v else ""
+
+def row(label, value):
+    return f"<dt>{label}</dt><dd>{value}</dd>" if value else ""
+
+def br_line(label, value):
+    if not value:
+        return ""
+    return f"{label} : {value}<br>" if label else f"{value}<br>"
 
 def telesurv():
-    return "option disponible" if CFG.get("telesurveillance_confirmee") else '<span class="ph">[À CONFIRMER]</span>'
+    return "La télésurveillance peut compléter l’installation." if CFG.get("telesurveillance_confirmee") else ""
 
 # ------------------------------------------------------------------ utilitaires
 def slugify(s):
@@ -111,10 +120,22 @@ def load_catalogue():
         p["colors_ok"] = [c for c in p["colors_available"] if c in p["color_images"]]
         p["dup_name"] = names[p["name"]] > 1
         p["title_name"] = f'{p["name"]} ({p["model"]})' if p["dup_name"] else p["name"]
-        d = f'{p["name"]} : {lcfirst(feats[0])}.' if feats else f'{p["name"]}.'
-        if len(feats) > 1:
-            d += " " + "; ".join(feats[1:]) + "."
-        d += " Matériel Ajax Systems sélectionné, installé et paramétré chez vous par Active Sécurité 974, partout à La Réunion."
+        # Accroche et bénéfices propres à la référence (pas de phrase répétée).
+        p["hook"] = feats[0] if feats else p["category"]
+        seen, benefits = set(), []
+        for f in feats:
+            key = norm(f)
+            if key in seen:
+                continue
+            seen.add(key)
+            benefits.append(f)
+            if len(benefits) == 3:
+                break
+        p["benefits"] = benefits
+        d = p["hook"].rstrip(".") + "."
+        extra = [b for b in benefits[1:]]
+        if extra:
+            d += " " + " ".join(x.rstrip(".") + "." for x in extra)
         p["desc"] = d
         p["avail_tag"], p["avail_note"] = avail_info(p)
         out.append(p)
@@ -123,6 +144,7 @@ def load_catalogue():
 # ------------------------------------------------------------------ images
 IMG_OUT = os.path.join(ROOT, "assets", "img", "p")
 STAGE = (245, 245, 247)
+IMG_REV = 4
 _img_cache = {}
 
 def _process(src_rel):
@@ -132,14 +154,19 @@ def _process(src_rel):
     src = os.path.join(resolve_path(CFG["catalogue_images_dir"]), src_rel)
     stem = ("c-" if "/couleurs/" in src_rel else "") + slugify(os.path.splitext(os.path.basename(src_rel))[0])
     meta_path = os.path.join(IMG_OUT, stem + ".json")
-    # Cache déjà optimisé : on ne régénère que si le fichier source est plus récent.
-    if os.path.exists(meta_path) and (not os.path.exists(src) or os.path.getmtime(meta_path) >= os.path.getmtime(src)):
-        meta = json.load(open(meta_path, encoding="utf-8"))
-        _img_cache[src_rel] = meta
-        return meta
-    if not os.path.exists(src):
-        _img_cache[src_rel] = None
-        return None
+    def load_meta():
+        try:
+            return json.load(open(meta_path, encoding="utf-8"))
+        except Exception:
+            return None
+    cached = load_meta() if os.path.exists(meta_path) else None
+    source_ok = os.path.exists(src)
+    if cached and cached.get("rev") == IMG_REV and (not source_ok or os.path.getmtime(meta_path) >= os.path.getmtime(src)):
+        _img_cache[src_rel] = cached
+        return cached
+    if not source_ok:
+        _img_cache[src_rel] = cached
+        return cached
     os.makedirs(IMG_OUT, exist_ok=True)
     im = Image.open(src)
     im = im.convert("RGBA")
@@ -159,28 +186,22 @@ def _process(src_rel):
         pad = int(max(bbox[2] - bbox[0], bbox[3] - bbox[1]) * 0.04)
         bbox = (max(0, bbox[0] - pad), max(0, bbox[1] - pad), min(w0, bbox[2] + pad), min(h0, bbox[3] + pad))
         im = im.crop(bbox)
-    if opaque:
-        # fond blanc -> fond de scène neutre (multiplication, préserve les ombres)
-        from PIL import ImageChops
-        bg = Image.new("RGB", im.size, STAGE)
-        im = ImageChops.multiply(im.convert("RGB"), bg)
     W, H = im.size
-    widths = sorted({min(W, 480), min(W, 1000)})
+    # 700 cartes, 1000 fiches, 1600 hero — jamais d’agrandissement.
+    widths = sorted({w for w in (700, 1000, 1600) if w < W} | {W})
     srcset = []
     for w in widths:
         h = round(H * w / W)
         r = im if w == W else im.resize((w, h), Image.LANCZOS)
         fn = f"{stem}-{w}.webp"
-        r.save(os.path.join(IMG_OUT, fn), "WEBP", quality=84, method=4)
+        r.save(os.path.join(IMG_OUT, fn), "WEBP", quality=82, method=2)
         srcset.append((fn, w))
-    fw = min(W, 640); fh = round(H * fw / W)
+    fw = min(W, 1000); fh = round(H * fw / W)
     fb = im if fw == W else im.resize((fw, fh), Image.LANCZOS)
-    if opaque:
-        fb_name = f"{stem}.jpg"; fb.convert("RGB").save(os.path.join(IMG_OUT, fb_name), "JPEG", quality=86, optimize=True, progressive=True)
-    else:
-        fb_name = f"{stem}.png"
-        fb.quantize(colors=256, method=Image.Quantize.FASTOCTREE, dither=Image.Dither.FLOYDSTEINBERG).save(os.path.join(IMG_OUT, fb_name), "PNG", optimize=True)
-    meta = {"w": W, "h": H, "fw": fw, "fh": fh, "srcset": srcset, "fallback": fb_name, "opaque": opaque, "src": src_rel}
+    fb_name = f"{stem}.png"
+    out_img = fb if not opaque else fb.convert("RGBA")
+    out_img.save(os.path.join(IMG_OUT, fb_name), "PNG", optimize=True)
+    meta = {"rev": IMG_REV, "w": W, "h": H, "fw": fw, "fh": fh, "srcset": srcset, "fallback": fb_name, "opaque": opaque, "src": src_rel}
     json.dump(meta, open(meta_path, "w"))
     _img_cache[src_rel] = meta
     return meta
@@ -223,7 +244,8 @@ def picture(meta, alt, pre, sizes, cls="", eager=False, idimg=None, idsrc=None):
     load = 'fetchpriority="high"' if eager else 'loading="lazy"'
     ia = f' id="{idimg}"' if idimg else ""
     sa = f' id="{idsrc}"' if idsrc else ""
-    c = f' class="{cls}"' if cls else ""
+    matte = " is-matte" if meta.get("opaque") else ""
+    c = f' class="{(cls + matte).strip()}"' if (cls or matte) else ""
     return (f'<picture><source{sa} type="image/webp" srcset="{ss}" sizes="{sizes}">'
             f'<img{ia}{c} src="{fb}" alt="{E(alt)}" width="{meta["w"]}" height="{meta["h"]}" style="--w:{meta["w"]}px;max-width:min(100%,{meta["w"]}px)" {load} decoding="async"></picture>')
 

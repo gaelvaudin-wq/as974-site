@@ -35,8 +35,9 @@ def fill(group, gk, first, n=8):
             lst.append(p)
     return lst[:n]
 
-SZ_HERO = "(max-width:640px) 40vw, 420px"
-SZ_SPLIT = "(max-width:980px) 80vw, 520px"
+SZ_HERO = "(max-width:640px) 70vw, 720px"
+SZ_SPLIT = "(max-width:980px) 86vw, 640px"
+SZ_CARD = "(max-width:640px) 80vw, 340px"
 
 # ====================================================================== ACCUEIL
 def home():
@@ -45,8 +46,8 @@ def home():
     hero = f'''<section class="hero on-dark">
 <div class="wrap">
 <p class="eyebrow reveal">Partenaire agréé Ajax Systems · Toute l’île</p>
-<h1 class="display reveal d1">Sécurisez votre espace à La Réunion avec <span class="grad-text">Active Sécurité 974</span></h1>
-<p class="lead reveal d2">Alarme intrusion, incendie, vidéosurveillance et domotique : un écosystème cohérent, installé et suivi sur toute l’île. Matériel Ajax Systems, marque partenaire.</p>
+<h1 class="display reveal d1">La sécurité Ajax, chez vous.</h1>
+<p class="lead reveal d2">Alarme, incendie, vidéo et domotique. Installés et suivis sur toute l’île de La Réunion, par un partenaire agréé Ajax Systems.</p>
 <div class="btns reveal d3" style="justify-content:center"><a class="btn btn-primary btn-lg" href="contact.html#devis">Demander mon devis gratuit</a><a class="btn btn-outline btn-lg" href="#pourquoi">Pourquoi Ajax Systems</a></div>
 </div>
 <div class="hero-visual reveal d2" aria-hidden="false">
@@ -58,27 +59,14 @@ def home():
 <div class="hero-floor"></div>
 </section>'''
 
-    value = f'''<section class="section"><div class="wrap">
-<p class="eyebrow reveal">Proposition de valeur</p>
-<p class="statement reveal">Concevoir, installer, accompagner. <span class="dim">Active Sécurité 974 conçoit, installe et accompagne des systèmes de sécurité modernes pour particuliers et professionnels à La Réunion — de Baseline à Superior.</span></p>
-<ul class="ticks reveal">
-<li>Une seule interface pour alarme, vidéo, incendie et automatismes</li>
-<li>Étude et devis gratuits, sans engagement</li>
-<li>Intervention sur toute l’île de La Réunion</li>
-<li>Conseil, pose, formation à l’usage, suivi</li>
-</ul>
-</div></section>'''
-
     why = f'''<section class="section bg-ink on-dark" id="pourquoi"><div class="wrap">
-<div class="head reveal"><p class="eyebrow">Pourquoi Ajax Systems</p><h2 class="h2">Des avantages techniques vérifiés.</h2>
-<p class="lead">Faits repris du site du fabricant (ajax.systems), reformulés. Chiffres uniquement lorsqu’ils y figurent.</p></div>
+<div class="head reveal"><p class="eyebrow">Pourquoi Ajax Systems</p><h2 class="h2">Une technologie simple à vivre.</h2>
+<p class="lead">Concevoir, installer, accompagner : une seule application pour l’alarme, la vidéo, l’incendie et la domotique.</p></div>
 <div class="bento">
-<div class="tile w4 reveal"><p class="fig red">2 000<small>m</small></p><h3>Radio Jeweller longue portée</h3><p>Jusqu’à 2 000 m de communication radio avec une centrale ou un prolongateur de portée, protocole bidirectionnel chiffré.</p><p class="src">Source : ajax.systems/fr/products/hub-2/</p></div>
-<div class="tile w2 reveal d1"><p class="fig yellow">3<small>réseaux</small></p><h3>Multi-canal, toujours connecté</h3><p>Ethernet + deux cartes SIM (2G/3G/LTE) : jusqu’à trois réseaux indépendants, bascule automatique.</p><p class="src">Source : ajax.systems/fr/products/hub-2/</p></div>
-<div class="tile w2 reveal"><p class="fig">~9<small>s</small></p><h3>Photo-vérification</h3><p>Levée de doute en photos : première image en ~9 s selon les conditions indiquées sur les fiches Hub 2 / MotionCam.</p><p class="src">Source : ajax.systems/fr/products/hub-2/ &amp; motioncam-phod/</p></div>
-<div class="tile w2 reveal d1"><p class="fig blue">5<small>ans</small></p><h3>Autonomie des piles</h3><p>Ex. MotionProtect : jusqu’à 5 ans d’autonomie (annonce constructeur) ; piles préinstallées sur de nombreux détecteurs.</p><p class="src">Source : ajax.systems/fr/products/motionprotect/</p></div>
-<div class="tile w2 reveal d2"><p class="fig" style="font-size:clamp(40px,4vw,60px)">Anti&#8209;<br>sabotage</p><h3>Immunité animaux &amp; protection</h3><p>Algorithmes d’immunité aux animaux de compagnie ; boutons anti-sabotage et chiffrement des échanges radio.</p><p class="src">Source : ajax.systems/fr/products/motionprotect/ &amp; motioncam-phod/</p></div>
-<div class="tile w6 with-img reveal"><div class="tile-txt"><p class="fig" style="font-size:clamp(40px,4.4vw,68px)">Une app.<br>Tout l’écosystème.</p><h3>App + OS Malevich</h3><p>Pilotage smartphone / PC ; OS Malevich avec mises à jour OTA. Écosystème unifié : alarme, vidéo, incendie, domotique.</p><p class="src">Source : ajax.systems/fr/products/hub-2/</p></div>{stage_img("hub-2", "Noir", pre, "(max-width:640px) 70vw, 300px", need_alpha=True)}</div>
+<div class="tile w4 reveal"><p class="fig red">2 000<small>m</small></p><h3>Radio Jeweller longue portée</h3><p>Jusqu’à 2 000 m entre une centrale et un détecteur, ou avec un prolongateur de portée.</p><p class="src">ajax.systems/fr/products/hub-2/</p></div>
+<div class="tile w2 reveal d1"><p class="fig">3<small>réseaux</small></p><h3>Toujours connectée</h3><p>Ethernet et deux cartes SIM : la centrale bascule d’un réseau à l’autre.</p><p class="src">ajax.systems/fr/products/hub-2/</p></div>
+<div class="tile w2 reveal d1"><p class="fig">5<small>ans</small></p><h3>Piles longue durée</h3><p>MotionProtect annonce jusqu’à 5 ans d’autonomie. Beaucoup de détecteurs arrivent piles installées.</p><p class="src">ajax.systems/fr/products/motionprotect/</p></div>
+<div class="tile w6 with-img reveal"><div class="tile-txt"><p class="fig" style="font-size:clamp(40px,4.4vw,68px)">Une app.<br>Tout le système.</p><h3>Pilotage au quotidien</h3><p>Smartphone ou ordinateur : armement, notifications, vidéo et scénarios au même endroit.</p><p class="src">ajax.systems/fr/products/hub-2/</p></div>{stage_img("hub-2", "Noir", pre, "(max-width:640px) 70vw, 420px", need_alpha=True)}</div>
 </div>
 </div></section>'''
 
@@ -88,57 +76,46 @@ def home():
 <div class="panel light reveal"><p class="eyebrow">Particuliers</p><h3 class="h2">Votre maison, sereine.</h3><p>Maison ou appartement : une solution discrète, fiable, pilotable depuis le smartphone.</p>
 <div class="btns"><a class="btn btn-primary" href="contact.html?profil=particulier#devis">Étude gratuite pour mon logement</a><a class="btn btn-outline" href="particuliers.html">En savoir plus</a></div>
 <div class="panel-img">{stage_img("doorbell", "Blanc", pre, "(max-width:980px) 60vw, 360px", need_alpha=True)}</div></div>
-<div class="panel blue on-dark reveal d1"><p class="eyebrow">Professionnels</p><h3 class="h2">Votre activité, protégée.</h3><p>Commerces, bureaux, entrepôts, multi-sites : architecture évolutive, options Superior.</p>
+<div class="panel blue on-dark reveal d1"><p class="eyebrow">Professionnels</p><h3 class="h2">Votre activité, protégée.</h3><p>Commerces, bureaux, entrepôts et plusieurs sites : une installation qui grandit avec vous.</p>
 <div class="btns"><a class="btn btn-light" href="contact.html?profil=professionnel#devis">Demander une étude professionnelle</a><a class="btn btn-outline" href="professionnels.html">En savoir plus</a></div>
 <div class="panel-img">{stage_img("superior-motioncam-phod-jeweller", "Noir", pre, "(max-width:980px) 60vw, 360px", need_alpha=True)}</div></div>
 </div></div></section>'''
 
     chapters = [
         ("alarme", "gamme-alarme.html", "Chaque accès sous contrôle.", "Détection d’intrusion, commandes et sirènes Ajax Systems. Baseline pour l’essentiel sans fil ; Superior pour les architectures plus exigeantes.", "motionprotect", "Blanc", ""),
-        ("incendie", "gamme-incendie.html", "Détecter tôt. Alerter fort.", "Détecteurs de fumée, chaleur, CO et dispositifs associés. Pour les ERP, l’étude intègre vos contraintes sans affirmer une conformité non vérifiée.", "fireprotect-2-smoke-heat-co", "Blanc", ""),
-        ("video", "gamme-video.html", "Voir, pour lever le doute.", "Caméras IP, sonnette et NVR Ajax Systems, intégrés à l’alarme pour une levée de doute visuelle.", "turretcam", "Noir", "dark"),
-        ("domotique", "gamme-domotique.html", "Le confort, dans la même app.", "Automatismes, prises, relais, fuites d’eau et qualité de l’air : le confort dans la même application que la sécurité.", "lightswitch-1-gang-jeweller", "Olive", ""),
+        ("incendie", "gamme-incendie.html", "Détecter tôt. Alerter fort.", "Fumée, chaleur et monoxyde de carbone, dans la même installation que l’alarme.", "fireprotect-2-smoke-heat-co", "Blanc", ""),
+        ("video", "gamme-video.html", "Voir, pour lever le doute.", "Caméras, sonnette et enregistreurs, reliés à l’alarme.", "turretcam", "Noir", "dark"),
+        ("domotique", "gamme-domotique.html", "Le confort, dans la même app.", "Prises, relais, éclairage et alertes de fuite d’eau.", "socket", "Blanc", ""),
     ]
     rows = []
     for i, (g, href, h, txt, slug, col, st) in enumerate(chapters):
         cnt = len(group_products(g))
-        rows.append(f'''<div class="split{' rev' if i % 2 else ''}">
-<div class="split-media {st} reveal">{stage_img(slug, col, pre, SZ_SPLIT, need_alpha=(st == 'dark'))}</div>
-<div class="split-txt reveal d1"><p class="num">0{i+1} — {E(GROUP[g]["label"])}</p><h2 class="h2">{h}</h2><p class="lead">{txt}</p>
-<div class="btns"><a class="btn btn-dark" href="{href}">Découvrir la gamme</a><a class="btn btn-outline" href="catalogue-{g}.html">{cnt} références</a></div></div>
-</div>''')
+        rows.append(f'''<a class="range-card {st}" href="{href}"><div class="range-media">{stage_img(slug, col, pre, "(max-width:640px) 70vw, 280px", need_alpha=(st == "dark"))}</div><div><p class="num">0{i+1}</p><h3>{h}</h3><p>{txt}</p><span class="count">{cnt} références</span></div></a>''')
     gammes = f'''<section class="section bg-off" id="gammes"><div class="wrap">
-<div class="head reveal"><p class="eyebrow">Gammes</p><h2 class="h2">Quatre univers. Un seul écosystème.</h2></div>
-{"".join(rows)}
+<div class="head reveal"><p class="eyebrow">Gammes</p><h2 class="h2">Quatre univers. Un seul système.</h2></div>
+<div class="range-grid">{"".join(rows)}</div>
 </div></section>'''
 
-    vs = f'''<section class="section"><div class="wrap">
-<div class="head reveal"><p class="eyebrow">Baseline ou Superior</p><h2 class="h2">Deux niveaux pour coller à votre site.</h2><p class="lead">De l’essentiel sans fil aux projets exigeants. Nous vous orientons lors de l’étude gratuite.</p></div>
-{versus(pre, ALL, "catalogue.html?gamme=baseline#references", "catalogue.html?gamme=superior#references")}
-</div></section>'''
-
-    feat = pick(["hub-2", "motioncam-phod", "doorprotect", "bulletcam", "streetsiren", "keypad-touchscreen", "fireprotect-2-smoke-heat-co", "lightswitch-1-gang-jeweller", "doorbell"])
+    feat = pick(["hub-2", "motioncam-phod", "doorprotect", "bulletcam", "streetsiren", "keypad-touchscreen", "fireprotect-2-smoke-heat-co", "socket", "doorbell"])
     railsec = f'''<section class="section flush-top"><div class="wrap">
 {rail(feat, pre, "Catalogue", "Matériel sur devis.", ("catalogue.html", f"Voir tout le catalogue ({n} références)"), lead="Packshots officiels Ajax Systems. Chaque fiche propose « Demander un devis » : pas de panier ni de paiement en ligne.")}
 </div></section>'''
 
     process = f'''<section class="section bg-off"><div class="wrap">
-<div class="head reveal"><p class="eyebrow">Process</p><h2 class="h2">De la prise de contact au suivi.</h2></div>
+<div class="head reveal"><p class="eyebrow">Toute l’île, chez vous</p><h2 class="h2">De la prise de contact au suivi.</h2>
+<p class="lead">Nord, Sud, Est, Ouest et les Hauts. L’étude, la pose et le suivi se font à votre adresse.</p></div>
 <ol class="timeline reveal">
-<li><span class="dot">01</span><div><h3>Contact</h3><p>Formulaire ou téléphone {biz("telephone", "téléphone")}.</p></div></li>
-<li><span class="dot">02</span><div><h3>Étude gratuite</h3><p>Visite ou échanges à distance.</p></div></li>
-<li><span class="dot">03</span><div><h3>Devis clair</h3><p>Sans engagement, prix sur devis.</p></div></li>
+<li><span class="dot">01</span><div><h3>Contact</h3><p>Échange sur votre besoin{(' au ' + biz('telephone')) if biz('telephone') else ''}.</p></div></li>
+<li><span class="dot">02</span><div><h3>Étude gratuite</h3><p>Visite chez vous ou échanges à distance.</p></div></li>
+<li><span class="dot">03</span><div><h3>Devis clair</h3><p>Sans engagement. Le prix est établi dans le devis.</p></div></li>
 <li><span class="dot">04</span><div><h3>Installation</h3><p>Pose, configuration, formation.</p></div></li>
-<li><span class="dot">05</span><div><h3>Suivi</h3><p>Options de maintenance <span class="ph">[À CONFIRMER]</span>.</p></div></li>
+<li><span class="dot">05</span><div><h3>Suivi</h3><p>Maintenance selon le contrat défini ensemble.</p></div></li>
 </ol>
 </div></section>'''
 
-    zone = f'''<section class="section bg-ink on-dark"><div class="wrap zone">
-<div class="reveal"><p class="eyebrow">Zone d’intervention</p><h2 class="h2">Présents sur toute l’île.</h2><p class="lead" style="margin-top:24px">La Réunion, d’un bout à l’autre : Nord, Sud, Est, Ouest et Hauts. Un interlocuteur local pour l’étude, la pose et le suivi, chez vous.</p></div>
-<ul class="zone-words reveal d1" aria-label="Secteurs couverts"><li>Nord</li><li>Est</li><li>Sud</li><li>Ouest</li><li>Hauts</li></ul>
-</div></section>'''
-
-    body = hero + value + why + duo + gammes + vs + railsec + process + zone + cta(pre, text=f"Étude et devis gratuits. Réponse sous {biz('delai_reponse', 'délai de réponse')}. Partenaire agréé Ajax Systems.")
+    delay = biz("delai_reponse")
+    cta_text = "Étude et devis gratuits. Partenaire agréé Ajax Systems." + (f" Réponse sous {delay}." if delay else "")
+    body = hero + why + duo + gammes + railsec + process + cta(pre, text=cta_text)
     write_page("index.html", "Active Sécurité 974 — Alarme, vidéosurveillance, incendie et domotique à La Réunion",
                "Installateur partenaire agréé Ajax Systems à La Réunion : alarme, incendie, vidéosurveillance et domotique pour particuliers et professionnels. Étude et devis gratuits.",
                body, priority="1.0")
@@ -193,9 +170,9 @@ def professionnels():
     pre = ""
     cr, ld = crumbs(pre, [(None, "Professionnels")])
     sup = pick(["superior-hub-g3-jeweller", "superior-hub-hybrid-2", "superior-doorprotect-g3-jeweller", "superior-keypad-touchscreen-g3-jeweller", "superior-motioncam-phod-jeweller", "superior-streetsiren-doubledeck-jeweller", "superior-motionprotect-g3-jeweller", "superior-homesiren-g3-jeweller"])
-    body = f'''<section class="phero bg-blue on-dark"><div class="wrap phero-split">
-<div class="reveal">{cr}<p class="eyebrow">Professionnels</p><h1 class="h1">Sécurité pour commerces, bureaux et multi-sites à La Réunion.</h1>
-<p class="lead">Architectures évolutives, option Superior pour les projets exigeants, interlocuteur local pour l’étude, l’installation sur site et le suivi. Partenaire agréé Ajax Systems.</p>
+    body = f'''<section class="phero bg-blue on-dark"><div class="wrap phero-split crumbs-first">
+<div class="reveal">{cr}<p class="eyebrow">Professionnels</p><h1 class="h1">Votre activité, protégée.</h1>
+<p class="lead">Commerces, bureaux, entrepôts et plusieurs sites. Étude, installation et suivi par un partenaire agréé Ajax Systems, sur toute l’île.</p>
 <div class="btns"><a class="btn btn-light btn-lg" href="contact.html?profil=professionnel#devis">Demander une étude professionnelle</a><a class="btn btn-outline btn-lg" href="catalogue.html?gamme=superior#references">Gamme Superior</a></div></div>
 <div class="phero-media blue reveal d1">{stage_img("superior-keypad-touchscreen-g3-jeweller", "Noir", pre, SZ_SPLIT, eager=True, need_alpha=True)}</div>
 </div></section>
@@ -206,8 +183,8 @@ def professionnels():
 <li><h3>Bureaux</h3><p>Multi-zones, horaires, utilisateurs multiples, scénarios d’armement.</p></li>
 <li><h3>Entrepôts &amp; locaux techniques</h3><p>Périmètres, portées radio, extensions de couverture.</p></li>
 <li><h3>Restaurants &amp; CHR</h3><p>Protection hors service, alertes, automatismes utiles au quotidien.</p></li>
-<li><h3>Multi-sites</h3><p>Vision consolidée, interlocuteur unique AS974 sur toute l’île.</p></li>
-<li><h3>Incendie (ERP / sites sensibles)</h3><p>Nous étudions les dispositifs Ajax adaptés. Les obligations réglementaires (ERP, etc.) sont analysées au cas par cas : aucune conformité n’est affirmée sans étude dédiée.</p></li>
+<li><h3>Plusieurs sites</h3><p>Un interlocuteur unique sur toute l’île, pour chaque adresse.</p></li>
+<li><h3>Incendie</h3><p>Détecteurs de fumée, de chaleur et de monoxyde de carbone, étudiés selon votre site.</p></li>
 </ol>
 </div></section>
 <section class="section bg-off"><div class="wrap">
@@ -221,8 +198,8 @@ def professionnels():
 {rail(sup, pre, "Sélection Superior", "Le matériel des projets exigeants.", ("catalogue.html?gamme=superior#references", "Toute la gamme Superior"))}
 </div></section>
 <section class="section bg-ink on-dark"><div class="wrap">
-<p class="eyebrow reveal">Options</p>
-<p class="statement reveal">Maintenance &amp; télésurveillance. <span class="dim">Maintenance selon contrat. Télésurveillance : option</span> <span class="ph">[À CONFIRMER]</span><span class="dim">.</span></p>
+<p class="eyebrow reveal">Après la pose</p>
+<p class="statement reveal">Un suivi dans la durée. <span class="dim">Maintenance selon le contrat défini ensemble.{(" " + telesurv()) if telesurv() else ""}</span></p>
 <div class="btns reveal"><a class="btn btn-light" href="services.html">Voir les services</a></div>
 </div></section>
 {cta(pre, "Parlons de votre site.", "Étude professionnelle sur place — toute l’île.", "Demander une étude professionnelle", "contact.html?profil=professionnel#devis")}'''
@@ -236,7 +213,7 @@ GAMME_PAGES = {
                "motioncam-phod", "Noir", "dark", ["doorprotect", "motionprotect", "motioncam-phod", "keypad-touchscreen", "streetsiren", "combiprotect"],
                "Alarme intrusion sans fil Ajax à La Réunion — détecteurs, claviers, sirènes | AS974",
                "Alarme intrusion Ajax Systems à La Réunion : détecteurs de mouvement et d’ouverture, claviers, sirènes. Gammes Baseline et Superior, installation par AS974."),
-    "incendie": ("gamme-incendie.html", "Incendie", "Détecteurs de fumée, chaleur, CO et dispositifs associés. Pour les ERP, l’étude intègre vos contraintes sans affirmer une conformité non vérifiée.",
+    "incendie": ("gamme-incendie.html", "Incendie", "Détecteurs de fumée, de chaleur et de monoxyde de carbone, étudiés selon votre site.",
                  "fireprotect-2-smoke-heat-co", "Blanc", "", ["fireprotect-2-smoke-heat-co", "fireprotect", "type4-manualcallpoint-jeweller", "fireprotect-2-rb-heat-smoke-co-ul-jeweller"],
                  "Détection incendie Ajax à La Réunion — fumée, chaleur, CO | AS974",
                  "Détecteurs incendie Ajax Systems à La Réunion : fumée, chaleur, monoxyde de carbone, déclencheurs manuels. Étude au cas par cas et installation par AS974."),
@@ -293,13 +270,13 @@ def gamme(g):
 CAT_LEADS = {
     "centrales": "Le cœur de votre système Ajax Systems : centrales, kits et prolongateurs de portée. Dimensionnés et installés par Active Sécurité 974 sur toute l’île.",
     "alarme": "Détecteurs, claviers, sirènes et commandes. Baseline pour l’essentiel sans fil ; Superior pour les projets exigeants.",
-    "incendie": "Détecteurs et dispositifs de signalisation Ajax Systems. Pour les ERP et sites professionnels, étude au cas par cas : aucune conformité réglementaire non vérifiée n’est affirmée.",
+    "incendie": "Détecteurs de fumée, de chaleur et de monoxyde de carbone. L’étude tient compte de votre site.",
     "video": "Caméras, sonnette et NVR Ajax Systems, intégrés à l’écosystème alarme, sur devis et installation AS974.",
     "domotique": "Prises, relais, éclairage, détection de fuite et qualité de l’air : automatisez le quotidien dans la même application.",
     "accessoires": "Modules d’intégration, alimentations, boîtiers et accessoires de pose pour compléter et raccorder votre installation.",
 }
-CAT_IMG = {"centrales": ("hub2-plus", "Noir"), "alarme": ("keypad-touchscreen", "Noir"), "incendie": ("fireprotect-2-smoke-heat-co", "Blanc"),
-           "video": ("turretcam", "Blanc"), "domotique": ("lightswitch-1-gang-jeweller", "Ivoire"), "accessoires": ("button", "Blanc")}
+CAT_IMG = {"centrales": ("hub2-plus", "Noir"), "alarme": ("motioncam-phod", "Noir"), "incendie": ("fireprotect-2-smoke-heat-co", "Blanc"),
+           "video": ("turretcam", "Blanc"), "domotique": ("socket", "Blanc"), "accessoires": ("button", "Blanc")}
 
 def catalogue_index():
     pre = ""
@@ -329,7 +306,7 @@ def catalogue_index():
 <div class="head reveal"><p class="eyebrow">Toutes les références</p><h2 class="h2">Trouvez le bon matériel.</h2></div>
 {filter_grid(ALL, pre, with_group=True)}
 </div></section>
-{cta(pre, "Prêt à composer votre système ?", f"Un conseiller AS974 vous répond sous {biz('delai_reponse', 'délai de réponse')}.")}'''
+{cta(pre, "Prêt à composer votre système ?", "Étude et devis gratuits, chez vous, sur toute l’île." + (f" Réponse sous {biz('delai_reponse')}." if biz('delai_reponse') else ""))}'''
     itemlist = {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Catalogue Active Sécurité 974", "url": SITE + "/catalogue.html",
                 "hasPart": [{"@type": "CollectionPage", "name": GROUP[g]["label"], "url": f"{SITE}/catalogue-{g}.html"} for g in GROUP]}
     write_page("catalogue.html", f"Catalogue Ajax Systems sur devis — {len(ALL)} références | AS974",
@@ -370,7 +347,7 @@ def services():
 <section class="section flush-top"><div class="wrap">
 <div class="split">
 <div class="split-media reveal">{stage_img("hub2-plus", "Blanc", pre, SZ_SPLIT)}</div>
-<div class="split-txt reveal d1"><p class="num">01 — Étude &amp; devis gratuit</p><h2 class="h2">Comprendre avant de proposer.</h2><p class="lead">Visite à domicile / sur site ou échanges à distance. Livrables clairs, sans engagement. Pas de tarifs inventés sur le site.</p>
+<div class="split-txt reveal d1"><p class="num">01 — Étude &amp; devis gratuit</p><h2 class="h2">Comprendre avant de proposer.</h2><p class="lead">Visite chez vous ou échange à distance. Un devis clair, sans engagement. Le prix est établi après l’étude.</p>
 <div class="btns"><a class="btn btn-primary" href="contact.html#devis">Prendre rendez-vous d’étude</a></div></div>
 </div>
 <div class="split rev">
@@ -380,7 +357,7 @@ def services():
 </div>
 <div class="split">
 <div class="split-media reveal">{stage_img("streetsiren", "Blanc", pre, SZ_SPLIT)}</div>
-<div class="split-txt reveal d1"><p class="num">03 — Maintenance / télésurveillance</p><h2 class="h2">Un suivi dans la durée.</h2><p class="lead">Maintenance préventive et intervention selon contrat. Télésurveillance : option {telesurv()}, non présentée comme active tant qu’elle n’est pas validée.</p>
+<div class="split-txt reveal d1"><p class="num">03 — Maintenance / télésurveillance</p><h2 class="h2">Un suivi dans la durée.</h2><p class="lead">Maintenance et dépannage, selon le contrat défini ensemble. {telesurv()}</p>
 <div class="btns"><a class="btn btn-outline" href="contact.html#devis">Me renseigner sur les options</a></div></div>
 </div>
 </div></section>
@@ -404,10 +381,8 @@ def a_propos():
 <ol class="numlist reveal">
 <li><h3>Ancrage local</h3><p>Intervention Nord, Sud, Est, Ouest et Hauts. Nous venons chez vous.</p></li>
 <li><h3>Approche conseil</h3><p>Baseline ou Superior selon le site : pas de survente, devis clair.</p></li>
-<li><h3>Matériel partenaire</h3><p>Ajax Systems, marque partenaire. Packshots et références officielles.</p></li>
-<li><h3>Équipe</h3><p>{ph("présentation de l’équipe / photos avec droits")}</p></li>
-<li><h3>Ma Protection IA</h3><p>Relation éventuelle : {ph("lien avec Ma Protection IA")}</p></li>
-<li><h3>Transparence</h3><p>Aucun faux avis, chiffre ou certification sur ce site.</p></li>
+<li><h3>Matériel partenaire</h3><p>Partenaire agréé Ajax Systems. Les visuels et les références viennent du fabricant.</p></li>
+<li><h3>Devis clair</h3><p>Le prix est établi dans le devis, après avoir vu votre site.</p></li>
 </ol>
 </div></section>
 {cta(pre, "Discutons de votre projet.", "Contactez Active Sécurité 974.")}'''
@@ -419,20 +394,50 @@ def a_propos():
 def contact():
     pre = ""
     cr, ld = crumbs(pre, [(None, "Contact & devis")])
-    action = CFG.get("form_action") or "[À COMPLÉTER]"
-    mailto = CFG.get("form_mailto") or "[À COMPLÉTER]"
-    body = f'''<section class="phero" style="padding-bottom:clamp(40px,5vw,72px)"><div class="wrap">
-<div class="reveal">{cr}<p class="eyebrow">Contact &amp; devis</p><h1 class="h1">Contactez Active Sécurité 974.</h1>
-<p class="lead">Parlez-nous de votre projet : maison, appartement, commerce ou site professionnel. Première analyse, puis visite sur site si besoin pour l’étude gratuite. Intervention sur toute l’île de La Réunion, chez vous.</p></div>
-</div></section>
-<section class="section flush-top" id="devis"><div class="wrap contact-grid">
-<div>
-<div class="prefill" id="prefill" role="status"></div>
-<!-- Formspree : remplacer action (config form_action) par l’URL https://formspree.io/f/xxxx. Tant que l’action n’est pas une URL, le formulaire ouvre un mailto de repli (config form_mailto). -->
-<form class="form" id="form-devis" name="devis" method="POST" action="{E(action)}" data-mailto="{E(mailto)}" data-formspree="{E(action)}">
+    action = (CFG.get("form_action") or "").strip()
+    if action.startswith("["):
+        action = ""
+    email = biz_txt("email")
+    phone = biz("telephone")
+    ready = action.startswith("http")
+    aside = f'''<aside class="aside on-dark" aria-label="Coordonnées">
+<h2>Active Sécurité 974</h2>
+<p>Partenaire agréé Ajax Systems. Interventions chez vous, sur toute l’île.</p>
+<dl>
+{row("Adresse", biz("adresse"))}
+{row("Téléphone", phone)}
+{row("E-mail", biz("email"))}
+{row("SIRET", biz("siret"))}
+<dt>Zone</dt><dd>Toute l’île de La Réunion</dd>
+</dl>
+<div class="sl-box"><h3>Votre sélection devis</h3><ul class="sl-list" id="sl-list"><li>Aucun produit pour l’instant.</li></ul>
+<p style="margin-top:12px"><a class="link" href="catalogue.html">Ajouter depuis le catalogue</a></p></div>
+</aside>'''
+    if ready or email:
+        note_bits = ["Champs obligatoires <span class=\"req\">*</span>."]
+        if biz("delai_reponse"):
+            note_bits.insert(0, f"Nous vous répondons sous {biz('delai_reponse')}.")
+        if biz("horaires"):
+            note_bits.insert(0, biz("horaires") + ".")
+        form = f'''<div class="prefill" id="prefill" role="status"></div>
+<form class="form" id="form-devis" name="devis" method="POST" action="{E(action) if ready else ''}" data-mailto="{E(email)}">
 <input type="hidden" name="_subject" value="Demande de devis — Active Sécurité 974">
-<p class="hp"><label>Ne pas remplir : <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
-<div><label for="f-nom">Nom et prénom <span class="req" aria-hidden="true">*</span></label><input id="f-nom" name="nom" autocomplete="name" required placeholder="Votre nom"></div>
+<p class="hp"><label>Ne pas remplir <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>'''
+        # the rest of fields is appended below via marker
+        form_tail = f'''<div class="full"><button class="btn btn-primary btn-lg" type="submit">Envoyer ma demande de devis</button>
+<p class="form-note">{' '.join(note_bits)}</p></div>
+</form>'''
+        main = "FIELDS"
+    else:
+        call = f' <a href="tel:{phone}">{phone}</a>' if phone else ""
+        form = ""
+        form_tail = ""
+        main = f'''<div class="prefill" id="prefill" role="status"></div>
+<div class="devis-soon" role="status">
+<h2>Demande de devis bientôt disponible — appelez-nous.</h2>
+<p>Le formulaire en ligne n’est pas encore ouvert.{call}</p>
+</div>'''
+    fields = '''<div><label for="f-nom">Nom et prénom <span class="req" aria-hidden="true">*</span></label><input id="f-nom" name="nom" autocomplete="name" required placeholder="Votre nom"></div>
 <div><label for="f-email">E-mail <span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required placeholder="vous@exemple.fr"></div>
 <div><label for="f-tel">Téléphone <span class="req" aria-hidden="true">*</span></label><input id="f-tel" name="telephone" type="tel" autocomplete="tel" required placeholder="0692 …"></div>
 <div><label for="f-commune">Commune <span class="req" aria-hidden="true">*</span></label><input id="f-commune" name="commune" autocomplete="address-level2" required placeholder="Saint-Denis, Saint-Pierre…"></div>
@@ -445,36 +450,32 @@ def contact():
 <label><input type="checkbox" name="besoins" value="Vidéo"> Vidéo</label>
 <label><input type="checkbox" name="besoins" value="Domotique"> Domotique</label>
 <label><input type="checkbox" name="besoins" value="Maintenance"> Maintenance</label>
-<label><input type="checkbox" name="besoins" value="Télésurveillance"> Télésurveillance</label>
 </div></fieldset>
 <div class="full"><label for="f-gamme-souhaitee">Gamme souhaitée</label><select id="f-gamme-souhaitee" name="gamme"><option>Je ne sais pas</option><option>Baseline</option><option>Superior</option></select></div>
-<div class="full"><label for="f-produits">Produits du catalogue (sélection)</label><textarea id="f-produits" name="produits" rows="4" placeholder="Prérempli depuis le catalogue : modèle, référence et coloris."></textarea></div>
-<div class="full"><label for="f-message">Message</label><textarea id="f-message" name="message" placeholder="Décrivez brièvement votre besoin, vos disponibilités…"></textarea></div>
+<div class="full"><label for="f-produits">Produits du catalogue</label><textarea id="f-produits" name="produits" rows="4" placeholder="Modèle, référence et coloris, préremplis depuis une fiche."></textarea></div>
+<div class="full"><label for="f-message">Message</label><textarea id="f-message" name="message" placeholder="Décrivez brièvement votre besoin…"></textarea></div>
 <div class="full"><label class="consent"><input type="checkbox" name="consentement" value="oui" required> <span>J’accepte que mes données soient utilisées pour répondre à ma demande, conformément à la <a href="politique-confidentialite.html">politique de confidentialité</a>. <span class="req" aria-hidden="true">*</span></span></label></div>
-<div class="full"><button class="btn btn-primary btn-lg" type="submit">Envoyer ma demande de devis</button>
-<p class="form-note">Nous vous répondons sous {biz("delai_reponse", "délai de réponse")}, {biz("horaires", "horaires d’ouverture")}. Champs obligatoires <span class="req">*</span>. Tant que l’adresse du formulaire n’est pas renseignée, l’envoi ouvre votre messagerie (destinataire {E(mailto)}).</p></div>
-</form>
+'''
+    if ready or email:
+        column = form + fields + form_tail
+    else:
+        column = main
+    body = f'''<section class="phero" style="padding-bottom:clamp(40px,5vw,72px)"><div class="wrap">
+<div class="reveal">{cr}<p class="eyebrow">Contact &amp; devis</p><h1 class="h1">Contactez Active Sécurité 974.</h1>
+<p class="lead">Parlez-nous de votre projet : maison, appartement, commerce ou site professionnel. Nous venons chez vous, sur toute l’île, pour l’étude gratuite.</p></div>
+</div></section>
+<section class="section flush-top" id="devis"><div class="wrap contact-grid">
+<div>
+{column}
 </div>
-<aside class="aside on-dark" aria-label="Coordonnées">
-<h2>Active Sécurité 974</h2>
-<p>Partenaire agréé Ajax Systems. Interventions à domicile / sur site, sur toute l’île.</p>
-<dl>
-<dt>Adresse</dt><dd>{biz("adresse", "adresse")}</dd>
-<dt>Téléphone</dt><dd>{biz("telephone", "téléphone")}</dd>
-<dt>E-mail</dt><dd>{biz("email", "e-mail")}</dd>
-<dt>SIRET</dt><dd>{biz("siret", "SIRET")}</dd>
-<dt>Zone</dt><dd>Toute l’île de La Réunion (Nord, Sud, Est, Ouest, Hauts)</dd>
-</dl>
-<div class="sl-box"><h3>Votre sélection devis</h3><ul class="sl-list" id="sl-list"><li>Aucun produit pour l’instant.</li></ul>
-<p style="margin-top:12px"><a class="link" href="catalogue.html">Ajouter depuis le catalogue</a></p></div>
-</aside>
+{aside}
 </div></section>'''
     write_page("contact.html", "Contact et demande de devis gratuit — Active Sécurité 974",
                "Demandez votre devis gratuit : alarme, vidéosurveillance, incendie ou domotique Ajax Systems. Intervention chez vous sur toute l’île de La Réunion.",
                body, jsonld=[ld], priority="0.9")
     body2 = f'''<section class="phero notfound"><div class="wrap center">
 <p class="eyebrow">Demande envoyée</p><h1 class="h1">Merci, votre demande est bien partie.</h1>
-<p class="lead" style="margin:28px auto 0">Un conseiller Active Sécurité 974 revient vers vous sous {biz("delai_reponse", "délai de réponse")}.</p>
+<p class="lead" style="margin:28px auto 0">Un conseiller Active Sécurité 974 revient vers vous{(' sous ' + biz('delai_reponse')) if biz('delai_reponse') else ''}.</p>
 <div class="btns" style="justify-content:center"><a class="btn btn-dark btn-lg" href="index.html">Retour à l’accueil</a><a class="btn btn-outline btn-lg" href="catalogue.html">Explorer le catalogue</a></div>
 </div></section>'''
     write_page("merci.html", "Merci — demande de devis envoyée | AS974", "Votre demande de devis a bien été transmise à Active Sécurité 974.", body2, noindex=True)
@@ -483,37 +484,44 @@ def contact():
 def legal_page(path, title, h1, note, inner, desc):
     pre = ""
     cr, ld = crumbs(pre, [(None, h1)])
+    notice = f'<div class="notice">{note}</div>' if note else ""
     body = f'''<section class="phero" style="padding-bottom:clamp(40px,5vw,64px)"><div class="wrap">{cr}<p class="eyebrow">Informations légales</p><h1 class="h1" style="font-size:clamp(36px,4.4vw,60px)">{h1}</h1>
-<div class="notice">{note}</div></div></section>
+{notice}</div></section>
 <section class="section flush-top"><div class="wrap"><div class="prose">{inner}</div></div></section>'''
     write_page(path, title, desc, body, jsonld=[ld], priority="0.3")
 
 def legal():
     h = CFG["hebergeur"]
+    editor = "".join([
+        br_line("Forme juridique", biz("forme_juridique")),
+        br_line("Raison sociale", biz("raison_sociale")),
+        br_line("Capital", biz("capital")),
+        br_line("SIRET", biz("siret")),
+        br_line("RCS", biz("rcs")),
+        br_line("Adresse", biz("adresse")),
+        br_line("Téléphone", biz("telephone")),
+        br_line("E-mail", biz("email")),
+        br_line("Directeur de la publication", biz("directeur_publication")),
+    ])
+    host = " — ".join(x for x in (h.get("nom"), h.get("adresse"), h.get("contact")) if x)
     legal_page("mentions-legales.html", "Mentions légales — Active Sécurité 974", "Mentions légales",
-               "Texte à faire relire par un conseil avant mise en ligne. Placeholders uniquement, aucune donnée inventée. Pas de CGV e-commerce (catalogue + devis seulement).",
+               "",
                f'''<h2>Éditeur</h2>
 <p><strong>Active Sécurité 974</strong> (AS974)<br>
-Forme juridique : {biz("forme_juridique", "forme juridique")}<br>
-Raison sociale : {biz("raison_sociale", "raison sociale")}<br>
-Capital : {biz("capital", "capital social")}<br>
-SIRET : {biz("siret", "SIRET")}<br>
-RCS : {biz("rcs", "RCS")}<br>
-Adresse : {biz("adresse", "adresse")}<br>
-Téléphone : {biz("telephone", "téléphone")} · E-mail : {biz("email", "e-mail")}<br>
-Directeur de la publication : {biz("directeur_publication", "directeur de la publication")}<br>
-Site : {E(SITE) if "[DOMAINE]" not in SITE else ph("domaine")}</p>
+{editor}
+Site : {E(SITE)}</p>
 <h2>Hébergeur</h2>
-<p>{E(h["nom"]) if h["nom"] else ph("hébergeur")} — {E(h["adresse"]) if h["adresse"] else ph("adresse de l’hébergeur")} — {E(h["contact"]) if h["contact"] else ph("contact de l’hébergeur")}</p>
+<p>{E(host)}</p>
 <h2>Propriété intellectuelle</h2>
 <p>La marque Active Sécurité 974 / AS974 et les contenus originaux du site sont protégés. Les noms, logos et visuels Ajax Systems appartiennent à leurs titulaires ; utilisation dans le cadre du partenariat agréé et des autorisations accordées.</p>
 <h2>Responsabilité</h2>
 <p>Les informations sont fournies à titre indicatif. Les devis et prestations font l’objet d’échanges personnalisés. Aucune vente en ligne n’est proposée sur ce site. Les coloris affichés sont ceux documentés par le fabricant ; leur disponibilité à La Réunion est confirmée lors du devis.</p>''',
                "Mentions légales du site Active Sécurité 974 (AS974) : éditeur, hébergeur, propriété intellectuelle et responsabilité.")
+    who = " — ".join(x for x in ("Active Sécurité 974", biz_txt("adresse"), biz_txt("email"), biz_txt("telephone")) if x)
     legal_page("politique-confidentialite.html", "Politique de confidentialité — Active Sécurité 974", "Politique de confidentialité",
-               "Document RGPD à faire relire avant mise en ligne. Placeholders pour les durées et contacts.",
+               "",
                f'''<h2>Responsable de traitement</h2>
-<p>Active Sécurité 974 — {biz("adresse", "adresse")} — {biz("email", "e-mail")} — {biz("telephone", "téléphone")}</p>
+<p>{E(who)}</p>
 <h2>Données collectées</h2>
 <p>Via le formulaire de demande de devis : identité, coordonnées, commune, profil, type de site, besoins, message, produits du catalogue éventuellement sélectionnés (modèle, référence, coloris), consentement.</p>
 <h2>Finalités</h2>
@@ -521,26 +529,25 @@ Site : {E(SITE) if "[DOMAINE]" not in SITE else ph("domaine")}</p>
 <h2>Base légale</h2>
 <p>Mesures précontractuelles / intérêt légitime / consentement (case du formulaire).</p>
 <h2>Durée de conservation</h2>
-<p>{ph("durée de conservation, ex. durée après le dernier échange")}</p>
+<p>Les données sont conservées le temps de traiter votre demande, puis selon les obligations légales applicables.</p>
 <h2>Destinataires</h2>
-<p>Personnel habilité d’Active Sécurité 974 ; sous-traitants techniques (hébergement du site et du formulaire : {E(h["nom"]) if h["nom"] else ph("hébergeur / service de formulaire")} ; messagerie) le cas échéant.</p>
+<p>Personnel habilité d’Active Sécurité 974 et, le cas échéant, l’hébergeur du site{(" (" + E(h["nom"]) + ")") if h.get("nom") else ""}.</p>
 <h2>Vos droits</h2>
-<p>Accès, rectification, suppression, limitation, opposition, portabilité : contactez {biz("email", "e-mail")}. Réclamation possible auprès de la CNIL.</p>
+<p>Accès, rectification, suppression, limitation, opposition, portabilité.{(" Contact : " + biz("email") + ".") if biz("email") else ""} Réclamation possible auprès de la CNIL.</p>
 <h2>Cookies</h2>
 <p>Voir la page <a href="cookies.html">Cookies</a>.</p>''',
                "Politique de confidentialité d’Active Sécurité 974 : données du formulaire de devis, finalités, durée de conservation et droits RGPD.")
     legal_page("cookies.html", "Cookies — Active Sécurité 974", "Cookies",
-               "Politique cookies minimale à finaliser selon l’outil de mesure d’audience / bandeau réellement déployé. Texte à faire relire.",
+               "",
                f'''<h2>Qu’est-ce qu’un cookie ?</h2>
 <p>Petit fichier déposé sur votre terminal lors de la visite du site.</p>
 <h2>Cookies utilisés</h2>
-<p>{ph("cookies essentiels / mesure d’audience / autres")}. Aucun cookie publicitaire tiers n’est annoncé à ce stade.</p>
+<p>Ce site ne dépose pas de cookie publicitaire. Aucun outil de mesure d’audience n’est actif pour le moment.</p>
 <h2>Stockage local</h2>
 <p>La fonction « sélection devis » mémorise uniquement dans votre navigateur (stockage local) les produits que vous ajoutez, pour préremplir le formulaire. Ces informations ne sont transmises que si vous envoyez le formulaire, et vous pouvez les retirer à tout moment depuis la page Contact.</p>
 <h2>Gestion</h2>
 <p>Vous pouvez configurer votre navigateur pour refuser les cookies. Un bandeau de consentement sera ajouté si des cookies non essentiels sont activés.</p>
-<h2>Contact</h2>
-<p>{biz("email", "e-mail")}</p>''',
+{('<h2>Contact</h2><p>' + biz("email") + '</p>') if biz("email") else ''}''',
                "Politique cookies du site Active Sécurité 974 : cookies, stockage local de la sélection devis et gestion de vos préférences.")
 
 def notfound():

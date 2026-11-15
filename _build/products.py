@@ -42,9 +42,12 @@ def fiche(p, all_products):
     extra_comp = ""
     for comp in p.get("component_color_options") or []:
         extra_comp += f'<tr><th scope="row">{E(comp["title"])}</th><td>{E(", ".join(comp["colors_available"]))}</td></tr>'
-    tags = tag_gamme(p["gk"]) + (f'<span class="tag tag-warn">{E(p["avail_tag"])}</span>' if p["avail_tag"] else "")
+    tags = tag_gamme(p["gk"])
     avail = f'<p class="avail">{E(p["avail_note"])}</p>' if p["avail_note"] else ""
-    feats_rows = "".join(f"<li>{E(f)}</li>" for f in p["feats"])
+    all_benefits = p.get("benefits") or []
+    extra = [b for b in all_benefits if norm(b) != norm(p.get("hook") or "")]
+    benefits = "".join(f"<li>{E(b)}</li>" for b in extra[:3])
+    feats_rows = "".join(f"<li>{E(b)}</li>" for b in all_benefits[:3])
     related = [x for x in all_products if x["category"] == p["category"] and x["slug"] != p["slug"]]
     if len(related) < 4:
         related += [x for x in all_products if x["group"] == p["group"] and x["slug"] != p["slug"] and x not in related]
@@ -57,13 +60,15 @@ def fiche(p, all_products):
 <div class="pdp-info">
 <div class="prod-tags">{tags}</div>
 <h1 class="h1">{E(p["name"])}</h1>
-<p class="ref">Réf. fabricant {E(p["model"])} · {E(p["category"])} · Ajax Systems, marque partenaire</p>
+<p class="fr-sub">{E(p["category"])}</p>
+<p class="ref">Réf. fabricant {E(p["model"])} · Ajax Systems, marque partenaire</p>
 <div class="pdp-price"><strong>Sur devis</strong><span>Étude, fourniture et installation par Active Sécurité 974</span></div>
-<p class="pdp-desc">{E(p["desc"])}</p>
+<p class="pdp-desc">{E(p["hook"])}</p>
+{f'<ul class="benefits">{benefits}</ul>' if benefits else ''}
 {colors}
 {avail}
 <div class="pdp-actions">
-<a class="btn btn-primary btn-lg" id="pdp-quote" href="{quote_href}">Demander un devis</a>
+<a class="btn btn-primary btn-lg js-quote" id="pdp-quote" href="{quote_href}">Demander un devis</a>
 <button class="btn btn-outline btn-lg" type="button" id="pdp-add" aria-pressed="false">Ajouter à ma sélection devis</button>
 </div>
 <ul class="assure">
@@ -74,13 +79,14 @@ def fiche(p, all_products):
 </div>
 </div>
 </div></section>
+<div class="pdp-bar"><a class="btn btn-primary js-quote" href="{quote_href}">Demander un devis</a></div>
 <section class="section bg-off"><div class="wrap specs">
 <div class="reveal"><p class="eyebrow">Caractéristiques</p><h2 class="h2">En bref.</h2>
 <p class="src-note">Données issues de la fiche officielle du fabricant, reformulées. <a href="{E(p["source_url"])}" rel="noopener" target="_blank">Fiche constructeur<span class="sr-only"> (nouvel onglet)</span></a></p></div>
 <div class="reveal d1"><table class="spec">
 <tr><th scope="row">Modèle</th><td>{E(p["name"])}</td></tr>
 <tr><th scope="row">Référence fabricant</th><td>{E(p["model"])}</td></tr>
-<tr><th scope="row">Gamme</th><td>{E(GAMME_LABEL[p["gk"]])}</td></tr>
+{f'<tr><th scope="row">Gamme</th><td>{E(GAMME_LABEL[p["gk"]])}</td></tr>' if p["gk"] != "a-confirmer" else ''}
 <tr><th scope="row">Type</th><td>{E(p["category"])}</td></tr>
 {f'<tr><th scope="row">Points clés</th><td><ul style="margin-left:18px">{feats_rows}</ul></td></tr>' if feats_rows else ''}
 <tr><th scope="row">Coloris officiels</th><td>{E(", ".join(p["colors_ok"])) if p["colors_ok"] else "À préciser lors du devis"}</td></tr>

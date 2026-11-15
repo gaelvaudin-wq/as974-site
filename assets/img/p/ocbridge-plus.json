@@ -1,1 +1,1 @@
-{"w": 980, "h": 995, "fw": 640, "fh": 650, "srcset": [["ocbridge-plus-480.webp", 480], ["ocbridge-plus-980.webp", 980]], "fallback": "ocbridge-plus.jpg", "opaque": true, "src": "images/ocbridge-plus.jpg"}
+{"rev": 4, "w": 980, "h": 995, "fw": 980, "fh": 995, "srcset": [["ocbridge-plus-700.webp", 700], ["ocbridge-plus-980.webp", 980]], "fallback": "ocbridge-plus.png", "opaque": true, "src": "images/ocbridge-plus.jpg"}

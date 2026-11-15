@@ -22,18 +22,23 @@ ICON_LIST = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-w
 
 def local_business():
     b = CFG["business"]
-    return {
+    data = {
         "@context": "https://schema.org", "@type": "LocalBusiness", "@id": SITE + "/#entreprise",
         "name": BRAND, "alternateName": CFG["brand_short"], "url": SITE + "/",
-        "logo": SITE + "/assets/img/logo/as974-horizontal-noir-rouge.png",
+        "logo": SITE + "/assets/img/logo/as974-wordmark-noir.svg",
         "image": SITE + "/assets/img/og-as974.jpg",
-        "description": "Installateur de systèmes de sécurité Ajax Systems (alarme, incendie, vidéosurveillance, domotique) pour particuliers et professionnels, interventions chez le client sur toute l’île de La Réunion.",
+        "description": "Installateur partenaire agréé Ajax Systems à La Réunion : alarme, incendie, vidéosurveillance et domotique, en intervention chez le client sur toute l’île.",
         "areaServed": {"@type": "AdministrativeArea", "name": "La Réunion"},
-        "telephone": b["telephone"] or "[À COMPLÉTER : téléphone]",
-        "email": b["email"] or "[À COMPLÉTER : e-mail]",
-        "address": {"@type": "PostalAddress", "streetAddress": b["adresse"] or "[À COMPLÉTER : adresse]", "addressRegion": "La Réunion", "addressCountry": "RE"},
-        "identifier": {"@type": "PropertyValue", "propertyID": "SIRET", "value": b["siret"] or "[À COMPLÉTER : SIRET]"},
     }
+    if b.get("telephone"):
+        data["telephone"] = b["telephone"]
+    if b.get("email"):
+        data["email"] = b["email"]
+    if b.get("adresse"):
+        data["address"] = {"@type": "PostalAddress", "streetAddress": b["adresse"], "addressRegion": "La Réunion", "addressCountry": "RE"}
+    if b.get("siret"):
+        data["identifier"] = {"@type": "PropertyValue", "propertyID": "SIRET", "value": b["siret"]}
+    return data
 
 def head(title, desc, path, pre, og_image=None, og_type="website", jsonld=None, noindex=False, base=None):
     url = SITE + "/" + (path if path != "index.html" else "")
@@ -83,10 +88,10 @@ def header(pre, current):
 <a class="skip-link" href="#contenu">Aller au contenu</a>
 <header class="header">
 <div class="header-inner">
-<a class="logo-link" href="{pre}index.html" aria-label="{E(BRAND)} — accueil"><img class="logo" src="{pre}assets/img/logo/as974-horizontal-noir-rouge.png" alt="{E(BRAND)}" width="103" height="40"></a>
+<a class="logo-link" href="{pre}index.html" aria-label="{E(BRAND)} — accueil"><img class="logo" src="{pre}assets/img/logo/as974-wordmark-noir.svg" alt="AS974" width="168" height="48"></a>
 <nav class="nav" id="site-nav" aria-label="Navigation principale">{"".join(items)}</nav>
 <div class="header-actions">
-<a class="icon-btn" href="{pre}contact.html#devis" aria-label="Ma sélection devis"><span class="sr-only sl-label">Ma sélection devis</span>{ICON_LIST}<span class="sl-count" hidden>0</span></a>
+<a class="icon-btn icon-devis" href="{pre}contact.html#devis" aria-label="Ma sélection devis"><span class="sr-only sl-label">Ma sélection devis</span>{ICON_LIST}<span class="icon-label">Devis</span><span class="sl-count" hidden>0</span></a>
 <a class="btn btn-primary btn-quote" href="{pre}contact.html#devis">Devis gratuit</a>
 <button class="icon-btn menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Ouvrir le menu"><span class="bars" aria-hidden="true"><i></i><i></i><i></i></span></button>
 </div>
@@ -102,14 +107,14 @@ def footer(pre):
 <div class="wrap-wide">
 <div class="footer-top">
 <div>
-<img class="logo" src="{pre}assets/img/logo/as974-horizontal-blanc-rouge.png" alt="{E(BRAND)}" width="113" height="44" loading="lazy">
+<img class="logo" src="{pre}assets/img/logo/as974-wordmark-blanc.svg" alt="AS974" width="168" height="48" loading="lazy">
 <address class="nap">
 <strong style="color:#fff">{E(BRAND)}</strong><br>
-{biz("adresse", "adresse")}<br>
-Tél. {biz("telephone", "téléphone")}<br>
-{biz("email", "e-mail")}<br>
-SIRET {biz("siret", "SIRET")}<br>
-Interventions chez le client sur toute l’île de La Réunion
+{br_line("", biz("adresse"))}
+{br_line("Tél.", biz("telephone"))}
+{br_line("", biz("email"))}
+{br_line("SIRET", biz("siret"))}
+Interventions chez le client, sur toute l’île de La Réunion
 </address>
 </div>
 <div><h2>Solutions</h2><ul>

@@ -72,6 +72,31 @@ def sitemap():
     open(os.path.join(ROOT, "robots.txt"), "w").write(
         f"User-agent: *\nAllow: /\nDisallow: {base_path}/merci.html\n\nSitemap: {SITE}/sitemap.xml\n")
 
+def prune_images():
+    used = set()
+    folder = os.path.join(ROOT, "assets", "img", "p")
+    for meta_path in glob.glob(os.path.join(folder, "*.json")):
+        meta = json.load(open(meta_path, encoding="utf-8"))
+        used.add(os.path.basename(meta_path))
+        used.add(meta.get("fallback") or "")
+        for fn, _w in meta.get("srcset") or []:
+            used.add(fn)
+    for path in glob.glob(os.path.join(folder, "*")):
+        if os.path.basename(path) not in used:
+            os.remove(path)
+
+def assert_public_copy():
+    banned = ("[À COMPLÉTER", "[À CONFIRMER", "Ma Protection IA", "Pas de tarifs inventés", "conformité non vérifiée", "conformité réglementaire non vérifiée")
+    bad = []
+    for path in glob.glob(os.path.join(ROOT, "*.html")) + glob.glob(os.path.join(ROOT, "produits", "*.html")):
+        text = open(path, encoding="utf-8").read()
+        for token in banned:
+            if token in text:
+                bad.append(f"{os.path.relpath(path, ROOT)} : {token}")
+                break
+    if bad:
+        raise SystemExit("Textes internes visibles :\n" + "\n".join(bad[:30]))
+
 def main():
     prods = load_catalogue()
     pages.init(prods)
@@ -91,6 +116,8 @@ def main():
     for p in prods: products.fiche(p, prods)
     og_image(); favicons(); sitemap()
     open(os.path.join(ROOT, ".nojekyll"), "w").close()
+    prune_images()
+    assert_public_copy()
     n_f = len(glob.glob(os.path.join(ROOT, "produits", "*.html")))
     n_p = len(glob.glob(os.path.join(ROOT, "*.html")))
     print(f"OK : {n_p} pages + {n_f} fiches produit, sitemap {len(layout.PAGES)} URL.")

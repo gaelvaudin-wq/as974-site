@@ -1,12 +1,10 @@
 """Composants réutilisables : carte produit, rail, grille filtrable, CTA."""
 from core import *
 
-def card(p, pre, sizes="(max-width:640px) 46vw, (max-width:980px) 30vw, 300px"):
+def card(p, pre, sizes="(max-width:640px) 84vw, 340px"):
     meta = default_image(p)
     url = f"{pre}produits/{p['slug']}.html"
     tags = tag_gamme(p["gk"])
-    if p["avail_tag"]:
-        tags += f'<span class="tag tag-warn">{E(p["avail_tag"])}</span>'
     dots = "".join(f'<i style="background:{COLOR_HEX.get(c, "#ccc")}" title="{E(c)}"></i>' for c in p["colors_ok"][:8])
     dots_html = f'<div class="dots" aria-label="Coloris : {E(", ".join(p["colors_ok"]))}">{dots}</div>' if dots else ""
     q = norm(" ".join([p["name"], p["model"], p["category"], p["gamme"], " ".join(p["feats"])]))
@@ -14,9 +12,9 @@ def card(p, pre, sizes="(max-width:640px) 46vw, (max-width:980px) 30vw, 300px"):
     return (f'<article class="prod" data-q="{E(q)}" data-g="{p["gk"]}" data-c="{slugify(p["category"])}" data-col="{cols}" data-grp="{p["group"]}">'
             f'<div class="prod-media">{picture(meta, p["name"], pre, sizes)}</div>'
             f'<div class="prod-body"><div class="prod-tags">{tags}</div>'
-            f'<h3><a href="{url}">{E(p["name"])}</a></h3>'
+            f'<h3>{E(p["name"])}</h3>'
             f'<p class="sub">{E(p["category"])}</p>{dots_html}'
-            f'<div class="foot"><span>Sur devis</span><span class="quote">Voir la fiche</span></div></div></article>')
+            f'<div class="foot"><span>Sur devis</span><a class="quote" href="{url}">Voir la fiche</a></div></div></article>')
 
 def rail(products, pre, eyebrow, title, more=None, dark=False, lead=None):
     if not products:
@@ -60,6 +58,7 @@ def filter_grid(products, pre, with_group=False):
 </div>
 <p class="result-count" id="f-count" aria-live="polite">{len(products)} références</p>
 <div class="grid-prod">{cards}</div>
+<p class="more-prod"><button type="button" class="btn btn-outline" id="f-more" hidden>Afficher plus de références</button></p>
 <div class="empty" id="f-empty" hidden><p>Aucune référence ne correspond à ces critères.</p><p class="mt-24"><a class="link" href="{pre}contact.html#devis">Décrivez-nous votre besoin</a></p></div>
 </div>'''
 

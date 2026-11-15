@@ -69,12 +69,19 @@
     function setSel(el,k){if(el&&params.get(k)){var v=params.get(k);if($$("option",el).some(function(o){return o.value===v}))el.value=v}}
     if(q&&params.get("q"))q.value=params.get("q");
     setSel(fg,"gamme");setSel(fs,"sous");setSel(fc,"couleur");setSel(fgr,"groupe");
+    var more=$("#f-more"), pageSize=24, shownMax=24;
+    function narrow(){return window.matchMedia("(max-width:700px)").matches}
     function apply(push){
-      var qv=norm(q&&q.value), gv=fg?fg.value:"", sv=fs?fs.value:"", cv=fc?fc.value:"", grv=fgr?fgr.value:"", n=0;
+      if(push)shownMax=pageSize;
+      var qv=norm(q&&q.value), gv=fg?fg.value:"", sv=fs?fs.value:"", cv=fc?fc.value:"", grv=fgr?fgr.value:"", n=0, kept=0;
       cards.forEach(function(c){
         var ok=(!qv||c.dataset.q.indexOf(qv)>-1)&&(!gv||c.dataset.g===gv)&&(!sv||c.dataset.c===sv)&&(!cv||("|"+c.dataset.col+"|").indexOf("|"+cv+"|")>-1)&&(!grv||c.dataset.grp===grv);
-        c.hidden=!ok; if(ok)n++;
+        if(!ok){c.hidden=true;return}
+        n++;
+        if(narrow()&&kept>=shownMax){c.hidden=true;return}
+        c.hidden=false; kept++;
       });
+      if(more)more.hidden=!(narrow()&&n>shownMax);
       if(count)count.textContent=n+" référence"+(n>1?"s":"")+(n===cards.length?"":" sur "+cards.length);
       if(empty)empty.hidden=n>0;
       if(push&&history.replaceState){
@@ -84,7 +91,8 @@
       }
     }
     [q,fg,fs,fc,fgr].forEach(function(el){if(el)el.addEventListener(el.tagName==="INPUT"?"input":"change",function(){apply(true)})});
-    if(reset)reset.addEventListener("click",function(){if(q)q.value="";[fg,fs,fc,fgr].forEach(function(el){if(el)el.value=""});apply(true)});
+    if(reset)reset.addEventListener("click",function(){if(q)q.value="";shownMax=pageSize;[fg,fs,fc,fgr].forEach(function(el){if(el)el.value=""});apply(true)});
+    if(more)more.addEventListener("click",function(){shownMax+=pageSize;apply(false);more.focus()});
     apply(false);
   }
 
@@ -104,12 +112,12 @@
         var doSwap=function(){if(src)src.srcset=im.webp;img.src=im.png;img.style.setProperty("--w",im.w+"px");img.width=im.w;img.height=im.h;img.alt=P.name+" — coloris "+c;img.dataset.color=c};
         if(anim&&!reduce){img.classList.add("swap");setTimeout(function(){doSwap();img.onload=function(){img.classList.remove("swap")};setTimeout(function(){img.classList.remove("swap")},350)},150)}else doSwap();
       }
-      if(quote)quote.href=quoteUrl();
+      $$(".js-quote").forEach(function(a){a.href=quoteUrl()});
       var r=$('input[name="couleur"][value="'+CSS.escape(c)+'"]');if(r)r.checked=true;
       if(history.replaceState&&c){var u=new URL(location.href);u.searchParams.set("couleur",c);history.replaceState(null,"",u)}
     }
     $$('input[name="couleur"]').forEach(function(r){r.addEventListener("change",function(){setColor(r.value,true)})});
-    if(current)setColor(current,false); else if(quote)quote.href=quoteUrl();
+    if(current)setColor(current,false); else $$(".js-quote").forEach(function(a){a.href=quoteUrl()});
     function updAdd(){if(!addb)return;var on=has(P.slug);addb.setAttribute("aria-pressed",on?"true":"false");addb.textContent=on?"Dans ma sélection devis ✓":"Ajouter à ma sélection devis"}
     if(addb){addb.addEventListener("click",function(){
       var l=load(),i=l.findIndex(function(x){return x.s===P.slug});
@@ -121,8 +129,13 @@
 
   /* ---------- formulaire devis : préremplissage ---------- */
   var form=$("#form-devis");
+  var prAll=new URLSearchParams(location.search), banner=$("#prefill");
+  if(banner && !form){
+    var modele0=prAll.get("modele"), ref0=prAll.get("ref"), coul0=prAll.get("couleur");
+    if(modele0){banner.innerHTML="Vous regardiez <strong>"+esc(modele0)+"</strong>"+(ref0?" (réf. "+esc(ref0)+")":"")+(coul0?" — coloris <strong>"+esc(coul0)+"</strong>":"")+".";banner.classList.add("show")}
+  }
   if(form){
-    var pr=new URLSearchParams(location.search), list=$("#sl-list"), ta=$("#f-produits"), banner=$("#prefill");
+    var pr=prAll, list=$("#sl-list"), ta=$("#f-produits");
     var modele=pr.get("modele"), ref=pr.get("ref"), coul=pr.get("couleur"), slug=pr.get("produit");
     if(modele&&slug){
       var l=load(), ex=l.find(function(x){return x.s===slug});
@@ -149,7 +162,8 @@
         e.preventDefault();
         var fd=new FormData(form), lines=[];
         fd.forEach(function(v,k){if(k==="_gotcha"||k==="_subject"||k==="bot-field")return; if(String(v).trim()) lines.push(k+" : "+v)});
-        var mail=form.getAttribute("data-mailto")||"[À COMPLÉTER]";
+        var mail=form.getAttribute("data-mailto")||"";
+        if(mail.indexOf("@")<0){return}
         var subject=encodeURIComponent("Demande de devis — Active Sécurité 974");
         var body=encodeURIComponent(lines.join("\n"));
         window.location.href="mailto:"+mail+"?subject="+subject+"&body="+body;
