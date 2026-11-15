@@ -68,9 +68,73 @@ def sitemap():
     open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(urls) + "\n</urlset>\n")
     from urllib.parse import urlparse
+    import re as _re
     base_path = urlparse(SITE).path.rstrip("/")
+    bots = "\n".join(
+        f"User-agent: {b}\nAllow: /\n" for b in
+        ("GPTBot", "ChatGPT-User", "ClaudeBot", "anthropic-ai", "PerplexityBot", "Google-Extended", "Applebot-Extended", "CCBot")
+    )
     open(os.path.join(ROOT, "robots.txt"), "w").write(
-        f"User-agent: *\nAllow: /\nDisallow: {base_path}/merci.html\n\nSitemap: {SITE}/sitemap.xml\n")
+        bots + f"\nUser-agent: *\nAllow: /\nDisallow: {base_path}/merci.html\n\nSitemap: {SITE}/sitemap.xml\n")
+    # sitemap images
+    img_ns = ' xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'
+    body_urls = []
+    today = datetime.date.today().isoformat()
+    for path, prio in layout.PAGES:
+        loc = SITE + "/" + ("" if path == "index.html" else path)
+        html = open(os.path.join(ROOT, path), encoding="utf-8").read()
+        imgs = []
+        tags = _re.findall(r'<img\b[^>]*>', html)[:8]
+        for tag in tags:
+            src_m = _re.search(r'src="([^"]+)"', tag)
+            alt_m = _re.search(r'alt="([^"]*)"', tag)
+            if not src_m:
+                continue
+            src, alt = src_m.group(1), alt_m.group(1) if alt_m else ""
+            if src.startswith("data:"):
+                continue
+            absu = src if src.startswith("http") else SITE + "/" + src.lstrip("./").replace("../", "")
+            if "assets/" in src or src.startswith("http"):
+                # resolve relative
+                if not src.startswith("http"):
+                    depth = path.count("/")
+                    base = "/".join([""] + path.split("/")[:-1]) if depth else ""
+                    # simpler: urljoin
+                    from urllib.parse import urljoin
+                    absu = urljoin(loc if loc.endswith("/") else loc.rsplit("/", 1)[0] + "/", src)
+                imgs.append(f'<image:image><image:loc>{E(absu)}</image:loc><image:title>{E(alt or BRAND)}</image:title></image:image>')
+        body_urls.append(f"<url><loc>{E(loc)}</loc><lastmod>{today}</lastmod><priority>{prio}</priority>{''.join(imgs)}</url>")
+    open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"{img_ns}>\n'
+        + "\n".join(body_urls) + "\n</urlset>\n")
+    llms = f"""# Active Sécurité 974 (AS974)
+Installateur partenaire agréé Ajax Systems. Interventions chez le client sur toute l’île de La Réunion (Saint-Denis, Saint-Pierre, Saint-Paul, Le Port, Saint-Benoît et les Hauts). Pas de local ouvert au public. Devis uniquement, pas de vente en ligne.
+
+Site : {SITE}/
+
+## Pages
+- Accueil : {SITE}/
+- Particuliers : {SITE}/particuliers.html
+- Professionnels : {SITE}/professionnels.html
+- Vidéosurveillance Baseline et Superior : {SITE}/gamme-video.html
+- Incendie professionnel EN54 : {SITE}/gamme-incendie.html
+- Alarme (FireProtect logement en complément) : {SITE}/gamme-alarme.html
+- Domotique : {SITE}/gamme-domotique.html
+- Services : {SITE}/services.html
+- Catalogue : {SITE}/catalogue.html
+- FAQ : {SITE}/faq.html
+- Contact : {SITE}/contact.html
+
+## À retenir
+Les lignes vidéo Baseline et Superior reconnaissent toutes deux personnes, véhicules et animaux, et peuvent déclencher l’alarme. Superior ajoute une IA enrichie, des optiques P-Iris et les NVR H2D.
+Les FireProtect / FireProtect 2 (Residence Line) complètent une alarme de logement. Le système incendie professionnel est la ligne EN54.
+Coordonnées légales non publiées tant qu’elles ne sont pas renseignées.
+"""
+    open(os.path.join(ROOT, "llms.txt"), "w", encoding="utf-8").write(llms)
+    open(os.path.join(ROOT, "llms-full.txt"), "w", encoding="utf-8").write(llms + "\n## Références\n" + "\n".join(
+        f"- {p['name']} ({p['gamme']}, {p['category']}) : {SITE}/produits/{p['slug']}.html" for p in pages.ALL
+    ) + "\n")
 
 def prune_images():
     used = set()
@@ -112,7 +176,7 @@ def main():
     for g in pages.GAMME_PAGES: pages.gamme(g)
     pages.catalogue_index()
     for g in GROUP: pages.catalogue_cat(g)
-    pages.services(); pages.a_propos(); pages.contact(); pages.legal(); pages.notfound()
+    pages.services(); pages.a_propos(); pages.contact(); pages.faq(); pages.legal(); pages.notfound()
     for p in prods: products.fiche(p, prods)
     og_image(); favicons(); sitemap()
     open(os.path.join(ROOT, ".nojekyll"), "w").close()

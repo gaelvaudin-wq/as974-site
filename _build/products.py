@@ -2,9 +2,43 @@
 import json
 from core import *
 from layout import write_page, crumbs
-from components import rail
+from components import rail, yt, video_ld
 
 ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>'
+VIDEO_CATS = {"Caméras filaires", "Caméras Wi-Fi", "Enregistreurs vidéo", "Sonnettes"}
+
+def video_line(p):
+    if p["category"] not in VIDEO_CATS:
+        return None
+    blob = (p["name"] + " " + p["slug"]).lower()
+    if "superior" in blob:
+        return "superior"
+    return "baseline"
+
+def fiche_video(p):
+    line = video_line(p)
+    if line:
+        return yt("Mwxe-dN9QeM", "Scénarios vidéo", "La vidéosurveillance Ajax peut lancer un automatisme. Vidéo officielle Ajax Systems, valable pour Baseline et Superior.")
+    blob = (p["name"] + " " + p["category"] + " " + p["slug"]).lower()
+    if p["gamme"] == "EN54 Line" or p["slug"].startswith("en54-"):
+        return yt("5HO9wW5xYc8", "Ligne EN54", "Présentation officielle Ajax Systems du système incendie EN54 sans fil.")
+    if p["category"] == "Centrales":
+        return yt("NLnFmO16dXI", "Applications Ajax", "Recherche d’appareils et d’utilisateurs dans les applications Ajax. Vidéo officielle Ajax Systems.")
+    if any(k in blob for k in ("lightswitch", "socket", "relay", "wallswitch", "prise", "interrupteur")):
+        return yt("ms08SAie8Pg", "Scénario de température", "Exemple officiel de scénario d’automatisation dans l’application Ajax.")
+    return ""
+
+def video_ai_note(p, pre):
+    line = video_line(p)
+    if not line:
+        return ""
+    if line == "superior":
+        extra = "Cette référence est dans la ligne Superior : IA enrichie, et selon le modèle optique P-Iris, haut-parleur ou NVR HDMI 4K."
+    else:
+        extra = "Cette référence est dans la ligne Baseline : IA intégrée, en infrarouge, éclairage hybride ou varifocal selon le modèle."
+    return f'''<aside class="ai-note"><h2>IA des deux lignes vidéo</h2>
+<p>Baseline et Superior reconnaissent les personnes, les véhicules et les animaux, et peuvent déclencher l’alarme. {extra}</p>
+<p><a href="{pre}gamme-video.html#ia">Comparer les deux lignes</a></p></aside>'''
 
 def fiche(p, all_products):
     pre = "../"
@@ -67,6 +101,8 @@ def fiche(p, all_products):
 {f'<ul class="benefits">{benefits}</ul>' if benefits else ''}
 {colors}
 {avail}
+{video_ai_note(p, pre)}
+{fiche_video(p)}
 <div class="pdp-actions">
 <a class="btn btn-primary btn-lg js-quote" id="pdp-quote" href="{quote_href}">Demander un devis</a>
 <button class="btn btn-outline btn-lg" type="button" id="pdp-add" aria-pressed="false">Ajouter à ma sélection devis</button>
@@ -107,4 +143,9 @@ def fiche(p, all_products):
     if p["colors_ok"]: ld_product["color"] = ", ".join(p["colors_ok"])
     title = f'{p["title_name"]} — {g["label"]} sur devis | AS974'
     desc = clip(f'{p["name"]} (réf. {p["model"]}) : {lcfirst(p["feats"][0]) if p["feats"] else p["category"]}. Sur devis, installation par Active Sécurité 974 à La Réunion.')
-    write_page(path, title, desc, body, og_image=abs_img(m0) if m0 else None, og_type="product", jsonld=[ld_crumbs, ld_product], priority="0.6")
+    lds = [ld_crumbs, ld_product]
+    if video_line(p):
+        lds.append(video_ld("Mwxe-dN9QeM", "Scénarios vidéo Ajax", "Les dispositifs vidéo Ajax peuvent activer des scénarios d’automatisation."))
+    elif p["gamme"] == "EN54 Line" or p["slug"].startswith("en54-"):
+        lds.append(video_ld("5HO9wW5xYc8", "EN54 Line Ajax", "Système de détection incendie sans fil certifié EN 54, présenté par Ajax Systems."))
+    write_page(path, title, desc, body, og_image=abs_img(m0) if m0 else None, og_type="product", jsonld=lds, priority="0.6")

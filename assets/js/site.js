@@ -59,6 +59,20 @@
   function has(s){return load().some(function(i){return i.s===s})}
   function toast(msg){var t=$(".toast");if(!t){t=d.createElement("div");t.className="toast";t.setAttribute("role","status");t.setAttribute("aria-live","polite");d.body.appendChild(t)}t.innerHTML=msg;t.classList.add("show");clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove("show")},3200)}
   updCount();
+  d.addEventListener("click", function(e){
+    var b=e.target.closest&&e.target.closest(".yt-btn");
+    if(!b)return;
+    var fig=b.closest(".yt"), id=fig&&fig.getAttribute("data-yt");
+    if(!id)return;
+    var f=d.createElement("iframe");
+    f.className="yt-frame";
+    f.src="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(id)+"?autoplay=1&rel=0";
+    f.title=b.getAttribute("aria-label")||"Vidéo Ajax Systems";
+    f.setAttribute("allow","accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+    f.setAttribute("allowfullscreen","");
+    f.setAttribute("loading","lazy");
+    b.replaceWith(f);
+  });
   window.AS974={load:load,save:save,toast:toast};
 
   /* ---------- filtres catalogue ---------- */

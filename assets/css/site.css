@@ -569,3 +569,31 @@ a.quote{position:relative;z-index:2;color:var(--rouge);font-weight:650;min-heigh
 }
 .footer a{min-height:44px}
 .hero-badges,.tile p,.form-note,.colors .note{font-size:14px}
+.eyebrow::before{display:none}
+.hero::before{display:none}
+.prod:hover,.chap:hover,.split:hover .split-media img,.prod:hover .prod-media img,.panel:hover .panel-img img{transform:none;box-shadow:none}
+.prod-media,.split-media,.phero-media,.panel-img,.chap-img,.range-media,.hero-visual figure{padding:10%;overflow:hidden}
+.prod-media img,.pdp-stage img,.split-media img,.phero-media img,.panel-img img,.chap-img img,.range-media img,.hero-visual img,.tile img{
+  object-fit:contain!important;max-width:100%!important;max-height:100%!important;width:auto!important;height:auto!important}
+.pdp-stage picture{inset:10%;padding:0}
+.film{margin:0;background:#0B0B0C;border-radius:28px;overflow:hidden}
+.film video{width:100%;max-height:70vh;height:auto;object-fit:contain;background:#0B0B0C}
+.film figcaption{padding:12px 4px 0;font-size:14px;color:var(--muted)}
+.compare-video th,.compare-video td{font-size:15px}
+.ai-note{margin-top:28px;padding-top:22px;border-top:0}
+.ai-note h2{font-size:18px;letter-spacing:-.02em;margin-bottom:8px}
+.ai-note p{font-size:15px;color:var(--ink-2);margin-top:8px}
+.ai-note a{color:var(--bleu);font-weight:650}
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.feature{padding:8px 0 18px}
+.feature h2,.feature h3{font-size:22px;letter-spacing:-.03em;margin-bottom:8px}
+.feature p{color:var(--muted);font-size:16px}
+.duo-yt{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+.yt{margin:0}
+.yt-btn{position:relative;display:block;width:100%;padding:0;border:0;background:#0B0B0C;border-radius:24px;overflow:hidden;cursor:pointer;min-height:44px}
+.yt-btn img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;opacity:.92}
+.yt-play{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:var(--rouge)}
+.yt-play::before{content:"";position:absolute;left:28px;top:22px;border-style:solid;border-width:12px 0 12px 18px;border-color:transparent transparent transparent #fff}
+.yt-frame{width:100%;aspect-ratio:16/9;border:0;border-radius:24px;background:#0B0B0C}
+.yt figcaption{margin-top:10px;font-size:14px;color:var(--muted)}
+@media (max-width:700px){.feature-grid,.duo-yt{grid-template-columns:1fr}}

@@ -12,7 +12,7 @@ NAV = [
 ]
 GAMMES_MENU = [
     ("gamme-alarme.html", "Alarme intrusion", "Détection, claviers, sirènes"),
-    ("gamme-incendie.html", "Incendie", "Fumée, chaleur, CO"),
+    ("gamme-incendie.html", "Incendie EN54", "Ligne professionnelle"),
     ("gamme-video.html", "Vidéosurveillance", "Caméras, NVR, sonnette"),
     ("gamme-domotique.html", "Domotique", "Éclairage, prises, fuites d’eau"),
 ]
@@ -23,7 +23,7 @@ ICON_LIST = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-w
 def local_business():
     b = CFG["business"]
     data = {
-        "@context": "https://schema.org", "@type": "LocalBusiness", "@id": SITE + "/#entreprise",
+        "@context": "https://schema.org", "@type": "LocalBusiness", "additionalType": "SecuritySystemInstaller", "@id": SITE + "/#entreprise",
         "name": BRAND, "alternateName": CFG["brand_short"], "url": SITE + "/",
         "logo": SITE + "/assets/img/logo/as974-wordmark-noir.svg",
         "image": SITE + "/assets/img/og-as974.jpg",
@@ -63,6 +63,9 @@ def head(title, desc, path, pre, og_image=None, og_type="website", jsonld=None, 
 <meta property="og:url" content="{E(url)}">
 <meta property="og:image" content="{E(og_image or SITE + '/assets/img/og-as974.jpg')}">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{E(title)}">
+<meta name="twitter:description" content="{E(desc)}">
+<meta name="twitter:image" content="{E(og_image or SITE + '/assets/img/og-as974.jpg')}">
 <link rel="icon" href="{pre}favicon.svg" type="image/svg+xml">
 <link rel="icon" href="{pre}favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{pre}apple-touch-icon.png">
@@ -126,7 +129,8 @@ Interventions chez le client, sur toute l’île de La Réunion
 </ul></div>
 <div><h2>Gammes</h2><ul>
 <li><a href="{pre}gamme-alarme.html">Alarme intrusion</a></li>
-<li><a href="{pre}gamme-incendie.html">Incendie</a></li>
+<li><a href="{pre}gamme-incendie.html">Incendie EN54</a></li>
+<li><a href="{pre}faq.html">Questions fréquentes</a></li>
 <li><a href="{pre}gamme-video.html">Vidéosurveillance</a></li>
 <li><a href="{pre}gamme-domotique.html">Domotique</a></li>
 <li><a href="{pre}catalogue.html">Catalogue complet</a></li>

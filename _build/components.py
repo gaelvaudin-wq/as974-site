@@ -62,6 +62,27 @@ def filter_grid(products, pre, with_group=False):
 <div class="empty" id="f-empty" hidden><p>Aucune référence ne correspond à ces critères.</p><p class="mt-24"><a class="link" href="{pre}contact.html#devis">Décrivez-nous votre besoin</a></p></div>
 </div>'''
 
+def yt(vid, title, caption):
+    """Lecteur YouTube au clic (youtube-nocookie), miniature officielle."""
+    thumb = f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg"
+    return f'''<figure class="yt" data-yt="{E(vid)}">
+<button type="button" class="yt-btn" aria-label="Lire la vidéo : {E(title)}">
+<img src="{thumb}" alt="" width="480" height="360" loading="lazy" decoding="async">
+<span class="yt-play" aria-hidden="true"></span>
+</button>
+<figcaption>{E(caption)}</figcaption>
+</figure>'''
+
+def video_ld(vid, title, desc):
+    return {
+        "@context": "https://schema.org", "@type": "VideoObject",
+        "name": title, "description": desc,
+        "thumbnailUrl": f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
+        "embedUrl": f"https://www.youtube-nocookie.com/embed/{vid}",
+        "url": f"https://www.youtube.com/watch?v={vid}",
+        "publisher": {"@type": "Organization", "name": "Ajax Systems"},
+    }
+
 def cta(pre, title="Prêt à sécuriser votre espace ?", text="Étude et devis gratuits, sans engagement. Intervention chez vous, partout à La Réunion.", btn="Demander mon devis gratuit", href="contact.html#devis"):
     return f'''<section class="cta"><div class="wrap reveal">
 <h2 class="h2">{title}</h2>

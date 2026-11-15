@@ -115,6 +115,13 @@ def load_catalogue():
         p = dict(p)
         p["group"] = CAT2GROUP[p["category"]]
         p["gk"] = GAMME_KEY.get(p["gamme"], "a-confirmer")
+        # Incendie : la page dédiée est la ligne EN54. Les FireProtect grand public
+        # (Residence Line) complètent l'alarme Baseline. Source : catalogues Ajax.
+        fire_cats = {"Détecteurs d'incendie", "Dispositifs d'alarme incendie", "Déclencheurs manuels d'alarme"}
+        if p["gamme"] == "EN54 Line" or str(p["slug"]).startswith("en54-"):
+            p["group"] = "incendie"
+        elif p["gamme"] == "Residence Line" and p["category"] in fire_cats:
+            p["group"] = "alarme"
         feats = [f.strip().rstrip(".") for f in (p["feature_1"], p["feature_2"], p["feature_3"]) if f and f.strip() and not NOTE_PAT.search(f)]
         p["feats"] = feats
         p["colors_ok"] = [c for c in p["colors_available"] if c in p["color_images"]]
