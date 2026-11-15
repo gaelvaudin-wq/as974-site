@@ -71,7 +71,6 @@ def head(title, desc, path, pre, og_image=None, og_type="website", jsonld=None, 
 <meta name="twitter:title" content="{E(title)}">
 <meta name="twitter:description" content="{E(desc)}">
 <meta name="twitter:image" content="{E(og_image or SITE + '/assets/img/og-as974.jpg')}">
-<link rel="icon" href="{pre}favicon.svg" type="image/svg+xml">
 <link rel="icon" href="{pre}favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="{pre}apple-touch-icon.png">
 <link rel="preload" href="{pre}assets/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>

@@ -18,11 +18,7 @@ def video_line(p):
 def fiche_video(p, pre="../"):
     line = video_line(p)
     if line:
-        return yt("o8VNaCPCydE", "De la détection à la réaction", "Les caméras Ajax, Baseline comme Superior, peuvent lancer une réaction. Vidéo Ajax Systems.", pre)
-    if p["gamme"] == "EN54 Line" or p["slug"].startswith("en54-"):
-        return yt("5HO9wW5xYc8", "Ligne EN54", "La ligne incendie EN54 d’Ajax, en vidéo officielle.", pre)
-    if any(k in (p["slug"] + p["category"]).lower() for k in ("lightswitch", "socket", "relay", "wallswitch")):
-        return yt("ms08SAie8Pg", "Scénario de température", "Un scénario d’automatisation dans l’application Ajax.", pre)
+        return yt("o8VNaCPCydE", "De la détection à la réaction", "Les caméras Ajax, Baseline comme Superior, peuvent lancer une réaction. Vidéo Ajax Systems, en français.", pre)
     return ""
 
 def video_ai_note(p, pre):
@@ -143,6 +139,4 @@ def fiche(p, all_products):
     lds = [ld_crumbs, ld_product]
     if video_line(p):
         lds.append(video_ld("o8VNaCPCydE", "De la détection à la réaction", "Les caméras Ajax peuvent lancer une réaction automatique."))
-    elif p["gamme"] == "EN54 Line" or p["slug"].startswith("en54-"):
-        lds.append(video_ld("5HO9wW5xYc8", "Ligne EN54 Ajax", "Présentation Ajax de la ligne incendie EN54 pour les bâtiments."))
     write_page(path, title, desc, body, og_image=abs_img(m0) if m0 else None, og_type="product", jsonld=lds, priority="0.6")

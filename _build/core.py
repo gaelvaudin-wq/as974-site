@@ -253,8 +253,9 @@ def picture(meta, alt, pre, sizes, cls="", eager=False, idimg=None, idsrc=None):
     sa = f' id="{idsrc}"' if idsrc else ""
     matte = " is-matte" if meta.get("opaque") else ""
     c = f' class="{(cls + matte).strip()}"' if (cls or matte) else ""
+    widest = max((w for _fn, w in meta.get("srcset") or []), default=meta["w"])
     return (f'<picture><source{sa} type="image/webp" srcset="{ss}" sizes="{sizes}">'
-            f'<img{ia}{c} src="{fb}" alt="{E(alt)}" width="{meta["w"]}" height="{meta["h"]}" style="--w:{meta["w"]}px;max-width:min(100%,{meta["w"]}px)" {load} decoding="async"></picture>')
+            f'<img{ia}{c} src="{fb}" alt="{E(alt)}" width="{meta["w"]}" height="{meta["h"]}" style="--w:{widest}px" {load} decoding="async"></picture>')
 
 def abs_img(meta):
     return f"{SITE}/assets/img/p/{meta['fallback']}" if meta else f"{SITE}/assets/img/og-as974.jpg"
