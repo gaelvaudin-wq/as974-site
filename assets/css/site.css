@@ -619,6 +619,8 @@ a.quote{position:relative;z-index:2;color:var(--rouge);font-weight:650;min-heigh
 .tile .src{font-size:13px;color:#6E6E73}
 img.is-matte{mix-blend-mode:multiply}
 .section{padding:clamp(64px,7vw,96px) 0}
+.hd-shot{margin:28px 0 0}
+.hd-shot img{width:100%;height:auto;object-fit:contain;border-radius:28px}
 .prod-media,.split-media,.phero-media,.panel-img,.chap-img,.range-media,.hero-visual figure,.pdp-stage{position:relative!important;overflow:hidden!important}
 .prod-media{aspect-ratio:4/5}
 .hero-visual figure,.split-media,.phero-media,.panel-img,.chap-img,.range-media{aspect-ratio:1/1;min-height:180px}

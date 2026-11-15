@@ -107,6 +107,10 @@ def home():
 </video>
 <figcaption>Une caméra Ajax reconnaît une personne et déclenche la sirène.</figcaption>
 </figure>
+<figure class="hd-shot reveal"><picture>
+<source type="image/webp" srcset="assets/img/hd/bulletcam-800.webp 800w, assets/img/hd/bulletcam-1200.webp 1200w, assets/img/hd/bulletcam-1600.webp 1600w" sizes="(max-width:800px) 100vw, 1200px">
+<img src="assets/img/hd/bulletcam-1600.webp" alt="BulletCam Ajax, visuel officiel haute définition" width="1600" height="667" loading="lazy" decoding="async">
+</picture></figure>
 <div class="btns"><a class="btn btn-dark" href="gamme-video.html">Les deux lignes vidéo</a><a class="btn btn-outline" href="gamme-video.html#superior">Voir Superior</a></div>
 </div></section>'''
 
