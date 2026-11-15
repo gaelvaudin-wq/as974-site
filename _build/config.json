@@ -1,0 +1,30 @@
+{
+  "_comment": "Constantes du site. Les champs métier null restent affichés [À COMPLÉTER]. SITE_URL est la base canonique GitHub Pages (sans slash final). Relancer : python3 _build/build.py",
+  "SITE_URL": "https://gaelvaudin-wq.github.io/as974-site",
+  "brand": "Active Sécurité 974",
+  "brand_short": "AS974",
+  "business": {
+    "raison_sociale": null,
+    "forme_juridique": null,
+    "capital": null,
+    "siret": null,
+    "rcs": null,
+    "adresse": null,
+    "telephone": null,
+    "email": null,
+    "directeur_publication": null,
+    "horaires": null,
+    "delai_reponse": null
+  },
+  "hebergeur": {
+    "nom": "GitHub, Inc. — GitHub Pages",
+    "adresse": "88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis",
+    "contact": "https://support.github.com"
+  },
+  "form_action": "[À COMPLÉTER]",
+  "form_mailto": "[À COMPLÉTER]",
+  "form_email_reception": null,
+  "telesurveillance_confirmee": false,
+  "catalogue_json": "_build/data/AS974-Ajax-catalogue-complet.json",
+  "catalogue_images_dir": "_build/data/images"
+}

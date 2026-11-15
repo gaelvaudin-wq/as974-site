@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /as974-site/merci.html
+
+Sitemap: https://gaelvaudin-wq.github.io/as974-site/sitemap.xml
