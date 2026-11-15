@@ -10,6 +10,11 @@ NAV = [
     ("services.html", "Services", "services"),
     ("a-propos.html", "À propos", "apropos"),
 ]
+SERVICES_MENU = [
+    ("services-etude.html", "Étude et devis", "Chez vous, sans engagement"),
+    ("services-installation.html", "Installation", "Pose et prise en main"),
+    ("services-maintenance.html", "Maintenance", "Suivi après la pose"),
+]
 GAMMES_MENU = [
     ("gamme-alarme.html", "Alarme intrusion", "Détection, claviers, sirènes"),
     ("gamme-incendie.html", "Incendie EN54", "Ligne professionnelle"),
@@ -25,7 +30,7 @@ def local_business():
     data = {
         "@context": "https://schema.org", "@type": "LocalBusiness", "additionalType": "SecuritySystemInstaller", "@id": SITE + "/#entreprise",
         "name": BRAND, "alternateName": CFG["brand_short"], "url": SITE + "/",
-        "logo": SITE + "/assets/img/logo/as974-wordmark-noir.svg",
+        "logo": SITE + "/assets/img/logo/as974-b-horizontal-noir-rouge.png",
         "image": SITE + "/assets/img/og-as974.jpg",
         "description": "Installateur partenaire agréé Ajax Systems à La Réunion : alarme, incendie, vidéosurveillance et domotique, en intervention chez le client sur toute l’île.",
         "areaServed": {"@type": "AdministrativeArea", "name": "La Réunion"},
@@ -82,6 +87,10 @@ def header(pre, current):
             sub = "".join(f'<a href="{pre}{h}"{" aria-current=\"page\"" if current == h else ""}>{l}<small>{s}</small></a>' for h, l, s in GAMMES_MENU)
             cur = " is-current" if current.startswith("gamme-") else ""
             items.append(f'<div class="nav-drop{cur}"><button type="button" aria-expanded="false" aria-controls="menu-gammes">Gammes</button><div class="nav-menu" id="menu-gammes">{sub}</div></div>')
+        elif key == "services":
+            sub = "".join(f'<a href="{pre}{h}"{" aria-current=\"page\"" if current == h else ""}>{l}<small>{s}</small></a>' for h, l, s in SERVICES_MENU)
+            cur = " is-current" if current.startswith("services") else ""
+            items.append(f'<div class="nav-drop{cur}"><button type="button" aria-expanded="false" aria-controls="menu-services">Services</button><div class="nav-menu" id="menu-services">{sub}</div></div>')
         else:
             on = current == href or (key == "catalogue" and (current.startswith("catalogue") or current.startswith("produits/")))
             items.append(f'<a href="{pre}{href}"{" aria-current=\"page\"" if on else ""}>{label}</a>')
@@ -91,7 +100,7 @@ def header(pre, current):
 <a class="skip-link" href="#contenu">Aller au contenu</a>
 <header class="header">
 <div class="header-inner">
-<a class="logo-link" href="{pre}index.html" aria-label="{E(BRAND)} — accueil"><img class="logo" src="{pre}assets/img/logo/as974-wordmark-noir.svg" alt="AS974" width="168" height="48"></a>
+<a class="logo-link" href="{pre}index.html" aria-label="{E(BRAND)} — accueil"><img class="logo" src="{pre}assets/img/logo/as974-b-horizontal-noir-rouge.png" alt="Active Sécurité 974" width="180" height="70"></a>
 <nav class="nav" id="site-nav" aria-label="Navigation principale">{"".join(items)}</nav>
 <div class="header-actions">
 <a class="icon-btn icon-devis" href="{pre}contact.html#devis" aria-label="Ma sélection devis"><span class="sr-only sl-label">Ma sélection devis</span>{ICON_LIST}<span class="icon-label">Devis</span><span class="sl-count" hidden>0</span></a>
@@ -110,32 +119,35 @@ def footer(pre):
 <div class="wrap-wide">
 <div class="footer-top">
 <div>
-<img class="logo" src="{pre}assets/img/logo/as974-wordmark-blanc.svg" alt="AS974" width="168" height="48" loading="lazy">
+<img class="logo" src="{pre}assets/img/logo/as974-b-horizontal-blanc-rouge.png" alt="Active Sécurité 974" width="200" height="78" loading="lazy">
 <address class="nap">
 <strong style="color:#fff">{E(BRAND)}</strong><br>
 {br_line("", biz("adresse"))}
 {br_line("Tél.", biz("telephone"))}
 {br_line("", biz("email"))}
 {br_line("SIRET", biz("siret"))}
-Interventions chez le client, sur toute l’île de La Réunion
+Interventions chez le client, sur toute l’île de La Réunion<br>
+{"Coordonnées bientôt disponibles." if not (biz("telephone") or biz("email") or biz("adresse")) else ""}
 </address>
 </div>
 <div><h2>Solutions</h2><ul>
 <li><a href="{pre}particuliers.html">Particuliers</a></li>
 <li><a href="{pre}professionnels.html">Professionnels</a></li>
-<li><a href="{pre}services.html">Services</a></li>
+<li><a href="{pre}services-etude.html">Étude et devis</a></li>
+<li><a href="{pre}services-installation.html">Installation</a></li>
+<li><a href="{pre}services-maintenance.html">Maintenance</a></li>
 <li><a href="{pre}a-propos.html">À propos</a></li>
-<li><a href="{pre}contact.html">Contact &amp; devis</a></li>
 </ul></div>
 <div><h2>Gammes</h2><ul>
 <li><a href="{pre}gamme-alarme.html">Alarme intrusion</a></li>
 <li><a href="{pre}gamme-incendie.html">Incendie EN54</a></li>
-<li><a href="{pre}faq.html">Questions fréquentes</a></li>
 <li><a href="{pre}gamme-video.html">Vidéosurveillance</a></li>
 <li><a href="{pre}gamme-domotique.html">Domotique</a></li>
 <li><a href="{pre}catalogue.html">Catalogue complet</a></li>
 </ul></div>
-<div><h2>Informations</h2><ul>
+<div><h2>Aide</h2><ul>
+<li><a href="{pre}faq.html">Questions fréquentes</a></li>
+<li><a href="{pre}contact.html">Contact</a></li>
 <li><a href="{pre}mentions-legales.html">Mentions légales</a></li>
 <li><a href="{pre}politique-confidentialite.html">Confidentialité</a></li>
 <li><a href="{pre}cookies.html">Cookies</a></li>

@@ -32,7 +32,8 @@ def rail(products, pre, eyebrow, title, more=None, dark=False, lead=None):
 SEARCH_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>'
 
 def filter_grid(products, pre, with_group=False):
-    gks = [g for g in GAMME_LABEL if any(p["gk"] == g for p in products)]
+    products = [p for p in products if default_image(p)]
+    gks = [g for g in GAMME_LABEL if g != "a-confirmer" and any(p["gk"] == g for p in products)]
     cats = []
     for p in products:
         if p["category"] not in cats: cats.append(p["category"])
@@ -62,12 +63,12 @@ def filter_grid(products, pre, with_group=False):
 <div class="empty" id="f-empty" hidden><p>Aucune référence ne correspond à ces critères.</p><p class="mt-24"><a class="link" href="{pre}contact.html#devis">Décrivez-nous votre besoin</a></p></div>
 </div>'''
 
-def yt(vid, title, caption):
-    """Lecteur YouTube au clic (youtube-nocookie), miniature officielle."""
-    thumb = f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg"
+def yt(vid, title, caption, pre=""):
+    """Lecteur YouTube au clic (youtube-nocookie), poster HD local."""
+    thumb = f"{pre}assets/img/yt/{vid}.jpg"
     return f'''<figure class="yt" data-yt="{E(vid)}">
 <button type="button" class="yt-btn" aria-label="Lire la vidéo : {E(title)}">
-<img src="{thumb}" alt="" width="480" height="360" loading="lazy" decoding="async">
+<img src="{thumb}" alt="" width="1280" height="720" loading="lazy" decoding="async">
 <span class="yt-play" aria-hidden="true"></span>
 </button>
 <figcaption>{E(caption)}</figcaption>
@@ -77,7 +78,7 @@ def video_ld(vid, title, desc):
     return {
         "@context": "https://schema.org", "@type": "VideoObject",
         "name": title, "description": desc,
-        "thumbnailUrl": f"https://i.ytimg.com/vi/{vid}/hqdefault.jpg",
+        "thumbnailUrl": f"{SITE}/assets/img/yt/{vid}.jpg",
         "embedUrl": f"https://www.youtube-nocookie.com/embed/{vid}",
         "url": f"https://www.youtube.com/watch?v={vid}",
         "publisher": {"@type": "Organization", "name": "Ajax Systems"},

@@ -15,17 +15,14 @@ def video_line(p):
         return "superior"
     return "baseline"
 
-def fiche_video(p):
+def fiche_video(p, pre="../"):
     line = video_line(p)
     if line:
-        return yt("Mwxe-dN9QeM", "Scénarios vidéo", "La vidéosurveillance Ajax peut lancer un automatisme. Vidéo officielle Ajax Systems, valable pour Baseline et Superior.")
-    blob = (p["name"] + " " + p["category"] + " " + p["slug"]).lower()
+        return yt("o8VNaCPCydE", "De la détection à la réaction", "Les caméras Ajax, Baseline comme Superior, peuvent lancer une réaction. Vidéo Ajax Systems.", pre)
     if p["gamme"] == "EN54 Line" or p["slug"].startswith("en54-"):
-        return yt("5HO9wW5xYc8", "Ligne EN54", "Présentation officielle Ajax Systems du système incendie EN54 sans fil.")
-    if p["category"] == "Centrales":
-        return yt("NLnFmO16dXI", "Applications Ajax", "Recherche d’appareils et d’utilisateurs dans les applications Ajax. Vidéo officielle Ajax Systems.")
-    if any(k in blob for k in ("lightswitch", "socket", "relay", "wallswitch", "prise", "interrupteur")):
-        return yt("ms08SAie8Pg", "Scénario de température", "Exemple officiel de scénario d’automatisation dans l’application Ajax.")
+        return yt("5HO9wW5xYc8", "Ligne EN54", "La ligne incendie EN54 d’Ajax, en vidéo officielle.", pre)
+    if any(k in (p["slug"] + p["category"]).lower() for k in ("lightswitch", "socket", "relay", "wallswitch")):
+        return yt("ms08SAie8Pg", "Scénario de température", "Un scénario d’automatisation dans l’application Ajax.", pre)
     return ""
 
 def video_ai_note(p, pre):
@@ -102,7 +99,7 @@ def fiche(p, all_products):
 {colors}
 {avail}
 {video_ai_note(p, pre)}
-{fiche_video(p)}
+{fiche_video(p, pre)}
 <div class="pdp-actions">
 <a class="btn btn-primary btn-lg js-quote" id="pdp-quote" href="{quote_href}">Demander un devis</a>
 <button class="btn btn-outline btn-lg" type="button" id="pdp-add" aria-pressed="false">Ajouter à ma sélection devis</button>
@@ -118,7 +115,7 @@ def fiche(p, all_products):
 <div class="pdp-bar"><a class="btn btn-primary js-quote" href="{quote_href}">Demander un devis</a></div>
 <section class="section bg-off"><div class="wrap specs">
 <div class="reveal"><p class="eyebrow">Caractéristiques</p><h2 class="h2">En bref.</h2>
-<p class="src-note">Données issues de la fiche officielle du fabricant, reformulées. <a href="{E(p["source_url"])}" rel="noopener" target="_blank">Fiche constructeur<span class="sr-only"> (nouvel onglet)</span></a></p></div>
+<p class="src-note"><a href="{E(p["source_url"])}" rel="noopener" target="_blank">Fiche Ajax Systems<span class="sr-only"> (nouvel onglet)</span></a></p></div>
 <div class="reveal d1"><table class="spec">
 <tr><th scope="row">Modèle</th><td>{E(p["name"])}</td></tr>
 <tr><th scope="row">Référence fabricant</th><td>{E(p["model"])}</td></tr>
@@ -128,7 +125,7 @@ def fiche(p, all_products):
 <tr><th scope="row">Coloris officiels</th><td>{E(", ".join(p["colors_ok"])) if p["colors_ok"] else "À préciser lors du devis"}</td></tr>
 {extra_comp}
 <tr><th scope="row">Prix</th><td>Sur devis</td></tr>
-<tr><th scope="row">Disponibilité</th><td>{E(p["avail_tag"] or "À confirmer lors du devis")}</td></tr>
+<tr><th scope="row">Disponibilité</th><td>{E(p["avail_tag"] or "Précisée dans le devis")}</td></tr>
 </table></div>
 </div></section>
 <section class="section"><div class="wrap">
@@ -145,7 +142,7 @@ def fiche(p, all_products):
     desc = clip(f'{p["name"]} (réf. {p["model"]}) : {lcfirst(p["feats"][0]) if p["feats"] else p["category"]}. Sur devis, installation par Active Sécurité 974 à La Réunion.')
     lds = [ld_crumbs, ld_product]
     if video_line(p):
-        lds.append(video_ld("Mwxe-dN9QeM", "Scénarios vidéo Ajax", "Les dispositifs vidéo Ajax peuvent activer des scénarios d’automatisation."))
+        lds.append(video_ld("o8VNaCPCydE", "De la détection à la réaction", "Les caméras Ajax peuvent lancer une réaction automatique."))
     elif p["gamme"] == "EN54 Line" or p["slug"].startswith("en54-"):
-        lds.append(video_ld("5HO9wW5xYc8", "EN54 Line Ajax", "Système de détection incendie sans fil certifié EN 54, présenté par Ajax Systems."))
+        lds.append(video_ld("5HO9wW5xYc8", "Ligne EN54 Ajax", "Présentation Ajax de la ligne incendie EN54 pour les bâtiments."))
     write_page(path, title, desc, body, og_image=abs_img(m0) if m0 else None, og_type="product", jsonld=lds, priority="0.6")
