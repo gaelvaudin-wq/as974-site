@@ -192,6 +192,31 @@
       try{localStorage.removeItem(KEY)}catch(x){}
     });
   }
+  /* ---------- YouTube : lecture muette dès que la vidéo entre dans l'écran ---------- */
+  $$(".yt[data-yt-auto]").forEach(function(fig){
+    var id=fig.getAttribute("data-yt"), btn=fig.querySelector(".yt-btn");
+    if(!id||!btn) return;
+    if(reduce || !("IntersectionObserver" in window)) return;
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        var frame=fig.querySelector("iframe");
+        if(e.isIntersecting){
+          if(frame) return;
+          var f=d.createElement("iframe");
+          f.className="yt-frame";
+          f.src="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(id)+"?autoplay=1&mute=1&rel=0&playsinline=1";
+          f.title=btn.getAttribute("aria-label")||"Vidéo Ajax Systems";
+          f.setAttribute("allow","autoplay; encrypted-media; picture-in-picture");
+          f.setAttribute("allowfullscreen","");
+          btn.replaceWith(f);
+        } else if(frame){
+          frame.replaceWith(btn);
+        }
+      });
+    },{threshold:0.45});
+    io.observe(fig);
+  });
+
   /* ---------- vidéos : autoplay hero, lecture à l'arrivée, reduced-motion ---------- */
   $$("video.js-video").forEach(function(v){
     if(reduce){v.removeAttribute("autoplay"); try{v.pause()}catch(e){} return}

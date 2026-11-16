@@ -66,7 +66,7 @@ def filter_grid(products, pre, with_group=False):
 def yt(vid, title, caption, pre=""):
     """Lecteur YouTube au clic (youtube-nocookie), poster HD local."""
     thumb = f"{pre}assets/img/yt/{vid}.jpg"
-    return f'''<figure class="yt" data-yt="{E(vid)}">
+    return f'''<figure class="yt" data-yt="{E(vid)}" data-yt-auto="1">
 <button type="button" class="yt-btn" aria-label="Lire la vidéo : {E(title)}">
 <img src="{thumb}" alt="" width="1280" height="720" loading="lazy" decoding="async">
 <span class="yt-play" aria-hidden="true"></span>

@@ -1,5 +1,6 @@
 """Blocs qui vendent : performances sourcées, étude, pose, choix, différence AS974."""
 from core import *
+from diagrams import chaine, portee, ia, en54, frise, comparatif
 
 HUB = "https://ajax.systems/fr/products/hub-2/"
 MP = "https://ajax.systems/fr/products/motionprotect/"
@@ -25,9 +26,17 @@ def act(pre, href="contact.html#devis", label="Demander une étude gratuite"):
     return f'<p class="act"><a class="btn btn-primary" href="{pre}{href}">{E(label)}</a></p>'
 
 
-def _src(*links):
-    bits = " · ".join(f'<a href="{u}" rel="noopener">{E(t)}</a>' for t, u in links)
-    return f'<p class="src-note">Sources Ajax : {bits}.</p>'
+def _src(*_links):
+    return '<p class="src-note">Source : Ajax Systems</p>'
+
+
+def band(title, short, more, visual, cta_html, alt=False):
+    bg = " bg-off" if alt else ""
+    extra = f'<details class="more"><summary>En savoir plus</summary><div class="more-body">{more}</div></details>' if more else ""
+    return f'''<section class="section{bg}"><div class="wrap split-vis">
+<div class="vis-copy"><h2 class="h2">{title}</h2>{short}{extra}{cta_html}</div>
+<div class="vis-media">{visual}</div>
+</div></section>'''
 
 
 def performances(kind):
@@ -54,12 +63,9 @@ def performances(kind):
         body = f'''<p>Ajax indique, pour Hub 2, jusqu’à 2 000 m de communication radio avec une centrale ou un prolongateur de portée, en champ libre, et la possibilité de raccorder jusqu’à cinq prolongateurs. La centrale se relie en Ethernet et par deux cartes SIM : si un réseau tombe, elle bascule. La batterie de secours annoncée va jusqu’à 16 heures pour Hub 2 (2G) et jusqu’à 15 heures pour Hub 2 (4G), lorsque l’Ethernet est coupé. Ajax Cloud peut signaler une perte de liaison en 60 secondes. Les échanges sont décrits comme chiffrés : Ajax parle, pour MotionProtect, d’un chiffrement par blocs avec une clé dynamique. La centrale interroge les détecteurs toutes les 12 à 300 secondes, intervalle réglable.</p>
 <p>MotionProtect couvre jusqu’à 12 m, avec un angle de 88,5°. Installé à 2,4 m, Ajax indique une immunité aux animaux jusqu’à 20 kg et moins de 50 cm. L’autonomie mise en avant est de 5 ans ; la description technique de la même fiche évoque aussi jusqu’à 7 ans avec une pile CR123A. La portée radio de ce détecteur est indiquée jusqu’à 1 700 m en champ ouvert, pas 2 000 m. Ces chiffres sont ceux du fabricant, en conditions qu’il précise. Les murs, la tôle et l’humidité de La Réunion se vérifient sur place, au test radio.</p>'''
         src = _src(("Hub 2", HUB), ("MotionProtect", MP))
-    return f'''<section class="section"><div class="wrap prose">
-<h2 class="h2">Ce que le matériel tient, selon Ajax.</h2>
-{body}
-{src}
-{act("")}
-</div></section>'''
+    visual = {"video": ia, "incendie": en54, "domotique": chaine, "acces": frise, "accessoires": chaine}.get(kind, portee)()
+    short = "<p>Les chiffres du fabricant sont repris ici. Nous les vérifions chez vous avant le devis.</p>"
+    return band("Performances annoncées.", short, src, visual, act(""))
 
 
 def etude(kind):
@@ -70,21 +76,15 @@ def etude(kind):
         "acces": "qui doit armer, qui ne doit pas tout voir, et quelles zones se séparent",
         "alarme": "chaque accès, chaque volume, les animaux, les ouvrants et la qualité radio réelle",
     }.get(kind, "les accès, les volumes et la façon dont le lieu est occupé")
-    return f'''<section class="section bg-off"><div class="wrap prose">
-<h2 class="h2">L’étude se fait chez vous, avant le devis.</h2>
-<p>Active Sécurité 974 commence par une visite sur place, sur toute l’île. Nous regardons {sujet}. L’analyse porte sur les risques du lieu et sur les accès, pas sur une liste d’appareils à placer partout. Le dimensionnement vient ensuite : combien de détecteurs, quelle centrale, quelles caméras, quels automatismes, et seulement là où ils servent.</p>
-<p>Le devis est gratuit et sans engagement. Il décrit le matériel, la pose et le paramétrage. Aucun prix n’est affiché sur ce site, parce que deux maisons voisines ne donnent pas le même chantier. Pour un échange simple, des photos peuvent préparer la visite. Elles ne la remplacent pas quand il faut mesurer la radio ou voir une charpente.</p>
-{act("", "contact.html#devis", "Prendre rendez-vous pour l’étude")}
-</div></section>'''
+    short = f"<p>Nous venons voir {sujet}. Le devis gratuit décrit ensuite seulement ce que le lieu demande.</p>"
+    more = "<p>L’analyse porte sur les risques et les accès, pas sur une liste d’appareils à placer partout. Deux maisons voisines ne donnent pas le même chantier. Des photos peuvent préparer la visite. Elles ne remplacent pas un test radio.</p>"
+    return band("L’étude se fait chez vous, avant le devis.", short, more, frise(), act("", "contact.html#devis", "Prendre rendez-vous pour l’étude"), True)
 
 
 def pose(kind):
-    return f'''<section class="section"><div class="wrap prose">
-<h2 class="h2">La pose, le réglage, puis nous restons joignables.</h2>
-<p>L’installation est faite chez vous. Les appareils sans fil se posent sur leur support, les liaisons filaires Fibra ou l’alimentation des caméras suivent le plan de l’étude. Nous testons la radio ou le bus, les zones de détection, les sirènes et les notifications avant de partir. Les utilisateurs, les groupes, les droits et les scénarios sont paramétrés avec vous, pas laissés sur les réglages d’usine.</p>
-<p>Vous repartez en sachant armer, désarmer, lire une alerte et reconnaître une panne de pile. Un récapitulatif de ce qui a été posé vous est remis. Ensuite, la maintenance et le dépannage se font selon ce qui est écrit au devis. La télésurveillance peut être étudiée à ce moment-là. Elle n’est pas un service déjà ouvert sur ce site.</p>
-{act("", "services-installation.html", "Voir le déroulé de l’installation")}
-</div></section>'''
+    short = "<p>Nous posons, nous testons, puis nous vous montrons comment armer, lire une alerte et repérer une pile faible.</p>"
+    more = "<p>Les liaisons filaires et l’alimentation suivent le plan de l’étude. Les utilisateurs et les scénarios sont réglés avec vous. Le dépannage suit ce qui est écrit au devis. La télésurveillance, si vous la souhaitez, se discute à part. Elle n’est pas un service déjà ouvert.</p>"
+    return band("La pose, le réglage, puis nous restons joignables.", short, more, frise(), act("", "services-installation.html", "Voir le déroulé de l’installation"))
 
 
 def choix(products, pre, kind):
@@ -93,23 +93,15 @@ def choix(products, pre, kind):
     col = ", ".join(colors) if colors else "les coloris indiqués sur chaque fiche"
     jew = sum(1 for p in products if "jeweller" in p["slug"] or "Jeweller" in p["name"])
     fib = sum(1 for p in products if "fibra" in p["slug"] or "Fibra" in p["name"])
-    return f'''<section class="section bg-off"><div class="wrap prose">
-<h2 class="h2">Le choix se fait dans le catalogue officiel, pas dans deux coloris imposés.</h2>
-<p>Cette page couvre {n} références du catalogue AS974 pour cette famille. Sur chaque fiche, le sélecteur de version propose les autres modèles de la même famille, par exemple une autre optique, un autre nombre de gangs, une alimentation différente, ou la déclinaison Jeweller et Fibra quand Ajax les publie toutes les deux. Le sélecteur de coloris n’affiche que les teintes documentées pour cette référence, avec leur visuel officiel quand Ajax le fournit. Ici, cela représente {jew} références radio Jeweller et {fib} références filaires Fibra. Les coloris rencontrés dans la famille : {E(col)}.</p>
-<p>{"La centrale EN54 peut aussi recevoir, selon Ajax, des appareils d’intrusion, de vidéo et d’automatisation dans le cadre EN 50131 Grade 2. L’extension se fait avec les appareils prévus pour cette centrale, pas avec une autre gamme." if kind == "incendie" else "Le système peut s’agrandir ensuite : un prolongateur de portée, une caméra ou un automatisme rejoignent la même application. On ne change pas de marque pour ajouter une pièce."}</p>
-{act(pre, "contact.html#devis", "Demander un devis sur cette sélection")}
-</div></section>'''
+    short = f"<p>Cette famille compte {n} références, dont {jew} en Jeweller et {fib} en Fibra. Chaque fiche montre uniquement les coloris documentés pour ce modèle.</p>"
+    more = f"<p>Coloris rencontrés ici : {E(col)}. Le sélecteur de version ouvre les autres optiques, formats ou alimentations de la même famille. On agrandit le système dans la même application, sans changer de marque.</p>"
+    return band("Le choix se fait dans le catalogue, pas dans deux coloris imposés.", short, more, ia(), act(pre, "contact.html#devis", "Demander un devis sur cette sélection"), True)
 
 
 def pourquoi(kind, pre=""):
-    return f'''<section class="section"><div class="wrap prose">
-<h2 class="h2">Pourquoi choisir Active Sécurité 974.</h2>
-<p>Nous sommes partenaire agréé Ajax Systems, et nous n’installons pas un mélange de marques sur le même devis. {"Pour un ERP ou un bâtiment, la page Incendie ne propose que la ligne EN54, pas un détecteur de logement rebaptisé système incendie." if kind == "incendie" else "Alarme, vidéo et automatismes restent dans une seule application, celle du fabricant."} L’étude, la pose et le suivi sont faits par le même interlocuteur, chez vous, de Saint-Denis à Saint-Pierre, du littoral aux Hauts.</p>
-<p>Un kit à monter soi-même vous laisse le plan, le test radio et les droits utilisateurs. Cela peut suffire à quelqu’un qui veut bricoler. Ce n’est pas ce que nous vendons : nous venons voir le lieu, nous dimensionnons, nous posons et nous formons. Un installateur qui mélange plusieurs marques peut couvrir plus de catalogues. La contrepartie, chez nous, est l’inverse : un seul écosystème, dont nous répondons après la mise en service.</p>
-<p>Certaines offres du marché lient le matériel à un abonnement de télésurveillance, parfois avec une durée d’engagement. Ici, le devis porte d’abord sur le système installé chez vous. Si vous voulez un centre de télésurveillance, nous le regardons à part, pendant l’étude. Nous ne l’affichons pas comme un service déjà souscrit, et nous n’annonçons pas de durée de contrat que nous n’avons pas publiée.</p>
-<p>Nous ne publions ni classement, ni nombre de clients, ni avis. La différence à juger est celle du déroulé : visite, analyse, devis détaillé, pose, tests, formation, puis un SAV prévu au devis.</p>
-{act(pre)}
-</div></section>'''
+    short = "<p>Nous venons, nous chiffrons le système installé, puis nous le posons. Pas de classement, pas de nombre de clients, pas d’avis inventé.</p>"
+    more = "<p>Un kit vous laisse le plan et les tests. Un installateur multimarque couvre plusieurs catalogues. Certaines offres lient le matériel à un abonnement. Ici, le devis porte d’abord sur l’installation. La télésurveillance, si vous la voulez, se discute à part et n’est pas un service déjà ouvert.</p>"
+    return band("Pourquoi choisir Active Sécurité 974.", short, more, comparatif(), act(pre))
 
 
 def index_produits(products, pre, titre="Toutes les références, pour choisir puis demander un devis."):
@@ -121,11 +113,13 @@ def index_produits(products, pre, titre="Toutes les références, pour choisir p
             f'<li><a href="{pre}produits/{p["slug"]}.html">{E(p["name"])}</a>'
             f'<span>Réf. {E(p["model"])} · {E(cols)}. {E(feat)}</span></li>'
         )
-    return f'''<section class="section bg-off" id="references-gamme"><div class="wrap">
-<h2 class="h2">{E(titre)}</h2>
-<p class="lead">Chaque lien ouvre la fiche, avec le sélecteur de version et de coloris, et le bouton de devis.</p>
-<ul class="ref-index">{"".join(items)}</ul>
-{act(pre, "contact.html#devis", "Aucune référence ne convient telle quelle : décrire mon besoin")}
+    return f'''<section class="section bg-off" id="references-gamme"><div class="wrap split-vis">
+<div class="vis-copy"><h2 class="h2">{E(titre)}</h2>
+<p>Ouvrez la liste, choisissez une fiche, puis le coloris. Le devis reprend exactement ce choix.</p>
+<details class="more"><summary>En savoir plus</summary><ul class="ref-index">{"".join(items)}</ul></details>
+{act(pre, "contact.html#devis", "Décrire mon besoin")}
+</div>
+<div class="vis-media">{chaine()}</div>
 </div></section>'''
 
 
@@ -161,7 +155,16 @@ def configurateur(devices):
         f'<span class="sr-only">{E(n)} {E(r)}</span></button>' for n, h, r in LS_COLORS)
     return f'''<section class="section" id="configurateur"><div class="wrap">
 <h2 class="h2">Composer un ensemble d’interrupteurs et de prises.</h2>
-<div class="prose"><p>Choisissez le nombre de postes, le modèle de chaque poste et le coloris du panneau. Les huit teintes sont celles publiées par Ajax pour LightSwitch et Outlet : noir, graphite, blanc, ivoire, fumée, huître, gris et olive. Un poste seul se pose sans cadre. Les cadres Ajax existent en 2, 3, 4 et 5 postes. Les cadres verticaux existent. Ajax indique que les prises ne se combinent qu’en cadre horizontal. Le rendu utilise les visuels officiels du catalogue. La composition part dans la demande de devis, sans prix.</p></div>
+<div class="prose"><p>Choisissez le nombre de postes, le modèle et le coloris. La composition part dans le devis, sans prix.</p>
+<details class="more"><summary>En savoir plus</summary><p>Huit teintes de panneau : noir, graphite, blanc, ivoire, fumée, huître, gris et olive. Un poste seul se pose sans cadre. Les cadres existent en 2, 3, 4 et 5 postes. Les prises ne se combinent qu’à l’horizontale.</p></details>
+<div class="cfg-official">
+<img src="assets/img/ajax/ls_all_frames_f90723c216.jpg" alt="Cadres LightSwitch publiés par Ajax">
+<img src="assets/img/ajax/ls_1_gang_27a92c6cc4.jpg" alt="Un poste, visuel officiel">
+<img src="assets/img/ajax/ls_two_devices_d98e7ef76a.jpg" alt="Deux commandes, visuel officiel">
+<img src="assets/img/ajax/ls_four_devices_7d8b0f118d.jpg" alt="Quatre postes, visuel officiel">
+<img src="assets/img/ajax/ls_five_devices_3b8296cb8d.jpg" alt="Cinq postes, visuel officiel">
+</div>
+<p class="src-note">Source : Ajax Systems. Le visuel à trois postes est composé avec les packshots officiels : Ajax ne publie pas, dans les fichiers repris ici, une photo de cadre à trois postes seule.</p></div>
 <div class="cfg" id="cfg" data-cfg>
 <div class="cfg-controls">
 <label>Postes <select id="cfg-seats"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option></select></label>

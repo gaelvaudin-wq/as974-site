@@ -174,7 +174,7 @@ def main():
     pages.gamme_acces()
     pages.catalogue_index()
     for g in GROUP: pages.catalogue_cat(g)
-    pages.services(); pages.a_propos(); pages.contact(); pages.faq(); pages.legal(); pages.notfound()
+    pages.services(); pages.a_propos(); pages.contact(); pages.faq(); pages.legal(); pages.sources(); pages.notfound()
     for p in prods: products.fiche(p, prods)
     og_image(); favicons(); sitemap()
     open(os.path.join(ROOT, ".nojekyll"), "w").close()

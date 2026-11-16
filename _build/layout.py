@@ -119,7 +119,7 @@ def footer(pre):
 <div class="wrap-wide">
 <div class="footer-top">
 <div>
-<img class="logo" src="{pre}assets/img/logo/as974-b-horizontal-blanc-rouge.png" alt="Active Sécurité 974" width="200" height="78" loading="lazy">
+<img class="logo" src="{pre}assets/img/logo/as974-b-horizontal-blanc-rouge.png" alt="Active Sécurité 974" width="200" height="78">
 <address class="nap">
 <strong style="color:#fff">{E(BRAND)}</strong><br>
 {br_line("", biz("adresse"))}
@@ -152,6 +152,7 @@ Interventions chez le client, sur toute l’île de La Réunion<br>
 <li><a href="{pre}mentions-legales.html">Mentions légales</a></li>
 <li><a href="{pre}politique-confidentialite.html">Confidentialité</a></li>
 <li><a href="{pre}cookies.html">Cookies</a></li>
+<li><a href="{pre}sources.html">Sources</a></li>
 </ul>
 <p class="footer-legal">Partenaire agréé Ajax Systems. Active Sécurité 974 est une marque distincte ; Ajax Systems et ses visuels appartiennent à leur titulaire. Catalogue et devis uniquement, sans vente en ligne.</p>
 </div>

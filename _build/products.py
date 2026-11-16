@@ -132,7 +132,7 @@ def fiche(p, all_products):
 <div class="pdp-bar"><a class="btn btn-primary js-quote" href="{quote_href}">Demander un devis</a></div>
 <section class="section bg-off"><div class="wrap specs">
 <div class="reveal"><p class="eyebrow">Caractéristiques</p><h2 class="h2">En bref.</h2>
-<p class="src-note"><a href="{E(p["source_url"])}" rel="noopener" target="_blank">Fiche Ajax Systems<span class="sr-only"> (nouvel onglet)</span></a></p></div>
+<p class="src-note">Source : Ajax Systems</p></div>
 <div class="reveal d1"><table class="spec">
 <tr><th scope="row">Modèle</th><td>{E(p["name"])}</td></tr>
 <tr><th scope="row">Référence fabricant</th><td>{E(p["model"])}</td></tr>
