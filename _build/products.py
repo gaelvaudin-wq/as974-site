@@ -3,6 +3,7 @@ import json
 from core import *
 from layout import write_page, crumbs
 from components import rail, yt, video_ld
+from sell import siblings, family_of
 
 ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>'
 VIDEO_CATS = {"Caméras filaires", "Caméras Wi-Fi", "Enregistreurs vidéo", "Sonnettes"}
@@ -50,14 +51,27 @@ def fiche(p, all_products):
         m = ims[c]; ss, fb = img_urls(m, pre)
         jsimgs[c] = {"webp": ss, "png": fb, "w": m["w"], "h": m["h"]}
     data = {"slug": p["slug"], "name": p["name"], "ref": p["model"], "default": cur, "images": jsimgs, "contact": pre + "contact.html"}
-    # sélecteur couleur
+    fam = siblings(p, all_products)
+    if len(fam) > 1:
+        opts = "".join(
+            f'<option value="{pre}produits/{x["slug"]}.html"{" selected" if x["slug"]==p["slug"] else ""}>{E(x["name"])} — {E(x["model"])}</option>'
+            for x in fam)
+        variant = (f'<label class="variant">Version <select id="pdp-variant">{opts}</select></label>'
+                   f'<p class="note">Autres versions officielles de la même famille (optique, format, Jeweller ou Fibra, alimentation). Le coloris choisi est repris sur la fiche suivante.</p>')
+    else:
+        variant = ""
+    ralmap = p.get("color_ral") or {}
+    def _title(c):
+        r = ralmap.get(c)
+        return f"{c} · {r}" if r else c
+    # sélecteur couleur : uniquement les teintes documentées pour CETTE référence
     if len(p["colors_ok"]) > 1:
         sw = "".join(
             f'<div class="sw"><input type="radio" name="couleur" id="c-{slugify(c)}" value="{E(c)}"{" checked" if c == cur else ""}>'
-            f'<label for="c-{slugify(c)}" title="{E(c)}"><i style="background:{COLOR_HEX.get(c, "#ccc")}"></i><span class="sr-only">{E(c)}</span></label></div>'
+            f'<label for="c-{slugify(c)}" title="{E(_title(c))}"><i style="background:{COLOR_HEX.get(c, "#ccc")}"></i><span class="sr-only">{E(_title(c))}</span></label></div>'
             for c in p["colors_ok"])
-        colors = (f'<fieldset class="colors"><legend>Coloris <output id="pdp-color-name">{E(cur)}</output></legend><div class="swatches">{sw}</div>'
-                  f'<p class="note">{len(p["colors_ok"])} coloris officiels documentés par le fabricant. Teintes des pastilles indicatives.</p></fieldset>')
+        colors = (f'<fieldset class="colors"><legend>Coloris <output id="pdp-color-name">{E(_title(cur))}</output></legend><div class="swatches">{sw}</div>'
+                  f'<p class="note">{len(p["colors_ok"])} coloris officiels pour cette référence. Aucune teinte n’est ajoutée au-delà de la fiche Ajax. Les pastilles sont indicatives.</p></fieldset>')
     elif len(p["colors_ok"]) == 1:
         c = p["colors_ok"][0]
         colors = (f'<fieldset class="colors"><legend>Coloris <output id="pdp-color-name">{E(c)}</output></legend><div class="swatches">'
@@ -92,6 +106,7 @@ def fiche(p, all_products):
 <div class="pdp-price"><strong>Sur devis</strong><span>Étude, fourniture et installation par Active Sécurité 974</span></div>
 <p class="pdp-desc">{E(p["hook"])}</p>
 {f'<ul class="benefits">{benefits}</ul>' if benefits else ''}
+{variant}
 {colors}
 {avail}
 {video_ai_note(p, pre)}

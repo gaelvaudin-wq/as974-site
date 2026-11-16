@@ -171,6 +171,7 @@ def main():
     for p in prods: product_images(p)
     pages.home(); pages.particuliers(); pages.professionnels()
     for g in pages.GAMME_PAGES: pages.gamme(g)
+    pages.gamme_acces()
     pages.catalogue_index()
     for g in GROUP: pages.catalogue_cat(g)
     pages.services(); pages.a_propos(); pages.contact(); pages.faq(); pages.legal(); pages.notfound()

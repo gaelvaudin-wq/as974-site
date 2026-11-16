@@ -2,6 +2,7 @@
 from core import *
 from layout import write_page, crumbs
 from components import card, rail, filter_grid, cta, versus, yt, video_ld
+import sell
 
 P = {}      # slug -> produit
 ALL = []
@@ -43,41 +44,33 @@ SZ_CARD = "(max-width:640px) 80vw, 340px"
 def home():
     pre = ""
     n = sum(1 for p in ALL if default_image(p))
-    hero = f'''<section class="hero on-dark">
-<div class="wrap">
-<p class="eyebrow reveal">Toute l’île · Ajax Systems</p>
-<h1 class="display reveal d1">La sécurité Ajax, chez vous.</h1>
-<p class="lead reveal d2">Alarme, incendie, vidéo et domotique. Installés et suivis sur toute l’île de La Réunion, par un partenaire agréé Ajax Systems.</p>
-<div class="btns reveal d3" style="justify-content:center"><a class="btn btn-primary btn-lg" href="contact.html#devis">Demander mon devis gratuit</a><a class="btn btn-outline btn-lg" href="#pourquoi">Pourquoi Ajax Systems</a></div>
+    hero = f'''<section class="hero-film on-dark">
+<video class="js-video is-hero" poster="assets/video/ia-sirene-dissuasion.jpg" muted loop playsinline preload="metadata" aria-label="Une caméra Ajax reconnaît une personne et la sirène part">
+<source src="assets/video/ia-sirene-dissuasion.webm" type="video/webm">
+<source src="assets/video/ia-sirene-dissuasion.mp4" type="video/mp4">
+</video>
+<div class="hero-film-copy wrap">
+<p class="eyebrow">Installateur à La Réunion · partenaire agréé Ajax Systems</p>
+<h1 class="display">Nous venons chez vous. Nous étudions. Nous posons.</h1>
+<p class="lead">Active Sécurité 974 conçoit et installe l’alarme, la vidéo, l’incendie et la domotique Ajax, sur toute l’île. L’étude et le devis sont gratuits. Le matériel reste celui du fabricant : {n} références illustrées, chacune avec ses coloris officiels.</p>
+<div class="btns"><a class="btn btn-primary btn-lg" href="contact.html#devis">Demander une étude gratuite</a><a class="btn btn-outline btn-lg" href="services-etude.html">Voir comment se passe la visite</a></div>
 </div>
-<div class="hero-visual hero-products reveal d2" aria-hidden="false">
-<figure>{stage_img("motioncam-phod", "Blanc", pre, SZ_HERO, eager=True, need_alpha=True)}</figure>
-<figure>{stage_img("hub-2", "Blanc", pre, "(max-width:640px) 46vw, 520px", eager=True, need_alpha=True)}</figure>
-<figure>{stage_img("keypad-touchscreen", "Blanc", pre, SZ_HERO, eager=True, need_alpha=True)}</figure>
-</div>
-<div class="wrap"><div class="hero-badges"><span>Étude et devis gratuits</span><span>Intervention chez vous, partout sur l’île</span><span>{n} références sur devis</span></div></div>
-<div class="hero-floor"></div>
 </section>'''
-
-    why = f'''<section class="section bg-ink on-dark" id="pourquoi"><div class="wrap">
-<div class="head reveal"><p class="eyebrow">Pourquoi Ajax Systems</p><h2 class="h2">Une technologie simple à vivre.</h2>
-<p class="lead">Concevoir, installer, accompagner : une seule application pour l’alarme, la vidéo, l’incendie et la domotique.</p></div>
-<div class="bento">
-<div class="tile reveal"><p class="fig red">2 000<small>m</small></p><h3>Radio Jeweller longue portée</h3><p>Jusqu’à 2 000 m entre une centrale et un détecteur, ou avec un prolongateur de portée.</p></div>
-<div class="tile reveal d1"><p class="fig">3<small>réseaux</small></p><h3>Toujours connectée</h3><p>Ethernet et deux cartes SIM : la centrale bascule d’un réseau à l’autre.</p></div>
-<div class="tile reveal d2"><p class="fig">5<small>ans</small></p><h3>Piles longue durée</h3><p>MotionProtect annonce jusqu’à 5 ans d’autonomie. Beaucoup de détecteurs arrivent piles installées.</p></div>
-</div>
+    why = f'''<section class="section bg-off"><div class="wrap prose">
+<h2 class="h2">Les chiffres sont ceux d’Ajax, pas les nôtres.</h2>
+<p>Hub 2 annonce jusqu’à 2 000 m de radio en champ libre, une liaison Ethernet plus deux cartes SIM, et une batterie de secours jusqu’à 16 heures selon la version. MotionProtect annonce jusqu’à 12 m de détection et jusqu’à 5 ans de pile dans ses caractéristiques mises en avant. Ces valeurs se vérifient sur place : un mur en béton ou une tôle ne se comporte pas comme un champ libre. Le détail sourcé est sur chaque page de gamme.</p>
 <p class="src-note">Sources Ajax : <a href="https://ajax.systems/fr/products/hub-2/">Hub 2</a>, <a href="https://ajax.systems/fr/products/motionprotect/">MotionProtect</a>.</p>
+{sell.act(pre, "gamme-alarme.html", "Voir les performances de l’alarme")}
 </div></section>'''
-
     duo = f'''<section class="section"><div class="wrap-wide">
-<div class="head center reveal"><p class="eyebrow">Pour qui</p><h2 class="h2">Particuliers &amp; professionnels.</h2></div>
+<div class="head center"><h2 class="h2">Maison ou activité, la visite est la même.</h2>
+<p class="lead">Nous nous déplaçons pour un logement comme pour un commerce. Le devis change parce que le lieu change.</p></div>
 <div class="duo">
-<div class="panel light reveal"><p class="eyebrow">Particuliers</p><h3 class="h2">Votre maison, sereine.</h3><p>Maison ou appartement : une solution discrète, fiable, pilotable depuis le smartphone.</p>
-<div class="btns"><a class="btn btn-primary" href="contact.html?profil=particulier#devis">Étude gratuite pour mon logement</a><a class="btn btn-outline" href="particuliers.html">En savoir plus</a></div>
+<div class="panel light"><h3 class="h2">Votre maison.</h3><p>Ouvertures, volumes, animaux, absences. Une étude chez vous, puis une pose et la prise en main de l’application.</p>
+<div class="btns"><a class="btn btn-primary" href="contact.html?profil=particulier#devis">Étude gratuite pour mon logement</a></div>
 <div class="panel-img">{stage_img("doorbell", "Blanc", pre, "(max-width:980px) 60vw, 360px", need_alpha=True)}</div></div>
-<div class="panel blue on-dark reveal d1"><p class="eyebrow">Professionnels</p><h3 class="h2">Votre activité, protégée.</h3><p>Commerces, bureaux, entrepôts et plusieurs sites : une installation qui grandit avec vous.</p>
-<div class="btns"><a class="btn btn-light" href="contact.html?profil=professionnel#devis">Demander une étude professionnelle</a><a class="btn btn-outline" href="professionnels.html">En savoir plus</a></div>
+<div class="panel blue on-dark"><h3 class="h2">Votre activité.</h3><p>Commerce, bureaux, entrepôt, plusieurs adresses. Zones, utilisateurs et, si le bâtiment l’exige, la ligne incendie EN54.</p>
+<div class="btns"><a class="btn btn-light" href="contact.html?profil=professionnel#devis">Demander une étude professionnelle</a></div>
 <div class="panel-img">{stage_img("superior-motioncam-phod-jeweller", "Noir", pre, "(max-width:980px) 60vw, 360px", need_alpha=True)}</div></div>
 </div></div></section>'''
 
@@ -92,50 +85,38 @@ def home():
         cnt = len(group_products(g))
         rows.append(f'''<a class="range-card {st}" href="{href}"><div class="range-media">{stage_img(slug, col, pre, "(max-width:640px) 70vw, 280px", need_alpha=(st == "dark"))}</div><div><p class="num">0{i+1}</p><h3>{h}</h3><p>{txt}</p><span class="count">{cnt} références</span></div></a>''')
     gammes = f'''<section class="section bg-off" id="gammes"><div class="wrap">
-<div class="head reveal"><p class="eyebrow">Gammes</p><h2 class="h2">Quatre univers. Un seul système.</h2></div>
+<div class="head"><h2 class="h2">Quatre familles. Une seule application.</h2>
+<p class="lead">Choisissez la famille qui correspond au lieu. Chaque page détaille les performances annoncées par Ajax, l’étude, la pose et toutes les références.</p></div>
 <div class="range-grid">{"".join(rows)}</div>
+{sell.act(pre, "catalogue.html", f"Parcourir les {n} références et demander un devis")}
 </div></section>'''
 
-    video_home = '''<section class="section" id="video-ia"><div class="wrap">
-<div class="head reveal"><p class="eyebrow">Vidéo · Baseline et Superior</p><h2 class="h2">L’IA déclenche l’alarme.</h2>
-<p class="lead">Baseline et Superior intègrent la détection IA des personnes, des véhicules et des animaux, et peuvent déclencher l’alarme.</p></div>
-<figure class="film reveal">
-<video poster="assets/video/ia-sirene-dissuasion.jpg" controls playsinline preload="metadata" aria-label="Une caméra Ajax reconnaît une personne et déclenche la sirène">
-<source src="assets/video/ia-sirene-dissuasion.webm" type="video/webm">
-<source src="assets/video/ia-sirene-dissuasion.mp4" type="video/mp4">
-<track kind="captions" src="assets/video/ia-sirene-dissuasion.fr.vtt" srclang="fr" label="Français" default>
-</video>
-<figcaption>Une caméra Ajax reconnaît une personne et déclenche la sirène.</figcaption>
-</figure>
-<figure class="hd-shot reveal"><picture>
-<source type="image/webp" srcset="assets/img/hd/bulletcam-800.webp 800w, assets/img/hd/bulletcam-1200.webp 1200w, assets/img/hd/bulletcam-1600.webp 1600w" sizes="(max-width:800px) 100vw, 1200px">
-<img src="assets/img/hd/bulletcam-1600.webp" alt="BulletCam Ajax, visuel officiel haute définition" width="1600" height="667" loading="lazy" decoding="async">
-</picture></figure>
-<div class="btns"><a class="btn btn-dark" href="gamme-video.html">Les deux lignes vidéo</a><a class="btn btn-outline" href="gamme-video.html#superior">Voir Superior</a></div>
+    video_home = ""
+    railsec = ""
+    process = f'''<section class="section"><div class="wrap prose">
+<h2 class="h2">De l’appel à la maintenance, dans l’ordre.</h2>
+<p>Vous décrivez le lieu. Nous venons. Nous notons les accès, les risques et les contraintes du bâtiment, y compris l’humidité, les coupures de courant et la couverture mobile quand elles comptent. Le devis détaille le matériel et la pose. Le jour de l’installation, nous posons, nous testons, nous réglons l’application et nous vous montrons comment vous en servir. Ensuite, le dépannage suit ce qui a été prévu au devis.</p>
+{sell.act(pre, "services-installation.html", "Lire le déroulé complet")}
 </div></section>'''
-
-    feat = pick(["hub-2", "motioncam-phod", "doorprotect", "bulletcam", "streetsiren", "keypad-touchscreen", "fireprotect-2-smoke-heat-co", "socket", "doorbell"])
-    railsec = f'''<section class="section flush-top"><div class="wrap">
-{rail(feat, pre, "Catalogue", "Matériel sur devis.", ("catalogue.html", f"Voir tout le catalogue ({n} références)"), lead="Packshots officiels Ajax Systems. Chaque fiche propose « Demander un devis » : pas de panier ni de paiement en ligne.")}
-</div></section>'''
-
-    process = f'''<section class="section bg-off"><div class="wrap">
-<div class="head reveal"><p class="eyebrow">Toute l’île, chez vous</p><h2 class="h2">De la prise de contact au suivi.</h2>
-<p class="lead">Nord, Sud, Est, Ouest et les Hauts. L’étude, la pose et le suivi se font à votre adresse.</p></div>
-<ol class="timeline reveal">
-<li><span class="dot">01</span><div><h3>Contact</h3><p>Échange sur votre besoin{(' au ' + biz('telephone')) if biz('telephone') else ''}.</p></div></li>
-<li><span class="dot">02</span><div><h3>Étude gratuite</h3><p>Visite chez vous ou échanges à distance.</p></div></li>
-<li><span class="dot">03</span><div><h3>Devis clair</h3><p>Sans engagement. Le prix est établi dans le devis.</p></div></li>
-<li><span class="dot">04</span><div><h3>Installation</h3><p>Pose, configuration, formation.</p></div></li>
-<li><span class="dot">05</span><div><h3>Suivi</h3><p>Maintenance selon le contrat défini ensemble.</p></div></li>
+    day = f'''<section class="section bg-off" id="quotidien"><div class="wrap day">
+<div>
+<h2 class="h2">Ce que vous faites vraiment, une fois le système posé.</h2>
+<ol class="day-steps" data-day>
+<li class="is-on"><h3>Vous armez en partant.</h3><p>Depuis le clavier, un badge ou l’application. Un groupe peut rester ouvert, un autre se fermer : un bureau et une réserve ne vivent pas au même horaire.</p></li>
+<li><h3>Une alerte arrive, avec de quoi comprendre.</h3><p>Le message dit quel appareil a parlé. S’il s’agit d’un MotionCam, Ajax décrit une série de photos, pas une simple sonnerie. Un détecteur sans photo ne prétend pas envoyer d’image.</p></li>
+<li><h3>La caméra peut lancer la sirène.</h3><p>Sur Baseline comme sur Superior, l’IA reconnaît personnes, véhicules et animaux et peut déclencher l’alarme. Le réglage se fait caméra par caméra, pendant l’étude.</p></li>
+<li><h3>Un scénario coupe ou allume.</h3><p>L’armement peut éteindre des lumières LightSwitch, ou une fuite détectée par LeaksProtect peut fermer une vanne WaterStop si l’étude a retenu ces appareils.</p></li>
 </ol>
+{sell.act(pre)}
+</div>
+<div class="phone" aria-hidden="true"><div class="phone-screen" data-screen="0"><b>Désarmé</b><span>Armer la maison</span></div><div class="phone-screen" data-screen="1"><b>Alerte</b><span>Ouverture · entrée</span></div><div class="phone-screen" data-screen="2"><b>Détection</b><span>Personne · véhicule · animal</span></div><div class="phone-screen" data-screen="3"><b>Scénario</b><span>Armement → lumières éteintes</span></div></div>
 </div></section>'''
 
     faq_home = "".join(f'<details class="faq"><summary>{E(q)}</summary><p>{E(a)}</p></details>' for q, a in FAQ[:4])
     faqsec = f'''<section class="section"><div class="wrap faq-home"><div class="head reveal"><h2 class="h2">Questions fréquentes.</h2></div>{faq_home}<p class="mt-28"><a class="link" href="faq.html">Toutes les questions</a></p></div></section>'''
     delay = biz("delai_reponse")
     cta_text = "Étude et devis gratuits. Partenaire agréé Ajax Systems." + (f" Réponse sous {delay}." if delay else "")
-    body = hero + video_home + why + duo + gammes + railsec + process + faqsec + cta(pre, text=cta_text)
+    body = hero + duo + why + process + day + gammes + faqsec + cta(pre, text=cta_text)
     website = {"@context": "https://schema.org", "@type": "WebSite", "name": BRAND, "url": SITE + "/", "inLanguage": "fr-FR",
                "publisher": {"@id": SITE + "/#entreprise"}}
     org = {"@context": "https://schema.org", "@type": "Organization", "name": BRAND, "url": SITE + "/",
@@ -185,7 +166,8 @@ def particuliers():
 <section class="section"><div class="wrap">
 {rail(pick(["hub-2", "doorprotect", "motioncam-phod", "homesiren", "keypad-touchscreen", "doorbell", "fireprotect-2-smoke-heat-co", "leaksprotect"]), pre, "Produits phares", "Matériel souvent recommandé.", ("catalogue.html", "Tout le catalogue"))}
 </div></section>
-{cta(pre, "Étude gratuite pour votre logement.", "Intervention à domicile sur toute l’île — devis sans engagement.", href="contact.html?profil=particulier#devis")}'''
+{cta(pre, "Étude gratuite pour votre logement.", "Intervention à domicile sur toute l’île. Devis sans engagement.", href="contact.html?profil=particulier#devis")}'''
+    body += sell.etude("alarme") + sell.pose("alarme") + sell.pourquoi("alarme")
     write_page("particuliers.html", "Alarme maison et appartement à La Réunion — Particuliers | AS974",
                "Alarme sans fil, photo-vérification, vidéo et domotique pour votre maison ou appartement à La Réunion. Étude gratuite et installation à domicile par Active Sécurité 974.",
                body, jsonld=[ld], priority="0.9")
@@ -234,7 +216,8 @@ def professionnels():
 <p class="statement reveal">Un suivi dans la durée. <span class="dim">Maintenance selon le contrat défini ensemble.{(" " + telesurv()) if telesurv() else ""}</span></p>
 <div class="btns reveal"><a class="btn btn-light" href="services.html">Voir les services</a></div>
 </div></section>
-{cta(pre, "Parlons de votre site.", "Étude professionnelle sur place — toute l’île.", "Demander une étude professionnelle", "contact.html?profil=professionnel#devis")}'''
+{cta(pre, "Parlons de votre site.", "Étude professionnelle sur place, sur toute l’île.", "Demander une étude professionnelle", "contact.html?profil=professionnel#devis")}'''
+    body += sell.etude("alarme") + sell.pose("alarme") + sell.pourquoi("alarme")
     write_page("professionnels.html", "Sécurité professionnelle Ajax à La Réunion — Superior et EN54 | AS974",
                "Sécurité pour commerces, bureaux et plusieurs sites à La Réunion : ligne vidéo Superior, incendie EN54 et applications Ajax PRO. Étude sur place par Active Sécurité 974.",
                body, jsonld=[ld, video_ld("o8VNaCPCydE", "De la détection à la réaction", "Les caméras Ajax peuvent lancer une réaction automatique.")], priority="0.9")
@@ -341,7 +324,8 @@ def gamme_video():
 <section class="section bg-off"><div class="wrap">
 {rail(sup[:8], pre, "Superior", "Caméras HLVF et NVR pour les sites exigeants.", ("catalogue-video.html?gamme=superior#references", "Toute la ligne Superior"))}
 </div></section>
-{cta(pre, "Un projet vidéo ?", "Étude chez vous, sur toute l’île. Baseline ou Superior, selon le site.")}'''
+{cta(pre, "Un projet vidéo ?", "Étude chez vous, sur toute l’île. Baseline ou Superior, selon le site.")}
+{sell.blocs("video", prods, pre)}'''
     write_page("gamme-video.html",
                "Vidéosurveillance Ajax à La Réunion — lignes Baseline et Superior | AS974",
                "Deux lignes vidéo Ajax, Baseline et Superior. Les deux reconnaissent personnes, véhicules et animaux et peuvent déclencher l’alarme. Caméras, NVR et étude à La Réunion.",
@@ -387,7 +371,8 @@ def gamme_en54():
 {rail(prods[:8], pre, "Catalogue EN54", "Les références de la ligne.", ("catalogue-incendie.html", "Tout le catalogue incendie EN54"))}
 <p class="mt-28">La ligne Type 4 d’Ajax est une autre offre professionnelle, distincte de l’EN54. <a class="link" href="catalogue-incendie.html?gamme=type4#references">Voir la ligne Type 4</a></p>
 </div></section>
-{cta(pre, "Un site professionnel à protéger.", "Étude incendie chez vous, sur toute l’île de La Réunion.", "Demander une étude", "contact.html?profil=professionnel#devis")}'''
+{cta(pre, "Un site professionnel à protéger.", "Étude incendie chez vous, sur toute l’île de La Réunion.", "Demander une étude", "contact.html?profil=professionnel#devis")}
+{sell.blocs("incendie", prods, pre)}'''
     write_page("gamme-incendie.html",
                "Incendie EN54 Ajax à La Réunion — centrale, détecteurs, déclencheurs | AS974",
                "Ligne professionnelle Ajax EN54 à La Réunion : centrale Fire Hub, détecteurs, déclencheurs manuels et diffuseurs. Étude pour commerces et bâtiments, par Active Sécurité 974.",
@@ -450,6 +435,24 @@ def gamme(g):
 <ul class="index-list reveal">{idx}</ul>
 </div></section>
 {cta(pre)}'''
+    kind = {"alarme": "alarme", "domotique": "domotique"}.get(g, "alarme")
+    extra_cfg = ""
+    if g == "domotique":
+        devices = []
+        for p in prods:
+            if not (p["slug"].startswith("lightswitch") or p["slug"].startswith("outlet")):
+                continue
+            ims = product_images(p)
+            images = {}
+            for col, meta in ims.items():
+                if not col:
+                    continue
+                _ss, fb = img_urls(meta, pre)
+                images[col] = fb
+            devices.append({"slug": p["slug"], "name": p["name"], "model": p["model"],
+                            "kind": "prise" if p["slug"].startswith("outlet") else "interrupteur", "images": images})
+        extra_cfg = sell.configurateur(devices)
+    body = body + extra_cfg + sell.blocs(kind, prods, pre)
     lds = [ld]
     if g == "domotique":
         lds.append(video_ld("o8VNaCPCydE", "De la détection à la réaction", "Les caméras Ajax peuvent lancer une réaction automatique."))
@@ -466,6 +469,21 @@ CAT_LEADS = {
 }
 CAT_IMG = {"centrales": ("starterkit", "Blanc"), "alarme": ("motioncam-phod", "Noir"), "incendie": ("en54-fire-hub-jeweller", "Blanc"),
            "video": ("turretcam", "Blanc"), "domotique": ("socket", "Blanc"), "accessoires": ("button", "Blanc")}
+
+def gamme_acces():
+    pre = ""
+    prods = [p for p in ALL if p["category"] in ("Claviers", "Boutons & télécommandes") or p["slug"].startswith("tag-") or p["slug"].startswith("pass-")]
+    cr, ld = crumbs(pre, [(None, "Contrôle d’accès")])
+    body = f'''<section class="phero"><div class="wrap">
+{cr}<h1 class="h1">Qui arme, qui entre, qui est prévenu.</h1>
+<p class="lead">Claviers, badges Tag et Pass, télécommandes et groupes d’utilisateurs. Le contrôle d’accès Ajax sert à identifier les personnes sur le système. Une gâche ou un portail ne s’ajoutent que si l’étude retient un relais compatible.</p>
+<div class="btns"><a class="btn btn-primary btn-lg" href="contact.html#devis">Demander une étude des accès</a></div>
+</div></section>
+{sell.blocs("acces", prods, pre)}'''
+    write_page("gamme-acces.html", "Contrôle d’accès Ajax à La Réunion — claviers, Tag, Pass | AS974",
+               "Claviers, badges Tag et Pass, télécommandes Ajax. Droits utilisateurs et groupes, étudiés et posés par Active Sécurité 974 sur toute l’île.",
+               body, jsonld=[ld], priority="0.8")
+
 
 def catalogue_index():
     pre = ""
@@ -521,7 +539,8 @@ def catalogue_cat(g):
 <section class="section flush-top" id="references"><div class="wrap">
 {filter_grid(prods, pre)}
 </div></section>
-{cta(pre, "Besoin d’aide pour composer votre système ?", "Étude gratuite · Partenaire agréé · Toute l’île · Intervention sur site.", "Demander un devis")}'''
+{sell.blocs({"alarme":"alarme","video":"video","incendie":"incendie","domotique":"domotique","centrales":"alarme","accessoires":"accessoires"}.get(g,"alarme"), prods, pre)}
+{cta(pre, "Besoin d’aide pour composer votre système ?", "Étude gratuite. Partenaire agréé. Intervention sur site, sur toute l’île.", "Demander un devis")}'''
     write_page(f"catalogue-{g}.html", f"{label} — catalogue Ajax Systems sur devis ({len(prods)} réf.) | AS974",
                clip(f"{label} : {len(prods)} références Ajax Systems sur devis. {GROUP[g]['intro']} Installation par Active Sécurité 974 à La Réunion."),
                body, jsonld=[ld], priority="0.8")
@@ -572,7 +591,10 @@ def services():
                    f"{h1} par Active Sécurité 974, chez vous, sur toute l’île de La Réunion.",
                    f'''<section class="phero"><div class="wrap phero-split">{cr2}<div><h1 class="h1">{h1}</h1><p class="lead">{lead}</p></div>
 <div class="phero-media">{stage_img(shot[0], shot[1], pre, SZ_SPLIT, eager=True)}</div></div></section>
-<section class="section flush-top"><div class="wrap"><ol class="numlist">{lis}</ol></div></section>
+<section class="section flush-top"><div class="wrap prose"><ol class="numlist">{lis}</ol>
+<p>Chaque étape se conclut par une décision : continuer, modifier le périmètre, ou s’arrêter. Rien n’est facturé tant que le devis n’est pas accepté. Les coordonnées de contact s’affichent ici dès qu’elles sont renseignées. En attendant, le formulaire de demande d’étude reste le moyen de nous écrire.</p>
+</div></section>
+{sell.pose("alarme") if "installation" in path else sell.etude("alarme") if "etude" in path else sell.pourquoi("alarme")}
 {cta(pre)}''', jsonld=[ld2], priority="0.6")
     write_page("services.html", "Services : étude, installation, maintenance — Active Sécurité 974",
                "Étude et devis gratuits, installation et paramétrage, maintenance selon contrat : Active Sécurité 974 vous accompagne chez vous, partout à La Réunion.",

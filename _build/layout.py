@@ -20,6 +20,7 @@ GAMMES_MENU = [
     ("gamme-incendie.html", "Incendie EN54", "Ligne professionnelle"),
     ("gamme-video.html", "Vidéosurveillance", "Caméras, NVR, sonnette"),
     ("gamme-domotique.html", "Domotique", "Éclairage, prises, fuites d’eau"),
+    ("gamme-acces.html", "Contrôle d’accès", "Claviers, badges, utilisateurs"),
 ]
 PAGES = []  # (path, priority) pour le sitemap
 
@@ -142,6 +143,7 @@ Interventions chez le client, sur toute l’île de La Réunion<br>
 <li><a href="{pre}gamme-incendie.html">Incendie EN54</a></li>
 <li><a href="{pre}gamme-video.html">Vidéosurveillance</a></li>
 <li><a href="{pre}gamme-domotique.html">Domotique</a></li>
+<li><a href="{pre}gamme-acces.html">Contrôle d’accès</a></li>
 <li><a href="{pre}catalogue.html">Catalogue complet</a></li>
 </ul></div>
 <div><h2>Aide</h2><ul>

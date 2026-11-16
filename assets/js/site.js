@@ -131,6 +131,12 @@
       if(history.replaceState&&c){var u=new URL(location.href);u.searchParams.set("couleur",c);history.replaceState(null,"",u)}
     }
     $$('input[name="couleur"]').forEach(function(r){r.addEventListener("change",function(){setColor(r.value,true)})});
+    var variant=$("#pdp-variant");
+    if(variant) variant.addEventListener("change",function(){
+      var url=variant.value; if(!url) return;
+      if(current) url+=(url.indexOf("?")>=0?"&":"?")+"couleur="+encodeURIComponent(current);
+      location.href=url;
+    });
     if(current)setColor(current,false); else $$(".js-quote").forEach(function(a){a.href=quoteUrl()});
     function updAdd(){if(!addb)return;var on=has(P.slug);addb.setAttribute("aria-pressed",on?"true":"false");addb.textContent=on?"Dans ma sélection devis ✓":"Ajouter à ma sélection devis"}
     if(addb){addb.addEventListener("click",function(){
@@ -184,6 +190,87 @@
         return;
       }
       try{localStorage.removeItem(KEY)}catch(x){}
+    });
+  }
+  /* ---------- vidéos : autoplay hero, lecture à l'arrivée, reduced-motion ---------- */
+  $$("video.js-video").forEach(function(v){
+    if(reduce){v.removeAttribute("autoplay"); try{v.pause()}catch(e){} return}
+    var start=function(){var p=v.play(); if(p&&p.catch)p.catch(function(){})};
+    if(v.classList.contains("is-hero")){start(); return}
+    if(!("IntersectionObserver" in window)) return;
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting) start(); else v.pause(); });
+    },{threshold:.5});
+    io.observe(v);
+  });
+
+  /* ---------- quotidien : l'écran suit l'étape visible ---------- */
+  var day=document.querySelector("[data-day]");
+  if(day){
+    var steps=$$("li", day), phone=document.querySelector(".phone");
+    function show(i){
+      steps.forEach(function(s,k){s.classList.toggle("is-on", k===i)});
+      if(phone) phone.setAttribute("data-on", String(i));
+    }
+    if(reduce || !("IntersectionObserver" in window)) show(0);
+    else {
+      var dio=new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting) show(steps.indexOf(e.target)); });
+      },{threshold:.6});
+      steps.forEach(function(s){dio.observe(s)});
+    }
+  }
+
+  /* ---------- configurateur LightSwitch / Outlet ---------- */
+  var cfg=document.getElementById("cfg"), cfgData=document.getElementById("cfg-data");
+  if(cfg && cfgData){
+    var C=JSON.parse(cfgData.textContent);
+    var seats=document.getElementById("cfg-seats"), slots=document.getElementById("cfg-slots");
+    var stage=document.getElementById("cfg-stage"), cname=document.getElementById("cfg-color-name");
+    var color="Blanc";
+    function devs(){return C.devices}
+    function paint(){
+      var n=+seats.value, html="", imgs="";
+      for(var i=0;i<n;i++){
+        var opts=devs().map(function(d,ix){return '<option value="'+ix+'"'+(ix===Math.min(i,devs().length-1)?'':'')+'>'+esc(d.name)+'</option>'}).join("");
+        html+='<label>Poste '+(i+1)+' <select class="cfg-slot">'+opts+'</select></label>';
+      }
+      slots.innerHTML=html;
+      $$(".cfg-slot", slots).forEach(function(sel,i){ sel.selectedIndex=Math.min(i, sel.options.length-1); sel.addEventListener("change", draw); });
+      draw();
+    }
+    function draw(){
+      var parts=[], imgs="";
+      $$(".cfg-slot", slots).forEach(function(sel){
+        var d=devs()[+sel.value]; if(!d) return;
+        var src=d.images[color]||d.images.Blanc||"";
+        parts.push(d.name+" — "+color+(d.model?" (réf. "+d.model+")":""));
+        if(src) imgs+='<figure><img src="'+src+'" alt="'+esc(d.name+" "+color)+'"><figcaption>'+esc(d.name)+'</figcaption></figure>';
+      });
+      stage.innerHTML=imgs||"<p>Visuel non disponible pour ce coloris.</p>";
+      cfg._parts=parts;
+    }
+    $$(".cfg-color", cfg).forEach(function(b){
+      b.addEventListener("click", function(){
+        color=b.getAttribute("data-color");
+        $$(".cfg-color", cfg).forEach(function(x){x.setAttribute("aria-pressed", x===b?"true":"false")});
+        var meta=C.colors.filter(function(c){return c.name===color})[0];
+        if(cname&&meta) cname.textContent=meta.name+" · "+meta.ral+". Le RAL est une approximation indiquée par Ajax.";
+        draw();
+      });
+    });
+    seats.addEventListener("change", paint);
+    paint();
+    var qbtn=document.getElementById("cfg-quote");
+    if(qbtn) qbtn.addEventListener("click", function(){
+      var l=load();
+      (cfg._parts||[]).forEach(function(label){
+        var d=devs().filter(function(x){return label.indexOf(x.name)===0})[0];
+        if(!d) return;
+        l.push({s:d.slug,n:d.name+" ("+color+")",r:d.model||"",c:color});
+      });
+      save(l);
+      location.href="contact.html#devis";
     });
   }
 })();
