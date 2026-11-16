@@ -67,7 +67,7 @@ GROUPS = [
      ["Centrales", "Kits de démarrage", "Prolongateurs de portée"]),
     ("alarme", "Alarme intrusion", "Détecteurs, claviers, sirènes et commandes pour protéger chaque accès.",
      ["Détecteurs de mouvements", "Détecteurs d'ouverture", "Détecteurs de bris de glace", "Détecteurs sismiques", "Claviers", "Sirènes", "Boutons & télécommandes"]),
-    ("incendie", "Incendie", "Détecteurs de fumée, de chaleur et de CO, déclencheurs manuels et signalisation.",
+    ("incendie", "Incendie EN54", "Ligne professionnelle Ajax EN54 : centrale, détecteurs, déclencheurs, sirènes, flashs et modules pour les bâtiments.",
      ["Détecteurs d'incendie", "Dispositifs d'alarme incendie", "Déclencheurs manuels d'alarme"]),
     ("video", "Vidéosurveillance", "Caméras IP, enregistreurs, sonnette et interphonie reliés à l’alarme.",
      ["Caméras filaires", "Caméras Wi-Fi", "Enregistreurs vidéo", "Sonnettes", "Modules d'interphonie"]),
@@ -118,8 +118,18 @@ def load_catalogue():
         # Incendie : la page dédiée est la ligne EN54. Les FireProtect grand public
         # (Residence Line) complètent l'alarme Baseline. Source : catalogues Ajax.
         fire_cats = {"Détecteurs d'incendie", "Dispositifs d'alarme incendie", "Déclencheurs manuels d'alarme"}
-        if p["gamme"] == "EN54 Line" or str(p["slug"]).startswith("en54-"):
+        slug = str(p["slug"])
+        if p["gamme"] == "EN54 Line" or slug.startswith("en54-"):
             p["group"] = "incendie"
+        elif slug.startswith("manualcallpoint-"):
+            # Ajax les présente sur la page EN54. Seule la version rouge est certifiée EN 54-25.
+            p["group"] = "incendie"
+        elif p["gamme"] == "Type4 Line" or slug.startswith("type4-"):
+            # Ligne distincte, pas EN 54 : hors du catalogue Incendie.
+            if p["category"] in ("Centrales", "Prolongateurs de portée", "Kits de démarrage"):
+                p["group"] = "centrales"
+            else:
+                p["group"] = "accessoires"
         elif p["gamme"] == "Residence Line" and p["category"] in fire_cats:
             p["group"] = "alarme"
         feats = [f.strip().rstrip(".") for f in (p["feature_1"], p["feature_2"], p["feature_3"]) if f and f.strip() and not NOTE_PAT.search(f)]

@@ -39,6 +39,11 @@ def fiche(p, all_products):
     path = f"produits/{p['slug']}.html"
     g = GROUP[p["group"]]
     cr, ld_crumbs = crumbs(pre, [("catalogue.html", "Catalogue"), (f"catalogue-{p['group']}.html", g["label"]), (None, p["name"])])
+    complement = ""
+    if p["group"] == "alarme" and p["category"] == "Détecteurs d'incendie":
+        complement = ('<p class="note">Ce détecteur complète une alarme intrusion Baseline. '
+                      'Il n’appartient pas à la ligne EN54. '
+                      f'<a href="{pre}gamme-alarme.html#completer">Compléter votre alarme</a>.</p>')
     ims = product_images(p)
     p["colors_ok"] = [c for c in p["colors_ok"] if c in ims]
     cur = p["default_color"] if p["default_color"] in p["colors_ok"] else (p["colors_ok"][0] if p["colors_ok"] else "")
@@ -108,6 +113,7 @@ def fiche(p, all_products):
 {f'<ul class="benefits">{benefits}</ul>' if benefits else ''}
 {variant}
 {colors}
+{complement}
 {avail}
 {video_ai_note(p, pre)}
 {fiche_video(p, pre)}

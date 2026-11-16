@@ -76,7 +76,7 @@ def home():
 
     chapters = [
         ("alarme", "gamme-alarme.html", "Chaque accès sous contrôle.", "Détection d’intrusion, commandes et sirènes Ajax Systems. Baseline pour l’essentiel sans fil ; Superior pour les architectures plus exigeantes.", "motionprotect", "Blanc", ""),
-        ("incendie", "gamme-incendie.html", "Incendie, du logement au site.", "FireProtect en complément de l’alarme. Ligne EN54 pour les bâtiments professionnels.", "en54-fire-hub-jeweller", "Blanc", ""),
+        ("incendie", "gamme-incendie.html", "Incendie EN54, pour les bâtiments.", "Centrale, détecteurs, déclencheurs, sirènes et modules certifiés selon les normes publiées par Ajax. Pas les détecteurs de logement.", "en54-fire-hub-jeweller", "Blanc", ""),
         ("video", "gamme-video.html", "Voir, pour lever le doute.", "Caméras, sonnette et enregistreurs, reliés à l’alarme.", "turretcam", "Noir", "dark"),
         ("domotique", "gamme-domotique.html", "Le confort, dans la même app.", "Prises, relais, éclairage et alertes de fuite d’eau.", "socket", "Blanc", ""),
     ]
@@ -338,45 +338,36 @@ def gamme_video():
 
 def gamme_en54():
     pre = ""
-    prods = [p for p in ALL if p["gamme"] == "EN54 Line" or str(p["slug"]).startswith("en54-")]
+    prods = [p for p in ALL if p["gamme"] == "EN54 Line" or str(p["slug"]).startswith("en54-") or str(p["slug"]).startswith("manualcallpoint-")]
     cr, ld = crumbs(pre, [("professionnels.html", "Professionnels"), (None, "Incendie EN54")])
-    hubs = [p for p in prods if p["category"] == "Centrales"]
-    dets = [p for p in prods if p["category"] == "Détecteurs d'incendie"]
-    sound = [p for p in prods if "sounder" in p["slug"] or "vad" in p["slug"] or p["category"] == "Dispositifs d'alarme incendie"]
-    calls = [p for p in prods if "call" in p["slug"] or p["category"] == "Déclencheurs manuels d'alarme"]
+    arch = f'''<section class="section"><div class="wrap prose">
+<h2 class="h2">Une ligne pour les bâtiments, pas pour équiper une maison.</h2>
+<p>Cette page décrit l’EN54 Line d’Ajax : le système d’alarme incendie sans fil que le fabricant destine aux bâtiments commerciaux et municipaux, aux entreprises et aux prescripteurs. Les détecteurs de la ligne s’appellent EN54 FireProtect. Ce n’est pas la gamme de logement.</p>
+<p>L’architecture publiée par Ajax part de la centrale EN54 Fire Hub Jeweller, à écran tactile. Autour, les détecteurs ponctuels de chaleur et de fumée, certains avec avertisseur, les sirènes, les dispositifs visuels, l’indicateur déporté, le module à deux entrées et deux sorties, le prolongateur EN54 Fire ReX, et les batteries internes 24 h ou 72 h présentes dans le catalogue de la ligne. Le déclencheur manuel est sur la même page officielle. Ajax écrit que seule la version rouge est certifiée EN 54-25.</p>
+<p>La centrale porte les communicateurs : Jeweller pour les états et les alarmes, Wings et TurboWings pour les gros paquets. Ajax annonce une portée radio jusqu’à 1 800 m, le chiffrement bidirectionnel, et une alarme vers les diffuseurs en trois secondes. Vers le réseau, Ethernet ou Wi-Fi en voie principale, deux SIM 2G/4G en secours. Les événements peuvent partir vers un centre de télésurveillance en SurGard ou en SIA DC-09. Ajax indique aussi que cette centrale, certifiée EN 50131 Grade 2, peut recevoir des appareils d’intrusion, de vidéo et d’automatisation.</p>
+<p class="src-note"><a href="https://ajax.systems/fr/solutions/en-54-certified-fire-and-life-safety-solution/" rel="noopener">Système certifié EN 54, ajax.systems</a></p>
+{sell.act(pre, "contact.html?profil=professionnel#devis", "Demander une étude EN54")}
+</div></section>
+<section class="section bg-off"><div class="wrap prose">
+<h2 class="h2">De l’étude à la maintenance.</h2>
+<p>L’étude se fait sur le bâtiment : circulations, locaux, issues, et ce que le site doit vraiment couvrir. Nous ne partons pas d’un détecteur de maison posé au plafond d’un ERP. Le devis décrit la centrale, les détecteurs, les diffuseurs, les déclencheurs, les modules et la mise en service. Aucun prix n’est affiché ici.</p>
+<p>La pose est sans fil, comme Ajax la présente : appareils jumelés dans les applications, tests, zones, et formation des personnes qui liront l’écran tactile. La mise en service vérifie que l’alarme part, que les diffuseurs parlent, et que les défauts remontent. Ensuite, Ajax décrit une maintenance suivie dans les applications, avec l’avertissement de pile faible. Le contrat de visite, lui, se décide dans le devis, pas par une formule toute faite.</p>
+{sell.act(pre, "services-maintenance.html", "Voir le suivi après la mise en service")}
+</div></section>'''
     body = f'''<section class="phero"><div class="wrap phero-split crumbs-first">
-<div class="reveal">{cr}<p class="eyebrow">Professionnels · EN54 Line</p><h1 class="h1">Incendie, du logement au bâtiment.</h1>
-<p class="lead">Deux usages distincts chez Ajax : les détecteurs FireProtect pour compléter une alarme de logement, et la ligne EN54 pour les bâtiments professionnels.</p>
-<div class="btns"><a class="btn btn-primary btn-lg" href="contact.html?profil=professionnel#devis">Étude incendie professionnelle</a><a class="btn btn-outline btn-lg" href="catalogue-incendie.html">Voir les {len(prods)} références EN54</a></div></div>
-<div class="phero-media reveal d1">{stage_img("en54-fire-hub-jeweller", "Blanc", pre, SZ_SPLIT, eager=True)}</div>
+<div>{cr}<p class="eyebrow">Professionnels · EN54 Line</p><h1 class="h1">Incendie certifié EN 54, pour les bâtiments.</h1>
+<p class="lead">Centrale, détecteurs EN54 FireProtect, déclencheurs manuels, sirènes, flashs et modules. Pour les ERP, les entreprises, les bâtiments et les prescripteurs.</p>
+<div class="btns"><a class="btn btn-primary btn-lg" href="contact.html?profil=professionnel#devis">Demander une étude EN54</a><a class="btn btn-outline btn-lg" href="catalogue-incendie.html">Voir les {len(prods)} références de la ligne</a></div></div>
+<div class="phero-media">{stage_img("en54-fire-hub-jeweller", "Blanc", pre, SZ_SPLIT, eager=True)}</div>
 </div></section>
-<section class="section" id="logement"><div class="wrap">
-<div class="head reveal"><h2 class="h2">Particuliers : FireProtect en complément de votre alarme.</h2>
-<p class="lead">Fumée, chaleur et monoxyde de carbone, dans la même application que l’alarme intrusion. Ce n’est pas la ligne EN54 des bâtiments.</p>
-<div class="fire-visual">{stage_img("fireprotect-2-smoke-heat-co", "Blanc", pre, "(max-width:700px) 80vw, 360px")}</div>
-<p class="fire-cta"><a class="btn btn-dark" href="gamme-alarme.html">Voir le complément alarme</a></p></div>
-</div></section>
-<section class="section bg-off" id="en54"><div class="wrap">
-<div class="head reveal"><h2 class="h2">Professionnels : la ligne EN54.</h2>
-<p class="lead">Ajax présente cette ligne comme un système d’alarme incendie sans fil conçu selon EN 54, pour les bâtiments commerciaux et municipaux.</p></div>
-<div class="feature-grid">
-<article class="feature"><h3>Centrale</h3><p>EN54 Fire Hub Jeweller. Ajax indique les normes EN 54-2, EN 54-4, EN 54-13, EN 54-21, EN 54-25 et EN 50131 (Grade 2). Pilotage par l’écran tactile ou les applications Ajax.</p></article>
-<article class="feature"><h3>Détecteurs</h3><p>EN54 FireProtect chaleur, fumée, et versions avec diffuseur. Normes citées par Ajax : EN 54-3, EN 54-5, EN 54-7, EN 54-25. Détection de fumée HazeFlow 2 et détection de chaleur.</p></article>
-<article class="feature"><h3>Alerte</h3><p>Diffuseurs, indicateurs visuels (VAD) et déclencheurs manuels. Ajax précise que seule la version rouge du ManualCallPoint est certifiée EN 54-25.</p></article>
-<article class="feature"><h3>Autour de la centrale</h3><p>EN54 Fire ReX Jeweller prolonge la portée. Le module EN54 I/O (2×2) et les batteries internes 24 h ou 72 h complètent le système.</p></article>
-</div>
-<p class="src-note"><a href="https://ajax.systems/fr/solutions/en-54-certified-fire-and-life-safety-solution/" rel="noopener">Ligne EN54 sur ajax.systems</a></p>
-</div></section>
-<section class="section bg-off"><div class="wrap">
-{rail(prods[:8], pre, "Catalogue EN54", "Les références de la ligne.", ("catalogue-incendie.html", "Tout le catalogue incendie EN54"))}
-<p class="mt-28">La ligne Type 4 d’Ajax est une autre offre professionnelle, distincte de l’EN54. <a class="link" href="catalogue-incendie.html?gamme=type4#references">Voir la ligne Type 4</a></p>
-</div></section>
-{cta(pre, "Un site professionnel à protéger.", "Étude incendie chez vous, sur toute l’île de La Réunion.", "Demander une étude", "contact.html?profil=professionnel#devis")}
+{arch}
 {sell.blocs("incendie", prods, pre)}'''
+    itemlist = {"@context": "https://schema.org", "@type": "ItemList", "name": "Ajax EN54 Line",
+                "itemListElement": [{"@type": "ListItem", "position": i, "name": p["name"], "url": f"{SITE}/produits/{p['slug']}.html"} for i, p in enumerate(prods, 1)]}
     write_page("gamme-incendie.html",
                "Incendie EN54 Ajax à La Réunion — centrale, détecteurs, déclencheurs | AS974",
-               "Ligne professionnelle Ajax EN54 à La Réunion : centrale Fire Hub, détecteurs, déclencheurs manuels et diffuseurs. Étude pour commerces et bâtiments, par Active Sécurité 974.",
-               body, jsonld=[ld], priority="0.8")
+               "Ligne professionnelle Ajax EN54 pour ERP, entreprises et bâtiments à La Réunion : centrale Fire Hub, détecteurs, déclencheurs, sirènes et modules. Étude par Active Sécurité 974.",
+               body, jsonld=[ld, itemlist], priority="0.8")
 
 def gamme(g):
     if g == "video":
@@ -402,11 +393,13 @@ def gamme(g):
     extra = ""
     if g == "alarme":
         fire = [p for p in ALL if p["group"] == "alarme" and p["category"] == "Détecteurs d'incendie"]
-        extra = f'''<section class="section bg-off"><div class="wrap">
-<div class="head reveal"><p class="eyebrow">Complément Baseline</p><h2 class="h2">Détecteurs incendie pour le logement.</h2>
-<p class="lead">Fumée, chaleur et monoxyde de carbone dans la même application que l’alarme. Pour un bâtiment, la ligne EN54 est à part.</p></div>
-{rail(fire[:6], pre, "Residence Line", "À ajouter à une alarme Baseline.", ("catalogue-alarme.html?sous=detecteurs-d-incendie#references", "Tous les détecteurs incendie logement"))}
-<p class="mt-28"><a class="link" href="gamme-incendie.html">Système professionnel EN54</a></p>
+        extra = f'''<section class="section bg-off" id="completer"><div class="wrap prose">
+<h2 class="h2">Compléter votre alarme.</h2>
+<p>Les FireProtect, FireProtect Plus et FireProtect 2 signalent la fumée, la chaleur ou le monoxyde selon le modèle, dans la même application que l’alarme intrusion. Ils complètent une protection Baseline. Ils ne constituent pas un système incendie de bâtiment, et ils n’ont pas de page incendie : un ERP se traite avec la ligne EN54, ailleurs sur le site, pour les prescripteurs.</p>
+</div>
+<div class="wrap">
+{rail(fire, pre, "Avec l’alarme", "Les détecteurs de logement du catalogue.", ("catalogue-alarme.html?sous=detecteurs-d-incendie#references", "Toutes ces références dans le catalogue alarme"))}
+{sell.act(pre, "contact.html#devis", "Les ajouter à une étude d’alarme")}
 </div></section>'''
     if g == "domotique":
         extra = f'''<section class="section"><div class="wrap">
@@ -462,7 +455,7 @@ def gamme(g):
 CAT_LEADS = {
     "centrales": "Le cœur de votre système Ajax Systems : centrales, kits et prolongateurs de portée. Dimensionnés et installés par Active Sécurité 974 sur toute l’île.",
     "alarme": "Détecteurs, claviers, sirènes et commandes. Baseline pour l’essentiel sans fil ; Superior pour les projets exigeants.",
-    "incendie": "Ligne professionnelle Ajax EN54 : centrale, détecteurs, déclencheurs et diffuseurs. Les FireProtect du logement sont dans l’alarme intrusion.",
+    "incendie": "Uniquement la ligne professionnelle Ajax EN54 : centrale, détecteurs, déclencheurs, sirènes, flashs et modules. Les détecteurs de logement sont dans l’alarme.",
     "video": "Caméras, sonnette et NVR Ajax Systems, intégrés à l’écosystème alarme, sur devis et installation AS974.",
     "domotique": "Prises, relais, éclairage, détection de fuite et qualité de l’air : automatisez le quotidien dans la même application.",
     "accessoires": "Modules d’intégration, alimentations, boîtiers et accessoires de pose pour compléter et raccorder votre installation.",
@@ -524,6 +517,8 @@ def catalogue_index():
 def catalogue_cat(g):
     pre = ""
     prods = group_products(g)
+    if g == "incendie":
+        prods = [p for p in prods if p["gamme"] == "EN54 Line" or str(p["slug"]).startswith("en54-") or str(p["slug"]).startswith("manualcallpoint-")]
     label = GROUP[g]["label"]
     cr, ld = crumbs(pre, [("catalogue.html", "Catalogue"), (None, label)])
     chips = "".join(f'<a class="chip" href="?sous={slugify(c)}#references">{E(c)}<span class="n">{sum(1 for p in prods if p["category"] == c)}</span></a>' for c in GROUP[g]["cats"] if any(p["category"] == c for p in prods))
@@ -720,8 +715,8 @@ FAQ = [
      "Chez le client, sur toute l’île : Saint-Denis, Saint-Pierre, Saint-Paul, Le Port, Saint-Benoît, les autres communes et les Hauts. Il n’y a pas de local ouvert au public."),
     ("Baseline et Superior vidéo ont-ils la même intelligence artificielle ?",
      "Oui. Ajax équipe les deux lignes d’une IA qui reconnaît les personnes, les véhicules et les animaux, et peut déclencher l’alarme. Superior ajoute une IA enrichie, des optiques P-Iris et des enregistreurs NVR H2D."),
-    ("Les détecteurs FireProtect remplacent-ils un système incendie EN 54 ?",
-     "Non. Les FireProtect et FireProtect 2 de la Residence Line complètent une alarme de logement. Le système professionnel certifié EN 54 est la ligne EN54 : centrale Fire Hub, détecteurs, déclencheurs manuels et diffuseurs."),
+    ("Où sont les détecteurs de fumée pour une maison ?",
+     "Sur la page Alarme, dans « Compléter votre alarme ». FireProtect, FireProtect Plus et FireProtect 2 ne font pas partie de la page Incendie. Cette page est réservée à la ligne professionnelle EN54, pour les bâtiments."),
     ("Y a-t-il un prix sur le site ?",
      "Non. Chaque référence est sur devis. L’étude et le devis sont gratuits, sans engagement, après un échange ou une visite chez vous."),
     ("Quelles applications pilotent le système ?",

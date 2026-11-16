@@ -125,7 +125,7 @@ Site : {SITE}/
 
 ## À retenir
 Les lignes vidéo Baseline et Superior reconnaissent toutes deux personnes, véhicules et animaux, et peuvent déclencher l’alarme. Superior ajoute une IA enrichie, des optiques P-Iris et les NVR H2D.
-Les FireProtect / FireProtect 2 (Residence Line) complètent une alarme de logement. Le système incendie professionnel est la ligne EN54.
+Les FireProtect, FireProtect Plus et FireProtect 2 complètent une alarme de logement (page Alarme). Ils n’ont pas de page incendie. La page Incendie est uniquement la ligne professionnelle EN54.
 Coordonnées légales non publiées tant qu’elles ne sont pas renseignées.
 """
     open(os.path.join(ROOT, "llms.txt"), "w", encoding="utf-8").write(llms)
