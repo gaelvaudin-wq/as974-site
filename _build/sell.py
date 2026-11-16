@@ -70,13 +70,13 @@ def performances(kind):
 
 def etude(kind):
     sujet = {
-        "video": "les angles morts, la nuit, l’alimentation des caméras et ce qui doit, ou non, déclencher l’alarme",
-        "incendie": "le bâtiment, les circulations, les locaux techniques et les obligations du site, pas un logement traité comme une maison",
-        "domotique": "les circuits d’éclairage, le neutre disponible ou non, les prises à mesurer et les arrivées d’eau",
-        "acces": "qui doit armer, qui ne doit pas tout voir, et quelles zones se séparent",
-        "alarme": "chaque accès, chaque volume, les animaux, les ouvrants et la qualité radio réelle",
-    }.get(kind, "les accès, les volumes et la façon dont le lieu est occupé")
-    short = f"<p>Nous venons voir {sujet}. Le devis gratuit décrit ensuite seulement ce que le lieu demande.</p>"
+        "video": "les angles, la nuit et ce qui doit lancer l’alarme",
+        "incendie": "le bâtiment, les circulations et les locaux techniques",
+        "domotique": "les circuits, le neutre et les arrivées d’eau",
+        "acces": "qui arme, et quelles zones se séparent",
+        "alarme": "les accès, les volumes et la radio réelle",
+    }.get(kind, "les accès et la façon dont le lieu est occupé")
+    short = f"<p>Nous venons voir {sujet}. Le devis ne décrit que ce que le lieu demande.</p>"
     more = "<p>L’analyse porte sur les risques et les accès, pas sur une liste d’appareils à placer partout. Deux maisons voisines ne donnent pas le même chantier. Des photos peuvent préparer la visite. Elles ne remplacent pas un test radio.</p>"
     return band("L’étude se fait chez vous, avant le devis.", short, more, frise(), act("", "contact.html#devis", "Prendre rendez-vous pour l’étude"), True)
 
@@ -156,7 +156,7 @@ def configurateur(devices):
     return f'''<section class="section" id="configurateur"><div class="wrap">
 <h2 class="h2">Composer un ensemble d’interrupteurs et de prises.</h2>
 <div class="prose"><p>Choisissez le nombre de postes, le modèle et le coloris. La composition part dans le devis, sans prix.</p>
-<details class="more"><summary>En savoir plus</summary><p>Huit teintes de panneau : noir, graphite, blanc, ivoire, fumée, huître, gris et olive. Un poste seul se pose sans cadre. Les cadres existent en 2, 3, 4 et 5 postes. Les prises ne se combinent qu’à l’horizontale.</p></details>
+<details class="more"><summary>En savoir plus</summary><p>Huit teintes de panneau. Un poste seul se pose sans cadre. Les cadres existent en 2, 3, 4 et 5 postes. Ajax ne publie pas, dans les fichiers repris ici, une photo de cadre à trois postes seule. Les prises ne se combinent qu’à l’horizontale.</p></details>
 <div class="cfg-official">
 <img src="assets/img/ajax/ls_all_frames_f90723c216.jpg" alt="Cadres LightSwitch publiés par Ajax">
 <img src="assets/img/ajax/ls_1_gang_27a92c6cc4.jpg" alt="Un poste, visuel officiel">
@@ -164,7 +164,7 @@ def configurateur(devices):
 <img src="assets/img/ajax/ls_four_devices_7d8b0f118d.jpg" alt="Quatre postes, visuel officiel">
 <img src="assets/img/ajax/ls_five_devices_3b8296cb8d.jpg" alt="Cinq postes, visuel officiel">
 </div>
-<p class="src-note">Source : Ajax Systems. Le visuel à trois postes est composé avec les packshots officiels : Ajax ne publie pas, dans les fichiers repris ici, une photo de cadre à trois postes seule.</p></div>
+<p class="src-note">Source : Ajax Systems</p></div>
 <div class="cfg" id="cfg" data-cfg>
 <div class="cfg-controls">
 <label>Postes <select id="cfg-seats"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option></select></label>

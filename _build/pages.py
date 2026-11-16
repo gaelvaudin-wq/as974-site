@@ -73,7 +73,7 @@ def home():
 <div class="panel-img"><img class="home-shot home-cover" src="assets/img/ajax/ls_house_xl_1894a479bc.jpg" alt="Interrupteur Ajax dans un salon" width="1600" height="900"></div></div>
 <div class="panel blue on-dark"><h3 class="h2">Votre activité.</h3><p>Commerce, bureaux, entrepôt, plusieurs sites.</p>
 <div class="btns"><a class="btn btn-light" href="contact.html?profil=professionnel#devis">Étude professionnelle</a></div>
-<div class="panel-img"><img class="home-shot home-cover" src="assets/img/ajax/ls_five_devices_3b8296cb8d.jpg" alt="Interrupteurs et prises Ajax dans un intérieur" width="1472" height="916"></div></div>
+<div class="panel-img"><img class="home-shot home-cover" src="assets/img/ajax/entrepot-kramp.jpg" alt="Entrepôt, cas client Ajax Systems" width="1600" height="900"></div></div>
 </div></div></section>'''
 
     chapters = [
@@ -275,7 +275,7 @@ def professionnels():
 
 # ====================================================================== GAMMES
 GAMME_PAGES = {
-    "alarme": ("gamme-alarme.html", "Alarme intrusion", "Détection d’intrusion, commandes et sirènes Ajax Systems. Baseline pour l’essentiel sans fil ; Superior pour les architectures plus exigeantes.",
+    "alarme": ("gamme-alarme.html", "Alarme intrusion", "Détecteurs, claviers et sirènes. Baseline sans fil, Superior si le site l’exige.",
                "motioncam-phod", "Noir", "dark", ["doorprotect", "motionprotect", "motioncam-phod", "keypad-touchscreen", "streetsiren", "combiprotect"],
                "Alarme intrusion sans fil Ajax à La Réunion — détecteurs, claviers, sirènes | AS974",
                "Alarme intrusion Ajax Systems à La Réunion : détecteurs de mouvement et d’ouverture, claviers, sirènes. Gammes Baseline et Superior, installation par AS974."),
@@ -287,7 +287,7 @@ GAMME_PAGES = {
               "bulletcam", "Blanc", "dark", ["bulletcam", "turretcam", "domecam-mini", "doorbell", "nvr", "bulletcam-hl"],
               "Vidéosurveillance Ajax à La Réunion — caméras IP, NVR, sonnette | AS974",
               "Caméras IP, enregistreurs NVR et sonnette vidéo Ajax Systems intégrés à l’alarme. Vidéosurveillance sur devis et installation à La Réunion par AS974."),
-    "domotique": ("gamme-domotique.html", "Domotique", "Automatismes, prises, relais, fuites d’eau et qualité de l’air : le confort dans la même application que la sécurité.",
+    "domotique": ("gamme-domotique.html", "Domotique", "Prises, relais et interrupteurs, dans la même application que l’alarme.",
                   "socket", "Blanc", "", ["socket", "wallswitch", "leaksprotect", "waterstop", "lifequality", "relay", "lightswitch-1-gang-jeweller"],
                   "Domotique Ajax à La Réunion — éclairage, prises, fuites d’eau | AS974",
                   "Domotique Ajax Systems à La Réunion : interrupteurs, prises connectées, relais, détection de fuite et qualité de l’air, dans la même application que l’alarme."),
@@ -324,36 +324,37 @@ def gamme_video():
         return ", ".join(found)
     body = f'''<section class="phero"><div class="wrap">
 <div class="reveal">{cr}<p class="eyebrow">Vidéosurveillance</p><h1 class="h1">Deux lignes. La même IA.</h1>
-<p class="lead">Ajax présente deux lignes de vidéosurveillance : Baseline et Superior. Les deux intègrent une intelligence artificielle qui reconnaît les personnes, les véhicules et les animaux, et peut déclencher l’alarme.</p>
+<p class="lead">Deux lignes, Baseline et Superior. Les deux peuvent lancer l’alarme.</p>
 <div class="btns"><a class="btn btn-primary btn-lg" href="#ia">Voir la reconnaissance</a><a class="btn btn-outline btn-lg" href="catalogue-video.html">Voir les {len(prods)} références</a></div></div>
 </div></section>
 <section class="section flush-top" id="ia"><div class="wrap">
 <div class="split">
 <div class="reveal">{video_block(pre)}</div>
 <div class="split-txt reveal d1"><p class="eyebrow">Commun aux deux lignes</p><h2 class="h2">Personnes, véhicules, animaux.</h2>
-<p class="lead">Sur Baseline comme sur Superior, l’intelligence artificielle est intégrée aux caméras. Elle distingue les personnes, les véhicules et les animaux, et peut déclencher l’alarme. Ce n’est pas une option réservée à Superior.</p>
+<p class="lead">Personnes, véhicules et animaux. Baseline comme Superior.</p>
 <p class="src-note">Source : Ajax Systems</p>
 </div>
 </div>
 </div></section>
 <section class="section bg-off" id="baseline"><div class="wrap">
 <div class="head reveal"><span class="tag tag-base">Baseline</span><h2 class="h2">La ligne essentielle.</h2>
-<p class="lead">Caméras, sonnette et enregistreurs pour la maison et les petits sites. L’IA intégrée reconnaît les personnes, les véhicules et les animaux et peut déclencher l’alarme.</p>
-<p class="src-note">Source : Ajax Systems. Le catalogue Baseline indique un matériel conforme NDAA.</p></div>
+<p class="lead">Caméras, sonnette et enregistreurs, pour la maison et les petits sites.</p>
+<p class="src-note">Source : Ajax Systems</p></div>
 <div class="feature-grid">
-<article class="feature"><h3>Caméras</h3><p>BulletCam, TurretCam et DomeCam Mini, en infrarouge ou en éclairage hybride (HL). Les versions HLVF ajoutent un objectif varifocal motorisé de 2,8–12 mm, l’éclairage hybride, le True WDR et des entrées/sorties audio et alarme.</p></article>
-<article class="feature"><h3>Aussi dans Baseline</h3><p>IndoorCam (Wi-Fi) et DoorBell. Même application Ajax que l’alarme, la même reconnaissance personnes, véhicules et animaux.</p></article>
-<article class="feature"><h3>Enregistreurs</h3><p>NVR, NVR H et NVR H2D. L’alimentation 12 V pour NVR complète l’installation lorsque le site le demande.</p></article>
+<article class="feature"><h3>Caméras</h3><p>BulletCam, TurretCam et DomeCam Mini.</p><details class="more"><summary>En savoir plus</summary><p>Infrarouge ou éclairage hybride. Les versions HLVF ajoutent un objectif 2,8–12 mm, le True WDR et des entrées audio et alarme. Le catalogue Baseline indique un matériel conforme NDAA.</p></details></article>
+<article class="feature"><h3>Aussi dans Baseline</h3><p>IndoorCam et DoorBell, dans la même application.</p></article>
+<article class="feature"><h3>Enregistreurs</h3><p>NVR, NVR H et NVR H2D.</p></article>
 </div>
 <p class="mt-28"><a class="btn btn-dark" href="catalogue-video.html?gamme=baseline#references">{len(base)} références Baseline</a></p>
 </div></section>
 <section class="section" id="superior"><div class="wrap">
 <div class="head reveal"><span class="tag tag-sup">Superior</span><h2 class="h2">La ligne pour les sites exigeants.</h2>
-<p class="lead">« Leurs fonctionnalités fondamentales sont sublimées par une qualité visuelle exceptionnelle, une intelligence artificielle enrichie, et un éventail d’options élargi. » La reconnaissance personnes, véhicules et animaux, et le déclenchement de l’alarme, restent ceux de la ligne Baseline : l’IA enrichie s’y ajoute, elle ne les remplace pas.</p></div>
+<p class="lead">Une image plus fine, une IA enrichie, plus d’options.</p>
+<details class="more"><summary>En savoir plus</summary><p>Ajax décrit une qualité visuelle plus haute et une IA enrichie. La reconnaissance des personnes, des véhicules et des animaux, et le déclenchement de l’alarme, restent ceux de Baseline.</p></details></div>
 <div class="feature-grid">
-<article class="feature"><h3>Caméras HLVF</h3><p>Superior BulletCam, DomeCam et TurretCam HLVF : objectif varifocal motorisé P-Iris de 2,8–12 mm, éclairage hybride, True WDR, microphone et haut-parleur, entrées et sorties audio et alarme, PoE ou 12 V.</p></article>
-<article class="feature"><h3>Enregistreurs</h3><p>Superior NVR H2D, doté d’IA : HDMI 4K, deux disques remplaçables à chaud, ports PoE ou double Gigabit selon le modèle, de 8 à 32 canaux.</p></article>
-<article class="feature"><h3>Pour qui</h3><p>Sites professionnels et projets ambitieux. Active Sécurité 974 est partenaire agréé Ajax Systems.</p></article>
+<article class="feature"><h3>Caméras HLVF</h3><p>BulletCam, DomeCam et TurretCam, objectif 2,8–12 mm.</p><details class="more"><summary>En savoir plus</summary><p>Optique P-Iris, éclairage hybride, True WDR, microphone et haut-parleur, entrées audio et alarme, PoE ou 12 V.</p></details></article>
+<article class="feature"><h3>Enregistreurs</h3><p>Superior NVR H2D, HDMI 4K, deux disques.</p><details class="more"><summary>En savoir plus</summary><p>IA intégrée, disques remplaçables à chaud, ports PoE ou double Gigabit selon le modèle, de 8 à 32 canaux.</p></details></article>
+<article class="feature"><h3>Pour qui</h3><p>Sites professionnels et projets ambitieux.</p></article>
 </div>
 <p class="mt-28"><a class="btn btn-dark" href="catalogue-video.html?gamme=superior#references">{len(sup)} références Superior</a> <a class="btn btn-outline" href="professionnels.html#video-superior">Côté professionnels</a></p>
 </div></section>
@@ -408,7 +409,7 @@ def gamme_en54():
 </div></section>'''
     body = f'''<section class="phero"><div class="wrap phero-split crumbs-first">
 <div>{cr}<p class="eyebrow">Professionnels · EN54 Line</p><h1 class="h1">Incendie certifié EN 54, pour les bâtiments.</h1>
-<p class="lead">Centrale, détecteurs EN54 FireProtect, déclencheurs manuels, sirènes, flashs et modules. Pour les ERP, les entreprises, les bâtiments et les prescripteurs.</p>
+<p class="lead">Centrale, détecteurs, sirènes et modules, pour les bâtiments.</p>
 <div class="btns"><a class="btn btn-primary btn-lg" href="contact.html?profil=professionnel#devis">Demander une étude EN54</a><a class="btn btn-outline btn-lg" href="catalogue-incendie.html">Voir les {len(prods)} références de la ligne</a></div></div>
 <div class="phero-media">{stage_img("en54-fire-hub-jeweller", "Blanc", pre, SZ_SPLIT, eager=True)}</div>
 </div></section>
@@ -447,7 +448,8 @@ def gamme(g):
         fire = [p for p in ALL if p["group"] == "alarme" and p["category"] == "Détecteurs d'incendie"]
         extra = f'''<section class="section bg-off" id="completer"><div class="wrap prose">
 <h2 class="h2">Compléter votre alarme.</h2>
-<p>Les FireProtect, FireProtect Plus et FireProtect 2 signalent la fumée, la chaleur ou le monoxyde selon le modèle, dans la même application que l’alarme intrusion. Ils complètent une protection Baseline. Ils ne constituent pas un système incendie de bâtiment, et ils n’ont pas de page incendie : un ERP se traite avec la ligne EN54, ailleurs sur le site, pour les prescripteurs.</p>
+<p>Fumée, chaleur ou monoxyde, dans la même application que l’alarme.</p>
+<details class="more"><summary>En savoir plus</summary><p>Ces détecteurs complètent une alarme Baseline. Un bâtiment se traite avec la ligne EN54.</p></details>
 </div>
 <div class="wrap">
 {rail(fire, pre, "Avec l’alarme", "Les détecteurs de logement du catalogue.", ("catalogue-alarme.html?sous=detecteurs-d-incendie#references", "Toutes ces références dans le catalogue alarme"))}
@@ -521,7 +523,7 @@ def gamme_acces():
     cr, ld = crumbs(pre, [(None, "Contrôle d’accès")])
     body = f'''<section class="phero"><div class="wrap">
 {cr}<h1 class="h1">Qui arme, qui entre, qui est prévenu.</h1>
-<p class="lead">Claviers, badges Tag et Pass, télécommandes et groupes d’utilisateurs. Le contrôle d’accès Ajax sert à identifier les personnes sur le système. Une gâche ou un portail ne s’ajoutent que si l’étude retient un relais compatible.</p>
+<p class="lead">Claviers, badges et télécommandes. Une gâche seulement si l’étude la retient.</p>
 <div class="btns"><a class="btn btn-primary btn-lg" href="contact.html#devis">Demander une étude des accès</a></div>
 </div></section>
 {sell.blocs("acces", prods, pre)}'''
