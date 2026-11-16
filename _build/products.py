@@ -26,13 +26,7 @@ def video_ai_note(p, pre):
     line = video_line(p)
     if not line:
         return ""
-    if line == "superior":
-        extra = "Cette référence est dans la ligne Superior : IA enrichie, et selon le modèle optique P-Iris, haut-parleur ou NVR HDMI 4K."
-    else:
-        extra = "Cette référence est dans la ligne Baseline : IA intégrée, en infrarouge, éclairage hybride ou varifocal selon le modèle."
-    return f'''<aside class="ai-note"><h2>IA des deux lignes vidéo</h2>
-<p>Baseline et Superior reconnaissent les personnes, les véhicules et les animaux, et peuvent déclencher l’alarme. {extra}</p>
-<p><a href="{pre}gamme-video.html#ia">Comparer les deux lignes</a></p></aside>'''
+    return f'''<aside class="ai-note"><p>Baseline et Superior reconnaissent personnes, véhicules et animaux, et peuvent lancer l’alarme.</p></aside>'''
 
 def fiche(p, all_products):
     pre = "../"
@@ -110,7 +104,7 @@ def fiche(p, all_products):
 <p class="ref">Réf. fabricant {E(p["model"])} · Ajax Systems, marque partenaire</p>
 <div class="pdp-price"><strong>Sur devis</strong><span>Étude, fourniture et installation par Active Sécurité 974</span></div>
 <p class="pdp-desc">{E(p["hook"])}</p>
-{f'<ul class="benefits">{benefits}</ul>' if benefits else ''}
+{f'<details class="more"><summary>En savoir plus</summary><ul class="benefits">{benefits}</ul></details>' if benefits else ''}
 {variant}
 {colors}
 {complement}

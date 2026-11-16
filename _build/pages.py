@@ -70,22 +70,24 @@ def home():
 <div class="duo">
 <div class="panel light"><h3 class="h2">Votre maison.</h3><p>Une étude chez vous, puis la pose.</p>
 <div class="btns"><a class="btn btn-primary" href="contact.html?profil=particulier#devis">Étude pour mon logement</a></div>
-<div class="panel-img"><img class="home-shot" src="assets/img/hd/bulletcam-1600.webp" alt="Caméra Ajax devant une maison" width="1600" height="667"></div></div>
+<div class="panel-img"><img class="home-shot home-cover" src="assets/img/ajax/ls_house_xl_1894a479bc.jpg" alt="Interrupteur Ajax dans un salon" width="1600" height="900"></div></div>
 <div class="panel blue on-dark"><h3 class="h2">Votre activité.</h3><p>Commerce, bureaux, entrepôt, plusieurs sites.</p>
 <div class="btns"><a class="btn btn-light" href="contact.html?profil=professionnel#devis">Étude professionnelle</a></div>
-<div class="panel-img"><img class="home-shot" src="assets/img/ajax/ls_five_devices_3b8296cb8d.jpg" alt="Interrupteurs et prises Ajax dans un intérieur" width="1472" height="916"></div></div>
+<div class="panel-img"><img class="home-shot home-cover" src="assets/img/ajax/ls_five_devices_3b8296cb8d.jpg" alt="Interrupteurs et prises Ajax dans un intérieur" width="1472" height="916"></div></div>
 </div></div></section>'''
 
     chapters = [
         ("alarme", "gamme-alarme.html", "Alarme.", "Détecteurs, claviers et sirènes.", "assets/img/p/c-mc-black-ccad3224b1.png", ""),
         ("incendie", "gamme-incendie.html", "Incendie EN54.", "La ligne des bâtiments.", "assets/img/p/c-en54-fire-hub-white-9fbd4eb73a.png", ""),
-        ("video", "gamme-video.html", "Vidéo.", "L’image peut lancer l’alarme.", "assets/img/hd/bulletcam-1600.webp", "dark"),
-        ("domotique", "gamme-domotique.html", "Domotique.", "Lumières, prises, fuites d’eau.", "assets/img/ajax/ls_five_devices_3b8296cb8d.jpg", ""),
+        ("video", "gamme-video.html", "Vidéo.", "L’image peut lancer l’alarme.", "assets/img/ajax/ia-pet.jpg", "dark cover"),
+        ("domotique", "gamme-domotique.html", "Domotique.", "Lumières, prises, fuites d’eau.", "assets/img/ajax/ls_five_devices_3b8296cb8d.jpg", "cover"),
     ]
     rows = []
     for g, href, h, txt, src, st in chapters:
         cnt = len(group_products(g))
-        rows.append(f'''<a class="range-card {st}" href="{href}"><div class="range-media"><img class="home-shot" src="{src}" alt="{h}"></div><div><h3>{h}</h3><p>{txt}</p><span class="count">{cnt} références</span></div></a>''')
+        cover = " home-cover" if "cover" in st else ""
+        card = st.replace(" cover", "")
+        rows.append(f'''<a class="range-card {card}" href="{href}"><div class="range-media"><img class="home-shot{cover}" src="{src}" alt="{h}"></div><div><h3>{h}</h3><p>{txt}</p><span class="count">{cnt} références</span></div></a>''')
     gammes = f'''<section class="section bg-off" id="gammes"><div class="wrap">
 <div class="head"><h2 class="h2">Quatre familles.</h2>
 <p class="lead">Une seule application pour tout le système.</p></div>
@@ -107,16 +109,25 @@ def home():
 <p>Vous armez, vous lisez l’alerte, vous coupez une lumière.</p>
 {sell.act(pre)}
 </div>
-<div class="phone phone-live" data-on="0">
-<video class="app-clip" data-screen="0" autoplay muted loop playsinline preload="auto" poster="assets/video/hero-ia.jpg"><source src="assets/video/app/lumiere.mp4" type="video/mp4"></video>
+<div class="app-stage">
+<div class="app-screen is-arm"><header><b>Maison</b><em>Armé</em></header>
+<ul><li><span>Entrée</span><strong>Fermée</strong></li><li><span>Salon</span><strong>Calme</strong></li><li><span>Jardin</span><strong>Calme</strong></li></ul></div>
+<div class="app-screen is-alert"><header><b>Alerte</b><em>Maintenant</em></header>
+<ul><li><span>Jardin</span><strong>Mouvement</strong></li><li><span>Sirène</span><strong>Active</strong></li><li><span>Photo</span><strong>En cours</strong></li></ul></div>
+<div class="app-screen is-photo"><img src="assets/img/ajax/ia-human.jpg" alt=""><header><b>Levée de doute</b><em>Photo</em></header></div>
+<div class="app-screen is-scene"><header><b>Scénario</b><em>Fait</em></header>
+<ul><li><span>Salon</span><strong>Lumière coupée</strong></li><li><span>Déclencheur</span><strong>Armement</strong></li><li><span>Prise</span><strong>Coupée</strong></li></ul></div>
 </div>
 </div></section>'''
-    ia_block = f'''<section class="section"><div class="wrap split-vis">
-<div class="vis-copy"><h2 class="h2">Personne, véhicule, animal.</h2>
-<p>La caméra peut lancer la sirène. Baseline et Superior.</p>
-{sell.act(pre, "gamme-video.html", "Voir la vidéo")}
+    ia_block = f'''<section class="section"><div class="wrap">
+<div class="head"><h2 class="h2">Personne, véhicule, animal.</h2>
+<p class="lead">La caméra peut lancer la sirène. Baseline et Superior.</p></div>
+<div class="ia-row">
+<figure><img src="assets/img/ajax/ia-human.jpg" alt="Détection d’une personne dans le jardin"><figcaption>Personne</figcaption></figure>
+<figure><img src="assets/img/ajax/ia-pet.jpg" alt="Détection d’un animal"><figcaption>Animal</figcaption></figure>
+<figure><img src="assets/img/ajax/ia-reglage.jpg" alt="Réglage officiel : personne, animal, véhicule"><figcaption>Véhicule, dans le réglage</figcaption></figure>
 </div>
-<div class="vis-media">{ia()}</div>
+{sell.act(pre, "gamme-video.html", "Voir la vidéo")}
 </div></section>'''
     why_as = f'''<section class="section bg-off"><div class="wrap split-vis">
 <div class="vis-copy"><h2 class="h2">Pourquoi AS974.</h2>
@@ -132,7 +143,7 @@ def home():
 <a class="range-card" href="produits/hub-2.html"><div class="range-media"><img class="home-shot" src="assets/img/p/c-hub2-4g-white-e143ae613b.png" alt="Hub 2"></div><div><h3>Hub 2</h3><p>La centrale.</p></div></a>
 <a class="range-card" href="produits/motioncam-phod.html"><div class="range-media"><img class="home-shot" src="assets/img/p/c-mc-black-ccad3224b1.png" alt="MotionCam"></div><div><h3>MotionCam</h3><p>La photo en alarme.</p></div></a>
 <a class="range-card" href="produits/streetsiren.html"><div class="range-media"><img class="home-shot" src="assets/img/p/c-ss-black-1154b5ea2b.png" alt="Sirène extérieure Ajax"></div><div><h3>Sirène</h3><p>Dehors, bien visible.</p></div></a>
-<a class="range-card" href="catalogue.html"><div class="range-media"><img class="home-shot" src="assets/img/ajax/ls_1_gang_27a92c6cc4.jpg" alt="Interrupteur Ajax"></div><div><h3>Et le reste.</h3><p>Tout le catalogue.</p></div></a>
+<a class="range-card" href="catalogue.html"><div class="range-media"><img class="home-shot home-cover" src="assets/img/ajax/ls_four_devices_7d8b0f118d.jpg" alt="Ensemble d’interrupteurs et de prises Ajax"></div><div><h3>Et le reste.</h3><p>Tout le catalogue.</p></div></a>
 </div>
 {sell.act(pre, "catalogue.html", "Ouvrir le catalogue")}
 </div></section>'''
@@ -172,35 +183,35 @@ def particuliers():
     cr, ld = crumbs(pre, [(None, "Particuliers")])
     body = f'''<section class="phero"><div class="wrap phero-split">
 <div class="reveal">{cr}<p class="eyebrow">Particuliers</p><h1 class="h1">Sécurité pour votre maison ou appartement à La Réunion.</h1>
-<p class="lead">Solution discrète, fiable et pilotable depuis le smartphone : intrusion, alertes, vérification visuelle et scénarios du quotidien, adaptés à la vie sur l’île, y compris absences et résidences secondaires.</p>
+<p class="lead">Une étude chez vous, puis la pose.</p>
 <div class="btns"><a class="btn btn-primary btn-lg" href="contact.html?profil=particulier#devis">Étude gratuite pour mon logement</a><a class="btn btn-outline btn-lg" href="catalogue.html">Explorer le catalogue</a></div></div>
 <div class="phero-media reveal d1">{stage_img("motionprotect", "Blanc", pre, SZ_SPLIT, eager=True)}</div>
 </div></section>
 <section class="section bg-off"><div class="wrap">
 <div class="head reveal"><p class="eyebrow">Besoins typiques</p><h2 class="h2">Ce que nous protégeons chez vous.</h2></div>
 <ol class="numlist reveal">
-<li><h3>Maison &amp; appartement</h3><p>Ouvertures, volumes, abords. Pose soignée, esthétique discrète, formation à l’application.</p></li>
-<li><h3>Résidences secondaires</h3><p>Alertes à distance, photo-vérification pour lever le doute sans vous déplacer inutilement.</p></li>
-<li><h3>Absences prolongées</h3><p>Armement à distance, scénarios, suivi des événements, même depuis la métropole ou en voyage.</p></li>
-<li><h3>Animaux de compagnie</h3><p>Détecteurs avec immunité animaux (selon modèles Ajax) pour limiter les fausses alertes.</p></li>
-<li><h3>Application smartphone</h3><p>Armement, notifications, historique et pilotage dans l’application du fabricant.</p></li>
-<li><h3>Photo-vérification</h3><p>MotionCam et équivalents : recevoir des photos en cas d’alarme pour évaluer la situation.</p></li>
+<li><h3>Maison et appartement</h3><p>Ouvertures, volumes, abords.</p></li>
+<li><h3>Résidence secondaire</h3><p>Alerte à distance, photo pour lever le doute.</p></li>
+<li><h3>Absence</h3><p>Armement et scénarios, depuis l’application.</p></li>
+<li><h3>Animaux</h3><p>Immunité animaux, selon le détecteur Ajax.</p></li>
+<li><h3>Application</h3><p>Armement, historique, notifications.</p></li>
+<li><h3>Photo</h3><p>Une image en cas d’alarme.</p></li>
 </ol>
 </div></section>
 <section class="section"><div class="wrap">
 <div class="split">
 <div class="split-media dark reveal">{stage_img("motioncam-phod", "Noir", pre, SZ_SPLIT, need_alpha=True)}</div>
-<div class="split-txt reveal d1"><p class="num">Photo-vérification</p><h2 class="h2">Une photo, pas seulement une alerte.</h2><p class="lead">En cas d’alarme, recevez des images pour évaluer la situation et lever le doute, sans vous déplacer inutilement.</p>
+<div class="split-txt reveal d1"><p class="num">Photo-vérification</p><h2 class="h2">Une photo, pas seulement une alerte.</h2><p class="lead">Une image pour lever le doute, sans vous déplacer.</p>
 <div class="btns"><a class="btn btn-dark" href="produits/motioncam-phod.html">Voir MotionCam (PhOD)</a></div></div>
 </div>
 <div class="split rev">
 <div class="split-media reveal">{stage_img("doorbell", "Graphite", pre, SZ_SPLIT)}</div>
-<div class="split-txt reveal d1"><p class="num">Au quotidien</p><h2 class="h2">Tout, depuis votre smartphone.</h2><p class="lead">Armement, notifications, historique, vidéo et scénarios : une seule application pour toute la maison.</p>
+<div class="split-txt reveal d1"><p class="num">Au quotidien</p><h2 class="h2">Tout, depuis votre smartphone.</h2><p class="lead">Armement, alertes et scénarios, dans une application.</p>
 <div class="btns"><a class="btn btn-dark" href="gamme-domotique.html">Découvrir la domotique</a></div></div>
 </div>
 </div></section>
 <section class="section bg-off"><div class="wrap">
-<div class="head reveal"><p class="eyebrow">Approche</p><h2 class="h2">Baseline pour l’essentiel, Superior si besoin.</h2><p class="lead">Pour la plupart des logements, la gamme Baseline (sans fil) couvre l’essentiel. Projet plus exigeant : étude Superior.</p></div>
+<div class="head reveal"><p class="eyebrow">Approche</p><h2 class="h2">Baseline pour l’essentiel, Superior si besoin.</h2><p class="lead">Baseline pour l’essentiel. Superior si le projet l’exige.</p></div>
 {versus(pre, None, "gamme-alarme.html", "catalogue.html?gamme=superior#references")}
 </div></section>
 <section class="section"><div class="wrap">
@@ -587,17 +598,17 @@ def services():
     cr, ld = crumbs(pre, [(None, "Services")])
     body = f'''<section class="phero"><div class="wrap">
 <div class="reveal">{cr}<p class="eyebrow">Services</p><h1 class="h1">Étude, installation, suivi.</h1>
-<p class="lead">Active Sécurité 974 vous accompagne de l’analyse du besoin à la mise en service chez vous, sur toute l’île.</p></div>
+<p class="lead">De la visite à la mise en service, chez vous.</p></div>
 </div></section>
 <section class="section flush-top"><div class="wrap">
 <div class="split">
 <div class="split-media reveal">{stage_img("hub2-plus", "Blanc", pre, SZ_SPLIT)}</div>
-<div class="split-txt reveal d1"><p class="num">01 — Étude &amp; devis gratuit</p><h2 class="h2">Comprendre avant de proposer.</h2><p class="lead">Visite chez vous ou échange à distance. Un devis clair, sans engagement. Le prix est établi après l’étude.</p>
+<div class="split-txt reveal d1"><p class="num">01 — Étude &amp; devis gratuit</p><h2 class="h2">Comprendre avant de proposer.</h2><p class="lead">Visite chez vous. Devis clair, sans engagement.</p>
 <div class="btns"><a class="btn btn-primary" href="contact.html#devis">Prendre rendez-vous d’étude</a></div></div>
 </div>
 <div class="split rev">
 <div class="split-media dark reveal">{stage_img("keypad-touchscreen", "Noir", pre, SZ_SPLIT, need_alpha=True)}</div>
-<div class="split-txt reveal d1"><p class="num">02 — Installation</p><h2 class="h2">Une pose soignée, chez vous.</h2><p class="lead">Pose, paramétrage, tests radio, formation à l’application, documentation. Intervention chez le client.</p>
+<div class="split-txt reveal d1"><p class="num">02 — Installation</p><h2 class="h2">Une pose soignée, chez vous.</h2><p class="lead">Pose, réglages, puis prise en main de l’application.</p>
 <div class="btns"><a class="btn btn-primary" href="contact.html#devis">Planifier mon installation</a></div></div>
 </div>
 <div class="split">
@@ -627,9 +638,7 @@ def services():
                    f"{h1} par Active Sécurité 974, chez vous, sur toute l’île de La Réunion.",
                    f'''<section class="phero"><div class="wrap phero-split">{cr2}<div><h1 class="h1">{h1}</h1><p class="lead">{lead}</p></div>
 <div class="phero-media">{stage_img(shot[0], shot[1], pre, SZ_SPLIT, eager=True)}</div></div></section>
-<section class="section flush-top"><div class="wrap prose"><ol class="numlist">{lis}</ol>
-<p>Chaque étape se conclut par une décision : continuer, modifier le périmètre, ou s’arrêter. Rien n’est facturé tant que le devis n’est pas accepté. Les coordonnées de contact s’affichent ici dès qu’elles sont renseignées. En attendant, le formulaire de demande d’étude reste le moyen de nous écrire.</p>
-</div></section>
+<section class="section flush-top"><div class="wrap"><ol class="numlist">{lis}</ol></div></section>
 {sell.pose("alarme") if "installation" in path else sell.etude("alarme") if "etude" in path else sell.pourquoi("alarme")}
 {cta(pre)}''', jsonld=[ld2], priority="0.6")
     write_page("services.html", "Services : étude, installation, maintenance — Active Sécurité 974",

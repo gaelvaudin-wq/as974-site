@@ -24,15 +24,18 @@ def chaine():
     return _svg("".join(parts), "Chaîne détecteur, centrale, application et télésurveillance")
 
 def portee():
-    return _svg(
-        '<circle cx="320" cy="190" r="120" fill="none" stroke="#0A4D8C" stroke-width="3"/>'
-        '<circle cx="320" cy="190" r="70" fill="none" stroke="#E10600" stroke-width="3"/>'
-        '<circle cx="320" cy="190" r="14" fill="#0B0B0C"/>'
-        '<text x="320" y="48" text-anchor="middle" fill="#0B0B0C" font-size="18" font-family="Inter,sans-serif">Portée radio en champ libre</text>'
-        '<text x="470" y="120" fill="#0A4D8C" font-size="14" font-family="Inter,sans-serif">Hub 2 · 2 000 m</text>'
-        '<text x="400" y="168" fill="#E10600" font-size="14" font-family="Inter,sans-serif">EN54 · 1 800 m</text>'
-        '<text x="320" y="320" text-anchor="middle" fill="#5F5F64" font-size="14" font-family="Inter,sans-serif">Les murs se vérifient sur place.</text>',
-        "Schéma de portée radio Jeweller")
+    return (
+        '<svg class="schema schema-lg" viewBox="0 0 640 560" role="img" aria-label="Schéma de portée radio Jeweller">'
+        '<rect width="640" height="560" rx="28" fill="#F5F5F7"/>'
+        '<circle cx="300" cy="300" r="210" fill="none" stroke="#0A4D8C" stroke-width="4"/>'
+        '<circle cx="300" cy="300" r="128" fill="none" stroke="#E10600" stroke-width="4"/>'
+        '<circle cx="300" cy="300" r="18" fill="#0B0B0C"/>'
+        '<text x="300" y="52" text-anchor="middle" fill="#0B0B0C" font-size="22" font-family="Inter,sans-serif">Portée radio en champ libre</text>'
+        '<text x="430" y="130" fill="#0A4D8C" font-size="18" font-family="Inter,sans-serif">Hub 2 · 2 000 m</text>'
+        '<text x="360" y="210" fill="#E10600" font-size="18" font-family="Inter,sans-serif">EN54 · 1 800 m</text>'
+        '<text x="300" y="530" text-anchor="middle" fill="#5F5F64" font-size="16" font-family="Inter,sans-serif">Les murs se vérifient sur place.</text>'
+        '</svg>'
+    )
 
 def ia():
     items = [("Personne", "#E10600"), ("Véhicule", "#0A4D8C"), ("Animal", "#F5C518")]
@@ -74,13 +77,14 @@ def frise():
 
 def comparatif():
     rows = [
-        (70, "Kit à monter", "Vous faites le plan"),
-        (150, "Multimarque", "Plusieurs catalogues"),
-        (230, "Avec engagement", "Matériel lié à un abonnement"),
-        (310, "AS974", "Une étude, un devis, une pose"),
+        ("Kit à monter", "Le plan et les tests restent chez vous.", False),
+        ("Multimarque", "Plusieurs catalogues, plusieurs logiques.", False),
+        ("Abonnement lié", "Le matériel est parfois lié à un contrat.", False),
+        ("AS974", "Étude, devis, pose, puis le SAV.", True),
     ]
-    bits = ['<rect x="24" y="300" width="592" height="4" fill="#E10600"/>']
-    for y, title, text in rows:
-        bits.append(f'<text x="40" y="{y}" fill="#0B0B0C" font-size="18" font-family="Inter,sans-serif" font-weight="700">{title}</text>')
-        bits.append(f'<text x="280" y="{y}" fill="#0A4D8C" font-size="16" font-family="Inter,sans-serif">{text}</text>')
-    return _svg("".join(bits), "Comparatif visuel : pourquoi choisir Active Sécurité 974")
+    cards = []
+    for title, text, ours in rows:
+        cls = "cmp-card is-us" if ours else "cmp-card"
+        mark = "✓" if ours else "–"
+        cards.append(f'<li class="{cls}"><b>{mark}</b><strong>{title}</strong><span>{text}</span></li>')
+    return f'<ul class="cmp" aria-label="Pourquoi choisir Active Sécurité 974">{"".join(cards)}</ul>'
