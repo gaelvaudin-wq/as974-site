@@ -1,1078 +1,5098 @@
 {
- "6vpsu": [
-  {
-   "v": "12V",
-   "l": "PSU for Hub/Hub Plus/ReX Unité d'alimentation pour le fonctionnement du dispositif à partir d'une source d'alimentation "
-  }
- ],
- "ajax-superior-spacecontrol-jeweller": [
-  {
-   "v": "Jusqu'à 5 ans",
-   "l": "de fonctionnement avec des batteries améliorées préinstallées"
-  }
- ],
- "ajax-superior-multitransmitter-8-inputs-fibra": [
-  {
-   "v": "8",
-   "l": "entrées pour connecter des dispositifs tiers"
-  }
- ],
- "12-24vpsu-hub2": [
-  {
-   "v": "12V",
-   "l": "PSU for Hub/Hub Plus/ReX Unité d'alimentation pour le fonctionnement du dispositif à partir d'une source d'alimentation "
-  }
- ],
- "combiprotect": [
-  {
-   "v": "Jusqu'à 12 m",
-   "l": "distance de détection de mouvement"
-  },
-  {
-   "v": "Jusqu'à 9 m",
-   "l": "distance de détection des bris de glace"
-  },
-  {
-   "v": "3",
-   "l": "niveaux de sensibilité pour les capteurs de mouvement et de bris de glace"
-  },
-  {
-   "v": "Jusqu'à 5 ans",
-   "l": "de fonctionnement avec la batterie préinstallée"
-  },
-  {
-   "v": "Jusqu'à 1 200 m",
-   "l": "portée de communication avec une centrale Ajax ou un prolongateur de portée 1"
-  },
-  {
-   "v": "2",
-   "l": "couleurs du boîtier brillant"
-  }
- ],
- "curtain-outdoor-jeweller": [
-  {
-   "v": "Jusqu’à 3 ans",
-   "l": "de fonctionnement avec les batteries préinstallées"
-  },
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "5 550 ft portée de communication avec une centrale ou un prolongateur de portée Ajax 2"
-  }
- ],
- "curtain-outdoor-mini-jeweller": [
-  {
-   "v": "2 m",
-   "l": "odes de détection Principal et Immunité aux animaux"
-  },
-  {
-   "v": "Jusqu'à 3 ans",
-   "l": "de fonctionnement sur les batteries préinstallées"
-  },
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "5 550 ft de portée de communication 1 avec une centrale ou un prolongateur de portée Ajax"
-  }
- ],
- "dualcurtain-outdoor": [
-  {
-   "v": "3",
-   "l": "Vérification du délai Il faut moins d'une seconde à ELSA pour déterminer s'il s'agit d'une menace, ou d'une fausse alarm"
-  }
- ],
- "en54-fire-hub-jeweller": [
-  {
-   "v": "110–240 V",
-   "l": "Secteur 1"
-  },
-  {
-   "v": "2",
-   "l": "emplacements pour cartes SIM pour la connexion de la centrale à l'internet via le réseau cellulaire"
-  },
-  {
-   "v": "200",
-   "l": "dispositifs adressables"
-  },
-  {
-   "v": "40",
-   "l": "zones incendie"
-  },
-  {
-   "v": "25",
-   "l": "groupes de sécurité"
-  },
-  {
-   "v": "110–240 V",
-   "l": "Alimentation principale"
-  }
- ],
- "en54-fire-rex-jeweller": [
-  {
-   "v": "Jusqu'à 1 800 m",
-   "l": "portée de communication radio"
-  },
-  {
-   "v": "Jusqu'à 5",
-   "l": "prolongateurs de portée par système pour étendre la couverture jusqu'à 35 km"
-  },
-  {
-   "v": "110–240 V",
-   "l": "Secteur 1"
-  }
- ],
- "en54-fireprotect-jeweller-detectors": [
-  {
-   "v": "Jusqu'à 5 ans",
-   "l": "sur les batteries CR123A préinstallées"
-  }
- ],
- "en54-fireprotect-jeweller-sounders-vads": [
-  {
-   "v": "5 ans",
-   "l": "de fonctionnement sur les batteries CR123A préinstallées"
-  }
- ],
- "en54-indicator-jeweller": [
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "de portée de communication 1 avec une centrale ou un prolongateur de portée Ajax"
-  },
-  {
-   "v": "Jusqu'à 5 ans",
-   "l": "de fonctionnement sur les batteries CR123A préinstallées"
-  }
- ],
- "en54-internal-battery": [
-  {
-   "v": "7",
-   "l": "4 V tension nominale"
-  }
- ],
- "en54-io-module-2x2-jeweller": [
-  {
-   "v": "2 s",
-   "l": "orties isolées galvaniquement chacun compatible avec AC ou DC"
-  },
-  {
-   "v": "2",
-   "l": "entrées prenant en charge les types de connexion NC, NO, EOL, 2EOL et 3EOL"
-  },
-  {
-   "v": "5 ans",
-   "l": "de fonctionnement avec des batteries CR123A préinstallées et sans alimentation externe"
-  },
-  {
-   "v": "2",
-   "l": "boutons anti-sabotage pour détecter le démontage du dispositif"
-  }
- ],
- "fireprotect-2-ac-co-jeweller": [
-  {
-   "v": "110–240 V",
-   "l": "Alimentation principale"
-  },
-  {
-   "v": "Jusqu'à 1 500 m",
-   "l": "portée de communication avec une centrale Ajax"
-  }
- ],
- "fireprotect-2-ac-heat-co-jeweller": [
-  {
-   "v": "110–240 V",
-   "l": "Alimentation principale"
-  },
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "portée de communication avec une centrale Ajax"
-  }
- ],
- "fireprotect-2-ac-heat-smoke-jeweller": [
-  {
-   "v": "110–240 V",
-   "l": "Alimentation principale"
-  },
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "portée de communication avec une centrale Ajax"
-  }
- ],
- "fireprotect-2-co": [
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "portée de communication avec une centrale Ajax"
-  },
-  {
-   "v": "10 ans",
-   "l": "de fonctionnement avec batteries scellées non remplaçables"
-  },
-  {
-   "v": "Jusqu'à 7 ans",
-   "l": "de fonctionnement avec batteries CR123A remplaçables"
-  }
- ],
- "fireprotect-2-ac-heat-smoke-co-jeweller": [
-  {
-   "v": "110–240 V",
-   "l": "Alimentation principale"
-  },
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "portée de communication avec une centrale Ajax"
-  }
- ],
- "fireprotect-2-ac-heat-jeweller": [
-  {
-   "v": "110–240 V",
-   "l": "Alimentation principale"
-  },
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "portée de communication avec une centrale Ajax"
-  }
- ],
- "fireprotect-2-heat": [
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "portée de communication avec une centrale Ajax"
-  },
-  {
-   "v": "10 ans",
-   "l": "de fonctionnement avec batteries scellées non remplaçables"
-  },
-  {
-   "v": "Jusqu'à 7 ans",
-   "l": "de fonctionnement avec batteries CR123A remplaçables"
-  }
- ],
- "fireprotect-2-heat-co": [
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "portée de communication avec une centrale Ajax"
-  },
-  {
-   "v": "10 ans",
-   "l": "de fonctionnement avec batteries scellées non remplaçables"
-  },
-  {
-   "v": "Jusqu'à 7 ans",
-   "l": "de fonctionnement avec batteries CR123A remplaçables"
-  }
- ],
- "fireprotect-2-rb-co-ul-jeweller": [
-  {
-   "v": "Jusqu'à 5 ans",
-   "l": "de fonctionnement avec batteries remplaçables préinstallées"
-  }
- ],
- "fireprotect-2-rb-heat-smoke-co-ul-jeweller": [
-  {
-   "v": "Jusqu'à 5 ans",
-   "l": "de fonctionnement avec batteries remplaçables préinstallées"
-  }
- ],
- "fireprotect-2-rb-heat-smoke-ul-jeweller": [
-  {
-   "v": "Jusqu'à 5 ans",
-   "l": "de fonctionnement avec batteries remplaçables préinstallées"
-  }
- ],
- "fireprotect-2-smoke-heat-co": [
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "5 550 ft Portée de communication avec une centrale Ajax en champ ouvert"
-  },
-  {
-   "v": "Jusqu'à 10 ans",
-   "l": "de fonctionnement sur les batteries scellées"
-  },
-  {
-   "v": "Jusqu'à 7 ans",
-   "l": "de fonctionnement avec des batteries CR123A remplaçables"
-  }
- ],
- "fireprotect-2-smoke-heat": [
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "5 550 ft Portée de communication avec une centrale Ajax en champ ouvert"
-  },
-  {
-   "v": "Jusqu'à 10 ans",
-   "l": "de fonctionnement sur les batteries scellées"
-  },
-  {
-   "v": "Jusqu'à 7 ans",
-   "l": "de fonctionnement avec des batteries CR123A remplaçables"
-  }
- ],
- "glandbox": [
-  {
-   "v": "16",
-   "l": "lieux d'installation des presse-étoupes quatre de chaque côté de l'accessoire"
-  }
- ],
- "fireprotect-2-rb-heat-ul-jeweller": [
-  {
-   "v": "Jusqu'à 5 ans",
-   "l": "de fonctionnement avec batteries remplaçables préinstallées"
-  }
- ],
- "glassprotect": [
-  {
-   "v": "Jusqu'à 7 ans",
-   "l": "de fonctionnement avec batterie préinstallée"
-  },
-  {
-   "v": "2",
-   "l": "couleurs du boîtier mat"
-  }
- ],
- "hub": [
-  {
-   "v": "100",
-   "l": "dispositifs Ajax sans fil peuvent être ajoutés à une centrale"
-  },
-  {
-   "v": "9",
-   "l": "groupes de sécurité peut être créé pour gérer la sécurité de l'établissement"
-  },
-  {
-   "v": "Jusqu'à 2 000 m",
-   "l": "portée de communication avec les dispositifs Ajax sans fil"
-  },
-  {
-   "v": "Jusqu'à 15 heures",
-   "l": "de fonctionnement autonome avec batterie de secours"
-  },
-  {
-   "v": "2",
-   "l": "couleurs du boîtier mat"
-  },
-  {
-   "v": "9",
-   "l": "groupes de sécurité"
-  },
-  {
-   "v": "50",
-   "l": "utilisateurs"
-  },
-  {
-   "v": "100",
-   "l": "dispositifs"
-  }
- ],
- "homesiren": [
-  {
-   "v": "Jusqu'à 5 ans",
-   "l": "de fonctionnement sur batteries"
-  }
- ],
- "hub-2": [
-  {
-   "v": "9",
-   "l": "groupes Gestion flexible de la sécurité du site"
-  }
- ],
- "hub-bp": [
-  {
-   "v": "100",
-   "l": "dispositifs Ajax sans fil peuvent être ajoutés à une centrale"
-  },
-  {
-   "v": "Jusqu'à 2 000 m",
-   "l": "6 500 ft portée de communication avec les dispositifs Ajax sans fil 1"
-  },
-  {
-   "v": "9",
-   "l": "groupes Gestion souple de la sécurité du site"
-  },
-  {
-   "v": "2",
-   "l": "couleurs du boîtier mat"
-  },
-  {
-   "v": "9",
-   "l": "groupes de sécurité"
-  },
-  {
-   "v": "50",
-   "l": "utilisateurs"
-  },
-  {
-   "v": "100",
-   "l": "dispositifs"
-  }
- ],
- "keypad-outdoor-jeweller": [
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "5 550 ft de portée de communication 1 avec une centrale ou un prolongateur de portée Ajax"
-  },
-  {
-   "v": "Jusqu'à 2 ans",
-   "l": "de fonctionnement sur les batteries préinstallées"
-  }
- ],
- "keypad-touchscreen": [
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "5 550 ft de la portée de communication radio avec une centrale ou un prolongateur de portée Ajax 1"
-  }
- ],
- "keypad-plus": [
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "5 550 ft 1 Distance de communication avec une centrale Ajax ou un prolongateur de portée"
-  },
-  {
-   "v": "Jusqu'à 3",
-   "l": "5 ans de fonctionnement avec la batterie préinstallée"
-  }
- ],
- "lifequality": [
-  {
-   "v": "Jusqu'à 3 ans",
-   "l": "de fonctionnement sur les batteries préinstallées"
-  },
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "5 550 ft de portée de communication avec une centrale ou un prolongateur de portée Ajax"
-  },
-  {
-   "v": "Jusqu'à 450",
-   "l": "ppm Niveau moyen 2 de CO 2 extérieur"
-  },
-  {
-   "v": "Jusqu'à 1000",
-   "l": "ppm Niveau acceptable de CO 2 intérieur. N'affecte pas 2 la performance cognitive"
-  }
- ],
- "lifequality-lite-jeweller": [
-  {
-   "v": "Jusqu’à 5 ans",
-   "l": "1 de fonctionnement sur les batteries préinstallées"
-  },
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "5 550 ft de portée de communication 2 avec une centrale ou un prolongateur de portée Ajax"
-  }
- ],
- "lightswitch-1-gang-120-jeweller": [
-  {
-   "v": "Jusqu'à 1 100 m",
-   "l": "3 600 ft de distance de communication 1 avec une centrale Ajax"
-  }
- ],
- "lightswitch-2-gang-2-way-jeweller": [
-  {
-   "v": "5 à 600 W",
-   "l": "Compatibilité avec les lampes"
-  }
- ],
- "lightswitch-1-gang-jeweller": [
-  {
-   "v": "5 à 600 W",
-   "l": "Compatibilité avec les ampoules"
-  }
- ],
- "lightswitch-2-gang-jeweller": [
-  {
-   "v": "5 à 600 W",
-   "l": "Compatibilité avec les ampoules"
-  }
- ],
- "lightswitch-2-way-jeweller": [
-  {
-   "v": "5 à 600 W",
-   "l": "Compatibilité avec les ampoules"
-  }
- ],
- "lightswitch-3-way-120-jeweller": [
-  {
-   "v": "Jusqu'à 1 100 m",
-   "l": "3 600 ft de distance de communication 1 avec une centrale Ajax"
-  }
- ],
- "lightswitch-4-way-120-jeweller": [
-  {
-   "v": "Jusqu'à 1 100 m",
-   "l": "3 600 ft de distance de communication 1 avec une centrale Ajax"
-  }
- ],
- "lightswitch-dimmer-jeweller": [
-  {
-   "v": "Jusqu'à 900 m",
-   "l": "de distance de communication avec une centrale Ajax"
-  }
- ],
- "lightswitch-crossover-jeweller": [
-  {
-   "v": "5 à 600 W",
-   "l": "Compatibilité avec les lampes"
-  }
- ],
- "manualcallpoint-red-jeweller": [
-  {
-   "v": "Jusqu'à 7 ans",
-   "l": "durée de vie de la batterie"
-  },
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "portée de communication avec une centrale Ajax"
-  }
- ],
- "manualcallpoints-jeweller": [
-  {
-   "v": "Jusqu'à 7 ans",
-   "l": "durée de vie de la batterie"
-  }
- ],
- "motioncam-outdoor-phod": [
-  {
-   "v": "9 secondes",
-   "l": "pour livrer la première photo 1"
-  },
-  {
-   "v": "3",
-   "l": "–15 mètres 9,8–49 ft zone de détection"
-  },
-  {
-   "v": "0",
-   "l": "8–1,3 m 2,6–4,3 ft hauteur d'installation recommandée"
-  },
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "5 550 ft portée de communication avec une centrale ou un prolongateur de portée Ajax 2"
-  },
-  {
-   "v": "Jusqu'à 3 ans",
-   "l": "de fonctionnement sur les batteries préinstallées"
-  }
- ],
- "motionprotect": [
-  {
-   "v": "Jusqu'à 12 m",
-   "l": "distance de détection de mouvement"
-  },
-  {
-   "v": "Jusqu'à 5 ans",
-   "l": "de fonctionnement avec batteries préinstallées"
-  },
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "portée de communication avec une centrale Ajax ou un prolongateur de portée 1"
-  },
-  {
-   "v": "2",
-   "l": "couleurs du boîtier brillant"
-  }
- ],
- "motionprotect-outdoor": [
-  {
-   "v": "2 secondes",
-   "l": "Détection d’un obstacle devant les deux lentilles"
-  },
-  {
-   "v": "2",
-   "l": "5 minutes Détection d’un obstacle devant une lentille"
-  }
- ],
- "motionprotectplus": [
-  {
-   "v": "Jusqu'à 12 m",
-   "l": "distance de détection de mouvement"
-  },
-  {
-   "v": "Jusqu'à 5 ans",
-   "l": "de fonctionnement avec batterie préinstallée"
-  },
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "portée de communication avec une centrale Ajax ou un prolongateur de portée 1"
-  },
-  {
-   "v": "2",
-   "l": "couleurs du boîtier brillant"
-  }
- ],
- "rex-2": [
-  {
-   "v": "Jusqu'à 35 km",
-   "l": "2 de portée avec un système de sécurité 2"
-  }
- ],
- "socket-type-b-jeweller": [
-  {
-   "v": "2 m",
-   "l": "odes de fonctionnement Impulsion et bistable"
-  }
- ],
- "speakerphone-jeweller": [
-  {
-   "v": "Jusqu'à 10 m",
-   "l": "30 ft distance d'audibilité de la voix"
-  },
-  {
-   "v": "Jusqu’à 12 heures",
-   "l": "de fonctionnement en mode conversation"
-  },
-  {
-   "v": "Jusqu'à 3 ans",
-   "l": "de fonctionnement avec batteries préinstallées"
-  },
-  {
-   "v": "12 V",
-   "l": "⎓, 1 A alimentation externe en option"
-  },
-  {
-   "v": "Jusqu'à 10 m",
-   "l": "odules d’interpellation audio dans un seul système Ajax"
-  },
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "5 550 ft distance de communication avec une centrale Ajax 3"
-  },
-  {
-   "v": "3 W",
-   "l": "puissance de sortie du haut-parleur"
-  },
-  {
-   "v": "Jusqu'à 103 dB",
-   "l": "volume du haut-parleur"
-  }
- ],
- "streetsiren": [
-  {
-   "v": "Jusqu'à 1 500 m",
-   "l": "4 900 ft de communication par radio avec une centrale ou un prolongateur de portée Ajax 3"
-  }
- ],
- "superior-button-jeweller": [
-  {
-   "v": "Jusqu'à 1 300 m",
-   "l": "4 250 ft portée de communication avec une centrale ou un prolongateur de portée Ajax 1"
-  }
- ],
- "superior-combiprotect-fibra": [
-  {
-   "v": "3",
-   "l": "niveaux de sensibilité pour les capteurs de mouvement et de bris de glace"
-  },
-  {
-   "v": "Jusqu’à 46 m",
-   "l": "W faible consommation d'énergie"
-  }
- ],
- "superior-combiprotect-jeweller": [
-  {
-   "v": "Jusqu'à 9 m",
-   "l": "distance de détection de bris de glace"
-  }
- ],
- "superior-doorprotect-fibra": [
-  {
-   "v": "Jusqu'à 2 000 m",
-   "l": "portée de communication avec une centrale Ajax ou un module 2 qui prolonge la ligne Fibra"
-  },
-  {
-   "v": "Jusqu'à 0",
-   "l": "036 W faible consommation d'énergie"
-  },
-  {
-   "v": "2",
-   "l": "couleurs du boîtier mat"
-  }
- ],
- "superior-glassprotect-fibra": [
-  {
-   "v": "Jusqu'à 9 m",
-   "l": "la zone de détection du bris de glace"
-  },
-  {
-   "v": "Jusqu'à 2 000 m",
-   "l": "portée de communication avec une centrale Ajax 1 ou un module qui prolonge la ligne Fibra"
-  },
-  {
-   "v": "Jusqu'à 0",
-   "l": "036 W faible consommation d'énergie"
-  },
-  {
-   "v": "2",
-   "l": "couleurs du boîtier mat"
-  }
- ],
- "superior-doorprotect-plus-fibra": [
-  {
-   "v": "Jusqu'à 0",
-   "l": "036 W faible consommation d'énergie"
-  }
- ],
- "superior-glassprotect-jeweller": [
-  {
-   "v": "2",
-   "l": "couleurs du boîtier mat"
-  }
- ],
- "superior-homesiren-g3-jeweller": [
-  {
-   "v": "85 à 105 dB",
-   "l": "Réglage du volume des signaux pour les alarmes et autres événements"
-  }
- ],
- "superior-homesiren-jeweller": [
-  {
-   "v": "Jusqu'à 5 ans",
-   "l": "de fonctionnement avec des batteries améliorées"
-  }
- ],
- "superior-hub-hybrid": [
-  {
-   "v": "8",
-   "l": "lignes pour connecter des dispositifs filaires Ajax Superior"
-  },
-  {
-   "v": "Jusqu'à 100",
-   "l": "dispositifs sur une seule ligne pour un câblage économique"
-  },
-  {
-   "v": "Jusqu'à 60 heures",
-   "l": "de fonctionnement autonome avec une batterie de secours de 12 V⎓, 7 Ah"
-  }
- ],
- "superior-keypad-outdoor-fibra": [
-  {
-   "v": "Jusqu'à 2 000 m",
-   "l": "6 550 ft de communication filaire 1 avec une centrale Ajax ou un module qui prolonge la ligne Fibra"
-  },
-  {
-   "v": "Jusqu'à 0",
-   "l": "6 W Très faible consommation d'énergie"
-  }
- ],
- "superior-keypad-fibra": [
-  {
-   "v": "Jusqu'à 0",
-   "l": "23 W de la consommation d'énergie de la ligne Fibra"
-  },
-  {
-   "v": "Jusqu'à 2 000 m",
-   "l": "6 550 ft de la portée de communication avec une centrale Ajax 1 ou un module d’extension de ligne Fibra"
-  }
- ],
- "superior-hub-hybrid-2": [
-  {
-   "v": "8",
-   "l": "lignes pour connecter des dispositifs Ajax Superior filaires"
-  },
-  {
-   "v": "Jusqu'à 200",
-   "l": "dispositifs sur une seule ligne pour un câblage économique"
-  },
-  {
-   "v": "Jusqu'à 60 heures",
-   "l": "de fonctionnement autonome avec une batterie de secours de 12 V⎓, 7 Ah"
-  }
- ],
- "superior-keypad-plus-jeweller": [
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "5 550 ft 1 Distance de communication avec une centrale Ajax ou un prolongateur de portée"
-  }
- ],
- "superior-keypad-touchscreen-fibra": [
-  {
-   "v": "Jusqu'à 1",
-   "l": "31 W Consommation de la ligne Fibra"
-  }
- ],
- "superior-lineprotect-fibra": [
-  {
-   "v": "Jusqu'à 2 000 m",
-   "l": "distance de communication filaire avec une centrale Ajax"
-  }
- ],
- "superior-megahub": [
-  {
-   "v": "8",
-   "l": "lignes to connect wired Ajax Superior devices"
-  },
-  {
-   "v": "Jusqu'à 2 000 m",
-   "l": "6 550 ft de la portée de communication 2 entre la centrale et les dispositifs connectés en champ ouvert"
-  },
-  {
-   "v": "Jusqu'à 60 heures",
-   "l": "de fonctionnement autonome avec une batterie de secours de 12 V⎓, 18 Ah"
-  }
- ],
- "superior-linesplit-fibra": [
-  {
-   "v": "Jusqu'à 2 000 m",
-   "l": "distance de communication filaire avec une centrale Ajax"
-  }
- ],
- "superior-linesupply-fibra": [
-  {
-   "v": "Jusqu'à 10 m",
-   "l": "odules sur la ligne Fibra"
-  },
-  {
-   "v": "Jusqu'à 2 000 m",
-   "l": "portée de communication avec une centrale Ajax ou un module qui prolonge la ligne Fibra (1)"
-  }
- ],
- "superior-motioncam-am-phod-jeweller": [
-  {
-   "v": "3",
-   "l": "niveaux de sensibilité de la détection de mouvement qui peut être définie dans l'application Ajax PRO"
-  }
- ],
- "superior-motioncam-hd-phod-jeweller": [
-  {
-   "v": "Jusqu'à 4 ans",
-   "l": "de fonctionnement 3 sur les batteries améliorées préinstallées"
-  },
-  {
-   "v": "Jusqu'à 3 500 m",
-   "l": "11 450 ft de la portée de communication radio avec une centrale ou un prolongateur de portée Ajax 4"
-  }
- ],
- "superior-motioncam-fibra": [
-  {
-   "v": "Jusqu'à 12 m",
-   "l": "39 ft de portée de détection 2"
-  }
- ],
- "superior-motioncam-phod-fibra": [
-  {
-   "v": "Jusqu'à 39",
-   "l": "ft 12 m Distance de détection de mouvement 2"
-  }
- ],
- "superior-motioncam-phod-jeweller": [
-  {
-   "v": "9 secondes",
-   "l": "pour recevoir la première photo 1"
-  }
- ],
- "superior-motionprotect-g3-fibra": [
-  {
-   "v": "Jusqu'à 0",
-   "l": "23 W Consommation de la ligne Fibra"
-  },
-  {
-   "v": "Jusqu'à 2",
-   "l": "000 m 6,550 ft portée de communication avec un module qui prolonge la ligne Fibra ou une centrale Ajax 1"
-  }
- ],
- "superior-motionprotect-fibra": [
-  {
-   "v": "Jusqu'à 12 m",
-   "l": "distance de détection de mouvement 1"
-  },
-  {
-   "v": "Jusqu'à 0",
-   "l": "045 W Faible consommation d'énergie"
-  },
-  {
-   "v": "Jusqu'à 2 000 m",
-   "l": "portée de communication avec une centrale Ajax ou un module qui prolonge la ligne Fibra 2"
-  },
-  {
-   "v": "2",
-   "l": "couleurs du boîtier mat"
-  }
- ],
- "superior-motionprotect-jeweller": [
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "portée de communication avec une centrale Ajax ou un prolongateur de portée 2"
-  },
-  {
-   "v": "2",
-   "l": "couleurs du boîtier mat"
-  }
- ],
- "superior-motionprotect-plus-fibra": [
-  {
-   "v": "Jusqu'à 12 m",
-   "l": "distance de détection de mouvement 1"
-  },
-  {
-   "v": "Jusqu'à 0",
-   "l": "086 W Faible consommation d'énergie"
-  },
-  {
-   "v": "Jusqu'à 2 000 m",
-   "l": "portée de communication avec une centrale Ajax ou un module qui prolonge la ligne Fibra 2"
-  },
-  {
-   "v": "2",
-   "l": "couleurs du boîtier mat"
-  }
- ],
- "superior-motionprotect-plus-g3-fibra": [
-  {
-   "v": "Jusqu'à 90 m",
-   "l": "W Consommation de la ligne Fibra"
-  },
-  {
-   "v": "Jusqu'à 2 000 m",
-   "l": "6 550 ft portée de communication avec une centrale Ajax ou un module qui prolonge la ligne Fibra 1"
-  }
- ],
- "superior-motionprotect-plus-jeweller": [
-  {
-   "v": "2",
-   "l": "couleurs du boîtier mat"
-  }
- ],
- "superior-multirelay-fibra": [
-  {
-   "v": "Jusqu'à 0",
-   "l": "18 W Faible consommation d'énergie"
-  },
-  {
-   "v": "Jusqu'à 2 000 m",
-   "l": "1 portée de communication avec une centrale Ajax"
-  }
- ],
- "superior-multitransmitter-fibra": [
-  {
-   "v": "Jusqu'à 400 m",
-   "l": "1,300 ft d'une connexion filaire entre les dispositifs et le module d'intégration"
-  }
- ],
- "superior-multitransmitter-io-4x4-fibra": [
-  {
-   "v": "4",
-   "l": "entrées pour connecter des dispositifs tiers"
-  },
-  {
-   "v": "Jusqu'à 400 m",
-   "l": "1,300 ft d'une connexion filaire entre les dispositifs et le module d'intégration 2"
-  }
- ],
- "superior-streetsiren-fibra": [
-  {
-   "v": "Jusqu'à 2 000 m",
-   "l": "6 550 ft de portée de communication avec une centrale Ajax ou un module qui prolonge la ligne Fibra 3"
-  }
- ],
- "superior-streetsiren-plus-g3-jeweller": [
-  {
-   "v": "85 à 107 dB",
-   "l": "Réglage du volume des signaux pour les alarmes et autres événements"
-  },
-  {
-   "v": "jusqu'à 95",
-   "l": "% Humidité admissible"
-  }
- ],
- "superior-streetsiren-plus-jeweller": [
-  {
-   "v": "Jusqu'à 10 ans",
-   "l": "de fonctionnement avec les batteries préinstallées"
-  },
-  {
-   "v": "Jusqu'à 1 500 m",
-   "l": "4 900 ft de portée de communication sans fil 2 avec une centrale ou un prolongateur de portée Ajax"
-  }
- ],
- "superior-transmitter-fibra": [
-  {
-   "v": "Jusqu'à 2 000 m",
-   "l": "portée de communication 2 avec une centrale Ajax ou un module qui prolonge la ligne Fibra"
-  }
- ],
- "takeover-module-jeweller": [
-  {
-   "v": "319",
-   "l": "5 MHz Qolsys/Interlogix"
-  },
-  {
-   "v": "345 M",
-   "l": "Hz Honeywell/Resideo/2GIG"
-  },
-  {
-   "v": "433 M",
-   "l": "Hz DSC"
-  }
- ],
- "type4-fire-rex-jeweller": [
-  {
-   "v": "Jusqu'à 1 800 m",
-   "l": "portée de communication radio"
-  }
- ],
- "type4-fire-hub-jeweller": [
-  {
-   "v": "2",
-   "l": "emplacements pour cartes SIM pour connecter l'équipement d'alarme incendie à l'internet via un téléphone portable"
-  }
- ],
- "type4-internal-battery": [
-  {
-   "v": "7",
-   "l": "4 V tension nominale"
-  }
- ],
- "type4-hub-4g-jeweller": [
-  {
-   "v": "Jusqu'à 20 heures",
-   "l": "de fonctionnement autonome avec une batterie de secours intégrée"
-  }
- ],
- "type4-fireprotect-jeweller-sounders-vads": [
-  {
-   "v": "5 ans",
-   "l": "de fonctionnement sur les batteries CR123A préinstallées"
-  }
- ],
- "type4-io-module-2x2-jeweller": [
-  {
-   "v": "2 s",
-   "l": "orties isolées galvaniquement chacun compatible avec AC ou DC"
-  },
-  {
-   "v": "2",
-   "l": "entrées prenant en charge les types de connexion NC, NO, EOL, 2EOL et 3EOL"
-  },
-  {
-   "v": "5 ans",
-   "l": "de fonctionnement avec des batteries CR123A préinstallées et sans alimentation externe"
-  },
-  {
-   "v": "2",
-   "l": "boutons anti-sabotage pour détecter le démontage du dispositif"
-  }
- ],
- "type4-manualcallpoint-jeweller": [
-  {
-   "v": "Jusqu'à 1 700 m",
-   "l": "portée de la communication sans fil avec un équipement d'alarme incendie ou un prolongateur de portée"
-  },
-  {
-   "v": "Jusqu'à 7 ans",
-   "l": "durée de vie de la batterie"
-  }
- ],
- "type4-rex-jeweller": [
-  {
-   "v": "Jusqu'à 1 800 m",
-   "l": "portée de communication radio"
-  },
-  {
-   "v": "Jusqu’à 35 heures",
-   "l": "sur une batterie de secours"
-  }
- ],
- "waterstop": [
-  {
-   "v": "Jusqu'à 1 100 m",
-   "l": "3 600 ft de portée de communication 2 avec une centrale ou un prolongateur de portée Ajax"
-  },
-  {
-   "v": "Jusqu'à 3 ans",
-   "l": "de fonctionnement sur les batteries préinstallées"
-  }
- ]
+ "6vpsu": {
+  "tiles": [
+   {
+    "v": "12V",
+    "l": "PSU for Hub/Hub Plus/ReX"
+   }
+  ],
+  "variants": {}
+ },
+ "12-24vpsu-hub2": {
+  "tiles": [
+   {
+    "v": "12V",
+    "l": "PSU for Hub/Hub Plus/ReX"
+   }
+  ],
+  "variants": {}
+ },
+ "ajax-superior-spacecontrol-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement avec des batteries améliorées préinstallées"
+   },
+   {
+    "v": "Jusqu'à 1 300 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "Jusqu'à 1 300 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "IP32",
+    "l": "Protection contre l'humidité"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement autonome"
+   }
+  ],
+  "variants": {}
+ },
+ "12vpsu-hub2": {
+  "tiles": [
+   {
+    "v": "12V",
+    "l": "PSU installation"
+   }
+  ],
+  "variants": {}
+ },
+ "12vpsu": {
+  "tiles": [
+   {
+    "v": "12V",
+    "l": "PSU installation"
+   }
+  ],
+  "variants": {}
+ },
+ "ajax-superior-multitransmitter-8-inputs-fibra": {
+  "tiles": [
+   {
+    "v": "8",
+    "l": "entrées"
+   },
+   {
+    "v": "36 s",
+    "l": "le module dans les"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication allant"
+   },
+   {
+    "v": "Jusqu'à 400 m",
+    "l": "connexion filaire aux dispositifs tiers"
+   }
+  ],
+  "variants": {}
+ },
+ "bulletcam": {
+  "tiles": [
+   {
+    "v": "IP66",
+    "l": "Boîtier métallique"
+   },
+   {
+    "v": "2880 × 1620 px",
+    "l": "définition jusqu'à"
+   },
+   {
+    "v": "100° à 110°",
+    "l": "angle de vision de"
+   },
+   {
+    "v": "3840 × 2160 px",
+    "l": "définition jusqu'à"
+   },
+   {
+    "v": "75° à 85°",
+    "l": "angle de vision de"
+   },
+   {
+    "v": "5 MP",
+    "l": "Capteur CMOS"
+   },
+   {
+    "v": "4 mm",
+    "l": "8 mm"
+   },
+   {
+    "v": "jusqu'à 256 Go",
+    "l": "Emplacement MicroSD"
+   },
+   {
+    "v": "jusqu'à 50 m",
+    "l": "Éclairage IR"
+   }
+  ],
+  "variants": {
+   "5mp-2.8": [
+    {
+     "v": "2880 × 1620 px",
+     "l": "définition jusqu'à"
+    },
+    {
+     "v": "100° à 110°",
+     "l": "angle de vision de"
+    }
+   ],
+   "8mp-2.8": [
+    {
+     "v": "3840 × 2160 px",
+     "l": "définition jusqu'à"
+    },
+    {
+     "v": "100° à 110°",
+     "l": "angle de vision de"
+    }
+   ],
+   "5mp-4": [
+    {
+     "v": "2880 × 1620 px",
+     "l": "définition jusqu'à"
+    },
+    {
+     "v": "75° à 85°",
+     "l": "angle de vision de"
+    }
+   ],
+   "8mp-4": [
+    {
+     "v": "3840 × 2160 px",
+     "l": "définition jusqu'à"
+    },
+    {
+     "v": "75° à 85°",
+     "l": "angle de vision de"
+    }
+   ]
+  }
+ },
+ "bulletcam-hlvf": {
+  "tiles": [
+   {
+    "v": "jusqu'à 60 m",
+    "l": "Portée de l'éclairage IR"
+   },
+   {
+    "v": "jusqu'à 40 m",
+    "l": "Portée de l'éclairage blanc"
+   }
+  ],
+  "variants": {}
+ },
+ "button": {
+  "tiles": [
+   {
+    "v": "300 m",
+    "l": "Jusqu'à 1 300 m 000 ft"
+   },
+   {
+    "v": "Jusqu'à 1 300 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "IP55",
+    "l": "pour la résistance à l'eau et à la poussière"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement sur la batterie préinstallée"
+   }
+  ],
+  "variants": {}
+ },
+ "bypass-dimmer-55": {
+  "tiles": [
+   {
+    "v": "8 V",
+    "l": "Raccordement des ampoules à moins de"
+   }
+  ],
+  "variants": {}
+ },
+ "bulletcam-hl": {
+  "tiles": [
+   {
+    "v": "jusqu'à 50 m",
+    "l": "portée d'éclairage IR et de lumière blanche"
+   },
+   {
+    "v": "jusqu'à 50 m",
+    "l": "Éclairage hybride"
+   },
+   {
+    "v": "IP66",
+    "l": "et IK"
+   },
+   {
+    "v": "jusqu'à 50 m",
+    "l": "Portée de l'éclairage IR"
+   },
+   {
+    "v": "jusqu'à 50 m",
+    "l": "Portée de l'éclairage blanc"
+   },
+   {
+    "v": "jusqu'à 50 m",
+    "l": "Éclairage IR + lumière blanche"
+   },
+   {
+    "v": "5 MP",
+    "l": "Capteur CMOS"
+   },
+   {
+    "v": "4 mm",
+    "l": "8 mm"
+   },
+   {
+    "v": "IP66",
+    "l": "Indice de protection"
+   },
+   {
+    "v": "jusqu'à 256 Go",
+    "l": "Emplacement MicroSD"
+   }
+  ],
+  "variants": {
+   "5mp-2.8": [
+    {
+     "v": "110°",
+     "l": "angle de vision de"
+    }
+   ],
+   "8mp-2.8": [
+    {
+     "v": "110°",
+     "l": "angle de vision de"
+    }
+   ],
+   "5mp-4": [
+    {
+     "v": "85°",
+     "l": "angle de vision de"
+    }
+   ],
+   "8mp-4": [
+    {
+     "v": "85°",
+     "l": "angle de vision de"
+    }
+   ]
+  }
+ },
+ "cabletrunk": {
+  "tiles": [
+   {
+    "v": "9,5 mm",
+    "l": "avec seulement"
+   },
+   {
+    "v": "9,5 mm",
+    "l": "Aspect élégant de l'installation"
+   },
+   {
+    "v": "16 mm",
+    "l": "Compatible avec les goulottes de câblage standard"
+   }
+  ],
+  "variants": {}
+ },
+ "combiprotect": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 12 m",
+    "l": "distance de détection de mouvement"
+   },
+   {
+    "v": "Jusqu'à 9 m",
+    "l": "distance de détection des bris de glace"
+   },
+   {
+    "v": "180°",
+    "l": "angle de détection de bris de glace"
+   },
+   {
+    "v": "3",
+    "l": "niveaux de sensibilité"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement avec la batterie préinstallée"
+   },
+   {
+    "v": "Jusqu'à 1 200 m",
+    "l": "portée de communication avec une centrale Ajax ou un prolongateur de portée"
+   },
+   {
+    "v": "2",
+    "l": "couleurs"
+   },
+   {
+    "v": "Jusqu'à 1 200 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "d'autonomie"
+   }
+  ],
+  "variants": {}
+ },
+ "coverplate": {
+  "tiles": [
+   {
+    "v": "8",
+    "l": "couleurs"
+   },
+   {
+    "v": "8",
+    "l": "colours"
+   }
+  ],
+  "variants": {}
+ },
+ "curtain-outdoor-mini-jeweller": {
+  "tiles": [
+   {
+    "v": "2",
+    "l": "modes de détection"
+   },
+   {
+    "v": "Jusqu'à 3 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "100°",
+    "l": "Angle de vue vertical"
+   },
+   {
+    "v": "15°",
+    "l": "Angle de vue horizontal"
+   },
+   {
+    "v": "Jusqu'à 3 ans",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   },
+   {
+    "v": "jusqu'à 1 700 m",
+    "l": "Portée de la communication sans fil"
+   }
+  ],
+  "variants": {}
+ },
+ "curtain-outdoor-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu’à 3 ans",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   },
+   {
+    "v": "8°",
+    "l": "Angle de vision horizontal"
+   },
+   {
+    "v": "2",
+    "l": "capteurs PIR"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   }
+  ],
+  "variants": {}
+ },
+ "curtaincam-outdoor-highmount-phod-jeweller": {
+  "tiles": [
+   {
+    "v": "12–24 V",
+    "l": "Possibilité de brancher une alimentation"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "portée de communication en champ ouvert"
+   },
+   {
+    "v": "IP55",
+    "l": "Indice de protection"
+   }
+  ],
+  "variants": {}
+ },
+ "domecam-hlvf": {
+  "tiles": [
+   {
+    "v": "jusqu'à 60 m",
+    "l": "Portée de l'éclairage IR"
+   },
+   {
+    "v": "jusqu'à 40 m",
+    "l": "Portée de l'éclairage blanc"
+   }
+  ],
+  "variants": {}
+ },
+ "domecam-mini": {
+  "tiles": [
+   {
+    "v": "2880 × 1620 px",
+    "l": "définition jusqu'à"
+   },
+   {
+    "v": "100° à 110°",
+    "l": "angle de vision de"
+   },
+   {
+    "v": "3840 × 2160 px",
+    "l": "définition jusqu'à"
+   },
+   {
+    "v": "75° à 85°",
+    "l": "angle de vision de"
+   },
+   {
+    "v": "5 MP",
+    "l": "Capteur CMOS"
+   },
+   {
+    "v": "4 mm",
+    "l": "8 mm"
+   },
+   {
+    "v": "jusqu'à 256 Go",
+    "l": "Emplacement MicroSD"
+   },
+   {
+    "v": "jusqu'à 15 m",
+    "l": "Éclairage IR"
+   }
+  ],
+  "variants": {
+   "5mp-2.8": [
+    {
+     "v": "2880 × 1620 px",
+     "l": "définition jusqu'à"
+    },
+    {
+     "v": "100° à 110°",
+     "l": "angle de vision de"
+    }
+   ],
+   "8mp-2.8": [
+    {
+     "v": "3840 × 2160 px",
+     "l": "définition jusqu'à"
+    },
+    {
+     "v": "100° à 110°",
+     "l": "angle de vision de"
+    }
+   ],
+   "5mp-4": [
+    {
+     "v": "2880 × 1620 px",
+     "l": "définition jusqu'à"
+    },
+    {
+     "v": "75° à 85°",
+     "l": "angle de vision de"
+    }
+   ],
+   "8mp-4": [
+    {
+     "v": "3840 × 2160 px",
+     "l": "définition jusqu'à"
+    },
+    {
+     "v": "75° à 85°",
+     "l": "angle de vision de"
+    }
+   ]
+  }
+ },
+ "doorbell": {
+  "tiles": [
+   {
+    "v": "jusqu'à 500 m",
+    "l": "à une distance allant"
+   },
+   {
+    "v": "jusqu'à 500 m",
+    "l": "Connexion Wi-Fi améliorée"
+   },
+   {
+    "v": "jusqu'à 1 h",
+    "l": "Autonomie"
+   },
+   {
+    "v": "jusqu'à 1 h",
+    "l": "Bouton anti-sabotage pour détecter le démontage du dispositif"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "communication sans fil3 avec une centrale Ajax"
+   },
+   {
+    "v": "4 MP",
+    "l": "capteur CMOS"
+   },
+   {
+    "v": "2688 × 1520 px",
+    "l": "capteur CMOS 4 MP"
+   },
+   {
+    "v": "IP54",
+    "l": "indice de protection"
+   },
+   {
+    "v": "jusqu'à 85 dB",
+    "l": "Haut-parleur"
+   }
+  ],
+  "variants": {}
+ },
+ "doorprotect": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1 200 m",
+    "l": "portée de communication"
+   },
+   {
+    "v": "Jusqu'à 1 200 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "3",
+    "l": "niveaux de volume réglables"
+   },
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "d'autonomie"
+   }
+  ],
+  "variants": {}
+ },
+ "domecam-mini-hl": {
+  "tiles": [
+   {
+    "v": "IP66",
+    "l": "et IK"
+   },
+   {
+    "v": "jusqu'à 15 m",
+    "l": "portée d'éclairage IR et de lumière blanche"
+   },
+   {
+    "v": "jusqu'à 15 m",
+    "l": "Portée de l'éclairage IR"
+   },
+   {
+    "v": "jusqu'à 15 m",
+    "l": "Portée de l'éclairage blanc"
+   },
+   {
+    "v": "jusqu'à 15 m",
+    "l": "Éclairage IR + lumière blanche"
+   },
+   {
+    "v": "5 MP",
+    "l": "Capteur CMOS"
+   },
+   {
+    "v": "4 mm",
+    "l": "8 mm"
+   },
+   {
+    "v": "IP66",
+    "l": "Indice de protection"
+   },
+   {
+    "v": "jusqu'à 256 Go",
+    "l": "Emplacement pour carte microSD"
+   }
+  ],
+  "variants": {
+   "5mp-2.8": [
+    {
+     "v": "110°",
+     "l": "angle de vision de"
+    }
+   ],
+   "8mp-2.8": [
+    {
+     "v": "110°",
+     "l": "angle de vision de"
+    }
+   ],
+   "5mp-4": [
+    {
+     "v": "85°",
+     "l": "angle de vision de"
+    }
+   ],
+   "8mp-4": [
+    {
+     "v": "85°",
+     "l": "angle de vision de"
+    }
+   ]
+  }
+ },
+ "dualcurtain-outdoor": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1700 m",
+    "l": "1700 m de communication radio en espace ouvert"
+   },
+   {
+    "v": "1700 m",
+    "l": "Jusqu'à 1700 m"
+   },
+   {
+    "v": "Jusqu'à 1700 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "Jusqu'à 4 ans",
+    "l": "d'autonomie"
+   }
+  ],
+  "variants": {}
+ },
+ "doublebutton": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1300 m",
+    "l": "1300 m de communication radio en espace ouvert"
+   },
+   {
+    "v": "1300 m",
+    "l": "Jusqu'à 1300 m"
+   },
+   {
+    "v": "Jusqu'à 1300 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "IP55",
+    "l": "Boîtier"
+   },
+   {
+    "v": "jusqu'à 5 ans",
+    "l": "Fonctionne"
+   }
+  ],
+  "variants": {}
+ },
+ "doorprotectplus": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1 200 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "d'autonomie"
+   }
+  ],
+  "variants": {}
+ },
+ "en54-fire-hub-jeweller": {
+  "tiles": [
+   {
+    "v": "110–240 V",
+    "l": "Secteur"
+   },
+   {
+    "v": "7,4 V",
+    "l": "⎓, 5 Ah"
+   },
+   {
+    "v": "7,4 V",
+    "l": "Batterie de secours"
+   },
+   {
+    "v": "263",
+    "l": "× 223 × 54 mm"
+   },
+   {
+    "v": "54 mm",
+    "l": "263 × 223 ×"
+   },
+   {
+    "v": "54 mm",
+    "l": "Boîtier compact"
+   },
+   {
+    "v": "jusqu'à 1 800 m",
+    "l": "portée de communication"
+   },
+   {
+    "v": "60 dB",
+    "l": "Buzzer intégré de"
+   },
+   {
+    "v": "60 dB",
+    "l": "Buzzer de"
+   },
+   {
+    "v": "2",
+    "l": "emplacements pour cartes SIM"
+   },
+   {
+    "v": "40",
+    "l": "zones d'incendie"
+   },
+   {
+    "v": "jusqu'à 1 800 m",
+    "l": "Portée radio"
+   }
+  ],
+  "variants": {}
+ },
+ "en54-fireprotect-jeweller-detectors": {
+  "tiles": [
+   {
+    "v": "1S",
+    "l": "B, BR, BS, C, CR, CS, ou une température fixe"
+   },
+   {
+    "v": "1S",
+    "l": "Détection de chaleur"
+   },
+   {
+    "v": "jusqu'à 1 700 m",
+    "l": "d'indication ou le prolongateur de portée"
+   },
+   {
+    "v": "jusqu'à 1 700 m",
+    "l": "Communication Jeweller Intégrée"
+   },
+   {
+    "v": "85 dB",
+    "l": "Avertisseur sonore de"
+   },
+   {
+    "v": "85 dB",
+    "l": "Alarmes sonores"
+   },
+   {
+    "v": "5",
+    "l": "min par dispositif sans démontage du boîtier"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "sur les batteries CR123A préinstallées"
+   },
+   {
+    "v": "jusqu'à 90°",
+    "l": "Panneau SmartBracket permettant une rotation du dispositif"
+   },
+   {
+    "v": "jusqu'à 1 700 m",
+    "l": "Émetteurs radio intégrés permettant de communiquer"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "d'autonomie"
+   }
+  ],
+  "variants": {}
+ },
+ "en54-internal-battery": {
+  "tiles": [
+   {
+    "v": "5",
+    "l": "Ah pour 24 heures de fonctionnement"
+   },
+   {
+    "v": "24 heures",
+    "l": "5 Ah pour"
+   },
+   {
+    "v": "24 heures",
+    "l": "Capacité"
+   },
+   {
+    "v": "5",
+    "l": "ans"
+   }
+  ],
+  "variants": {}
+ },
+ "en54-fire-rex-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1 800 m",
+    "l": "portée de communication radio"
+   },
+   {
+    "v": "jusqu'à 35 km",
+    "l": "pour étendre la couverture"
+   },
+   {
+    "v": "jusqu'à 35 km",
+    "l": "Jusqu'à 5 prolongateurs de portée par système"
+   },
+   {
+    "v": "110–240 V",
+    "l": "Secteur"
+   },
+   {
+    "v": "7,4 V",
+    "l": "⎓, 5 Ah"
+   },
+   {
+    "v": "7,4 V",
+    "l": "Batterie de secours"
+   },
+   {
+    "v": "jusqu'à 1 800 m",
+    "l": "Portée de communication"
+   },
+   {
+    "v": "jusqu'à 35 km",
+    "l": "Portée"
+   },
+   {
+    "v": "jusqu'à 1 800 m",
+    "l": "Portée radio"
+   },
+   {
+    "v": "72 heures",
+    "l": "Chaque batterie offre jusqu'à 24 ou"
+   }
+  ],
+  "variants": {}
+ },
+ "en54-fireprotect-jeweller-sounders-vads": {
+  "tiles": [
+   {
+    "v": "jusqu'à 1 700 m",
+    "l": "de portée avec une centrale d'alarme incendie ou un prolongateur de portée"
+   },
+   {
+    "v": "jusqu'à 1 700 m",
+    "l": "Communication Jeweller Intégrée"
+   },
+   {
+    "v": "100 dB",
+    "l": "avec un buzzer de"
+   },
+   {
+    "v": "100 dB",
+    "l": "Indication sonore d'alarme"
+   },
+   {
+    "v": "5",
+    "l": "ans de fonctionnement"
+   },
+   {
+    "v": "5 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "IP54",
+    "l": "avec un boîtier"
+   },
+   {
+    "v": "10°C",
+    "l": "une plage de fonctionnement de"
+   },
+   {
+    "v": "60°C",
+    "l": "une plage de fonctionnement de –10°C à +"
+   },
+   {
+    "v": "IP54",
+    "l": "Conçu pour diverses conditions"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   }
+  ],
+  "variants": {}
+ },
+ "en54-indicator-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "de portée de communication avec une centrale ou un prolongateur de portée Ajax"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "IP54",
+    "l": "avec un boîtier"
+   },
+   {
+    "v": "10°C",
+    "l": "des températures de fonctionnement de"
+   },
+   {
+    "v": "50°C",
+    "l": "des températures de fonctionnement de –10°C à +"
+   },
+   {
+    "v": "IP54",
+    "l": "Conçu pour diverses conditions"
+   },
+   {
+    "v": "5",
+    "l": "ans de fonctionnement"
+   },
+   {
+    "v": "5 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   }
+  ],
+  "variants": {}
+ },
+ "en54-io-module-2x2-jeweller": {
+  "tiles": [
+   {
+    "v": "2",
+    "l": "sorties isolées galvaniquement"
+   },
+   {
+    "v": "2",
+    "l": "entrées"
+   },
+   {
+    "v": "5",
+    "l": "ans de fonctionnement"
+   },
+   {
+    "v": "5 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "jusqu'à 1 700 m",
+    "l": "Communication Jeweller Intégrée"
+   },
+   {
+    "v": "2",
+    "l": "boutons anti-sabotage"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "Jeweller"
+   }
+  ],
+  "variants": {}
+ },
+ "external-antenna": {
+  "tiles": [
+   {
+    "v": "3 m",
+    "l": "Surmonte tous les obstacles au signal grâce à un câble de"
+   },
+   {
+    "v": "Jusqu'à 3 m",
+    "l": "connexion filaire"
+   }
+  ],
+  "variants": {}
+ },
+ "fireprotect-2-ac-co-jeweller": {
+  "tiles": [
+   {
+    "v": "20 secondes",
+    "l": "une alarme est déclenchée dans les"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Deux types d'alarme incendie interconnectée"
+   },
+   {
+    "v": "10 ans",
+    "l": "durée de vie de"
+   },
+   {
+    "v": "10 ans",
+    "l": "Capteur de CO"
+   },
+   {
+    "v": "110–240 V",
+    "l": "Alimentation principale"
+   },
+   {
+    "v": "Jusqu'à 1 500 m",
+    "l": "portée de communication avec une centrale Ajax"
+   },
+   {
+    "v": "20",
+    "l": "secondes pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Fin de vie utile"
+   },
+   {
+    "v": "Jusqu'à 1 500 mètres",
+    "l": "de portée de communication radio avec une centrale"
+   },
+   {
+    "v": "Jusqu'à 1 500 mètres",
+    "l": "Jeweller"
+   },
+   {
+    "v": "85 dB",
+    "l": "Sirène intégrée de"
+   }
+  ],
+  "variants": {}
+ },
+ "fireprotect-2-ac-heat-jeweller": {
+  "tiles": [
+   {
+    "v": "20 secondes",
+    "l": "une alarme est déclenchée dans les"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Deux types d'alarme incendie interconnectée"
+   },
+   {
+    "v": "110–240 V",
+    "l": "Alimentation principale"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "portée de communication avec une centrale Ajax"
+   },
+   {
+    "v": "20",
+    "l": "secondes pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Fin de vie utile"
+   },
+   {
+    "v": "Jusqu'à 1 700 mètres",
+    "l": "de portée de communication radio avec une centrale"
+   },
+   {
+    "v": "Jusqu'à 1 700 mètres",
+    "l": "Jeweller"
+   },
+   {
+    "v": "85 dB",
+    "l": "Sirène intégrée de"
+   },
+   {
+    "v": "85",
+    "l": "dB siren"
+   },
+   {
+    "v": "85 dB",
+    "l": "siren"
+   }
+  ],
+  "variants": {}
+ },
+ "fireprotect-2-ac-heat-co-jeweller": {
+  "tiles": [
+   {
+    "v": "20 secondes",
+    "l": "une alarme est déclenchée dans les"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Deux types d'alarme incendie interconnectée"
+   },
+   {
+    "v": "110–240 V",
+    "l": "Alimentation principale"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "portée de communication avec une centrale Ajax"
+   },
+   {
+    "v": "20",
+    "l": "secondes pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Fin de vie utile"
+   },
+   {
+    "v": "Jusqu'à 1 700 mètres",
+    "l": "de portée de communication radio avec une centrale"
+   },
+   {
+    "v": "Jusqu'à 1 700 mètres",
+    "l": "Jeweller"
+   },
+   {
+    "v": "85 dB",
+    "l": "Sirène intégrée de"
+   },
+   {
+    "v": "85",
+    "l": "dB siren"
+   },
+   {
+    "v": "85 dB",
+    "l": "siren"
+   }
+  ],
+  "variants": {}
+ },
+ "fireprotect-2-ac-heat-smoke-co-jeweller": {
+  "tiles": [
+   {
+    "v": "20 secondes",
+    "l": "une alarme est déclenchée dans les"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Deux types d'alarme incendie interconnectée"
+   },
+   {
+    "v": "110–240 V",
+    "l": "Alimentation principale"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "portée de communication avec une centrale Ajax"
+   },
+   {
+    "v": "20",
+    "l": "secondes pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Fin de vie utile"
+   },
+   {
+    "v": "Jusqu'à 1 700 mètres",
+    "l": "de portée de communication radio avec une centrale"
+   },
+   {
+    "v": "Jusqu'à 1 700 mètres",
+    "l": "Jeweller"
+   },
+   {
+    "v": "85 dB",
+    "l": "Sirène intégrée de"
+   },
+   {
+    "v": "85",
+    "l": "dB siren"
+   },
+   {
+    "v": "85 dB",
+    "l": "siren"
+   }
+  ],
+  "variants": {}
+ },
+ "fireprotect-2-heat": {
+  "tiles": [
+   {
+    "v": "20 s",
+    "l": "une alarme en"
+   },
+   {
+    "v": "20 s",
+    "l": "Deux types d'alarme incendie interconnectée"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "portée de communication avec une centrale Ajax"
+   },
+   {
+    "v": "10",
+    "l": "ans de fonctionnement"
+   },
+   {
+    "v": "10 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "85 dB",
+    "l": "Sirène intégrée de"
+   },
+   {
+    "v": "Jusqu'à 1 700 mètres",
+    "l": "de portée de communication radio avec une centrale"
+   },
+   {
+    "v": "20",
+    "l": "secondes pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "pour activer jusqu'à 200 détecteurs d'incendie"
+   }
+  ],
+  "variants": {}
+ },
+ "fireprotect-2-co": {
+  "tiles": [
+   {
+    "v": "20 s",
+    "l": "une alarme en"
+   },
+   {
+    "v": "20 s",
+    "l": "Deux types d'alarme incendie interconnectée"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "portée de communication avec une centrale Ajax"
+   },
+   {
+    "v": "10",
+    "l": "ans de fonctionnement"
+   },
+   {
+    "v": "10 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "85 dB",
+    "l": "Sirène intégrée de"
+   },
+   {
+    "v": "Jusqu'à 1 700 mètres",
+    "l": "de portée de communication radio avec une centrale"
+   },
+   {
+    "v": "20",
+    "l": "secondes pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "pour activer jusqu'à 200 détecteurs d'incendie"
+   }
+  ],
+  "variants": {}
+ },
+ "fireprotect-2-ac-heat-smoke-jeweller": {
+  "tiles": [
+   {
+    "v": "20 secondes",
+    "l": "une alarme est déclenchée dans les"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Deux types d'alarme incendie interconnectée"
+   },
+   {
+    "v": "110–240 V",
+    "l": "Alimentation principale"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "portée de communication avec une centrale Ajax"
+   },
+   {
+    "v": "20",
+    "l": "secondes pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Fin de vie utile"
+   },
+   {
+    "v": "Jusqu'à 1 700 mètres",
+    "l": "de portée de communication radio avec une centrale"
+   },
+   {
+    "v": "Jusqu'à 1 700 mètres",
+    "l": "Jeweller"
+   },
+   {
+    "v": "85 dB",
+    "l": "Sirène intégrée de"
+   },
+   {
+    "v": "85",
+    "l": "dB siren"
+   },
+   {
+    "v": "85 dB",
+    "l": "siren"
+   }
+  ],
+  "variants": {}
+ },
+ "fireprotect-2-heat-co": {
+  "tiles": [
+   {
+    "v": "20 s",
+    "l": "une alarme en"
+   },
+   {
+    "v": "20 s",
+    "l": "Deux types d'alarme incendie interconnectée"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "portée de communication avec une centrale Ajax"
+   },
+   {
+    "v": "10",
+    "l": "ans de fonctionnement"
+   },
+   {
+    "v": "10 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "85 dB",
+    "l": "Sirène intégrée de"
+   },
+   {
+    "v": "Jusqu'à 1 700 mètres",
+    "l": "de portée de communication radio avec une centrale"
+   },
+   {
+    "v": "20",
+    "l": "secondes pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "pour activer jusqu'à 200 détecteurs d'incendie"
+   }
+  ],
+  "variants": {}
+ },
+ "fireprotect-2-rb-co-ul-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "10 ans",
+    "l": "Durée de vie de"
+   },
+   {
+    "v": "10 ans",
+    "l": "Capteur de CO"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Alarme interconnectée en"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Fin de vie utile"
+   },
+   {
+    "v": "700 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "85 dB",
+    "l": "Sirène intégrée de"
+   }
+  ],
+  "variants": {}
+ },
+ "fireprotect-2-rb-heat-smoke-co-ul-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Alarme interconnectée en"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Fin de vie utile"
+   },
+   {
+    "v": "700 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "85 dB",
+    "l": "Sirène intégrée de"
+   }
+  ],
+  "variants": {}
+ },
+ "fireprotect-2-rb-heat-ul-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Alarme interconnectée en"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Fin de vie utile"
+   },
+   {
+    "v": "700 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "85 dB",
+    "l": "Sirène intégrée de"
+   }
+  ],
+  "variants": {}
+ },
+ "fireprotect-2-rb-heat-smoke-ul-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Alarme interconnectée en"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Fin de vie utile"
+   },
+   {
+    "v": "700 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "85 dB",
+    "l": "Sirène intégrée de"
+   }
+  ],
+  "variants": {}
+ },
+ "fireprotect-2-smoke-heat": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "de fonctionnement avec des batteries remplaçables"
+   },
+   {
+    "v": "Jusqu'à 10 ans",
+    "l": "de fonctionnement avec des batteries scellées"
+   },
+   {
+    "v": "20 secondes",
+    "l": "alarme en moins de"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Deux types d'alarme incendie interconnectée"
+   },
+   {
+    "v": "Jusqu'à 10 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "20",
+    "l": "secondes pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Fin de vie"
+   },
+   {
+    "v": "Jusqu'à 1,700 m",
+    "l": "communication radio en espace ouvert"
+   },
+   {
+    "v": "Jusqu'à 1,700 m",
+    "l": "Sorties de secours déverrouillées"
+   },
+   {
+    "v": "85 dB",
+    "l": "Sirène intégrée de"
+   }
+  ],
+  "variants": {}
+ },
+ "fireprotect-2-smoke-heat-co": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "de fonctionnement avec des batteries remplaçables"
+   },
+   {
+    "v": "Jusqu'à 10 ans",
+    "l": "de fonctionnement avec des batteries scellées"
+   },
+   {
+    "v": "20 secondes",
+    "l": "alarme en moins de"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Deux types d'alarme incendie interconnectée"
+   },
+   {
+    "v": "Jusqu'à 10 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "20",
+    "l": "secondes pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "pour activer jusqu'à 200 détecteurs d'incendie"
+   },
+   {
+    "v": "20 secondes",
+    "l": "Fin de vie"
+   },
+   {
+    "v": "Jusqu'à 1,700 m",
+    "l": "communication radio en espace ouvert"
+   },
+   {
+    "v": "Jusqu'à 1,700 m",
+    "l": "Déverrouillage des issues de secours"
+   },
+   {
+    "v": "85 dB",
+    "l": "Sirène intégrée de"
+   }
+  ],
+  "variants": {}
+ },
+ "glandbox": {
+  "tiles": [
+   {
+    "v": "16",
+    "l": "lieux d'installation des presse-étoupes"
+   },
+   {
+    "v": "jusqu'à 20 mm",
+    "l": "Support pour des diamètres de presse-étoupe allant"
+   },
+   {
+    "v": "IP20",
+    "l": "Boîtier"
+   }
+  ],
+  "variants": {}
+ },
+ "glassprotect": {
+  "tiles": [
+   {
+    "v": "180°",
+    "l": "angles de détection des bris de glace"
+   },
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "2",
+    "l": "couleurs"
+   },
+   {
+    "v": "Jusqu'à 1 000 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "d'autonomie"
+   }
+  ],
+  "variants": {}
+ },
+ "homesiren-plus-jeweller": {
+  "tiles": [
+   {
+    "v": "100 dB",
+    "l": "de 80 dB à"
+   },
+   {
+    "v": "80 dB",
+    "l": "Volume réglable"
+   },
+   {
+    "v": "3 s",
+    "l": "Durée d'alarme configurable"
+   },
+   {
+    "v": "12 V",
+    "l": "Possibilité de raccorder une alimentation externe"
+   },
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "portée de communication bidirectionnelle"
+   }
+  ],
+  "variants": {}
+ },
+ "hub": {
+  "tiles": [
+   {
+    "v": "100",
+    "l": "dispositifs Ajax sans fil"
+   },
+   {
+    "v": "9",
+    "l": "groupes de sécurité"
+   },
+   {
+    "v": "2",
+    "l": "réseaux de communication indépendants"
+   },
+   {
+    "v": "Jusqu'à 15 heures",
+    "l": "de fonctionnement autonome avec batterie de secours"
+   },
+   {
+    "v": "2",
+    "l": "couleurs"
+   },
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "de communication radio entre les dispositifs sans fil et une centrale"
+   },
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "5",
+    "l": "scénarios d'automatisation"
+   },
+   {
+    "v": "30 secondes",
+    "l": "Détection du brouillage en"
+   },
+   {
+    "v": "jusqu'à 15 heures",
+    "l": "La batterie rechargeable intégrée offre"
+   },
+   {
+    "v": "jusqu'à 15 heures",
+    "l": "1 La batterie Li-ion 3 Ah offre"
+   }
+  ],
+  "variants": {}
+ },
+ "hub-2": {
+  "tiles": [
+   {
+    "v": "9",
+    "l": "groupes"
+   },
+   {
+    "v": "3",
+    "l": "réseaux de télécommunication indépendants Prêt à l'emploi"
+   },
+   {
+    "v": "9",
+    "l": "secondes pour recevoir la première photo"
+   },
+   {
+    "v": "9 secondes",
+    "l": "pour recevoir la première photo"
+   },
+   {
+    "v": "9 secondes",
+    "l": "Vérification d'alarmes par photo en"
+   },
+   {
+    "v": "16 heures",
+    "l": "Fonctionnement via la batterie de secours de"
+   },
+   {
+    "v": "Jusqu'à 2000 m",
+    "l": "de communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "320×240 px",
+    "l": "Le délai de livraison d'une photo avec une résolution de"
+   }
+  ],
+  "variants": {}
+ },
+ "hub-bp": {
+  "tiles": [
+   {
+    "v": "100",
+    "l": "dispositifs Ajax sans fil"
+   },
+   {
+    "v": "12V",
+    "l": "5 an sur une batterie externe tierce Zinc-air"
+   },
+   {
+    "v": "jusqu'à 1,5 an",
+    "l": "Alimentation externe"
+   },
+   {
+    "v": "9",
+    "l": "groupes"
+   },
+   {
+    "v": "2",
+    "l": "réseaux de communication indépendants"
+   },
+   {
+    "v": "2",
+    "l": "couleurs"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Distance de communication radio"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "3 m",
+    "l": "Longueur du câble"
+   },
+   {
+    "v": "9 secondes",
+    "l": "Levée de doute photo en"
+   }
+  ],
+  "variants": {}
+ },
+ "homesiren": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement sur batteries"
+   },
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement autonome"
+   }
+  ],
+  "variants": {}
+ },
+ "hub2-plus": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 2000 m",
+    "l": "de communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "9",
+    "l": "secondes pour recevoir la première photo"
+   },
+   {
+    "v": "9 secondes",
+    "l": "pour recevoir la première photo"
+   }
+  ],
+  "variants": {}
+ },
+ "hubplus": {
+  "tiles": [
+   {
+    "v": "jusqu'à 16 heures",
+    "l": "fonctionne"
+   }
+  ],
+  "variants": {}
+ },
+ "junctionbox": {
+  "tiles": [
+   {
+    "v": "IP66",
+    "l": "Boîtier"
+   }
+  ],
+  "variants": {}
+ },
+ "keypad-plus": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 3,5 ans",
+    "l": "de fonctionnement avec la batterie préinstallée"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "Jusqu'à 3,5 ans",
+    "l": "de fonctionnement autonome"
+   }
+  ],
+  "variants": {}
+ },
+ "keypad-outdoor-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 2 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "12 V",
+    "l": "Alimentation externe optionnelle"
+   },
+   {
+    "v": "IP66",
+    "l": "Boîtier durable avec protection"
+   },
+   {
+    "v": "12 V",
+    "l": "Bornier"
+   },
+   {
+    "v": "jusqu'à 2 ans",
+    "l": "Autonomie de fonctionnement"
+   },
+   {
+    "v": "jusqu'à 1 700 m",
+    "l": "Fournit"
+   },
+   {
+    "v": "Jusqu'à 2 ans",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   }
+  ],
+  "variants": {}
+ },
+ "indoorcam": {
+  "tiles": [
+   {
+    "v": "jusqu'à 500 m",
+    "l": "à une distance allant"
+   },
+   {
+    "v": "jusqu'à 500 m",
+    "l": "Connexion Wi-Fi améliorée"
+   },
+   {
+    "v": "4 MP",
+    "l": "Capteur CMOS"
+   },
+   {
+    "v": "4 MP",
+    "l": "Grande stabilité"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "communication avec une centrale Ajax"
+   },
+   {
+    "v": "jusqu'à 85 dB",
+    "l": "Microphone"
+   }
+  ],
+  "variants": {}
+ },
+ "leaksprotect": {
+  "tiles": [
+   {
+    "v": "7 secondes",
+    "l": "Compatibilité des dispositifs"
+   },
+   {
+    "v": "Jusqu'à 1 300 m",
+    "l": "communication radio bidirectionnelle sécurisée en champ ouvert"
+   },
+   {
+    "v": "Jusqu'à 1 300 m",
+    "l": "Ajax WaterStop Jeweller"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   },
+   {
+    "v": "IP65",
+    "l": "Boîtier"
+   }
+  ],
+  "variants": {}
+ },
+ "keypad-touchscreen": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1,5 ans",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   },
+   {
+    "v": "Jusqu'à 1,5 ans",
+    "l": "Deux options d'alimentation"
+   },
+   {
+    "v": "32",
+    "l": "langues d'interface"
+   },
+   {
+    "v": "12 V",
+    "l": "Le bloc d'alimentation"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "32",
+    "l": "interface languages"
+   },
+   {
+    "v": "480 × 854 px",
+    "l": "Écran de 5 pouces avec une résolution de"
+   }
+  ],
+  "variants": {}
+ },
+ "lifequality": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 3 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "Jusqu'à 3 ans",
+    "l": "d'autonomie"
+   },
+   {
+    "v": "Jusqu'à 3 ans",
+    "l": "Ventilation"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "Jusqu'à 2,5 ans",
+    "l": "en cas de fonctionnement à des températures inférieures à zéro"
+   }
+  ],
+  "variants": {}
+ },
+ "lifequality-lite-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu’à 5 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "30°C",
+    "l": "à +50°C–22°F à 122°F"
+   },
+   {
+    "v": "50°C",
+    "l": "30°C à +"
+   },
+   {
+    "v": "22°",
+    "l": "30°C à +50°C"
+   },
+   {
+    "v": "122°",
+    "l": "30°C à +50°C–22°F à"
+   },
+   {
+    "v": "30°C",
+    "l": "Fonctionnement stable dans des environnements difficiles"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "d'autonomie"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "Ventilation"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "communication radio bidirectionnelle sécurisée en champ ouvert"
+   },
+   {
+    "v": "Jusqu'à 2,5 ans",
+    "l": "en cas de fonctionnement à des températures inférieures à zéro"
+   }
+  ],
+  "variants": {}
+ },
+ "lightswitch-1-gang-120-jeweller": {
+  "tiles": [
+   {
+    "v": "4",
+    "l": "tailles de cadre pour combiner plusieurs interrupteurs"
+   },
+   {
+    "v": "Jusqu'à 1 100 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "Jusqu'à 1 100 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "8",
+    "l": "couleurs"
+   },
+   {
+    "v": "8",
+    "l": "colours"
+   },
+   {
+    "v": "jusqu'à 500 W",
+    "l": "Incandescentes"
+   },
+   {
+    "v": "jusqu'à 250 W",
+    "l": "CFL/LED"
+   },
+   {
+    "v": "jusqu'à 0,2 W",
+    "l": "Consommation d'énergie"
+   }
+  ],
+  "variants": {}
+ },
+ "lightswitch-1-gang-jeweller": {
+  "tiles": [
+   {
+    "v": "5 à 600 W",
+    "l": "Compatibilité avec les ampoules"
+   },
+   {
+    "v": "Jusqu'à 1 100 m",
+    "l": "Contrôle et configuration à distance"
+   },
+   {
+    "v": "4",
+    "l": "tailles de cadre pour combiner plusieurs interrupteurs"
+   },
+   {
+    "v": "Jusqu'à 1 100 mètres",
+    "l": "de portée de communication radio avec une centrale"
+   },
+   {
+    "v": "Jusqu'à 1 100 mètres",
+    "l": "Jeweller"
+   },
+   {
+    "v": "8",
+    "l": "couleurs"
+   },
+   {
+    "v": "8",
+    "l": "colours"
+   },
+   {
+    "v": "jusqu'à 0,2 W",
+    "l": "Consomme"
+   }
+  ],
+  "variants": {}
+ },
+ "lightswitch-2-gang-jeweller": {
+  "tiles": [
+   {
+    "v": "5 à 600 W",
+    "l": "Compatibilité avec les ampoules"
+   },
+   {
+    "v": "Jusqu'à 1 100 m",
+    "l": "Contrôle et configuration à distance"
+   },
+   {
+    "v": "4",
+    "l": "tailles de cadre pour combiner plusieurs interrupteurs"
+   },
+   {
+    "v": "Jusqu'à 1 100 mètres",
+    "l": "de portée de communication radio avec une centrale"
+   },
+   {
+    "v": "Jusqu'à 1 100 mètres",
+    "l": "Jeweller"
+   },
+   {
+    "v": "8",
+    "l": "couleurs"
+   },
+   {
+    "v": "8",
+    "l": "colours"
+   },
+   {
+    "v": "jusqu'à 0,2 W",
+    "l": "Consomme"
+   }
+  ],
+  "variants": {}
+ },
+ "lightswitch-2-way-jeweller": {
+  "tiles": [
+   {
+    "v": "5 à 600 W",
+    "l": "Compatibilité avec les ampoules"
+   },
+   {
+    "v": "Jusqu'à 1 100 m",
+    "l": "Contrôle et configuration à distance"
+   },
+   {
+    "v": "4",
+    "l": "tailles de cadre pour combiner plusieurs interrupteurs"
+   },
+   {
+    "v": "Jusqu'à 1 100 mètres",
+    "l": "de portée de communication radio avec une centrale"
+   },
+   {
+    "v": "Jusqu'à 1 100 mètres",
+    "l": "Jeweller"
+   },
+   {
+    "v": "8",
+    "l": "couleurs"
+   },
+   {
+    "v": "8",
+    "l": "colours"
+   },
+   {
+    "v": "jusqu'à 0,2 W",
+    "l": "Consomme"
+   }
+  ],
+  "variants": {}
+ },
+ "lightswitch-2-gang-2-way-jeweller": {
+  "tiles": [
+   {
+    "v": "5 à 600 W",
+    "l": "Compatibilité avec les lampes"
+   },
+   {
+    "v": "Jusqu'à 1 100 m",
+    "l": "Contrôle et configuration à distance"
+   },
+   {
+    "v": "4",
+    "l": "tailles de cadre pour combiner plusieurs interrupteurs"
+   },
+   {
+    "v": "Jusqu'à 1 100 mètres",
+    "l": "de portée de communication radio avec une centrale"
+   },
+   {
+    "v": "Jusqu'à 1 100 mètres",
+    "l": "Jeweller"
+   },
+   {
+    "v": "8",
+    "l": "couleurs"
+   },
+   {
+    "v": "8",
+    "l": "colours"
+   },
+   {
+    "v": "jusqu'à 0,2 W",
+    "l": "Consomme"
+   }
+  ],
+  "variants": {}
+ },
+ "lightswitch-3-way-120-jeweller": {
+  "tiles": [
+   {
+    "v": "4",
+    "l": "tailles de cadre pour combiner plusieurs interrupteurs"
+   },
+   {
+    "v": "Jusqu'à 1 100 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "Jusqu'à 1 100 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "8",
+    "l": "couleurs"
+   },
+   {
+    "v": "8",
+    "l": "colours"
+   },
+   {
+    "v": "jusqu'à 500 W",
+    "l": "Incandescentes"
+   },
+   {
+    "v": "jusqu'à 250 W",
+    "l": "CFL/LED"
+   },
+   {
+    "v": "jusqu'à 0,2 W",
+    "l": "Consommation d'énergie"
+   }
+  ],
+  "variants": {}
+ },
+ "lightswitch-crossover-jeweller": {
+  "tiles": [
+   {
+    "v": "5 à 600 W",
+    "l": "Compatibilité avec les lampes"
+   },
+   {
+    "v": "Jusqu'à 1 100 m",
+    "l": "Contrôle et configuration à distance"
+   },
+   {
+    "v": "4",
+    "l": "tailles de cadre pour combiner plusieurs interrupteurs"
+   },
+   {
+    "v": "Jusqu'à 1 100 mètres",
+    "l": "de portée de communication radio avec une centrale"
+   },
+   {
+    "v": "Jusqu'à 1 100 mètres",
+    "l": "Jeweller"
+   },
+   {
+    "v": "8",
+    "l": "couleurs"
+   },
+   {
+    "v": "8",
+    "l": "colours"
+   },
+   {
+    "v": "jusqu'à 0,2 W",
+    "l": "Consomme"
+   }
+  ],
+  "variants": {}
+ },
+ "lightswitch-dimmer-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 900 m",
+    "l": "de distance de communication avec une centrale Ajax"
+   },
+   {
+    "v": "4",
+    "l": "tailles de cadre pour combiner plusieurs interrupteurs"
+   },
+   {
+    "v": "Jusqu'à 900 mètres",
+    "l": "de portée de communication radio avec une centrale"
+   },
+   {
+    "v": "Jusqu'à 900 mètres",
+    "l": "Jeweller"
+   },
+   {
+    "v": "8",
+    "l": "couleurs"
+   },
+   {
+    "v": "8",
+    "l": "colours"
+   },
+   {
+    "v": "jusqu'à 0,2 W",
+    "l": "Consomme"
+   }
+  ],
+  "variants": {}
+ },
+ "manualcallpoint-red-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "durée de vie de la batterie"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "portée de communication avec une centrale Ajax"
+   },
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "d'autonomie sur batterie"
+   },
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "Notifications instantanées concernant la maintenance"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "de communication radio avec une centrale"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "12 s",
+    "l": "Message de supervision de la centrale à un intervalle minimum de"
+   }
+  ],
+  "variants": {}
+ },
+ "manualcallpoints-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "durée de vie de la batterie"
+   },
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "d'autonomie avec la batterie"
+   },
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "Alarme anti-sabotage"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "portée de communication filaire avec la centrale"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "12",
+    "l": "s intervalle minimal de ping"
+   },
+   {
+    "v": "12 s",
+    "l": "intervalle minimal de ping"
+   }
+  ],
+  "variants": {}
+ },
+ "motioncam-outdoor": {
+  "tiles": [
+   {
+    "v": "9",
+    "l": "secondes pour recevoir la première photo"
+   },
+   {
+    "v": "9 secondes",
+    "l": "pour recevoir la première photo"
+   },
+   {
+    "v": "IP56",
+    "l": "Indice de protection du boîtier"
+   },
+   {
+    "v": "Jusqu'à 1700 m",
+    "l": "de portée de communication radio avec la centrale"
+   }
+  ],
+  "variants": {}
+ },
+ "motioncam-outdoor-highmount-phod": {
+  "tiles": [
+   {
+    "v": "90°",
+    "l": "Angle de vision vertical"
+   },
+   {
+    "v": "90°",
+    "l": "Angle de vision horizontal"
+   },
+   {
+    "v": "IP55",
+    "l": "Indice de protection"
+   },
+   {
+    "v": "90°",
+    "l": "vertical viewing angle"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   }
+  ],
+  "variants": {}
+ },
+ "motioncam-phod": {
+  "tiles": [
+   {
+    "v": "9",
+    "l": "secondes"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "portée de communication radio avec la centrale"
+   },
+   {
+    "v": "9",
+    "l": "secondes pour recevoir la première photo"
+   },
+   {
+    "v": "9 secondes",
+    "l": "pour recevoir la première photo"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   }
+  ],
+  "variants": {}
+ },
+ "motioncam-outdoor-phod": {
+  "tiles": [
+   {
+    "v": "9",
+    "l": "secondes"
+   },
+   {
+    "v": "3–15 mètres",
+    "l": "8–49 ft"
+   },
+   {
+    "v": "0,8–1,3 m",
+    "l": "6–4,3 ft"
+   },
+   {
+    "v": "Jusqu'à 3 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "36 secondes",
+    "l": "Il ne faut que"
+   },
+   {
+    "v": "36 secondes",
+    "l": "Notifications instantanées concernant la maintenance"
+   },
+   {
+    "v": "9",
+    "l": "secondes pour livrer la première photo"
+   },
+   {
+    "v": "9 secondes",
+    "l": "pour livrer la première photo"
+   },
+   {
+    "v": "25°",
+    "l": "jusqu'à −"
+   },
+   {
+    "v": "13°",
+    "l": "jusqu'à −25°С−"
+   },
+   {
+    "v": "IP56",
+    "l": "Boîtier"
+   },
+   {
+    "v": "Jusqu'à 3 ans",
+    "l": "d'autonomie"
+   }
+  ],
+  "variants": {}
+ },
+ "motionprotect": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 12 m",
+    "l": "distance de détection de mouvement"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "portée de communication avec une centrale Ajax ou un prolongateur de portée"
+   },
+   {
+    "v": "2",
+    "l": "couleurs"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "de communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "d'autonomie"
+   }
+  ],
+  "variants": {}
+ },
+ "motionprotect-curtain": {
+  "tiles": [
+   {
+    "v": "jusqu'à 3 ans",
+    "l": "Fonctionne"
+   },
+   {
+    "v": "Jusqu'à 1700 m",
+    "l": "1700 m de communication radio en espace ouvert"
+   },
+   {
+    "v": "1700 m",
+    "l": "Jusqu'à 1700 m"
+   }
+  ],
+  "variants": {}
+ },
+ "motionprotect-outdoor": {
+  "tiles": [
+   {
+    "v": "2",
+    "l": "secondes"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "700 m de communication radio en espace ouvert"
+   },
+   {
+    "v": "700 m",
+    "l": "Jusqu'à 1 700 m"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "60°",
+    "l": "Résiste à la chaleur jusqu’à +"
+   },
+   {
+    "v": "25°",
+    "l": "Résiste au froid jusqu’à −"
+   },
+   {
+    "v": "IP55",
+    "l": "l’eau"
+   },
+   {
+    "v": "Jusqu’à 5 ans",
+    "l": "d’autonomie"
+   }
+  ],
+  "variants": {}
+ },
+ "mountcam": {
+  "tiles": [
+   {
+    "v": "164 mm",
+    "l": "Support mural de"
+   },
+   {
+    "v": "164 mm",
+    "l": "MountCam A1"
+   },
+   {
+    "v": "174 mm",
+    "l": "Support mural de"
+   },
+   {
+    "v": "174 mm",
+    "l": "MountCam A2"
+   },
+   {
+    "v": "237 mm",
+    "l": "Support mural de"
+   },
+   {
+    "v": "237 mm",
+    "l": "MountCam B1"
+   },
+   {
+    "v": "242 mm",
+    "l": "Support mural de"
+   },
+   {
+    "v": "242 mm",
+    "l": "MountCam B2"
+   }
+  ],
+  "variants": {}
+ },
+ "multitransmitter": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "de portée de communication radio avec la centrale"
+   },
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "3",
+    "l": "power lines"
+   },
+   {
+    "v": "18",
+    "l": "zones for connecting devices"
+   }
+  ],
+  "variants": {}
+ },
+ "lightswitch-4-way-120-jeweller": {
+  "tiles": [
+   {
+    "v": "4",
+    "l": "tailles de cadre pour combiner plusieurs interrupteurs"
+   },
+   {
+    "v": "Jusqu'à 1 100 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "Jusqu'à 1 100 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "8",
+    "l": "couleurs"
+   },
+   {
+    "v": "8",
+    "l": "colours"
+   },
+   {
+    "v": "jusqu'à 500 W",
+    "l": "Incandescentes"
+   },
+   {
+    "v": "jusqu'à 250 W",
+    "l": "CFL/LED"
+   },
+   {
+    "v": "jusqu'à 0,2 W",
+    "l": "Consommation d'énergie"
+   }
+  ],
+  "variants": {}
+ },
+ "motionprotectplus": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 12 m",
+    "l": "distance de détection de mouvement"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "portée de communication avec une centrale Ajax ou un prolongateur de portée"
+   },
+   {
+    "v": "2",
+    "l": "couleurs"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "de communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "d'autonomie"
+   }
+  ],
+  "variants": {}
+ },
+ "nvr-h2d": {
+  "tiles": [
+   {
+    "v": "3",
+    "l": "× 2,0"
+   },
+   {
+    "v": "2",
+    "l": "× 2,0"
+   }
+  ],
+  "variants": {}
+ },
+ "outlet-basic-type-e": {
+  "tiles": [
+   {
+    "v": "4",
+    "l": "tailles de cadre pour combiner plusieurs interrupteurs et prises"
+   },
+   {
+    "v": "8",
+    "l": "couleurs"
+   },
+   {
+    "v": "8",
+    "l": "colours"
+   }
+  ],
+  "variants": {}
+ },
+ "outlet-type-e-jeweller": {
+  "tiles": [
+   {
+    "v": "2 heures",
+    "l": "de 10 secondes à"
+   },
+   {
+    "v": "10 secondes",
+    "l": "Minuterie d'arrêt automatique"
+   },
+   {
+    "v": "8",
+    "l": "couleurs"
+   },
+   {
+    "v": "8",
+    "l": "colours"
+   },
+   {
+    "v": "jusqu'à 1,5 W",
+    "l": "Consommation d'énergie"
+   },
+   {
+    "v": "Jusqu'à 1 100 m",
+    "l": "de portée de communication radio avec la centrale"
+   }
+  ],
+  "variants": {}
+ },
+ "relay": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1000 m",
+    "l": "1000 m de communication radio en espace ouvert"
+   },
+   {
+    "v": "1000 m",
+    "l": "Jusqu'à 1000 m"
+   },
+   {
+    "v": "Jusqu'à 1000 m",
+    "l": "Contact sec"
+   },
+   {
+    "v": "1 à 255 secondes",
+    "l": "Impulsions de"
+   },
+   {
+    "v": "7 à 24 V",
+    "l": "Alimentation"
+   }
+  ],
+  "variants": {}
+ },
+ "rex": {
+  "tiles": [
+   {
+    "v": "jusqu'à 35 heures",
+    "l": "Fonctionne"
+   }
+  ],
+  "variants": {}
+ },
+ "motioncam": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 4 ans",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "distance de communication radio avec une centrale ou un prolongateur de portée"
+   }
+  ],
+  "variants": {}
+ },
+ "socket": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1000 m",
+    "l": "{{imperialRange}} de communication radio en espace ouvert"
+   },
+   {
+    "v": "Jusqu'à 1000 m",
+    "l": "Protège les appareils contre les surintensités et les surtensions"
+   }
+  ],
+  "variants": {}
+ },
+ "rex-2": {
+  "tiles": [
+   {
+    "v": "9",
+    "l": "secondes pour recevoir la première photo"
+   },
+   {
+    "v": "9 secondes",
+    "l": "pour recevoir la première photo"
+   },
+   {
+    "v": "Jusqu’à 38 heures",
+    "l": "d'autonomie de la batterie de secours"
+   },
+   {
+    "v": "Jusqu'à 1700 m",
+    "l": "de communication radio avec une centrale"
+   },
+   {
+    "v": "Jusqu'à 38 heures",
+    "l": "d'autonomie sur la batterie de secours"
+   }
+  ],
+  "variants": {}
+ },
+ "socket-type-b-jeweller": {
+  "tiles": [
+   {
+    "v": "2",
+    "l": "modes de fonctionnement"
+   },
+   {
+    "v": "jusqu'à 1 100 m",
+    "l": "À distance à distance"
+   },
+   {
+    "v": "Jusqu'à 1 100 m",
+    "l": "de portée de communication radio avec la centrale"
+   },
+   {
+    "v": "Jusqu'à 1 100 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "2",
+    "l": "couleurs"
+   },
+   {
+    "v": "2",
+    "l": "colors"
+   }
+  ],
+  "variants": {}
+ },
+ "socket-type-g": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1100 m",
+    "l": "{{imperialRange}} de communication radio en espace ouvert"
+   },
+   {
+    "v": "Jusqu'à 1100 m",
+    "l": "Protège les appareils contre les surintensités et les surtensions"
+   }
+  ],
+  "variants": {}
+ },
+ "speakerphone-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu’à 12 heures",
+    "l": "de fonctionnement en mode conversation"
+   },
+   {
+    "v": "Jusqu'à 3 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "12",
+    "l": "V⎓, 1 A"
+   },
+   {
+    "v": "12 V",
+    "l": "⎓, 1 A"
+   },
+   {
+    "v": "3 W",
+    "l": "Haut-parleur de"
+   },
+   {
+    "v": "jusqu'à 103 dB",
+    "l": "Haut-parleur de 3 W avec un volume allant"
+   },
+   {
+    "v": "jusqu'à 10 m",
+    "l": "Audibilité de la voix"
+   },
+   {
+    "v": "jusqu'à 15 s",
+    "l": "La piste audio peut durer"
+   },
+   {
+    "v": "jusqu'à 10 minutes",
+    "l": "Temps de conversation ajustable pouvant aller"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "communication radio avec une centrale"
+   }
+  ],
+  "variants": {}
+ },
+ "starterkit-plus": {
+  "tiles": [
+   {
+    "v": "jusqu'à 2000 mètres",
+    "l": "Connecte des appareils"
+   }
+  ],
+  "variants": {}
+ },
+ "streetsiren": {
+  "tiles": [
+   {
+    "v": "jusqu'à 113 dB",
+    "l": "Buzzer avec un volume"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement autonome"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   }
+  ],
+  "variants": {}
+ },
+ "streetsiren-doubledeck": {
+  "tiles": [
+   {
+    "v": "IP54",
+    "l": "Boîtier"
+   },
+   {
+    "v": "jusqu'à 113 dB",
+    "l": "Buzzer avec un volume"
+   },
+   {
+    "v": "113",
+    "l": "dB1"
+   },
+   {
+    "v": "3",
+    "l": "minutes"
+   },
+   {
+    "v": "60°C",
+    "l": "+140°F"
+   },
+   {
+    "v": "140°",
+    "l": "+60°C+"
+   },
+   {
+    "v": "25°C",
+    "l": "13°F"
+   },
+   {
+    "v": "13°",
+    "l": "25°C"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "d'autonomie"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-bulletcam-hlvf": {
+  "tiles": [
+   {
+    "v": "jusqu'à 60 m",
+    "l": "Portée de l'éclairage IR"
+   },
+   {
+    "v": "jusqu'à 40 m",
+    "l": "Portée de l'éclairage blanc"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-button-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1 300 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "Jusqu'à 1 300 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "IP55",
+    "l": "Indice de protection"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement sur la batterie préinstallée"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-combiprotect-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-combiprotect-fibra": {
+  "tiles": [
+   {
+    "v": "180°",
+    "l": "angle de détection de bris de glace"
+   },
+   {
+    "v": "3",
+    "l": "niveaux de sensibilité"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   }
+  ],
+  "variants": {}
+ },
+ "outlet-basic-type-f": {
+  "tiles": [
+   {
+    "v": "4",
+    "l": "tailles de cadre pour combiner plusieurs interrupteurs et prises"
+   },
+   {
+    "v": "8",
+    "l": "couleurs"
+   },
+   {
+    "v": "8",
+    "l": "colours"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-domecam-hlvf": {
+  "tiles": [
+   {
+    "v": "jusqu'à 60 m",
+    "l": "Portée de l'éclairage IR"
+   },
+   {
+    "v": "jusqu'à 40 m",
+    "l": "Portée de l'éclairage blanc"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-doorprotect-fibra": {
+  "tiles": [
+   {
+    "v": "2",
+    "l": "couleurs"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Signaux personnalisables pour les entrées séparées"
+   },
+   {
+    "v": "2",
+    "l": "relais reed"
+   },
+   {
+    "v": "jusqu'à 0,036 W",
+    "l": "Consommation électrique"
+   },
+   {
+    "v": "2",
+    "l": "colors"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-doorprotect-g3-fibra": {
+  "tiles": [
+   {
+    "v": "180°",
+    "l": "Rotation à"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-doorprotect-g3-jeweller": {
+  "tiles": [
+   {
+    "v": "36 s",
+    "l": "Détection de perte de communication en"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "La portée de communication dépend du modèle de centrale. Wings offre"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-doorprotect-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "d'autonomie de la batterie avec un impact minimal des températures extrêmes"
+   },
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "d'autonomie"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-doorprotect-plus-fibra": {
+  "tiles": [
+   {
+    "v": "jusqu'à 0,036 W",
+    "l": "Consommation électrique du détecteur"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-doorprotect-plus-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "d'autonomie de la batterie avec un impact minimal des températures extrêmes"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "d'autonomie"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-doublebutton-g3-jeweller": {
+  "tiles": [
+   {
+    "v": "IP55",
+    "l": "Boîtier"
+   },
+   {
+    "v": "IP55",
+    "l": "Holder pour fixer le dispositif sur une surface plane"
+   },
+   {
+    "v": "IP55",
+    "l": "Protection"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-glassprotect-fibra": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 9 m",
+    "l": "la zone de détection du bris de glace"
+   },
+   {
+    "v": "2",
+    "l": "couleurs"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Détecteur de mouvement"
+   },
+   {
+    "v": "180°",
+    "l": "angles de détection des bris de glace"
+   },
+   {
+    "v": "jusqu'à 0,036 W",
+    "l": "Consommation électrique"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-glassprotect-jeweller": {
+  "tiles": [
+   {
+    "v": "180°",
+    "l": "angles de détection des bris de glace"
+   },
+   {
+    "v": "2",
+    "l": "couleurs"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "de fonctionnement"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-homesiren-g3-jeweller": {
+  "tiles": [
+   {
+    "v": "85 à 105 dB",
+    "l": "Réglage du volume des signaux pour les alarmes et autres événements"
+   },
+   {
+    "v": "3 s",
+    "l": "Volume des alarmes ajustable"
+   },
+   {
+    "v": "Jusqu'à 3 500 m",
+    "l": "Prise en charge de la connexion d'un indicateur LED externe"
+   },
+   {
+    "v": "Jusqu'à 2,5 ans",
+    "l": "Autonomie de la batterie en mode veille."
+   },
+   {
+    "v": "90 secondes",
+    "l": "5 ans avec une alarme de"
+   },
+   {
+    "v": "Jusqu'à 2,5 ans",
+    "l": "Compatibilité des dispositifs"
+   },
+   {
+    "v": "36 secondes",
+    "l": "Détection de perte de connexion en seulement"
+   },
+   {
+    "v": "jusqu'à 4 ans",
+    "l": "Dispositif entièrement sans fil avec une autonomie de la batterie pouvant aller"
+   },
+   {
+    "v": "Jusqu'à 4 ans",
+    "l": "d'autonomie"
+   },
+   {
+    "v": "Jusqu'à 4 ans",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-homesiren-fibra": {
+  "tiles": [
+   {
+    "v": "jusqu'à 1,8 W",
+    "l": "Consommation électrique"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-homesiren-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement avec des batteries améliorées"
+   },
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "Jusqu'à 4,5 ans",
+    "l": "de fonctionnement autonome"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-hub-g3-jeweller": {
+  "tiles": [
+   {
+    "v": "16 heures",
+    "l": "de fonctionnement autonome"
+   },
+   {
+    "v": "60 heures",
+    "l": "de fonctionnement autonome"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-hub-hybrid": {
+  "tiles": [
+   {
+    "v": "100",
+    "l": "dispositifs"
+   },
+   {
+    "v": "8",
+    "l": "lignes"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "<0>6 550 ft"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de la communication filaire et sans fil2"
+   },
+   {
+    "v": "Jusqu'à 60 heures",
+    "l": "de fonctionnement autonome"
+   },
+   {
+    "v": "12 V",
+    "l": "avec une batterie de secours de"
+   },
+   {
+    "v": "12 V",
+    "l": "Jusqu'à 60 heures de fonctionnement autonome"
+   },
+   {
+    "v": "3 m",
+    "l": "Longueur du câble de"
+   },
+   {
+    "v": "8",
+    "l": "lignes pour connecter des dispositifs filaires Ajax Superior"
+   },
+   {
+    "v": "110–240 V",
+    "l": "Alimentation intégrée"
+   },
+   {
+    "v": "12 V",
+    "l": "Connecteur pour une batterie de secours de"
+   },
+   {
+    "v": "12 V",
+    "l": "Emplacement pour une batterie de secours de"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-internal-battery": {
+  "tiles": [
+   {
+    "v": "16 heures",
+    "l": "de fonctionnement autonome"
+   },
+   {
+    "v": "60 heures",
+    "l": "de fonctionnement autonome"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-hub-hybrid-2": {
+  "tiles": [
+   {
+    "v": "250",
+    "l": "dispositifs"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Filaires"
+   },
+   {
+    "v": "jusqu'à 3 500 m",
+    "l": "Sans fil"
+   },
+   {
+    "v": "8",
+    "l": "lignes"
+   },
+   {
+    "v": "Jusqu'à 60 heures",
+    "l": "de fonctionnement autonome"
+   },
+   {
+    "v": "12 V",
+    "l": "avec une batterie de secours de"
+   },
+   {
+    "v": "12 V",
+    "l": "Jusqu'à 60 heures de fonctionnement autonome"
+   },
+   {
+    "v": "3 m",
+    "l": "Longueur du câble de"
+   },
+   {
+    "v": "8",
+    "l": "lignes pour connecter des dispositifs filaires Superior"
+   },
+   {
+    "v": "110–240 V",
+    "l": "Alimentation intégrée"
+   },
+   {
+    "v": "12 V",
+    "l": "Connecteur pour une batterie de secours de"
+   },
+   {
+    "v": "12 V",
+    "l": "Emplacement prévu pour une batterie de secours de"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-keypad-fibra": {
+  "tiles": [
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Fibra"
+   },
+   {
+    "v": "Jusqu'à 60 heures",
+    "l": "d'autonomie de batterie pour un système de 30 dispositifs"
+   },
+   {
+    "v": "jusqu'à 0,23 W",
+    "l": "Consommation électrique"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-keypad-outdoor-fibra": {
+  "tiles": [
+   {
+    "v": "60 dB",
+    "l": "Buzzer de"
+   },
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "communication filaire"
+   },
+   {
+    "v": "IP66",
+    "l": "Boîtier"
+   },
+   {
+    "v": "jusqu'à 0,6 W",
+    "l": "Consommation électrique"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-keypad-plus-g3-jeweller": {
+  "tiles": [
+   {
+    "v": "36 s",
+    "l": "Détection de perte de connexion en"
+   },
+   {
+    "v": "Jusqu'à 4,5 ans",
+    "l": "de fonctionnement avec des batteries préinstallées améliorées"
+   },
+   {
+    "v": "Jusqu'à 4,5 ans",
+    "l": "d'autonomie"
+   },
+   {
+    "v": "Jusqu'à 4.5 ans",
+    "l": "de fonctionnement sur des batteries préinstallées"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-keypad-plus-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "Jusqu'à 4,5 ans",
+    "l": "d'autonomie"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-keypad-touchscreen-fibra": {
+  "tiles": [
+   {
+    "v": "12 V",
+    "l": "Le bloc d'alimentation"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   },
+   {
+    "v": "jusqu'à 1,31 W",
+    "l": "Consommation électrique"
+   },
+   {
+    "v": "12 V",
+    "l": "alimentation externe de"
+   },
+   {
+    "v": "480 × 854 px",
+    "l": "Écran de 5 pouces avec une définition de"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-keypad-touchscreen-g3-jeweller": {
+  "tiles": [
+   {
+    "v": "700 m",
+    "l": ". La portée de communication dépend du modèle de centrale"
+   },
+   {
+    "v": "700 m",
+    "l": "Compatibilité des dispositifs"
+   },
+   {
+    "v": "36 s",
+    "l": "Détection de perte de connexion en"
+   },
+   {
+    "v": "Jusqu'à 1,5 an",
+    "l": "de fonctionnement avec des batteries préinstallées améliorées"
+   },
+   {
+    "v": "Jusqu'à 1,5 an",
+    "l": "d'autonomie"
+   },
+   {
+    "v": "Jusqu'à 1,5 an",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-lineprotect-fibra": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "distance de communication filaire avec une centrale Ajax"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Longueur de la ligne Fibra"
+   },
+   {
+    "v": "230 V",
+    "l": "Application de la tension 110"
+   },
+   {
+    "v": "0,17 W",
+    "l": "La consommation électrique du module peut atteindre"
+   },
+   {
+    "v": "jusqu'à 0,17 W",
+    "l": "Le module consomme"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-linesplit-fibra": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "distance de communication filaire avec une centrale Ajax"
+   },
+   {
+    "v": "jusqu'à 0,22 W",
+    "l": "La consommation électrique de LineSplit est"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   },
+   {
+    "v": "jusqu'à 0,22 W",
+    "l": "Le module consomme"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-linesupply-fibra": {
+  "tiles": [
+   {
+    "v": "75 W",
+    "l": "Divise la ligne Fibra en deux lignes"
+   },
+   {
+    "v": "45W",
+    "l": "La version"
+   },
+   {
+    "v": "75W",
+    "l": "la version"
+   },
+   {
+    "v": "45W",
+    "l": "Terminaux de sortie pour les nouvelles lignes Fibra"
+   },
+   {
+    "v": "Jusqu'à 22 km",
+    "l": "de la ligne Fibra"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-motioncam-am-phod-jeweller": {
+  "tiles": [
+   {
+    "v": "160",
+    "l": "× 120 pixels"
+   },
+   {
+    "v": "3",
+    "l": "niveaux de sensibilité de la détection de mouvement"
+   },
+   {
+    "v": "15,5 secondes",
+    "l": "des photos avec une définition de 960 × 720 pixels sont livrées en"
+   },
+   {
+    "v": "15,5 secondes",
+    "l": "Photos HD4"
+   },
+   {
+    "v": "9",
+    "l": "sec"
+   },
+   {
+    "v": "320",
+    "l": "× 240 pixels"
+   },
+   {
+    "v": "640",
+    "l": "× 480 pixels"
+   },
+   {
+    "v": "960",
+    "l": "× 720 pixels"
+   },
+   {
+    "v": "Jusqu'à 4 ans",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   },
+   {
+    "v": "Jusqu'à 3 500 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "Jusqu'à 3 ans",
+    "l": "avec la fonction Photo à la demande activée"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-megahub": {
+  "tiles": [
+   {
+    "v": "8",
+    "l": "lignes"
+   },
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "la portée de communication"
+   },
+   {
+    "v": "Jusqu'à 60 heures",
+    "l": "de fonctionnement autonome"
+   },
+   {
+    "v": "12 V",
+    "l": "avec une batterie de secours de"
+   },
+   {
+    "v": "12 V",
+    "l": "Jusqu'à 60 heures de fonctionnement autonome"
+   },
+   {
+    "v": "3 m",
+    "l": "Longueur du câble de"
+   },
+   {
+    "v": "8",
+    "l": "lines to connect wired Ajax Superior devices"
+   },
+   {
+    "v": "110–240 V",
+    "l": "Alimentation intégrée"
+   },
+   {
+    "v": "12 V",
+    "l": "Connecteur pour une batterie de secours de"
+   },
+   {
+    "v": "12 V",
+    "l": "Emplacement prévu pour une batterie de secours de"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-motioncam-g3-phod-jeweller": {
+  "tiles": [
+   {
+    "v": "15,5 secondes",
+    "l": ". En savoir plus"
+   },
+   {
+    "v": "15,5 secondes",
+    "l": "Compatibilité des dispositifs"
+   },
+   {
+    "v": "90°",
+    "l": "Angle de vue horizontal"
+   },
+   {
+    "v": "71°",
+    "l": "Angle de vue vertical"
+   },
+   {
+    "v": "9",
+    "l": "sec"
+   },
+   {
+    "v": "36 secondes",
+    "l": "Détection de perte de connexion en seulement"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-motioncam-fibra": {
+  "tiles": [
+   {
+    "v": "jusqu'à 0,12 W",
+    "l": "Consommation électrique"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-motioncam-hd-phod-jeweller": {
+  "tiles": [
+   {
+    "v": "15,5 secondes",
+    "l": "des photos avec une définition de 960 × 720 pixels sont livrées en"
+   },
+   {
+    "v": "15,5 secondes",
+    "l": "Angle de vue vertical"
+   },
+   {
+    "v": "Jusqu'à 4 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "9",
+    "l": "sec"
+   },
+   {
+    "v": "Jusqu'à 4 ans",
+    "l": "de fonctionnement avec les batteries préinstallées améliorées"
+   },
+   {
+    "v": "Jusqu'à 3 500 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   },
+   {
+    "v": "15,5 secondes",
+    "l": ".En savoir plus"
+   },
+   {
+    "v": "jusqu'à 15,5 secondes",
+    "l": "la livraison peut prendre"
+   },
+   {
+    "v": "jusqu'à 3 ans",
+    "l": "la durée de vie de la batterie peut aller"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-motioncam-phod-jeweller": {
+  "tiles": [
+   {
+    "v": "9",
+    "l": "secondes"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "communication radio avec une centrale ou un prolongateur de portée"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-motioncam-phod-fibra": {
+  "tiles": [
+   {
+    "v": "12 m",
+    "l": "Jusqu'à 39 ft"
+   },
+   {
+    "v": "jusqu'à 0,12 W",
+    "l": "Consommation électrique"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-motionprotect-fibra": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 12 m",
+    "l": "distance de détection de mouvement"
+   },
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "portée de communication avec une centrale Ajax ou un module qui prolonge la ligne Fibra"
+   },
+   {
+    "v": "2",
+    "l": "couleurs"
+   },
+   {
+    "v": "jusqu'à 0,045 W",
+    "l": "Consommation d'énergie"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-motionprotect-g3-fibra": {
+  "tiles": [
+   {
+    "v": "71°",
+    "l": "Angle de vue vertical"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   },
+   {
+    "v": "90°",
+    "l": "Angle de vision horizontal"
+   },
+   {
+    "v": "jusqu'à 0,23 W",
+    "l": "Consommation électrique"
+   }
+  ],
+  "variants": {}
+ },
+ "outlet-type-f-jeweller": {
+  "tiles": [
+   {
+    "v": "2 heures",
+    "l": "de 10 secondes à"
+   },
+   {
+    "v": "10 secondes",
+    "l": "Minuterie d'arrêt automatique"
+   },
+   {
+    "v": "8",
+    "l": "couleurs"
+   },
+   {
+    "v": "8",
+    "l": "colours"
+   },
+   {
+    "v": "jusqu'à 1,5 W",
+    "l": "Consommation d'énergie"
+   },
+   {
+    "v": "Jusqu'à 1 100 m",
+    "l": "de portée de communication radio avec la centrale"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-motionprotect-g3-jeweller": {
+  "tiles": [
+   {
+    "v": "71°",
+    "l": "Angle de vue vertical"
+   },
+   {
+    "v": "90°",
+    "l": "Angle de vue horizontal"
+   },
+   {
+    "v": "36 secondes",
+    "l": "Détection de perte de connexion en seulement"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-motionprotect-jeweller": {
+  "tiles": [
+   {
+    "v": "2",
+    "l": "couleurs"
+   },
+   {
+    "v": "700 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "d'autonomie"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-motionprotect-plus-g3-fibra": {
+  "tiles": [
+   {
+    "v": "71°",
+    "l": "Angle de vue vertical"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   },
+   {
+    "v": "90°",
+    "l": "Angle de vision horizontal"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-motionprotect-plus-fibra": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 12 m",
+    "l": "distance de détection de mouvement"
+   },
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "portée de communication avec une centrale Ajax ou un module qui prolonge la ligne Fibra"
+   },
+   {
+    "v": "2",
+    "l": "couleurs"
+   },
+   {
+    "v": "jusqu'à 0,086 W",
+    "l": "Consommation d'énergie"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-motionprotect-plus-g3-jeweller": {
+  "tiles": [
+   {
+    "v": "90°",
+    "l": "Angle de vision horizontal"
+   },
+   {
+    "v": "71°",
+    "l": "Angle de vue vertical"
+   },
+   {
+    "v": "36 secondes",
+    "l": "Détection de perte de connexion en seulement"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-motionprotect-plus-jeweller": {
+  "tiles": [
+   {
+    "v": "2",
+    "l": "couleurs"
+   },
+   {
+    "v": "700 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "d'autonomie"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-multitransmitter-fibra": {
+  "tiles": [
+   {
+    "v": "12 V",
+    "l": "Quatre sorties d'alimentation"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "KeyArm Zone"
+   },
+   {
+    "v": "12 V",
+    "l": "Emplacement pour une batterie de secours de"
+   },
+   {
+    "v": "18",
+    "l": "entrées pour connecter des dispositifs filaires"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-multirelay-fibra": {
+  "tiles": [
+   {
+    "v": "80°C",
+    "l": "Tous les relais sont désactivés si au moins l'un d'entre eux dépasse +"
+   },
+   {
+    "v": "80°C",
+    "l": "Protection contre la surchauffe"
+   },
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "portée de communication avec une centrale Ajax"
+   },
+   {
+    "v": "4",
+    "l": "relais indépendants"
+   },
+   {
+    "v": "2",
+    "l": "modes de fonctionnement"
+   },
+   {
+    "v": "jusqu'à 0,18 W",
+    "l": "Consommation électrique"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-multitransmitter-g3-jeweller": {
+  "tiles": [
+   {
+    "v": "12 V",
+    "l": "Quatre sorties d'alimentation"
+   },
+   {
+    "v": "36 secondes",
+    "l": "Détection de perte de connexion en seulement"
+   },
+   {
+    "v": "Jusqu'à 24 heures",
+    "l": "de fonctionnement avec une alimentation de secours 12 V⎓"
+   },
+   {
+    "v": "12 V",
+    "l": "Jusqu'à 24 heures de fonctionnement avec une alimentation de secours"
+   },
+   {
+    "v": "Jusqu'à 400 m",
+    "l": "connexion filaire avec les dispositifs connectés"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-multitransmitter-io-4x4-fibra": {
+  "tiles": [
+   {
+    "v": "4",
+    "l": "entrées"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Modes propres aux volets roulants et prise en charge de KeyArm Zone"
+   },
+   {
+    "v": "Jusqu'à 7,5 W",
+    "l": "de consommation d'énergie de la ligne Fibra"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-rex-g3-jeweller": {
+  "tiles": [
+   {
+    "v": "16 heures",
+    "l": "de fonctionnement autonome"
+   },
+   {
+    "v": "60 heures",
+    "l": "de fonctionnement autonome"
+   },
+   {
+    "v": "36 secondes",
+    "l": "les dispositifs connectés en"
+   },
+   {
+    "v": "36",
+    "l": "secondes"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-nvr-h2d": {
+  "tiles": [
+   {
+    "v": "1",
+    "l": "× jusqu'à 1 Gbit/s"
+   },
+   {
+    "v": "2",
+    "l": "× 24 To"
+   },
+   {
+    "v": "1",
+    "l": "× 3,0"
+   },
+   {
+    "v": "8",
+    "l": "× 16"
+   },
+   {
+    "v": "2",
+    "l": "× jusqu'à 1 Gbit/s"
+   },
+   {
+    "v": "2",
+    "l": "× 16 To"
+   },
+   {
+    "v": "2",
+    "l": "× 2,0"
+   },
+   {
+    "v": "3",
+    "l": "× 2,0"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-seismoprotect-g3-fibra": {
+  "tiles": [
+   {
+    "v": "jusqu'à 0,29 W",
+    "l": "Consommation électrique"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-streetsiren-doubledeck-fibra": {
+  "tiles": [
+   {
+    "v": "jusqu'à 0,37 W",
+    "l": "Consommation électrique"
+   },
+   {
+    "v": "jusqu'à 113 dB",
+    "l": "Indicateur d'alarme piézoélectrique produisant des volumes sonores allant"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-streetsiren-plus-fibra": {
+  "tiles": [
+   {
+    "v": "0,066 W",
+    "l": "d'énergie jusqu'à seulement"
+   },
+   {
+    "v": "0,066 W",
+    "l": "Faible consommation"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-streetsiren-fibra": {
+  "tiles": [
+   {
+    "v": "jusqu'à 0,37 W",
+    "l": "Consommation électrique"
+   },
+   {
+    "v": "jusqu'à 113 dB",
+    "l": "Volume du buzzer piézoélectrique allant"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-transmitter-fibra": {
+  "tiles": [
+   {
+    "v": "12 V",
+    "l": "Alimentation"
+   },
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "portée de communication avec une centrale Ajax ou un module qui prolonge la ligne Fibra"
+   },
+   {
+    "v": "5 v",
+    "l": "grâce au câble connecteur à"
+   },
+   {
+    "v": "5 v",
+    "l": "Raccordement pratique des fils"
+   },
+   {
+    "v": "jusqu'à 2 000 m",
+    "l": "Portée de communication"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-streetsiren-plus-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 10 ans",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   },
+   {
+    "v": "Jusqu'à 1 500 m",
+    "l": "communication radio en espace ouvert"
+   },
+   {
+    "v": "Jusqu'à 1 500 m",
+    "l": "Jeweller"
+   },
+   {
+    "v": "8",
+    "l": "batteries améliorées préinstallées"
+   },
+   {
+    "v": "8",
+    "l": "pre-installed enhanced batteries"
+   },
+   {
+    "v": "Jusqu'à 10 ans",
+    "l": "d'autonomie"
+   },
+   {
+    "v": "Jusqu'à 13 heures",
+    "l": "de fonctionnement en mode alarme"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-streetsiren-plus-g3-jeweller": {
+  "tiles": [
+   {
+    "v": "85 à 107 dB",
+    "l": "Réglage du volume des signaux pour les alarmes et autres événements"
+   },
+   {
+    "v": "3 s",
+    "l": "Volume des alarmes ajustable"
+   },
+   {
+    "v": "60°C",
+    "l": "140°F"
+   },
+   {
+    "v": "140°",
+    "l": "+60°C"
+   },
+   {
+    "v": "25°C",
+    "l": "13°F"
+   },
+   {
+    "v": "13°",
+    "l": "25°C"
+   },
+   {
+    "v": "IP54",
+    "l": "сlassé"
+   },
+   {
+    "v": "Jusqu'à 4,2 ans",
+    "l": "En mode veille."
+   },
+   {
+    "v": "90 secondes",
+    "l": "2 ans avec une alarme de"
+   },
+   {
+    "v": "Jusqu'à 4,2 ans",
+    "l": "Compatibilité des dispositifs"
+   },
+   {
+    "v": "12 V",
+    "l": "Possibilité de raccorder une alimentation externe"
+   },
+   {
+    "v": "36 secondes",
+    "l": "Détection de perte de connexion en seulement"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-streetsiren-doubledeck-jeweller": {
+  "tiles": [
+   {
+    "v": "85",
+    "l": "dB à 113 dB"
+   },
+   {
+    "v": "85 dB",
+    "l": "à 113 dB"
+   },
+   {
+    "v": "113 dB",
+    "l": "85 dB à"
+   },
+   {
+    "v": "85 dB",
+    "l": "Réglage du volume des signaux pour les alarmes et autres événements"
+   },
+   {
+    "v": "3",
+    "l": "s à 3 min"
+   },
+   {
+    "v": "3 s",
+    "l": "à 3 min"
+   },
+   {
+    "v": "3 s",
+    "l": "Volume des alarmes ajustable"
+   },
+   {
+    "v": "36 secondes",
+    "l": "Détection de perte de connexion en seulement"
+   },
+   {
+    "v": "IP54",
+    "l": "Boîtier protégé"
+   },
+   {
+    "v": "Jusqu'à 3 500 m",
+    "l": "portée de communication en champ ouvert"
+   }
+  ],
+  "variants": {}
+ },
+ "superior-turretcam-hlvf": {
+  "tiles": [
+   {
+    "v": "jusqu'à 60 m",
+    "l": "Portée de l'éclairage IR"
+   },
+   {
+    "v": "jusqu'à 40 m",
+    "l": "Portée de l'éclairage blanc"
+   }
+  ],
+  "variants": {}
+ },
+ "surfacebox-55": {
+  "tiles": [
+   {
+    "v": "46 mm",
+    "l": "n'ajoute que"
+   },
+   {
+    "v": "46 mm",
+    "l": "Design épuré"
+   },
+   {
+    "v": "8",
+    "l": "couleurs"
+   }
+  ],
+  "variants": {}
+ },
+ "takeover-module-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 2 000 m",
+    "l": "communication radio bidirectionnelle sécurisée en champ ouvert"
+   },
+   {
+    "v": "345",
+    "l": "MHz"
+   },
+   {
+    "v": "433",
+    "l": "MHz"
+   },
+   {
+    "v": "jusqu'à 24 heures",
+    "l": "La batterie rechargeable intégrée assure"
+   }
+  ],
+  "variants": {}
+ },
+ "turretcam": {
+  "tiles": [
+   {
+    "v": "2880 × 1620 px",
+    "l": "définition jusqu'à"
+   },
+   {
+    "v": "100° à 110°",
+    "l": "angle de vision de"
+   },
+   {
+    "v": "3840 × 2160 px",
+    "l": "définition jusqu'à"
+   },
+   {
+    "v": "75° à 85°",
+    "l": "angle de vision de"
+   },
+   {
+    "v": "5 MP",
+    "l": "Capteur CMOS"
+   },
+   {
+    "v": "4 mm",
+    "l": "8 mm"
+   },
+   {
+    "v": "jusqu'à 256 Go",
+    "l": "Emplacement MicroSD"
+   },
+   {
+    "v": "jusqu'à 50 m",
+    "l": "Éclairage IR"
+   }
+  ],
+  "variants": {
+   "5mp-2.8": [
+    {
+     "v": "2880 × 1620 px",
+     "l": "définition jusqu'à"
+    },
+    {
+     "v": "100° à 110°",
+     "l": "angle de vision de"
+    }
+   ],
+   "8mp-2.8": [
+    {
+     "v": "3840 × 2160 px",
+     "l": "définition jusqu'à"
+    },
+    {
+     "v": "100° à 110°",
+     "l": "angle de vision de"
+    }
+   ],
+   "5mp-4": [
+    {
+     "v": "2880 × 1620 px",
+     "l": "définition jusqu'à"
+    },
+    {
+     "v": "75° à 85°",
+     "l": "angle de vision de"
+    }
+   ],
+   "8mp-4": [
+    {
+     "v": "3840 × 2160 px",
+     "l": "définition jusqu'à"
+    },
+    {
+     "v": "75° à 85°",
+     "l": "angle de vision de"
+    }
+   ]
+  }
+ },
+ "transmitter": {
+  "tiles": [
+   {
+    "v": "25°C",
+    "l": "Fonctionne à des températures allant de"
+   },
+   {
+    "v": "50°C",
+    "l": "Fonctionne à des températures allant de –25°C à +"
+   }
+  ],
+  "variants": {}
+ },
+ "turretcam-hl": {
+  "tiles": [
+   {
+    "v": "IP66",
+    "l": "et IK"
+   },
+   {
+    "v": "jusqu'à 50 m",
+    "l": "portée d'éclairage IR et de lumière blanche"
+   },
+   {
+    "v": "jusqu'à 50 m",
+    "l": "Portée de l'éclairage IR"
+   },
+   {
+    "v": "jusqu'à 50 m",
+    "l": "Portée de l'éclairage blanc"
+   },
+   {
+    "v": "jusqu'à 50 m",
+    "l": "Éclairage IR + lumière blanche"
+   },
+   {
+    "v": "5 MP",
+    "l": "Capteur CMOS"
+   },
+   {
+    "v": "4 mm",
+    "l": "8 mm"
+   },
+   {
+    "v": "IP66",
+    "l": "Indice de protection"
+   },
+   {
+    "v": "jusqu'à 256 Go",
+    "l": "Emplacement pour carte microSD"
+   }
+  ],
+  "variants": {
+   "5mp-2.8": [
+    {
+     "v": "110°",
+     "l": "angle de vision de"
+    }
+   ],
+   "8mp-2.8": [
+    {
+     "v": "110°",
+     "l": "angle de vision de"
+    }
+   ],
+   "5mp-4": [
+    {
+     "v": "85°",
+     "l": "angle de vision de"
+    }
+   ],
+   "8mp-4": [
+    {
+     "v": "85°",
+     "l": "angle de vision de"
+    }
+   ]
+  }
+ },
+ "type4-fire-hub-jeweller": {
+  "tiles": [
+   {
+    "v": "240 V",
+    "l": "Secteur"
+   },
+   {
+    "v": "263",
+    "l": "× 223 × 54 mm"
+   },
+   {
+    "v": "54 mm",
+    "l": "263 × 223 ×"
+   },
+   {
+    "v": "54 mm",
+    "l": "Boîtier compact"
+   },
+   {
+    "v": "jusqu'à 1 800 m",
+    "l": "portée de communication"
+   },
+   {
+    "v": "2",
+    "l": "sorties relais pour la transmission d'événements aux fournisseurs de services"
+   },
+   {
+    "v": "60 dB",
+    "l": "Buzzer intégré de"
+   },
+   {
+    "v": "60 dB",
+    "l": "Buzzer de"
+   },
+   {
+    "v": "2",
+    "l": "emplacements pour cartes SIM"
+   },
+   {
+    "v": "jusqu'à 1 800 m",
+    "l": "Portée radio"
+   },
+   {
+    "v": "jusqu'à 1 800 m",
+    "l": "Portée de communication allant"
+   },
+   {
+    "v": "Jusqu'à 35 km",
+    "l": "de portée avec 5 prolongateurs de portée par équipement d'alarme incendie"
+   }
+  ],
+  "variants": {}
+ },
+ "turretcam-hlvf": {
+  "tiles": [
+   {
+    "v": "jusqu'à 60 m",
+    "l": "Portée de l'éclairage IR"
+   },
+   {
+    "v": "jusqu'à 40 m",
+    "l": "Portée de l'éclairage blanc"
+   }
+  ],
+  "variants": {}
+ },
+ "type4-fire-rex-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1 800 m",
+    "l": "portée de communication radio"
+   },
+   {
+    "v": "jusqu'à 35 km",
+    "l": "pour étendre la couverture"
+   },
+   {
+    "v": "jusqu'à 35 km",
+    "l": "Jusqu'à cinq prolongateurs de portée par système"
+   },
+   {
+    "v": "240 V",
+    "l": "Secteur"
+   },
+   {
+    "v": "jusqu'à 1 800 m",
+    "l": "Portée de communication"
+   },
+   {
+    "v": "jusqu'à 35 km",
+    "l": "Portée"
+   },
+   {
+    "v": "jusqu'à 1 800 m",
+    "l": "Portée radio"
+   },
+   {
+    "v": "72 heures",
+    "l": "Chaque batterie offre jusqu'à 24 ou"
+   }
+  ],
+  "variants": {}
+ },
+ "type4-hub-4g-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 20 heures",
+    "l": "de fonctionnement autonome"
+   },
+   {
+    "v": "jusqu'à 1 800 m",
+    "l": "portée de communication"
+   },
+   {
+    "v": "jusqu'à 1 800 m",
+    "l": "Portée sans fil allant"
+   },
+   {
+    "v": "jusqu'à 1 800 m",
+    "l": "Portée de communication allant"
+   }
+  ],
+  "variants": {}
+ },
+ "type4-internal-battery": {
+  "tiles": [
+   {
+    "v": "5",
+    "l": "Ah pour 24 heures de fonctionnement"
+   },
+   {
+    "v": "24 heures",
+    "l": "5 Ah pour"
+   },
+   {
+    "v": "24 heures",
+    "l": "Capacité"
+   }
+  ],
+  "variants": {}
+ },
+ "type4-io-module-2x2-jeweller": {
+  "tiles": [
+   {
+    "v": "2",
+    "l": "sorties isolées galvaniquement"
+   },
+   {
+    "v": "2",
+    "l": "entrées"
+   },
+   {
+    "v": "5",
+    "l": "ans de fonctionnement"
+   },
+   {
+    "v": "5 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "jusqu'à 1 700 m",
+    "l": "Communication Jeweller Intégrée"
+   },
+   {
+    "v": "2",
+    "l": "boutons anti-sabotage"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   }
+  ],
+  "variants": {}
+ },
+ "type4-fireprotect-jeweller-sounders-vads": {
+  "tiles": [
+   {
+    "v": "jusqu'à 1 700 m",
+    "l": "Communication Jeweller Intégrée"
+   },
+   {
+    "v": "100 dB",
+    "l": "avec un buzzer de"
+   },
+   {
+    "v": "100 dB",
+    "l": "Indication sonore d'alarme"
+   },
+   {
+    "v": "5",
+    "l": "ans de fonctionnement"
+   },
+   {
+    "v": "5 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "IP54",
+    "l": "avec un boîtier"
+   },
+   {
+    "v": "10°C",
+    "l": "une température de fonctionnement de"
+   },
+   {
+    "v": "60°C",
+    "l": "une température de fonctionnement de –10°C à +"
+   },
+   {
+    "v": "IP54",
+    "l": "Conçu pour diverses conditions"
+   },
+   {
+    "v": "Jusqu'à 5 ans",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   }
+  ],
+  "variants": {}
+ },
+ "type4-rex-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1 800 m",
+    "l": "portée de communication radio"
+   },
+   {
+    "v": "Jusqu’à 35 heures",
+    "l": "sur une batterie de secours"
+   },
+   {
+    "v": "jusqu'à 1 800 m",
+    "l": "Portée de communication"
+   },
+   {
+    "v": "jusqu'à 1 800 m",
+    "l": "Portée radio"
+   }
+  ],
+  "variants": {}
+ },
+ "type4-manualcallpoint-jeweller": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "portée de la communication sans fil avec un équipement d'alarme incendie ou un prolongateur de portée"
+   },
+   {
+    "v": "Jusqu'à 7 ans",
+    "l": "durée de vie de la batterie"
+   },
+   {
+    "v": "0°C",
+    "l": "avec une température de fonctionnement de"
+   },
+   {
+    "v": "50°C",
+    "l": "avec une température de fonctionnement de 0°C à +"
+   },
+   {
+    "v": "0°C",
+    "l": "Conçu pour diverses conditions"
+   },
+   {
+    "v": "Jusqu'à 1 700 m",
+    "l": "Compatibilité des dispositifs"
+   }
+  ],
+  "variants": {}
+ },
+ "vhfbridge": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 75 heures",
+    "l": "de fonctionnement autonome"
+   },
+   {
+    "v": "jusqu'à 75 heures",
+    "l": "l'émetteur fonctionnent sur une batterie de secours"
+   },
+   {
+    "v": "Jusqu'à 1800 m",
+    "l": "1800 m de communication radio en espace ouvert"
+   },
+   {
+    "v": "1800 m",
+    "l": "Jusqu'à 1800 m"
+   }
+  ],
+  "variants": {}
+ },
+ "wallswitch": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 1000 m",
+    "l": "1000 m de communication radio en espace ouvert"
+   },
+   {
+    "v": "1000 m",
+    "l": "Jusqu'à 1000 m"
+   },
+   {
+    "v": "Jusqu'à 1000 m",
+    "l": "Permet de contrôler la consommation électrique"
+   }
+  ],
+  "variants": {}
+ },
+ "waterstop": {
+  "tiles": [
+   {
+    "v": "Jusqu'à 3 ans",
+    "l": "de fonctionnement"
+   },
+   {
+    "v": "7 secondes",
+    "l": "Compatibilité des dispositifs"
+   },
+   {
+    "v": "9–12 V",
+    "l": "Le bloc d'alimentation"
+   },
+   {
+    "v": "4",
+    "l": "positions de montage"
+   },
+   {
+    "v": "7 secondes",
+    "l": "Coupure d'eau en"
+   },
+   {
+    "v": "IP66",
+    "l": "Indice de protection"
+   },
+   {
+    "v": "Jusqu'à 3 ans",
+    "l": "de fonctionnement avec les batteries préinstallées"
+   },
+   {
+    "v": "Jusqu'à 1 100 m",
+    "l": "communication radio bidirectionnelle sécurisée en champ ouvert"
+   }
+  ],
+  "variants": {}
+ }
 }

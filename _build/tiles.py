@@ -16,9 +16,38 @@ def _load():
     return _TILES
 
 
+def _entry(slug):
+    raw = _load().get(slug)
+    if not raw:
+        return [], {}
+    if isinstance(raw, list):
+        return raw, {}
+    return raw.get("tiles") or [], raw.get("variants") or {}
+
+
+def _variant_key(p):
+    blob = f"{p.get('name','')} {p.get('slug','')}"
+    mp = None
+    import re
+    mp = re.search(r"(\d)\s*Mp", blob, re.I)
+    mm = re.search(r"(\d+(?:[.,]\d+)?)\s*mm", blob, re.I)
+    if mp and mm:
+        return f"{mp.group(1)}mp-{mm.group(1).replace(',', '.')}"
+    return ""
+
+
 def tiles_for(p):
-    slug = p.get("official_page_slug") or ""
-    return list(_load().get(slug) or [])
+    common, variants = _entry(p.get("official_page_slug") or "")
+    chosen = list(variants.get(_variant_key(p)) or [])
+    have = {t["v"].lower() for t in chosen}
+    for t in common:
+        if chosen and any(mark in t["v"] for mark in ("×", "°", "Mp", "MP", "mm")):
+            continue
+        if t["v"].lower() in have:
+            continue
+        chosen.append(t)
+        have.add(t["v"].lower())
+    return chosen[:8]
 
 
 def system_html():
@@ -36,7 +65,9 @@ def system_html():
     ]
     bits = []
     for slug, prefix, who in wanted:
-        for t in data.get(slug) or []:
+        raw = data.get(slug) or []
+        rows = raw if isinstance(raw, list) else (raw.get("tiles") or [])
+        for t in rows:
             if t["v"] == prefix:
                 bits.append(f'<li class="tile"><b>{E(t["v"])}</b><span>{E(t["l"])} · {E(who)}</span></li>')
                 break

@@ -64,7 +64,7 @@ def home():
 <p class="src-note">Source : Ajax Systems</p>
 {sell.act(pre, "gamme-intrusion.html", "Voir l’intrusion")}
 </div>
-<div class="vis-media">{portee()}</div>
+<div class="vis-media"><img class="home-shot" src="assets/img/p/c-hub2-4g-white-e143ae613b.png" alt="Centrale Hub 2"></div>
 </div></section>'''
     duo = f'''<section class="section"><div class="wrap-wide">
 <div class="head center"><h2 class="h2">Maison ou activité.</h2>
@@ -87,9 +87,18 @@ def home():
         ("ssi", "gamme-ssi.html", "SSI.", "Type4, PPMS et Residence.", "assets/img/p/c-type4-fire-hub-white-761cd3145d.png", ""),
         ("domotique", "gamme-confort.html", "Confort.", "Éclairage, prises, relais.", "assets/img/ajax/ls_five_devices_3b8296cb8d.jpg", "cover"),
     ]
+    counts = {}
+    for p in ALL:
+        counts[ligne(p)] = counts.get(ligne(p), 0) + 1
+    tree_n = {
+        "alarme": counts.get("intrusion-baseline", 0) + counts.get("intrusion-superior", 0),
+        "video": counts.get("video-baseline", 0) + counts.get("video-superior", 0),
+        "ssi": counts.get("type4", 0) + counts.get("residence", 0),
+        "domotique": counts.get("confort", 0),
+    }
     rows = []
     for g, href, h, txt, src, st in chapters:
-        cnt = len(group_products(g))
+        cnt = tree_n[g]
         cover = " home-cover" if "cover" in st else ""
         card = st.replace(" cover", "")
         rows.append(f'''<a class="range-card {card}" href="{href}"><div class="range-media"><img class="home-shot{cover}" src="{src}" alt="{h}"></div><div><h3>{h}</h3><p>{txt}</p><span class="count">{cnt} références</span></div></a>''')
@@ -195,14 +204,14 @@ def particuliers():
 </div></section>
 <section class="section bg-off"><div class="wrap">
 <div class="head reveal"><p class="eyebrow">Besoins typiques</p><h2 class="h2">Ce que nous protégeons chez vous.</h2></div>
-<ol class="numlist reveal">
-<li><h3>Maison et appartement</h3><p>Ouvertures, volumes, abords.</p></li>
-<li><h3>Résidence secondaire</h3><p>Alerte à distance, photo pour lever le doute.</p></li>
-<li><h3>Absence</h3><p>Armement et scénarios, depuis l’application.</p></li>
-<li><h3>Animaux</h3><p>Immunité animaux, selon le détecteur Ajax.</p></li>
-<li><h3>Application</h3><p>Armement, historique, notifications.</p></li>
-<li><h3>Photo</h3><p>Une image en cas d’alarme.</p></li>
-</ol>
+<ul class="need-cards">
+<li><img src="assets/img/ajax/ls_house_xl_1894a479bc.jpg" alt="Salon avec un interrupteur Ajax"><h3>Maison et appartement</h3><p>Ouvertures, volumes, abords.</p></li>
+<li><img src="assets/img/ajax/ia-human.jpg" alt="Détection d’une personne dans le jardin"><h3>Résidence secondaire</h3><p>Alerte à distance, photo pour lever le doute.</p></li>
+<li><img src="assets/img/ajax/pro-app.jpg" alt="Écran de l’application Ajax"><h3>Absence</h3><p>Armement et scénarios, depuis l’application.</p></li>
+<li><img src="assets/img/ajax/ia-pet.jpg" alt="Détection d’un animal"><h3>Animaux</h3><p>Immunité animaux, selon le détecteur Ajax.</p></li>
+<li><img src="assets/video/app/photo-app.jpg" alt="Vérification photo dans l’application"><h3>Application</h3><p>Armement, historique, notifications.</p></li>
+<li><img src="assets/img/p/c-mc-black-ccad3224b1.png" alt="MotionCam"><h3>Photo</h3><p>Une image en cas d’alarme.</p></li>
+</ul>
 </div></section>
 <section class="section"><div class="wrap">
 <div class="split">
