@@ -111,15 +111,12 @@ def home():
 <p>Vous armez, vous lisez l’alerte, vous coupez une lumière.</p>
 {sell.act(pre)}
 </div>
-<div class="app-stage">
-<div class="app-screen is-arm"><header><b>Maison</b><em>Armé</em></header>
-<ul><li><span>Entrée</span><strong>Fermée</strong></li><li><span>Salon</span><strong>Calme</strong></li><li><span>Jardin</span><strong>Calme</strong></li></ul></div>
-<div class="app-screen is-alert"><header><b>Alerte</b><em>Maintenant</em></header>
-<ul><li><span>Jardin</span><strong>Mouvement</strong></li><li><span>Sirène</span><strong>Active</strong></li><li><span>Photo</span><strong>En cours</strong></li></ul></div>
-<div class="app-screen is-photo"><img src="assets/img/ajax/ia-human.jpg" alt=""><header><b>Levée de doute</b><em>Photo</em></header></div>
-<div class="app-screen is-scene"><header><b>Scénario</b><em>Fait</em></header>
-<ul><li><span>Salon</span><strong>Lumière coupée</strong></li><li><span>Déclencheur</span><strong>Armement</strong></li><li><span>Prise</span><strong>Coupée</strong></li></ul></div>
-</div>
+<figure class="app-film">
+<video class="js-video" autoplay muted loop playsinline preload="metadata" poster="assets/video/app/photo-app.jpg">
+<source src="assets/video/app/photo-app.mp4" type="video/mp4">
+</video>
+<figcaption>Vérification photo, application Ajax. <span class="src-note">Source : Ajax Systems</span></figcaption>
+</figure>
 </div></section>'''
     ia_block = f'''<section class="section"><div class="wrap">
 <div class="head"><h2 class="h2">Personne, véhicule, animal.</h2>
@@ -944,7 +941,13 @@ def _rails(products, pre):
     return "".join(blocks)
 
 
-def _line_page(path, parent, title, lead, products):
+def _film(src, poster, caption):
+    if src.endswith(".mp4"):
+        return f'''<figure class="app-film"><video class="js-video" autoplay muted loop playsinline preload="metadata" poster="{poster}"><source src="{src}" type="video/mp4"></video><figcaption>{caption} <span class="src-note">Source : Ajax Systems</span></figcaption></figure>'''
+    return yt(src, caption, caption + " Source : Ajax Systems")
+
+
+def _line_page(path, parent, title, lead, products, film=""):
     pre = ""
     cr, ld = crumbs(pre, parent)
     shown = [p for p in products if default_image(p)]
@@ -953,6 +956,7 @@ def _line_page(path, parent, title, lead, products):
 <p class="lead">{lead}</p>
 <p class="src-note">Source : Ajax Systems</p>
 <div class="btns"><a class="btn btn-primary btn-lg" href="contact.html#devis">Demander une étude</a></div>
+{film}
 </div></section>
 {_rails(products, pre)}
 {cta(pre, "Étude sur toute l’île.", f"{len(shown)} références illustrées dans cette ligne.")}'''
@@ -986,7 +990,7 @@ def arbre():
                [("gamme-intrusion.html", "Intrusion"), (None, "Baseline")],
                "Intrusion Baseline.",
                "Dispositifs sans fil pour la maison et les petits sites.",
-               intru_b)
+               intru_b, _film("assets/video/app/night-app.mp4", "assets/img/ajax/pro-app.jpg", "Armement dans l’application."))
     _line_page("gamme-intrusion-superior.html",
                [("gamme-intrusion.html", "Intrusion"), (None, "Superior")],
                "Intrusion Superior.",
@@ -1004,17 +1008,17 @@ def arbre():
                [("gamme-video.html", "Vidéo"), (None, "Baseline")],
                "Vidéo Baseline.",
                "Caméras, sonnette et enregistreurs. L’image peut lancer l’alarme.",
-               vid_b)
+               vid_b, _film("agYRW1Xj_IQ", "", "Caméras Baseline."))
     _line_page("gamme-video-superior.html",
                [("gamme-video.html", "Vidéo"), (None, "Superior")],
                "Vidéo Superior.",
                "Caméras et NVR pour les sites exigeants. Même reconnaissance, IA enrichie.",
-               vid_s)
+               vid_s, _film("agYRW1Xj_IQ", "", "Caméras Superior."))
     _line_page("gamme-ssi-type4.html",
                [("gamme-ssi.html", "SSI"), (None, "Type4 Line")],
                "Type4 Line.",
-               "Ajax présente cette ligne pour les ERP de type 4, en alarme incendie sans fil.",
-               type4)
+               "Ajax présente cette ligne pour les ERP de type 4.",
+               type4, _film("5HO9wW5xYc8", "", "Ligne Type4."))
     ppms_named = [p for p in type4 if p["slug"] in ("type4-hub-4g-jeweller", "type4-rex-jeweller", "type4-i-o-module-2x2-jeweller")]
     cr, ld = crumbs(pre, [("gamme-ssi.html", "SSI"), (None, "PPMS Line")])
     write_page("gamme-ssi-ppms.html", "PPMS Line — SSI | AS974",
@@ -1048,7 +1052,7 @@ def arbre():
     _line_page("gamme-confort.html", [(None, "Confort")],
                "Confort et automatisation.",
                "Éclairage, prises, relais et fuites d’eau, dans la même application que l’alarme.",
-               confort)
+               confort, _film("assets/video/app/switches-app.mp4", "assets/img/ajax/pro-desktop.jpg", "Interrupteurs dans l’application."))
     for old, target in (
         ("gamme-incendie.html", "gamme-ssi.html"),
         ("gamme-alarme.html", "gamme-intrusion.html"),

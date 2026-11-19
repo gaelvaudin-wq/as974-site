@@ -771,6 +771,9 @@ img.is-matte{filter:none!important;mix-blend-mode:normal!important}
   .tiles{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:6px}
   .tile{flex:0 0 min(78%,260px);scroll-snap-align:start}
 }
+.app-film{margin:28px 0 0}
+.app-film video,.app-film .yt{width:100%;border-radius:28px;background:#0B0B0C}
+.app-film video{max-height:720px;object-fit:contain}
 .fiche-tech{margin-top:18px}
 .fiche-tech .spec{margin-top:12px}
 .hero-film video.is-hero{position:absolute!important;inset:0;width:100%!important;height:100%!important;max-height:none!important;object-fit:cover!important;object-position:center center}

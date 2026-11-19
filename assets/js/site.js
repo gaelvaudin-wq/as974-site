@@ -204,7 +204,7 @@
           if(frame) return;
           var f=d.createElement("iframe");
           f.className="yt-frame";
-          f.src="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(id)+"?autoplay=1&mute=1&rel=0&playsinline=1";
+          f.src="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(id)+"?autoplay=1&mute=1&playsinline=1&loop=1&playlist="+encodeURIComponent(id)+"&rel=0";
           f.title=btn.getAttribute("aria-label")||"Vidéo Ajax Systems";
           f.setAttribute("allow","autoplay; encrypted-media; picture-in-picture");
           f.setAttribute("allowfullscreen","");
