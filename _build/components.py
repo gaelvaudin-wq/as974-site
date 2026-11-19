@@ -1,5 +1,6 @@
 """Composants réutilisables : carte produit, rail, grille filtrable, CTA."""
 from core import *
+from tiles import tiles_html
 
 def card(p, pre, sizes="(max-width:640px) 84vw, 340px"):
     meta = default_image(p)
@@ -14,6 +15,7 @@ def card(p, pre, sizes="(max-width:640px) 84vw, 340px"):
             f'<div class="prod-body"><div class="prod-tags">{tags}</div>'
             f'<h3>{E(p["name"])}</h3>'
             f'<p class="sub">{E(p["category"])}</p>{dots_html}'
+            f'{tiles_html(p, 4, compact=True)}'
             f'<div class="foot"><span>Sur devis</span><a class="quote" href="{url}">Voir la fiche</a></div></div></article>')
 
 def rail(products, pre, eyebrow, title, more=None, dark=False, lead=None):

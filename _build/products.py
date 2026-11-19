@@ -3,6 +3,7 @@ import json
 from core import *
 from layout import write_page, crumbs
 from components import rail, yt, video_ld
+from tiles import tiles_html
 from sell import siblings, family_of
 
 ICON_CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>'
@@ -128,10 +129,11 @@ def fiche(p, all_products):
 </div>
 </div></section>
 <div class="pdp-bar"><a class="btn btn-primary js-quote" href="{quote_href}">Demander un devis</a></div>
-<section class="section bg-off"><div class="wrap specs">
-<div class="reveal"><p class="eyebrow">Caractéristiques</p><h2 class="h2">En bref.</h2>
-<p class="src-note">Source : Ajax Systems</p></div>
-<div class="reveal d1"><table class="spec">
+<section class="section bg-off"><div class="wrap">
+<div class="reveal"><p class="eyebrow">Caractéristiques</p><h2 class="h2">En bref.</h2></div>
+{tiles_html(p, 8)}
+<details class="more fiche-tech"><summary>Fiche technique</summary>
+<table class="spec">
 <tr><th scope="row">Modèle</th><td>{E(p["name"])}</td></tr>
 <tr><th scope="row">Référence fabricant</th><td>{E(p["model"])}</td></tr>
 {f'<tr><th scope="row">Gamme</th><td>{E(GAMME_LABEL[p["gk"]])}</td></tr>' if p["gk"] != "a-confirmer" else ''}
@@ -141,7 +143,7 @@ def fiche(p, all_products):
 {extra_comp}
 <tr><th scope="row">Prix</th><td>Sur devis</td></tr>
 <tr><th scope="row">Disponibilité</th><td>{E(p["avail_tag"] or "Précisée dans le devis")}</td></tr>
-</table></div>
+</table></details>
 </div></section>
 <section class="section"><div class="wrap">
 {rail(related, pre, "Dans la même famille", "Autres produits.", (f"catalogue-{p['group']}.html", "Tout l’univers " + g["label"]))}

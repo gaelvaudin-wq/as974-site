@@ -759,6 +759,20 @@ img.is-matte{filter:none!important;mix-blend-mode:normal!important}
 .app-state:nth-child(3){animation-delay:8s}
 @keyframes appcycle{0%{opacity:1}26%{opacity:1}33%{opacity:0}92%{opacity:0}100%{opacity:1}}
 @media (max-width:700px){.ia-row,.cmp{grid-template-columns:1fr}}
+.tiles{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0 8px}
+.tile{background:#F5F5F7;border-radius:20px;padding:18px 16px;min-height:118px}
+.tile b{display:block;font-size:clamp(26px,2.4vw,40px);letter-spacing:-.045em;line-height:1;font-weight:750}
+.tile span{display:block;margin-top:8px;color:#5F5F64;font-size:14px;line-height:1.35}
+.tiles.is-compact{grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.tiles.is-compact .tile{min-height:0;padding:12px;border-radius:14px}
+.tiles.is-compact .tile b{font-size:20px}
+.tiles.is-compact .tile span{font-size:12px}
+@media (max-width:1023px){
+  .tiles{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:6px}
+  .tile{flex:0 0 min(78%,260px);scroll-snap-align:start}
+}
+.fiche-tech{margin-top:18px}
+.fiche-tech .spec{margin-top:12px}
 .hero-film video.is-hero{position:absolute!important;inset:0;width:100%!important;height:100%!important;max-height:none!important;object-fit:cover!important;object-position:center center}
 .hero-film::after{display:block!important;background:linear-gradient(180deg,rgba(11,11,12,.18) 0%,rgba(11,11,12,.08) 36%,rgba(11,11,12,.55) 68%,rgba(11,11,12,.88) 100%)!important;z-index:1}
 .hero-film,.hero-film .display{color:#fff}
