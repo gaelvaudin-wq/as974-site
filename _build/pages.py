@@ -5,6 +5,7 @@ from layout import write_page, crumbs
 from components import card, rail, filter_grid, cta, versus, yt, video_ld
 import sell
 from diagrams import portee, frise, ia, comparatif, en54
+from tiles import system_html
 
 P = {}      # slug -> produit
 ALL = []
@@ -61,7 +62,7 @@ def home():
 <div class="vis-copy"><h2 class="h2">Jusqu’à 2 000 m.</h2>
 <p>Portée annoncée du Hub 2 en champ libre. Nous la mesurons chez vous.</p>
 <p class="src-note">Source : Ajax Systems</p>
-{sell.act(pre, "gamme-alarme.html", "Voir l’alarme")}
+{sell.act(pre, "gamme-intrusion.html", "Voir l’intrusion")}
 </div>
 <div class="vis-media">{portee()}</div>
 </div></section>'''
@@ -188,6 +189,11 @@ def particuliers():
 <div class="btns"><a class="btn btn-primary btn-lg" href="contact.html?profil=particulier#devis">Étude gratuite pour mon logement</a><a class="btn btn-outline btn-lg" href="catalogue.html">Explorer le catalogue</a></div></div>
 <div class="phero-media reveal d1">{stage_img("motionprotect", "Blanc", pre, SZ_SPLIT, eager=True)}</div>
 </div></section>
+<section class="section"><div class="wrap">
+<div class="head"><h2 class="h2">Le système, en chiffres.</h2>
+<p class="lead">Chaque puce vient de la fiche du produit nommé.</p></div>
+{system_html()}
+</div></section>
 <section class="section bg-off"><div class="wrap">
 <div class="head reveal"><p class="eyebrow">Besoins typiques</p><h2 class="h2">Ce que nous protégeons chez vous.</h2></div>
 <ol class="numlist reveal">
@@ -208,7 +214,7 @@ def particuliers():
 <div class="split rev">
 <div class="split-media reveal">{stage_img("doorbell", "Graphite", pre, SZ_SPLIT)}</div>
 <div class="split-txt reveal d1"><p class="num">Au quotidien</p><h2 class="h2">Tout, depuis votre smartphone.</h2><p class="lead">Armement, alertes et scénarios, dans une application.</p>
-<div class="btns"><a class="btn btn-dark" href="gamme-domotique.html">Découvrir la domotique</a></div></div>
+<div class="btns"><a class="btn btn-dark" href="gamme-confort.html">Découvrir le confort</a></div></div>
 </div>
 </div></section>
 <section class="section bg-off"><div class="wrap">

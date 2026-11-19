@@ -21,6 +21,31 @@ def tiles_for(p):
     return list(_load().get(slug) or [])
 
 
+def system_html():
+    """Chiffres repris tels quels des tuiles Hub Jeweller et MotionProtect."""
+    data = _load()
+    wanted = [
+        ("hub", "Jusqu'à 2 000 m", "Hub Jeweller"),
+        ("hub", "100", "Hub Jeweller"),
+        ("hub", "Jusqu'à 15 heures", "Hub Jeweller"),
+        ("hub", "50", "Hub Jeweller"),
+        ("hub", "9", "Hub Jeweller"),
+        ("motionprotect", "Jusqu'à 12 m", "MotionProtect"),
+        ("motionprotect", "Jusqu'à 5 ans", "MotionProtect"),
+        ("motionprotect", "Jusqu'à 1 700 m", "MotionProtect"),
+    ]
+    bits = []
+    for slug, prefix, who in wanted:
+        for t in data.get(slug) or []:
+            if t["v"] == prefix:
+                bits.append(f'<li class="tile"><b>{E(t["v"])}</b><span>{E(t["l"])} · {E(who)}</span></li>')
+                break
+    if not bits:
+        return ""
+    return (f'<ul class="tiles" aria-label="Chiffres du système">{"".join(bits)}</ul>'
+            f'<p class="src-note">Source : Ajax Systems</p>')
+
+
 def tiles_html(p, limit=8, compact=False):
     items = tiles_for(p)[:limit]
     if not items:
