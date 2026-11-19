@@ -67,8 +67,10 @@ GROUPS = [
      ["Centrales", "Kits de démarrage", "Prolongateurs de portée"]),
     ("alarme", "Alarme intrusion", "Détecteurs, claviers, sirènes et commandes pour protéger chaque accès.",
      ["Détecteurs de mouvements", "Détecteurs d'ouverture", "Détecteurs de bris de glace", "Détecteurs sismiques", "Claviers", "Sirènes", "Boutons & télécommandes"]),
-    ("incendie", "Incendie EN54", "Ligne professionnelle Ajax EN54 : centrale, détecteurs, déclencheurs, sirènes, flashs et modules pour les bâtiments.",
+    ("ssi", "SSI", "SSI (système de sécurité incendie) : Type4 Line, PPMS Line et Residence Line, comme sur le menu Produits Ajax.",
      ["Détecteurs d'incendie", "Dispositifs d'alarme incendie", "Déclencheurs manuels d'alarme"]),
+    ("en54", "EN54 Line", "Ligne EN54 du catalogue fabricant. Elle n’est pas une des trois lignes du menu Produits (Type4, PPMS, Residence).",
+     []),
     ("video", "Vidéosurveillance", "Caméras IP, enregistreurs, sonnette et interphonie reliés à l’alarme.",
      ["Caméras filaires", "Caméras Wi-Fi", "Enregistreurs vidéo", "Sonnettes", "Modules d'interphonie"]),
     ("domotique", "Domotique", "Éclairage, prises, relais, fuites d’eau et qualité de l’air dans la même application.",
@@ -115,23 +117,16 @@ def load_catalogue():
         p = dict(p)
         p["group"] = CAT2GROUP[p["category"]]
         p["gk"] = GAMME_KEY.get(p["gamme"], "a-confirmer")
-        # Incendie : la page dédiée est la ligne EN54. Les FireProtect grand public
-        # (Residence Line) complètent l'alarme Baseline. Source : catalogues Ajax.
+        # Menu Produits Ajax FR : SSI = Type4 Line, PPMS Line, Residence Line.
+        # EN54 reste une ligne du catalogue, hors de ces trois entrées.
         fire_cats = {"Détecteurs d'incendie", "Dispositifs d'alarme incendie", "Déclencheurs manuels d'alarme"}
         slug = str(p["slug"])
         if p["gamme"] == "EN54 Line" or slug.startswith("en54-"):
-            p["group"] = "incendie"
-        elif slug.startswith("manualcallpoint-"):
-            # Ajax les présente sur la page EN54. Seule la version rouge est certifiée EN 54-25.
-            p["group"] = "incendie"
+            p["group"] = "en54"
         elif p["gamme"] == "Type4 Line" or slug.startswith("type4-"):
-            # Ligne distincte, pas EN 54 : hors du catalogue Incendie.
-            if p["category"] in ("Centrales", "Prolongateurs de portée", "Kits de démarrage"):
-                p["group"] = "centrales"
-            else:
-                p["group"] = "accessoires"
-        elif p["gamme"] == "Residence Line" and p["category"] in fire_cats:
-            p["group"] = "alarme"
+            p["group"] = "ssi"
+        elif p["gamme"] == "Residence Line" and (p["category"] in fire_cats or slug.startswith("manualcallpoint-")):
+            p["group"] = "ssi"
         feats = [f.strip().rstrip(".") for f in (p["feature_1"], p["feature_2"], p["feature_3"]) if f and f.strip() and not NOTE_PAT.search(f)]
         p["feats"] = feats
         p["colors_ok"] = [c for c in p["colors_available"] if c in p["color_images"]]

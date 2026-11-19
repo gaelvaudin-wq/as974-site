@@ -16,11 +16,22 @@ SERVICES_MENU = [
     ("services-maintenance.html", "Maintenance", "Suivi après la pose"),
 ]
 GAMMES_MENU = [
-    ("gamme-alarme.html", "Alarme intrusion", "Détection, claviers, sirènes"),
-    ("gamme-incendie.html", "Incendie EN54", "Ligne professionnelle"),
-    ("gamme-video.html", "Vidéosurveillance", "Caméras, NVR, sonnette"),
-    ("gamme-domotique.html", "Domotique", "Éclairage, prises, fuites d’eau"),
-    ("gamme-acces.html", "Contrôle d’accès", "Claviers, badges, utilisateurs"),
+    ("Protection contre les intrusions", [
+        ("gamme-intrusion-superior.html", "Superior", "Projets exigeants"),
+        ("gamme-intrusion-baseline.html", "Baseline", "Sans fil"),
+    ]),
+    ("Vidéosurveillance", [
+        ("gamme-video-superior.html", "Superior", "Caméras et NVR"),
+        ("gamme-video-baseline.html", "Baseline", "Caméras et NVR"),
+    ]),
+    ("SSI (système de sécurité incendie)", [
+        ("gamme-ssi-type4.html", "Type4 Line", "ERP de type 4"),
+        ("gamme-ssi-ppms.html", "PPMS Line", "Alerte menace"),
+        ("gamme-ssi-residence.html", "Residence Line", "Logements"),
+    ]),
+    ("Confort et automatisation", [
+        ("gamme-confort.html", "Éclairage, prises, relais", "Même application"),
+    ]),
 ]
 PAGES = []  # (path, priority) pour le sitemap
 
@@ -33,7 +44,7 @@ def local_business():
         "name": BRAND, "alternateName": CFG["brand_short"], "url": SITE + "/",
         "logo": SITE + "/assets/img/logo/as974-b-horizontal-noir-rouge.png",
         "image": SITE + "/assets/img/og-as974.jpg",
-        "description": "Installateur partenaire agréé Ajax Systems à La Réunion : alarme, incendie, vidéosurveillance et domotique, en intervention chez le client sur toute l’île.",
+        "description": "Installateur partenaire agréé Ajax Systems à La Réunion : intrusion, vidéosurveillance, SSI et confort, en intervention chez le client sur toute l’île.",
         "areaServed": {"@type": "AdministrativeArea", "name": "La Réunion"},
     }
     if b.get("telephone"):
@@ -84,7 +95,13 @@ def header(pre, current):
     items = []
     for href, label, key in NAV:
         if href == "__gammes__":
-            sub = "".join(f'<a href="{pre}{h}"{" aria-current=\"page\"" if current == h else ""}>{l}<small>{s}</small></a>' for h, l, s in GAMMES_MENU)
+            blocks = []
+            for title, links in GAMMES_MENU:
+                links_html = "".join(
+                    f'<a href="{pre}{h}"{" aria-current=\"page\"" if current == h else ""}>{l}<small>{s}</small></a>'
+                    for h, l, s in links)
+                blocks.append(f'<p class="nav-k">{title}</p>{links_html}')
+            sub = "".join(blocks)
             cur = " is-current" if current.startswith("gamme-") else ""
             items.append(f'<div class="nav-drop{cur}"><button type="button" aria-expanded="false" aria-controls="menu-gammes">Gammes</button><div class="nav-menu" id="menu-gammes">{sub}</div></div>')
         elif key == "services":
@@ -139,11 +156,10 @@ Interventions chez le client, sur toute l’île de La Réunion<br>
 <li><a href="{pre}a-propos.html">À propos</a></li>
 </ul></div>
 <div><h2>Gammes</h2><ul>
-<li><a href="{pre}gamme-alarme.html">Alarme intrusion</a></li>
-<li><a href="{pre}gamme-incendie.html">Incendie EN54</a></li>
+<li><a href="{pre}gamme-intrusion.html">Protection contre les intrusions</a></li>
 <li><a href="{pre}gamme-video.html">Vidéosurveillance</a></li>
-<li><a href="{pre}gamme-domotique.html">Domotique</a></li>
-<li><a href="{pre}gamme-acces.html">Contrôle d’accès</a></li>
+<li><a href="{pre}gamme-ssi.html">SSI (système de sécurité incendie)</a></li>
+<li><a href="{pre}gamme-confort.html">Confort et automatisation</a></li>
 <li><a href="{pre}catalogue.html">Catalogue complet</a></li>
 </ul></div>
 <div><h2>Aide</h2><ul>
@@ -157,7 +173,7 @@ Interventions chez le client, sur toute l’île de La Réunion<br>
 <p class="footer-legal">Partenaire agréé Ajax Systems. Active Sécurité 974 est une marque distincte ; Ajax Systems et ses visuels appartiennent à leur titulaire. Catalogue et devis uniquement, sans vente en ligne.</p>
 </div>
 </div>
-<div class="footer-bottom"><span>© {YEAR} {E(BRAND)} · AS974</span><span>Alarme · Incendie · Vidéosurveillance · Domotique — La Réunion</span></div>
+<div class="footer-bottom"><span>© {YEAR} {E(BRAND)} · AS974</span><span>Intrusion · Vidéo · SSI · Confort — La Réunion</span></div>
 </div>
 </footer>
 <script src="{pre}assets/js/site.js" defer></script>

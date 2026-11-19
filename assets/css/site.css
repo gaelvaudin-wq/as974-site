@@ -96,7 +96,8 @@ p{text-wrap:pretty}
 .nav-drop.open>button::after{transform:translateY(1px) rotate(225deg)}
 .nav-menu{position:absolute;top:calc(100% + 10px);left:0;min-width:280px;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);box-shadow:0 30px 60px rgba(0,0,0,.12);padding:10px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .25s var(--ease),transform .25s var(--ease),visibility .25s}
 .nav-drop.open .nav-menu{opacity:1;visibility:visible;transform:none}
-.nav-menu a{display:flex;flex-direction:column;padding:12px 14px;border-radius:12px;font-size:15px;font-weight:600}
+.nav-k{margin:10px 8px 0;padding:8px 6px 0;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.nav-menu a{display:flex;flex-direction:column;padding:10px 14px;border-radius:12px;font-size:15px;font-weight:600}
 .nav-menu a small{font-weight:450;color:var(--muted);font-size:13px}
 .nav-menu a:hover{background:var(--off)}
 .header-actions{display:flex;align-items:center;gap:10px}

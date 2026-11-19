@@ -1,4 +1,5 @@
 """Pages éditoriales (textes repris des pages v1 validées, mise en page refondue)."""
+import os
 from core import *
 from layout import write_page, crumbs
 from components import card, rail, filter_grid, cta, versus, yt, video_ld
@@ -77,10 +78,10 @@ def home():
 </div></div></section>'''
 
     chapters = [
-        ("alarme", "gamme-alarme.html", "Alarme.", "Détecteurs, claviers et sirènes.", "assets/img/p/c-mc-black-ccad3224b1.png", ""),
-        ("incendie", "gamme-incendie.html", "Incendie EN54.", "La ligne des bâtiments.", "assets/img/p/c-en54-fire-hub-white-9fbd4eb73a.png", ""),
-        ("video", "gamme-video.html", "Vidéo.", "L’image peut lancer l’alarme.", "assets/img/ajax/ia-pet.jpg", "dark cover"),
-        ("domotique", "gamme-domotique.html", "Domotique.", "Lumières, prises, fuites d’eau.", "assets/img/ajax/ls_five_devices_3b8296cb8d.jpg", "cover"),
+        ("alarme", "gamme-intrusion.html", "Intrusion.", "Superior et Baseline.", "assets/img/p/c-mc-black-ccad3224b1.png", ""),
+        ("video", "gamme-video.html", "Vidéo.", "Superior et Baseline.", "assets/img/ajax/ia-pet.jpg", "dark cover"),
+        ("ssi", "gamme-ssi.html", "SSI.", "Type4, PPMS et Residence.", "assets/img/p/c-type4-fire-hub-white-761cd3145d.png", ""),
+        ("domotique", "gamme-confort.html", "Confort.", "Éclairage, prises, relais.", "assets/img/ajax/ls_five_devices_3b8296cb8d.jpg", "cover"),
     ]
     rows = []
     for g, href, h, txt, src, st in chapters:
@@ -260,7 +261,7 @@ def professionnels():
 <p class="lead">Comme la ligne Baseline, les caméras Superior reconnaissent les personnes, les véhicules et les animaux, et peuvent déclencher l’alarme. Superior y ajoute une IA enrichie, des optiques P-Iris 2,8–12 mm, un haut-parleur, et les enregistreurs Superior NVR H2D.</p></div>
 <div class="btns"><a class="btn btn-dark" href="gamme-video.html#superior">Voir la ligne Superior</a><a class="btn btn-outline" href="catalogue-video.html?gamme=superior#references">Références Superior</a></div>
 {yt("o8VNaCPCydE", "De la détection à la réaction", "Les caméras peuvent déclencher une réaction. Vidéo Ajax Systems, en français.")}
-<p class="mt-28"><a class="link" href="gamme-incendie.html">Système incendie professionnel EN54</a></p>
+<p class="mt-28"><a class="link" href="gamme-ssi.html">SSI (système de sécurité incendie)</a></p>
 </div></section>
 <section class="section bg-ink on-dark"><div class="wrap">
 <p class="eyebrow reveal">Après la pose</p>
@@ -507,14 +508,16 @@ def gamme(g):
 
 # ====================================================================== CATALOGUE
 CAT_LEADS = {
-    "centrales": "Le cœur de votre système Ajax Systems : centrales, kits et prolongateurs de portée. Dimensionnés et installés par Active Sécurité 974 sur toute l’île.",
-    "alarme": "Détecteurs, claviers, sirènes et commandes. Baseline pour l’essentiel sans fil ; Superior pour les projets exigeants.",
-    "incendie": "Uniquement la ligne professionnelle Ajax EN54 : centrale, détecteurs, déclencheurs, sirènes, flashs et modules. Les détecteurs de logement sont dans l’alarme.",
-    "video": "Caméras, sonnette et NVR Ajax Systems, intégrés à l’écosystème alarme, sur devis et installation AS974.",
-    "domotique": "Prises, relais, éclairage, détection de fuite et qualité de l’air : automatisez le quotidien dans la même application.",
-    "accessoires": "Modules d’intégration, alimentations, boîtiers et accessoires de pose pour compléter et raccorder votre installation.",
+    "centrales": "Centrales, kits et prolongateurs. La ligne se choisit avec le projet : Baseline ou Superior.",
+    "alarme": "Détecteurs, claviers et sirènes. Baseline sans fil, Superior si le site l’exige.",
+    "ssi": "SSI (système de sécurité incendie) : Type4 Line, PPMS Line et Residence Line.",
+    "en54": "Ligne EN54 du catalogue fabricant, distincte des trois lignes du menu Produits.",
+    "video": "Caméras, sonnette et NVR. Baseline et Superior.",
+    "domotique": "Éclairage, prises, relais et fuites d’eau, dans la même application.",
+    "accessoires": "Modules, alimentations, boîtiers et accessoires de pose.",
 }
-CAT_IMG = {"centrales": ("starterkit", "Blanc"), "alarme": ("motioncam-phod", "Noir"), "incendie": ("en54-fire-hub-jeweller", "Blanc"),
+CAT_IMG = {"centrales": ("starterkit", "Blanc"), "alarme": ("motioncam-phod", "Noir"), "ssi": ("fireprotect-2-smoke-heat-co", "Blanc"),
+           "en54": ("en54-fire-hub-jeweller", "Blanc"),
            "video": ("turretcam", "Blanc"), "domotique": ("socket", "Blanc"), "accessoires": ("button", "Blanc")}
 
 def gamme_acces():
@@ -535,7 +538,7 @@ def gamme_acces():
 def catalogue_index():
     pre = ""
     cr, ld = crumbs(pre, [(None, "Catalogue")])
-    layout = [("alarme", "w4 dark"), ("centrales", "w2 hubs"), ("video", "w3"), ("incendie", "w3"), ("domotique", "w3"), ("accessoires", "w3")]
+    layout = [("alarme", "w4 dark"), ("centrales", "w2 hubs"), ("video", "w3"), ("ssi", "w3"), ("en54", "w3"), ("domotique", "w3"), ("accessoires", "w3")]
     tiles = []
     for i, (g, cls) in enumerate(layout):
         s, c = CAT_IMG[g]
@@ -571,12 +574,10 @@ def catalogue_index():
 def catalogue_cat(g):
     pre = ""
     prods = group_products(g)
-    if g == "incendie":
-        prods = [p for p in prods if p["gamme"] == "EN54 Line" or str(p["slug"]).startswith("en54-") or str(p["slug"]).startswith("manualcallpoint-")]
     label = GROUP[g]["label"]
     cr, ld = crumbs(pre, [("catalogue.html", "Catalogue"), (None, label)])
     chips = "".join(f'<a class="chip" href="?sous={slugify(c)}#references">{E(c)}<span class="n">{sum(1 for p in prods if p["category"] == c)}</span></a>' for c in GROUP[g]["cats"] if any(p["category"] == c for p in prods))
-    gl = {"alarme": "gamme-alarme.html", "incendie": "gamme-incendie.html", "video": "gamme-video.html", "domotique": "gamme-domotique.html"}.get(g)
+    gl = {"alarme": "gamme-intrusion.html", "ssi": "gamme-ssi.html", "en54": "catalogue-en54.html", "video": "gamme-video.html", "domotique": "gamme-confort.html"}.get(g)
     s, c = CAT_IMG[g]
     body = f'''<section class="phero"><div class="wrap phero-split">
 <div class="reveal">{cr}<p class="eyebrow">Catalogue</p><h1 class="h1">{E(label)}</h1>
@@ -588,7 +589,7 @@ def catalogue_cat(g):
 <section class="section flush-top" id="references"><div class="wrap">
 {filter_grid(prods, pre)}
 </div></section>
-{sell.blocs({"alarme":"alarme","video":"video","incendie":"incendie","domotique":"domotique","centrales":"alarme","accessoires":"accessoires"}.get(g,"alarme"), prods, pre)}
+{sell.blocs({"alarme":"alarme","video":"video","ssi":"incendie","en54":"incendie","domotique":"domotique","centrales":"alarme","accessoires":"accessoires"}.get(g,"alarme"), prods, pre)}
 {cta(pre, "Besoin d’aide pour composer votre système ?", "Étude gratuite. Partenaire agréé. Intervention sur site, sur toute l’île.", "Demander un devis")}'''
     write_page(f"catalogue-{g}.html", f"{label} — catalogue Ajax Systems sur devis ({len(prods)} réf.) | AS974",
                clip(f"{label} : {len(prods)} références Ajax Systems sur devis. {GROUP[g]['intro']} Installation par Active Sécurité 974 à La Réunion."),
@@ -727,7 +728,7 @@ def contact():
 <fieldset class="full" style="border:0"><legend class="lbl">Besoins</legend>
 <div class="checks">
 <label><input type="checkbox" name="besoins" value="Intrusion"> Intrusion</label>
-<label><input type="checkbox" name="besoins" value="Incendie"> Incendie</label>
+<label><input type="checkbox" name="besoins" value="SSI"> SSI</label>
 <label><input type="checkbox" name="besoins" value="Vidéo"> Vidéo</label>
 <label><input type="checkbox" name="besoins" value="Domotique"> Domotique</label>
 <label><input type="checkbox" name="besoins" value="Maintenance"> Maintenance</label>
@@ -768,7 +769,7 @@ FAQ = [
     ("Baseline et Superior vidéo ont-ils la même intelligence artificielle ?",
      "Oui. Ajax équipe les deux lignes d’une IA qui reconnaît les personnes, les véhicules et les animaux, et peut déclencher l’alarme. Superior ajoute une IA enrichie, des optiques P-Iris et des enregistreurs NVR H2D."),
     ("Où sont les détecteurs de fumée pour une maison ?",
-     "Sur la page Alarme, dans « Compléter votre alarme ». FireProtect, FireProtect Plus et FireProtect 2 ne font pas partie de la page Incendie. Cette page est réservée à la ligne professionnelle EN54, pour les bâtiments."),
+     "Sur SSI (système de sécurité incendie), ligne Residence. Ajax y place FireProtect, FireProtect Plus et FireProtect 2. Ils peuvent compléter une alarme Baseline. Type4 Line vise les ERP de type 4. PPMS Line vise l’alerte menace."),
     ("Y a-t-il un prix sur le site ?",
      "Non. Chaque référence est sur devis. L’étude et le devis sont gratuits, sans engagement, après un échange ou une visite chez vous."),
     ("Quelles applications pilotent le système ?",
@@ -788,13 +789,13 @@ def faq():
     main = {"@context": "https://schema.org", "@type": "FAQPage",
             "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]}
     body = f'''<section class="phero"><div class="wrap">{cr}<p class="eyebrow">Questions fréquentes</p><h1 class="h1">Ce qu’il faut savoir avant l’étude.</h1>
-<p class="lead">Réponses courtes sur l’intervention à La Réunion, les lignes Ajax Baseline, Superior et EN54, et les applications.</p></div></section>
+<p class="lead">Réponses courtes sur l’intervention à La Réunion, les lignes Ajax et les applications.</p></div></section>
 <section class="section flush-top"><div class="wrap"><div class="faq-col">{blocks}</div>
 <div class="duo-yt mt-28">{yt("NLnFmO16dXI", "Les applications Ajax", "Trouver un appareil ou un utilisateur dans les applications Ajax.")}{yt("o8VNaCPCydE", "De la détection à la réaction", "Les caméras peuvent lancer une réaction. Vidéo Ajax Systems, en français.")}</div>
 </div></section>
 {cta(pre)}'''
     write_page("faq.html", "Questions fréquentes — alarme Ajax à La Réunion | AS974",
-               "FAQ Active Sécurité 974 : intervention sur toute La Réunion, vidéo Baseline et Superior, incendie EN54, applications Ajax et devis gratuit.",
+               "FAQ Active Sécurité 974 : intervention sur toute La Réunion, intrusion, vidéo, SSI et applications Ajax.",
                body, jsonld=[ld, main, video_ld("NLnFmO16dXI", "Applications Ajax", "Recherche dans les applications Ajax Security System et Ajax PRO.")], priority="0.6")
 
 def legal_page(path, title, h1, note, inner, desc):
@@ -895,3 +896,167 @@ def notfound():
 </div></section>'''
     # <base> : GitHub Pages sert 404.html sous l’URL manquante (/as974-site/…).
     write_page("404.html", "Page introuvable — Active Sécurité 974", "Cette page n’existe pas ou a été déplacée.", body, noindex=True, pre="", base=SITE + "/")
+
+
+VIDEO_CATS = {"Caméras filaires", "Caméras Wi-Fi", "Enregistreurs vidéo", "Sonnettes", "Modules d'interphonie"}
+COMFORT_CATS = {"Interrupteurs d'éclairage", "Prises encastrées intelligentes", "Prises portables intelligentes", "Relais", "Vannes d'arrêt", "Détecteurs de fuites", "Détecteurs de qualité de l'air"}
+SKIP_LINE = {"Accessoires", "Unités d'alimentation"}
+
+
+def ligne(p):
+    slug = str(p["slug"])
+    if p["gamme"] == "Type4 Line" or slug.startswith("type4-"):
+        return "type4"
+    if p["gamme"] == "EN54 Line" or slug.startswith("en54-"):
+        return "en54"
+    if p["gamme"] == "Residence Line" and p["group"] == "ssi":
+        return "residence"
+    if p["category"] in VIDEO_CATS:
+        return "video-superior" if p["gk"] == "superior" else "video-baseline"
+    if p["category"] in COMFORT_CATS:
+        return "confort"
+    if p["category"] in SKIP_LINE or p["category"] == "Boîtiers":
+        return "autre"
+    if p["gk"] == "superior":
+        return "intrusion-superior"
+    if p["gk"] == "baseline":
+        return "intrusion-baseline"
+    return "autre"
+
+
+def _rails(products, pre):
+    cats = []
+    for p in products:
+        if p["category"] not in cats:
+            cats.append(p["category"])
+    blocks = []
+    for c in cats:
+        items = [p for p in products if p["category"] == c and default_image(p)]
+        if not items:
+            continue
+        blocks.append(f'<section class="section"><div class="wrap">{rail(items[:12], pre, str(len(items)), c)}</div></section>')
+    return "".join(blocks)
+
+
+def _line_page(path, parent, title, lead, products):
+    pre = ""
+    cr, ld = crumbs(pre, parent)
+    shown = [p for p in products if default_image(p)]
+    body = f'''<section class="phero"><div class="wrap">
+{cr}<p class="eyebrow">Gammes</p><h1 class="h1">{E(title)}</h1>
+<p class="lead">{lead}</p>
+<p class="src-note">Source : Ajax Systems</p>
+<div class="btns"><a class="btn btn-primary btn-lg" href="contact.html#devis">Demander une étude</a></div>
+</div></section>
+{_rails(products, pre)}
+{cta(pre, "Étude sur toute l’île.", f"{len(shown)} références illustrées dans cette ligne.")}'''
+    write_page(path, f"{title} | AS974", clip(lead), body, jsonld=[ld], priority="0.8")
+
+
+def _redirect(path, target):
+    full = os.path.join(ROOT, path)
+    html = f'''<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url={target}">
+<link rel="canonical" href="{SITE}/{target}">
+<meta name="robots" content="noindex,follow">
+<title>Redirection</title></head><body><p><a href="{target}">Continuer</a></p></body></html>'''
+    open(full, "w", encoding="utf-8").write(html)
+
+
+def arbre():
+    buckets = {}
+    for p in ALL:
+        buckets.setdefault(ligne(p), []).append(p)
+    pre = ""
+    intru_b = buckets.get("intrusion-baseline", [])
+    intru_s = buckets.get("intrusion-superior", [])
+    vid_b = buckets.get("video-baseline", [])
+    vid_s = buckets.get("video-superior", [])
+    type4 = buckets.get("type4", [])
+    residence = buckets.get("residence", [])
+    confort = buckets.get("confort", [])
+    en54 = buckets.get("en54", [])
+    _line_page("gamme-intrusion-baseline.html",
+               [("gamme-intrusion.html", "Intrusion"), (None, "Baseline")],
+               "Intrusion Baseline.",
+               "Dispositifs sans fil pour la maison et les petits sites.",
+               intru_b)
+    _line_page("gamme-intrusion-superior.html",
+               [("gamme-intrusion.html", "Intrusion"), (None, "Superior")],
+               "Intrusion Superior.",
+               "Dispositifs sans fil avancés et filaires, pour les projets exigeants.",
+               intru_s)
+    cr, ld = crumbs(pre, [(None, "Intrusion")])
+    write_page("gamme-intrusion.html", "Protection contre les intrusions | AS974",
+               "Intrusion Ajax : ligne Superior et ligne Baseline. Étude et pose à La Réunion.",
+               f'''<section class="phero"><div class="wrap">{cr}<h1 class="h1">Protection contre les intrusions.</h1>
+<p class="lead">Deux lignes, Superior et Baseline.</p>
+<div class="btns"><a class="btn btn-primary" href="gamme-intrusion-superior.html">Superior · {len(intru_s)}</a>
+<a class="btn btn-outline" href="gamme-intrusion-baseline.html">Baseline · {len(intru_b)}</a></div>
+</div></section>''', jsonld=[ld], priority="0.8")
+    _line_page("gamme-video-baseline.html",
+               [("gamme-video.html", "Vidéo"), (None, "Baseline")],
+               "Vidéo Baseline.",
+               "Caméras, sonnette et enregistreurs. L’image peut lancer l’alarme.",
+               vid_b)
+    _line_page("gamme-video-superior.html",
+               [("gamme-video.html", "Vidéo"), (None, "Superior")],
+               "Vidéo Superior.",
+               "Caméras et NVR pour les sites exigeants. Même reconnaissance, IA enrichie.",
+               vid_s)
+    _line_page("gamme-ssi-type4.html",
+               [("gamme-ssi.html", "SSI"), (None, "Type4 Line")],
+               "Type4 Line.",
+               "Ajax présente cette ligne pour les ERP de type 4, en alarme incendie sans fil.",
+               type4)
+    ppms_named = [p for p in type4 if p["slug"] in ("type4-hub-4g-jeweller", "type4-rex-jeweller", "type4-i-o-module-2x2-jeweller")]
+    cr, ld = crumbs(pre, [("gamme-ssi.html", "SSI"), (None, "PPMS Line")])
+    write_page("gamme-ssi-ppms.html", "PPMS Line — SSI | AS974",
+               "PPMS Line : alerte menace sans fil pour les établissements scolaires et les bâtiments publics.",
+               f'''<section class="phero"><div class="wrap">{cr}<h1 class="h1">PPMS Line.</h1>
+<p class="lead">Alerte menace sans fil pour les établissements scolaires et les bâtiments publics. Ajax indique une alerte sur le site en moins de 3 secondes.</p>
+<p class="src-note">Source : Ajax Systems</p>
+<details class="more"><summary>En savoir plus</summary>
+<p>Annoncés par Ajax, pas encore au catalogue illustré : Sounder/VAD (Blue) Jeweller, ManualCallPoint (Black) Jeweller.</p>
+</details>
+<div class="btns"><a class="btn btn-primary" href="contact.html#devis">Demander une étude</a></div>
+</div></section>
+{_rails(ppms_named, pre)}''', jsonld=[ld], priority="0.7")
+    _line_page("gamme-ssi-residence.html",
+               [("gamme-ssi.html", "SSI"), (None, "Residence Line")],
+               "Residence Line.",
+               "Détecteurs pour le logement. Ajax les place dans cette ligne. Ils peuvent compléter une alarme Baseline.",
+               residence)
+    cr, ld = crumbs(pre, [(None, "SSI")])
+    write_page("gamme-ssi.html", "SSI (système de sécurité incendie) | AS974",
+               "SSI : Type4 Line, PPMS Line et Residence Line. Étude à La Réunion par Active Sécurité 974.",
+               f'''<section class="phero"><div class="wrap">{cr}<h1 class="h1">SSI (système de sécurité incendie).</h1>
+<p class="lead">Trois lignes, comme sur le menu Produits Ajax.</p>
+<div class="btns">
+<a class="btn btn-primary" href="gamme-ssi-type4.html">Type4 · {len(type4)}</a>
+<a class="btn btn-outline" href="gamme-ssi-ppms.html">PPMS</a>
+<a class="btn btn-outline" href="gamme-ssi-residence.html">Residence · {len(residence)}</a>
+</div>
+<p class="src-note">Source : Ajax Systems</p>
+</div></section>''', jsonld=[ld], priority="0.85")
+    _line_page("gamme-confort.html", [(None, "Confort")],
+               "Confort et automatisation.",
+               "Éclairage, prises, relais et fuites d’eau, dans la même application que l’alarme.",
+               confort)
+    for old, target in (
+        ("gamme-incendie.html", "gamme-ssi.html"),
+        ("gamme-alarme.html", "gamme-intrusion.html"),
+        ("gamme-domotique.html", "gamme-confort.html"),
+        ("catalogue-incendie.html", "catalogue-ssi.html"),
+    ):
+        _redirect(old, target)
+    print("ARBRE",
+          "intrusion-baseline", len(intru_b),
+          "intrusion-superior", len(intru_s),
+          "video-baseline", len(vid_b),
+          "video-superior", len(vid_s),
+          "type4", len(type4),
+          "residence", len(residence),
+          "confort", len(confort),
+          "en54", len(en54),
+          "autre", len(buckets.get("autre", [])))

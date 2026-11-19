@@ -114,10 +114,10 @@ Site : {SITE}/
 - Accueil : {SITE}/
 - Particuliers : {SITE}/particuliers.html
 - Professionnels : {SITE}/professionnels.html
-- Vidéosurveillance Baseline et Superior : {SITE}/gamme-video.html
-- Incendie professionnel EN54 : {SITE}/gamme-incendie.html
-- Alarme (FireProtect logement en complément) : {SITE}/gamme-alarme.html
-- Domotique : {SITE}/gamme-domotique.html
+- Intrusion : {SITE}/gamme-intrusion.html
+- Vidéosurveillance : {SITE}/gamme-video.html
+- SSI (système de sécurité incendie) : {SITE}/gamme-ssi.html
+- Confort et automatisation : {SITE}/gamme-confort.html
 - Services : {SITE}/services.html
 - Catalogue : {SITE}/catalogue.html
 - FAQ : {SITE}/faq.html
@@ -125,7 +125,7 @@ Site : {SITE}/
 
 ## À retenir
 Les lignes vidéo Baseline et Superior reconnaissent toutes deux personnes, véhicules et animaux, et peuvent déclencher l’alarme. Superior ajoute une IA enrichie, des optiques P-Iris et les NVR H2D.
-Les FireProtect, FireProtect Plus et FireProtect 2 complètent une alarme de logement (page Alarme). Ils n’ont pas de page incendie. La page Incendie est uniquement la ligne professionnelle EN54.
+SSI (système de sécurité incendie) reprend les trois lignes du menu Produits Ajax : Type4 Line, PPMS Line et Residence Line. FireProtect est dans Residence Line. La ligne EN54 reste au catalogue, hors de ces trois entrées.
 Coordonnées légales non publiées tant qu’elles ne sont pas renseignées.
 """
     open(os.path.join(ROOT, "llms.txt"), "w", encoding="utf-8").write(llms)
@@ -172,6 +172,7 @@ def main():
     pages.home(); pages.particuliers(); pages.professionnels()
     for g in pages.GAMME_PAGES: pages.gamme(g)
     pages.gamme_acces()
+    pages.arbre()
     pages.catalogue_index()
     for g in GROUP: pages.catalogue_cat(g)
     pages.services(); pages.a_propos(); pages.contact(); pages.faq(); pages.legal(); pages.sources(); pages.notfound()

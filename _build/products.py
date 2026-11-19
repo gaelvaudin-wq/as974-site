@@ -34,7 +34,11 @@ def fiche(p, all_products):
     g = GROUP[p["group"]]
     cr, ld_crumbs = crumbs(pre, [("catalogue.html", "Catalogue"), (f"catalogue-{p['group']}.html", g["label"]), (None, p["name"])])
     complement = ""
-    if p["group"] == "alarme" and p["category"] == "Détecteurs d'incendie":
+    if p["gamme"] == "Residence Line" and p["category"] == "Détecteurs d'incendie":
+        complement = ('<p class="note">Ajax place ce détecteur dans Residence Line, sur la page SSI. '
+                      'Il peut compléter une alarme Baseline. '
+                      '<a href="../gamme-ssi-residence.html">Voir Residence Line</a>.</p>')
+    elif p["group"] == "alarme" and p["category"] == "Détecteurs d'incendie":
         complement = ('<p class="note">Ce détecteur complète une alarme intrusion Baseline. '
                       'Il n’appartient pas à la ligne EN54. '
                       f'<a href="{pre}gamme-alarme.html#completer">Compléter votre alarme</a>.</p>')
