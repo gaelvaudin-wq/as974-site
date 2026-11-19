@@ -1,7 +1,7 @@
 """Pages éditoriales (textes repris des pages v1 validées, mise en page refondue)."""
 import os
 from core import *
-from layout import write_page, crumbs
+from layout import write_page, crumbs, PAGES
 from components import card, rail, filter_grid, cta, versus, yt, video_ld
 import sell
 from diagrams import portee, frise, ia, comparatif, en54, steps
@@ -175,7 +175,7 @@ def home():
            "logo": SITE + "/assets/img/logo/as974-b-horizontal-noir-rouge.png",
            "areaServed": {"@type": "AdministrativeArea", "name": "La Réunion"}}
     write_page("index.html", "Alarme et vidéosurveillance Ajax à La Réunion — Active Sécurité 974",
-               "Installateur partenaire agréé Ajax Systems à La Réunion (Saint-Denis, Saint-Pierre, Saint-Paul, Le Port, Saint-Benoît et toute l’île) : alarme, vidéo, incendie EN54 et domotique. Étude gratuite chez vous.",
+               "Installateur partenaire agréé Ajax Systems à La Réunion (Saint-Denis, Saint-Pierre, Saint-Paul, Le Port, Saint-Benoît et toute l’île) : intrusion, vidéo, SSI et confort. Étude gratuite chez vous.",
                body, jsonld=[website, org, video_ld("o8VNaCPCydE", "De la détection à la réaction", "Les caméras Ajax peuvent lancer une réaction automatique.")], priority="1.0")
 
 # ====================================================================== PARTICULIERS
@@ -297,10 +297,10 @@ GAMME_PAGES = {
                "motioncam-phod", "Noir", "dark", ["doorprotect", "motionprotect", "motioncam-phod", "keypad-touchscreen", "streetsiren", "combiprotect"],
                "Alarme intrusion sans fil Ajax à La Réunion — détecteurs, claviers, sirènes | AS974",
                "Alarme intrusion Ajax Systems à La Réunion : détecteurs de mouvement et d’ouverture, claviers, sirènes. Gammes Baseline et Superior, installation par AS974."),
-    "incendie": ("gamme-incendie.html", "Incendie", "Détecteurs de fumée, de chaleur et de monoxyde de carbone, étudiés selon votre site.",
+    "incendie": ("gamme-incendie.html", "EN54 Line", "Ligne distincte du menu Produits. Le SSI du menu, c’est Type4, PPMS et Residence.",
                  "fireprotect-2-smoke-heat-co", "Blanc", "", ["fireprotect-2-smoke-heat-co", "fireprotect", "type4-manualcallpoint-jeweller", "fireprotect-2-rb-heat-smoke-co-ul-jeweller"],
-                 "Détection incendie Ajax à La Réunion — fumée, chaleur, CO | AS974",
-                 "Détecteurs incendie Ajax Systems à La Réunion : fumée, chaleur, monoxyde de carbone, déclencheurs manuels. Étude au cas par cas et installation par AS974."),
+                 "EN54 Line — catalogue Ajax | AS974",
+                 "Ligne EN54 du catalogue fabricant, distincte du SSI (Type4, PPMS, Residence)."),
     "video": ("gamme-video.html", "Vidéosurveillance", "Caméras IP, sonnette et NVR Ajax Systems, intégrés à l’alarme pour une levée de doute visuelle.",
               "bulletcam", "Blanc", "dark", ["bulletcam", "turretcam", "domecam-mini", "doorbell", "nvr", "bulletcam-hl"],
               "Vidéosurveillance Ajax à La Réunion — caméras IP, NVR, sonnette | AS974",
@@ -409,7 +409,7 @@ def gamme_video():
 def gamme_en54():
     pre = ""
     prods = [p for p in ALL if p["gamme"] == "EN54 Line" or str(p["slug"]).startswith("en54-") or str(p["slug"]).startswith("manualcallpoint-")]
-    cr, ld = crumbs(pre, [("professionnels.html", "Professionnels"), (None, "Incendie EN54")])
+    cr, ld = crumbs(pre, [("professionnels.html", "Professionnels"), (None, "EN54 Line")])
     arch = f'''<section class="section"><div class="wrap split-vis">
 <div class="vis-copy"><h2 class="h2">La ligne des bâtiments.</h2>
 <p>Centrale, détecteurs, sirènes, déclencheur rouge, module et prolongateur.</p>
@@ -426,7 +426,7 @@ def gamme_en54():
 <div class="vis-media">{steps()}</div>
 </div></section>'''
     body = f'''<section class="phero"><div class="wrap phero-split crumbs-first">
-<div>{cr}<p class="eyebrow">Professionnels · EN54 Line</p><h1 class="h1">Incendie certifié EN 54, pour les bâtiments.</h1>
+<div>{cr}<p class="eyebrow">Professionnels · EN54 Line</p><h1 class="h1">Ligne EN54, pour les bâtiments.</h1>
 <p class="lead">Centrale, détecteurs, sirènes et modules, pour les bâtiments.</p>
 <div class="btns"><a class="btn btn-primary btn-lg" href="contact.html?profil=professionnel#devis">Demander une étude EN54</a><a class="btn btn-outline btn-lg" href="catalogue-incendie.html">Voir les {len(prods)} références de la ligne</a></div></div>
 <div class="phero-media">{stage_img("en54-fire-hub-jeweller", "Blanc", pre, SZ_SPLIT, eager=True)}</div>
@@ -436,7 +436,7 @@ def gamme_en54():
     itemlist = {"@context": "https://schema.org", "@type": "ItemList", "name": "Ajax EN54 Line",
                 "itemListElement": [{"@type": "ListItem", "position": i, "name": p["name"], "url": f"{SITE}/produits/{p['slug']}.html"} for i, p in enumerate(prods, 1)]}
     write_page("gamme-incendie.html",
-               "Incendie EN54 Ajax à La Réunion — centrale, détecteurs, déclencheurs | AS974",
+               "EN54 Line — catalogue Ajax | AS974",
                "Ligne professionnelle Ajax EN54 pour ERP, entreprises et bâtiments à La Réunion : centrale Fire Hub, détecteurs, déclencheurs, sirènes et modules. Étude par Active Sécurité 974.",
                body, jsonld=[ld, itemlist], priority="0.8")
 
@@ -585,7 +585,7 @@ def catalogue_index():
                 "hasPart": [{"@type": "CollectionPage", "name": GROUP[g]["label"], "url": f"{SITE}/catalogue-{g}.html"} for g in GROUP]}
     shown = sum(1 for p in ALL if default_image(p))
     write_page("catalogue.html", f"Catalogue Ajax Systems sur devis — {shown} références | AS974",
-               f"Catalogue de {shown} références Ajax Systems : centrales, alarme, incendie, vidéosurveillance, domotique, accessoires. Sur devis, installation à La Réunion.",
+               f"Catalogue de {shown} références Ajax Systems : intrusion, vidéo, SSI, confort et accessoires. Sur devis, installation à La Réunion.",
                body, jsonld=[ld, itemlist], priority="0.9")
 
 def catalogue_cat(g):
@@ -770,7 +770,7 @@ def contact():
 {aside}
 </div></section>'''
     write_page("contact.html", "Contact et demande de devis gratuit — Active Sécurité 974",
-               "Demandez votre devis gratuit : alarme, vidéosurveillance, incendie ou domotique Ajax Systems. Intervention chez vous sur toute l’île de La Réunion.",
+               "Demandez votre devis gratuit : intrusion, vidéo, SSI ou confort. Intervention chez vous sur toute l’île de La Réunion.",
                body, jsonld=[ld], priority="0.9")
     body2 = f'''<section class="phero notfound"><div class="wrap center">
 <p class="eyebrow">Demande envoyée</p><h1 class="h1">Merci, votre demande est bien partie.</h1>
@@ -1038,11 +1038,8 @@ def arbre():
     write_page("gamme-ssi-ppms.html", "PPMS Line — SSI | AS974",
                "PPMS Line : alerte menace sans fil pour les établissements scolaires et les bâtiments publics.",
                f'''<section class="phero"><div class="wrap">{cr}<h1 class="h1">PPMS Line.</h1>
-<p class="lead">Alerte menace sans fil pour les établissements scolaires et les bâtiments publics. Ajax indique une alerte sur le site en moins de 3 secondes.</p>
+<p class="lead">Ajax rattache à cette ligne le Type4 Hub (4G), le Type4 ReX et le module E/S.</p>
 <p class="src-note">Source : Ajax Systems</p>
-<details class="more"><summary>En savoir plus</summary>
-<p>Annoncés par Ajax, pas encore au catalogue illustré : Sounder/VAD (Blue) Jeweller, ManualCallPoint (Black) Jeweller.</p>
-</details>
 <div class="btns"><a class="btn btn-primary" href="contact.html#devis">Demander une étude</a></div>
 </div></section>
 {_rails(ppms_named, pre)}''', jsonld=[ld], priority="0.7")
@@ -1067,6 +1064,9 @@ def arbre():
                "Confort et automatisation.",
                "Éclairage, prises, relais et fuites d’eau, dans la même application que l’alarme.",
                confort, _film("assets/video/app/switches-app.mp4", "assets/img/ajax/pro-desktop.jpg", "Interrupteurs dans l’application."))
+    gone = {
+        "gamme-incendie.html", "gamme-alarme.html", "gamme-domotique.html", "catalogue-incendie.html",
+    }
     for old, target in (
         ("gamme-incendie.html", "gamme-ssi.html"),
         ("gamme-alarme.html", "gamme-intrusion.html"),
@@ -1074,6 +1074,7 @@ def arbre():
         ("catalogue-incendie.html", "catalogue-ssi.html"),
     ):
         _redirect(old, target)
+    PAGES[:] = [item for item in PAGES if item[0] not in gone]
     print("ARBRE",
           "intrusion-baseline", len(intru_b),
           "intrusion-superior", len(intru_s),

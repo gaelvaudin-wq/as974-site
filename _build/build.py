@@ -37,7 +37,7 @@ def og_image():
     dr = ImageDraw.Draw(im)
     dr.text((72, 150), "Active Sécurité 974", font=F(64, 750), fill="white")
     dr.rectangle((72, 236, 172, 244), fill=(225, 6, 0))
-    dr.text((72, 280), "Alarme · Incendie · Vidéo · Domotique", font=F(34, 500), fill=(200, 200, 205))
+    dr.text((72, 280), "Intrusion · Vidéo · SSI · Confort", font=F(34, 500), fill=(200, 200, 205))
     dr.text((72, 330), "Partenaire agréé Ajax Systems — La Réunion", font=F(30, 500), fill=(160, 160, 165))
     if src and os.path.exists(src):
         p = Image.open(src).convert("RGBA"); p = p.crop(p.split()[3].getbbox()); p.thumbnail((380, 380))
