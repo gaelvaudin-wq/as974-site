@@ -63,6 +63,23 @@ def en54():
         bits.append(f'<text x="{x+90}" y="{y+42}" text-anchor="middle" fill="#fff" font-size="14" font-family="Inter,sans-serif">{name}</text>')
     return _svg("".join(bits), "Architecture de la ligne EN54")
 
+def steps():
+    items = [
+        ("assets/img/ajax/ls_house_xl_1894a479bc.jpg", "Visite dans un salon", "Étude", "Nous venons voir le lieu."),
+        ("assets/img/p/c-hub2-4g-white-e143ae613b.png", "Centrale Hub 2", "Devis", "Le prix est dans le devis."),
+        ("assets/img/p/c-ss-black-1154b5ea2b.png", "Sirène extérieure", "Installation", "Pose et essais chez vous."),
+        ("assets/img/ajax/pro-app.jpg", "Application Ajax", "Mise en service", "Vous armez depuis l’application."),
+        ("assets/img/ajax/entrepot-kramp.jpg", "Entrepôt, cas client Ajax", "SAV", "Nous restons joignables."),
+    ]
+    lis = []
+    for i, (src, alt, title, text) in enumerate(items, 1):
+        lis.append(
+            f'<li class="step"><img src="{src}" alt="{alt}">'
+            f'<div><span>{i}</span><h3>{title}</h3><p>{text}</p></div></li>'
+        )
+    return f'<ol class="steps">{"".join(lis)}</ol>'
+
+
 def frise():
     steps = ["Étude", "Devis", "Pose", "SAV"]
     colors = ["#0A4D8C", "#E10600", "#0B0B0C", "#F5C518"]

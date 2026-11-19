@@ -1,6 +1,6 @@
 """Blocs qui vendent : performances sourcées, étude, pose, choix, différence AS974."""
 from core import *
-from diagrams import chaine, portee, ia, en54, frise, comparatif
+from diagrams import chaine, portee, ia, en54, frise, comparatif, steps
 
 HUB = "https://ajax.systems/fr/products/hub-2/"
 MP = "https://ajax.systems/fr/products/motionprotect/"
@@ -78,13 +78,13 @@ def etude(kind):
     }.get(kind, "les accès et la façon dont le lieu est occupé")
     short = f"<p>Nous venons voir {sujet}. Le devis ne décrit que ce que le lieu demande.</p>"
     more = "<p>L’analyse porte sur les risques et les accès, pas sur une liste d’appareils à placer partout. Deux maisons voisines ne donnent pas le même chantier. Des photos peuvent préparer la visite. Elles ne remplacent pas un test radio.</p>"
-    return band("L’étude se fait chez vous, avant le devis.", short, more, frise(), act("", "contact.html#devis", "Prendre rendez-vous pour l’étude"), True)
+    return band("L’étude se fait chez vous, avant le devis.", short, more, steps(), act("", "contact.html#devis", "Prendre rendez-vous pour l’étude"), True)
 
 
 def pose(kind):
     short = "<p>Nous posons, nous testons, puis nous vous montrons comment armer, lire une alerte et repérer une pile faible.</p>"
     more = "<p>Les liaisons filaires et l’alimentation suivent le plan de l’étude. Les utilisateurs et les scénarios sont réglés avec vous. Le dépannage suit ce qui est écrit au devis. La télésurveillance, si vous la souhaitez, se discute à part. Elle n’est pas un service déjà ouvert.</p>"
-    return band("La pose, le réglage, puis nous restons joignables.", short, more, frise(), act("", "services-installation.html", "Voir le déroulé de l’installation"))
+    return band("La pose, le réglage, puis nous restons joignables.", short, more, steps(), act("", "services-installation.html", "Voir le déroulé de l’installation"))
 
 
 def choix(products, pre, kind):

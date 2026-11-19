@@ -4,7 +4,7 @@ from core import *
 from layout import write_page, crumbs
 from components import card, rail, filter_grid, cta, versus, yt, video_ld
 import sell
-from diagrams import portee, frise, ia, comparatif, en54
+from diagrams import portee, frise, ia, comparatif, en54, steps
 from tiles import system_html
 
 P = {}      # slug -> produit
@@ -99,12 +99,11 @@ def home():
 
     video_home = ""
     railsec = ""
-    process = f'''<section class="section"><div class="wrap split-vis">
-<div class="vis-copy"><h2 class="h2">Étude, devis, pose, SAV.</h2>
-<p>Quatre étapes. Un seul interlocuteur, chez vous.</p>
+    process = f'''<section class="section"><div class="wrap">
+<div class="head"><h2 class="h2">Étude, devis, pose, SAV.</h2>
+<p class="lead">Cinq temps. Un seul interlocuteur, chez vous.</p></div>
+{steps()}
 {sell.act(pre, "services-installation.html", "Voir l’installation")}
-</div>
-<div class="vis-media">{frise()}</div>
 </div></section>'''
     day = f'''<section class="section bg-off" id="quotidien"><div class="wrap split-vis">
 <div class="vis-copy"><h2 class="h2">L’application, au quotidien.</h2>
@@ -409,7 +408,7 @@ def gamme_en54():
 <p>Nous venons sur le bâtiment, puis nous mettons en service.</p>
 {sell.act(pre, "services-maintenance.html", "Voir le suivi")}
 </div>
-<div class="vis-media">{frise()}</div>
+<div class="vis-media">{steps()}</div>
 </div></section>'''
     body = f'''<section class="phero"><div class="wrap phero-split crumbs-first">
 <div>{cr}<p class="eyebrow">Professionnels · EN54 Line</p><h1 class="h1">Incendie certifié EN 54, pour les bâtiments.</h1>
