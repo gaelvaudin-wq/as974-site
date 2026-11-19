@@ -73,9 +73,12 @@ def home():
 <div class="panel light"><h3 class="h2">Votre maison.</h3><p>Une étude chez vous, puis la pose.</p>
 <div class="btns"><a class="btn btn-primary" href="contact.html?profil=particulier#devis">Étude pour mon logement</a></div>
 <div class="panel-img"><img class="home-shot home-cover" src="assets/img/ajax/ls_house_xl_1894a479bc.jpg" alt="Interrupteur Ajax dans un salon" width="1600" height="900"></div></div>
-<div class="panel blue on-dark"><h3 class="h2">Votre activité.</h3><p>Commerce, bureaux, entrepôt, plusieurs sites.</p>
-<div class="btns"><a class="btn btn-light" href="contact.html?profil=professionnel#devis">Étude professionnelle</a></div>
-<div class="panel-img"><img class="home-shot home-cover" src="assets/img/ajax/entrepot-kramp.jpg" alt="Entrepôt, cas client Ajax Systems" width="1600" height="900"></div></div>
+<article class="pro-card">
+<img src="assets/img/ajax/entrepot-kramp.jpg" alt="Entrepôt, cas client Ajax Systems" width="1600" height="900">
+<div><h3 class="h2">Votre activité.</h3><p>Commerce, bureaux, entrepôt, plusieurs sites.</p>
+<div class="btns"><a class="btn btn-primary" href="contact.html?profil=professionnel#devis">Demander une étude</a>
+<a class="btn btn-light" href="professionnels.html">Voir la page</a></div></div>
+</article>
 </div></div></section>'''
 
     chapters = [
@@ -230,50 +233,62 @@ def particuliers():
 def professionnels():
     pre = ""
     cr, ld = crumbs(pre, [(None, "Professionnels")])
-    sup = pick(["superior-hub-g3-jeweller", "superior-hub-hybrid-2", "superior-doorprotect-g3-jeweller", "superior-keypad-touchscreen-g3-jeweller", "superior-motioncam-phod-jeweller", "superior-streetsiren-doubledeck-jeweller", "superior-motionprotect-g3-jeweller", "superior-homesiren-g3-jeweller"])
-    body = f'''<section class="phero bg-blue on-dark"><div class="wrap phero-split crumbs-first">
-<div class="reveal">{cr}<p class="eyebrow">Professionnels</p><h1 class="h1">Votre activité, protégée.</h1>
-<p class="lead">Commerces, bureaux, entrepôts et plusieurs sites. Étude, installation et suivi par un partenaire agréé Ajax Systems, sur toute l’île.</p>
-<div class="btns"><a class="btn btn-light btn-lg" href="contact.html?profil=professionnel#devis">Demander une étude professionnelle</a><a class="btn btn-outline btn-lg" href="catalogue.html?gamme=superior#references">Gamme Superior</a></div></div>
-<div class="phero-media blue reveal d1">{stage_img("superior-keypad-touchscreen-g3-jeweller", "Noir", pre, SZ_SPLIT, eager=True, need_alpha=True)}</div>
+    sup = pick(["superior-hub-g3-jeweller", "superior-doorprotect-g3-jeweller", "superior-motioncam-phod-jeweller", "superior-streetsiren-doubledeck-jeweller"])
+    body = f'''<section class="pro-hero">
+<img src="assets/img/ajax/entrepot-kramp.jpg" alt="Entrepôt, cas client Ajax Systems">
+<div class="wrap">{cr}<h1 class="h1">Votre activité.</h1>
+<p class="lead">Étude, pose et suivi, sur le site.</p>
+<div class="btns"><a class="btn btn-primary btn-lg" href="contact.html?profil=professionnel#devis">Demander une étude</a></div>
 </div></section>
 <section class="section"><div class="wrap">
-<div class="head reveal"><p class="eyebrow">Cas d’usage</p><h2 class="h2">Des sites très différents, une même exigence.</h2></div>
-<ol class="numlist reveal">
-<li><h3>Commerces &amp; retail</h3><p>Ouvertures, volumes, abords, sirènes, vidéo pour lever le doute.</p></li>
-<li><h3>Bureaux</h3><p>Multi-zones, horaires, utilisateurs multiples, scénarios d’armement.</p></li>
-<li><h3>Entrepôts &amp; locaux techniques</h3><p>Périmètres, portées radio, extensions de couverture.</p></li>
-<li><h3>Restaurants &amp; CHR</h3><p>Protection hors service, alertes, automatismes utiles au quotidien.</p></li>
-<li><h3>Plusieurs sites</h3><p>Un interlocuteur unique sur toute l’île, pour chaque adresse.</p></li>
-<li><h3>Incendie</h3><p>Détecteurs de fumée, de chaleur et de monoxyde de carbone, étudiés selon votre site.</p></li>
-</ol>
+<div class="head"><h2 class="h2">Les sites.</h2></div>
+<ul class="site-types">
+<li><h3>Commerces</h3><p>Ouvertures, réserve, caisse.</p></li>
+<li><h3>Bureaux</h3><p>Zones, horaires, utilisateurs.</p></li>
+<li><h3>Entrepôts</h3><p>Volume, quais, radio.</p></li>
+<li><h3>ERP</h3><p>SSI Type4 ou PPMS, selon le site.</p></li>
+<li><h3>Plusieurs sites</h3><p>Un interlocuteur, chaque adresse.</p></li>
+</ul>
 </div></section>
 <section class="section bg-off"><div class="wrap">
-<div class="split">
-<div class="split-media reveal">{stage_img("superior-streetsiren-doubledeck-jeweller", "Blanc", pre, SZ_SPLIT)}</div>
-<div class="split-txt reveal d1"><p class="num">Superior</p><h2 class="h2">Quand Superior a du sens.</h2><p class="lead">Sites multi-zones, exigences élevées, complément filaire : la ligne Superior s’adresse aux projets ambitieux.</p>
-<div class="btns"><a class="btn btn-dark" href="catalogue.html?gamme=superior#references">{sum(1 for p in ALL if p["gk"] == "superior")} références Superior</a></div></div>
-</div>
+<div class="head"><h2 class="h2">Selon le besoin.</h2>
+<p class="lead">Les lignes suivent le menu Produits Ajax.</p></div>
+<ul class="site-types">
+<li><h3>Intrusion</h3><p>Baseline ou Superior.</p><a href="gamme-intrusion.html">Voir</a></li>
+<li><h3>Vidéo</h3><p>Baseline ou Superior. L’image peut lancer l’alarme.</p><a href="gamme-video-superior.html">Voir</a></li>
+<li><h3>SSI</h3><p>Type4, PPMS ou Residence.</p><a href="gamme-ssi.html">Voir</a></li>
+<li><h3>Accès</h3><p>Claviers, badges, groupes.</p><a href="gamme-acces.html">Voir</a></li>
+<li><h3>Confort</h3><p>Éclairage, prises, relais.</p><a href="gamme-confort.html">Voir</a></li>
+<li><h3>Télésurveillance</h3><p>Peut se discuter. Ce n’est pas un service déjà ouvert.</p></li>
+</ul>
+<details class="more"><summary>En savoir plus</summary>
+<p>La ligne EN54 reste au catalogue. Elle n’est pas une des trois lignes du menu Produits.</p>
+</details>
 </div></section>
 <section class="section"><div class="wrap">
-{rail(sup, pre, "Sélection Superior", "Le matériel des projets exigeants.", ("catalogue.html?gamme=superior#references", "Toute la gamme Superior"))}
+<div class="head"><h2 class="h2">Chiffres du fabricant.</h2></div>
+{system_html()}
 </div></section>
-<section class="section" id="video-superior"><div class="wrap">
-<div class="head reveal"><span class="tag tag-sup">Superior · vidéo</span><h2 class="h2">La ligne vidéo des sites exigeants.</h2>
-<p class="lead">Comme la ligne Baseline, les caméras Superior reconnaissent les personnes, les véhicules et les animaux, et peuvent déclencher l’alarme. Superior y ajoute une IA enrichie, des optiques P-Iris 2,8–12 mm, un haut-parleur, et les enregistreurs Superior NVR H2D.</p></div>
-<div class="btns"><a class="btn btn-dark" href="gamme-video.html#superior">Voir la ligne Superior</a><a class="btn btn-outline" href="catalogue-video.html?gamme=superior#references">Références Superior</a></div>
-{yt("o8VNaCPCydE", "De la détection à la réaction", "Les caméras peuvent déclencher une réaction. Vidéo Ajax Systems, en français.")}
-<p class="mt-28"><a class="link" href="gamme-ssi.html">SSI (système de sécurité incendie)</a></p>
+<section class="section bg-off"><div class="wrap">
+<div class="head"><h2 class="h2">Le déroulé.</h2></div>
+{steps()}
 </div></section>
-<section class="section bg-ink on-dark"><div class="wrap">
-<p class="eyebrow reveal">Après la pose</p>
-<p class="statement reveal">Un suivi dans la durée. <span class="dim">Maintenance selon le contrat défini ensemble.{(" " + telesurv()) if telesurv() else ""}</span></p>
-<div class="btns reveal"><a class="btn btn-light" href="services.html">Voir les services</a></div>
+<section class="section"><div class="wrap split-vis">
+<div class="vis-copy"><h2 class="h2">Pourquoi AS974.</h2>
+<p>Une étude, un devis, une pose.</p>
+{sell.act(pre, "a-propos.html", "À propos")}
+</div>
+<div class="vis-media">{comparatif()}</div>
 </div></section>
-{cta(pre, "Parlons de votre site.", "Étude professionnelle sur place, sur toute l’île.", "Demander une étude professionnelle", "contact.html?profil=professionnel#devis")}'''
-    body += sell.etude("alarme") + sell.pose("alarme") + sell.pourquoi("alarme")
-    write_page("professionnels.html", "Sécurité professionnelle Ajax à La Réunion — Superior et EN54 | AS974",
-               "Sécurité pour commerces, bureaux et plusieurs sites à La Réunion : ligne vidéo Superior, incendie EN54 et applications Ajax PRO. Étude sur place par Active Sécurité 974.",
+<section class="section bg-off"><div class="wrap">
+{rail(sup, pre, "Superior", "Une sélection pour les sites exigeants.", ("gamme-intrusion-superior.html", "Toute l’intrusion Superior"))}
+<figure class="app-film">{yt("o8VNaCPCydE", "De la détection à la réaction", "Les caméras peuvent lancer une réaction.")}
+<img src="assets/img/ajax/pro-app.jpg" alt="Écran de l’application Ajax, centrale Hub 2 Plus"></figure>
+<p class="src-note">Source : Ajax Systems</p>
+</div></section>
+{cta(pre, "Parlons de votre site.", "Étude sur place, sur toute l’île.", "Demander une étude", "contact.html?profil=professionnel#devis")}'''
+    write_page("professionnels.html", "Sécurité professionnelle à La Réunion — Active Sécurité 974",
+               "Commerces, bureaux, entrepôts et ERP à La Réunion : intrusion, vidéo, SSI et confort. Étude sur place par Active Sécurité 974.",
                body, jsonld=[ld, video_ld("o8VNaCPCydE", "De la détection à la réaction", "Les caméras Ajax peuvent lancer une réaction automatique.")], priority="0.9")
 
 # ====================================================================== GAMMES
